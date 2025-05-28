@@ -1,0 +1,7 @@
+
+    @import url('https://cdn.jsdelivr.net/npm/tailwindcss@3.4.16/dist/tailwind.min.css');
+    body { font-family: 'Poppins', sans-serif; }
+    .text-primary { color: #8B4513; }
+    .bg-primary { background-color: #8B4513; }
+    .rounded-button { border-radius: 8px; }
+    

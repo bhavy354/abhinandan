@@ -1,0 +1,1252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Herbs | Abhinandan International</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#8B4513',
+                        secondary: '#6B8E23'
+                    },
+                    borderRadius: {
+                        'none': '0px',
+                        'sm': '4px',
+                        DEFAULT: '8px',
+                        'md': '12px',
+                        'lg': '16px',
+                        'xl': '20px',
+                        '2xl': '24px',
+                        '3xl': '32px',
+                        'full': '9999px',
+                        'button': '8px'
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <style>
+        :where([class^="ri-"])::before {
+            content: "\f3c2";
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .heading {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .custom-input:focus {
+            outline: none;
+        }
+
+        .custom-checkbox {
+            appearance: none;
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #8B4513;
+            border-radius: 4px;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .custom-checkbox:checked {
+            background-color: #8B4513;
+        }
+
+        .custom-checkbox:checked::after {
+            content: "";
+            position: absolute;
+            width: 5px;
+            height: 10px;
+            border: solid white;
+            border-width: 0 2px 2px 0;
+            top: 2px;
+            left: 6px;
+            transform: rotate(45deg);
+        }
+
+        .product-gallery-thumbnail {
+            transition: all 0.3s ease;
+        }
+
+        .product-gallery-thumbnail:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-gallery-thumbnail.active {
+            border: 2px solid #8B4513;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-white">
+    <!-- Header Section -->
+    <header class="sticky top-0 z-50 bg-white shadow-sm">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                    <!-- <a href="#" class="text-3xl font-['Pacifico'] text-primary">Abhinandan</a> -->
+                    <a href="#" class="flex items-center">
+                        <img src="photo/logo-4kk-1.png" alt="Abhinandan Logo" class="h-10 w-auto mr-4">
+                    </a>
+                    <nav class="hidden md:flex ml-10">
+                        <ul class="flex space-x-8">
+                            <li><a href="Home.html"
+                                    class="text-gray-800 font-medium hover:text-primary transition-colors">Home</a></li>
+                            <li><a href="Product.html"
+                                    class="text-primary font-medium hover:text-primary transition-colors">Products</a>
+                            </li>
+                            <li><a href="Aboutus.html"
+                                    class="text-gray-800 font-medium hover:text-primary transition-colors">About Us</a>
+                            </li>
+                            <li><a href="Contact.html"
+                                    class="text-gray-800 font-medium hover:text-primary transition-colors">Contact</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="flex items-center">
+                    <div class="relative mr-4">
+                        <input type="text" placeholder="Search products..."
+                            class="custom-input pl-10 pr-4 py-2 rounded-full bg-gray-100 text-sm w-48 border-none">
+                        <div
+                            class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 flex items-center justify-center text-gray-500">
+                            <i class="ri-search-line"></i>
+                        </div>
+                    </div>
+
+                    <button
+                        class="ml-4 md:flex items-center px-4 py-2 bg-primary text-white rounded-button hover:bg-opacity-90 transition-colors whitespace-nowrap hidden">
+                        <span>Get Quote</span>
+                    </button>
+                    <div class="md:hidden w-10 h-10 flex items-center justify-center">
+                        <i class="ri-menu-line text-xl"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Product Detail Section -->
+    <section class="py-12 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <!-- Breadcrumb -->
+            <div class="flex items-center text-sm text-gray-600 mb-6">
+                <a href="Home.html" class="hover:text-primary">Home</a>
+                <i class="ri-arrow-right-s-line mx-2"></i>
+                <a href="Product.html" class="hover:text-primary">Products</a>
+                <i class="ri-arrow-right-s-line mx-2"></i>
+                <a href="Product.html?section#herbs" class="hover:text-primary">Herbs</a>
+                <i class="ri-arrow-right-s-line mx-2"></i>
+                <span class="text-primary" id="productNameBreadcrumb">Zeodary Roots</span>
+            </div>
+
+            <div class="flex flex-col lg:flex-row gap-8">
+                <!-- Product Gallery -->
+                <div class="lg:w-1/2">
+                    <div class="bg-white rounded-lg shadow-md p-4 mb-4">
+                        <div class="h-96 overflow-hidden rounded-lg mb-4">
+                            <img id="mainImage" src="./Product/Herbs/zedoary-root.jpg"  alt="Zeodary Roots" class="w-full h-full object-contain">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Info -->
+                <div class="lg:w-1/2">
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <h1 class="heading text-3xl font-bold text-gray-900" id="productName">Zeodary Roots</h1>
+                            <div class="relative">
+                                <select id="productSelector"
+                                    class="appearance-none bg-gray-100 border border-gray-300 text-gray-700 py-2 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-primary">
+                                    <option value="zeodary-roots">Zeodary Roots</option>
+                                    <option value="sena-leaves-pods">Sena Leaves & Pods</option>
+                                    <option value="basil-seeds">Basil Seeds</option>
+                                    <option value="cassia-small">Cassia Small</option>
+                                    <option value="cassia-big">Cassia Big</option>
+                                    <option value="annato-seeds">Annato Seeds</option>
+                                </select>
+                                <div
+                                    class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                                    <i class="ri-arrow-down-s-line"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-6">
+                            <h3 class="text-lg font-semibold text-gray-900 mb-2">Description</h3>
+                            <p class="text-gray-600 mb-4" id="productDescription">
+                                Zeodary roots, also known as Curcuma zedoaria, are aromatic rhizomes with a bitter and
+                                pungent taste. Our premium quality zeodary roots are carefully harvested, cleaned, and
+                                dried to preserve their essential oils and medicinal properties. These roots have a pale
+                                yellow interior with a distinct earthy aroma.
+                            </p>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                                <div class="flex items-start">
+                                    <i class="ri-checkbox-circle-fill text-green-500 mt-1 mr-2"></i>
+                                    <span class="text-gray-600">100% natural with no additives</span>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="ri-checkbox-circle-fill text-green-500 mt-1 mr-2"></i>
+                                    <span class="text-gray-600">Rich in essential oils and curcuminoids</span>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="ri-checkbox-circle-fill text-green-500 mt-1 mr-2"></i>
+                                    <span class="text-gray-600">Long shelf life (up to 2 years)</span>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="ri-checkbox-circle-fill text-green-500 mt-1 mr-2"></i>
+                                    <span class="text-gray-600">Retains original flavor and medicinal properties</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-6">
+                            <h3 class="text-lg font-semibold text-gray-900 mb-2">Specifications</h3>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <p class="text-gray-600"><span class="font-medium">Color:</span> <span
+                                            id="productColor">Pale yellow to brown</span></p>
+                                    <p class="text-gray-600"><span class="font-medium">Moisture:</span> <span
+                                            id="productMoisture">Max 10%</span></p>
+                                </div>
+                                <div>
+                                    <p class="text-gray-600"><span class="font-medium">Size:</span> <span
+                                            id="productSize">5-10cm pieces</span></p>
+                                    <p class="text-gray-600"><span class="font-medium">Packaging:</span> <span
+                                            id="productPackaging">10kg, 25kg, 50kg bags</span></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-6">
+                            <h3 class="text-lg font-semibold text-gray-900 mb-2">Storage Instructions</h3>
+                            <p class="text-gray-600" id="productStorage">
+                                Store in a cool, dry place away from direct sunlight. Keep in airtight containers to
+                                maintain freshness and prevent moisture absorption. Ideal storage temperature is below
+                                25°C with relative humidity below 65%. Avoid storing near strong-smelling substances as
+                                the roots can absorb odors.
+                            </p>
+                        </div>
+
+                        <div class="flex flex-col sm:flex-row gap-3 mb-6">
+                            <button
+                                class="flex-1 px-6 py-3 bg-primary text-white rounded-button hover:bg-opacity-90 transition-colors">
+                                Request Sample
+                            </button>
+                            <button
+                                class="flex-1 px-6 py-3 bg-secondary text-white rounded-button hover:bg-opacity-90 transition-colors">
+                                Enquiry Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Tabs -->
+            <div class="mt-12 bg-white rounded-lg shadow-md overflow-hidden">
+                <div class="border-b border-gray-200">
+                    <nav class="flex flex-col sm:flex-row">
+                        <button onclick="openTab(event, 'uses')"
+                            class="tab-button py-4 px-6 text-center border-b-2 font-medium text-primary border-primary">
+                            Uses
+                        </button>
+                        <button onclick="openTab(event, 'varieties')"
+                            class="tab-button py-4 px-6 text-center border-b-2 font-medium text-gray-500 border-transparent hover:text-gray-700 hover:border-gray-300">
+                            Varieties
+                        </button>
+                        <button onclick="openTab(event, 'names')"
+                            class="tab-button py-4 px-6 text-center border-b-2 font-medium text-gray-500 border-transparent hover:text-gray-700 hover:border-gray-300">
+                            Names in Different Languages
+                        </button>
+                        <button onclick="openTab(event, 'origin')"
+                            class="tab-button py-4 px-6 text-center border-b-2 font-medium text-gray-500 border-transparent hover:text-gray-700 hover:border-gray-300">
+                            Origin & Cultivation
+                        </button>
+                    </nav>
+                </div>
+
+                <div class="p-6">
+                    <!-- Uses Tab -->
+                    <div id="uses" class="tab-content active">
+                        <h3 class="heading text-xl font-semibold text-gray-900 mb-4">Culinary & Medicinal Uses</h3>
+                        <p class="text-gray-600 mb-4" id="culinaryUses">
+                            Zeodary roots have been used for centuries in traditional medicine and culinary
+                            applications. They are valued for their:
+                        </p>
+                        <ul class="list-disc pl-5 text-gray-600 mb-6 space-y-2" id="culinaryList">
+                            <li>Flavoring agent in traditional Asian cuisine</li>
+                            <li>Essential ingredient in Ayurvedic and Chinese medicine</li>
+                            <li>Digestive aid and appetite stimulant</li>
+                            <li>Anti-inflammatory and antioxidant properties</li>
+                            <li>Natural remedy for respiratory ailments</li>
+                            <li>Ingredient in herbal teas and tonics</li>
+                        </ul>
+
+                        <h3 class="heading text-xl font-semibold text-gray-900 mb-4">Industrial & Other Uses</h3>
+                        <p class="text-gray-600 mb-4" id="industrialUses">
+                            Beyond culinary and medicinal applications, zeodary roots have several industrial uses:
+                        </p>
+                        <ul class="list-disc pl-5 text-gray-600 mb-6 space-y-2" id="industrialList">
+                            <li>Essential oil extraction for perfumery</li>
+                            <li>Natural food coloring agent</li>
+                            <li>Ingredient in cosmetic preparations</li>
+                            <li>Flavoring in alcoholic beverages</li>
+                        </ul>
+                    </div>
+
+                    <!-- Varieties Tab -->
+                    <div id="varieties" class="tab-content">
+                        <h3 class="heading text-xl font-semibold text-gray-900 mb-4">Product Varieties</h3>
+                        <p class="text-gray-600 mb-4" id="varietiesDescription">
+                            We offer several forms of zeodary root products to meet different industrial and medicinal
+                            needs:
+                        </p>
+
+                        <div class="space-y-4" id="varietiesContainer">
+                            <div class="border border-gray-200 rounded-lg p-4">
+                                <h4 class="heading text-lg font-semibold text-gray-900 mb-2">Whole Dried Roots</h4>
+                                <p class="text-gray-600 mb-2">
+                                    <span class="font-medium">Size:</span> 5-10cm pieces<br>
+                                    <span class="font-medium">Color:</span> Pale yellow to brown<br>
+                                    <span class="font-medium">Moisture:</span> Max 10%<br>
+                                    <span class="font-medium">Use:</span> Traditional medicine, culinary applications
+                                </p>
+                            </div>
+
+                            <div class="border border-gray-200 rounded-lg p-4">
+                                <h4 class="heading text-lg font-semibold text-gray-900 mb-2">Zeodary Root Powder</h4>
+                                <p class="text-gray-600 mb-2">
+                                    <span class="font-medium">Mesh Size:</span> 80-100<br>
+                                    <span class="font-medium">Color:</span> Light yellow<br>
+                                    <span class="font-medium">Moisture:</span> Max 8%<br>
+                                    <span class="font-medium">Use:</span> Pharmaceutical preparations, food industry
+                                </p>
+                            </div>
+
+                            <div class="border border-gray-200 rounded-lg p-4">
+                                <h4 class="heading text-lg font-semibold text-gray-900 mb-2">Zeodary Essential Oil</h4>
+                                <p class="text-gray-600 mb-2">
+                                    <span class="font-medium">Extraction Method:</span> Steam distillation<br>
+                                    <span class="font-medium">Color:</span> Pale yellow<br>
+                                    <span class="font-medium">Purity:</span> 100% pure<br>
+                                    <span class="font-medium">Use:</span> Aromatherapy, perfumery, cosmetics
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Names Tab -->
+                    <div id="names" class="tab-content">
+                        <h3 class="heading text-xl font-semibold text-gray-900 mb-4">Names in Different Languages</h3>
+                        <p class="text-gray-600 mb-4" id="namesDescription">
+                            Zeodary root is known by various names across different cultures and regions:
+                        </p>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="namesContainer">
+                            <div class="border border-gray-200 rounded-lg p-4">
+                                <h4 class="heading text-lg font-semibold text-gray-900 mb-2">Indian Languages</h4>
+                                <ul class="space-y-1 text-gray-600">
+                                    <li><span class="font-medium">Hindi:</span> Kachur</li>
+                                    <li><span class="font-medium">Tamil:</span> Kichilikizhangu</li>
+                                    <li><span class="font-medium">Telugu:</span> Kachoram</li>
+                                    <li><span class="font-medium">Kannada:</span> Kachora</li>
+                                    <li><span class="font-medium">Malayalam:</span> Kachooram</li>
+                                    <li><span class="font-medium">Bengali:</span> Kachur</li>
+                                    <li><span class="font-medium">Gujarati:</span> Shatkachuro</li>
+                                    <li><span class="font-medium">Marathi:</span> Kachora</li>
+                                </ul>
+                            </div>
+
+                            <div class="border border-gray-200 rounded-lg p-4">
+                                <h4 class="heading text-lg font-semibold text-gray-900 mb-2">International Names</h4>
+                                <ul class="space-y-1 text-gray-600">
+                                    <li><span class="font-medium">Scientific:</span> Curcuma zedoaria</li>
+                                    <li><span class="font-medium">English:</span> Zeodary, White turmeric</li>
+                                    <li><span class="font-medium">Chinese:</span> E zhu</li>
+                                    <li><span class="font-medium">Japanese:</span> Gajutsu</li>
+                                    <li><span class="font-medium">Arabic:</span> Jadwar</li>
+                                    <li><span class="font-medium">French:</span> Zédoaire</li>
+                                    <li><span class="font-medium">German:</span> Zitwer</li>
+                                    <li><span class="font-medium">Spanish:</span> Cedoaria</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Origin Tab -->
+                    <div id="origin" class="tab-content">
+                        <h3 class="heading text-xl font-semibold text-gray-900 mb-4">Origin & Cultivation</h3>
+                        <p class="text-gray-600 mb-4" id="originDescription">
+                            Zeodary root is native to Southeast Asia and has been cultivated for thousands of years for
+                            its medicinal properties. Modern zeodary root products are produced from high-quality plants
+                            grown in optimal conditions.
+                        </p>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <h4 class="heading text-lg font-semibold text-gray-900 mb-2">Growing Regions</h4>
+                                <p class="text-gray-600 mb-2" id="growingRegions">
+                                    The best quality zeodary roots come from these regions:
+                                </p>
+                                <ul class="list-disc pl-5 text-gray-600 space-y-1" id="regionsList">
+                                    <li>Northeast India - known for high essential oil content</li>
+                                    <li>Indonesia - traditional cultivation areas</li>
+                                    <li>Thailand - produces premium quality roots</li>
+                                    <li>Bangladesh - wild and cultivated varieties</li>
+                                    <li>South China - used in traditional Chinese medicine</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <h4 class="heading text-lg font-semibold text-gray-900 mb-2">Processing Method</h4>
+                                <p class="text-gray-600 mb-2" id="processingMethod">
+                                    Our processing method preserves maximum medicinal properties:
+                                </p>
+                                <ol class="list-decimal pl-5 text-gray-600 space-y-1" id="processList">
+                                    <li>Selection of mature 2-3 year old plants</li>
+                                    <li>Careful harvesting to preserve rhizomes</li>
+                                    <li>Thorough cleaning and washing</li>
+                                    <li>Precision cutting to required sizes</li>
+                                    <li>Controlled drying at optimal temperatures</li>
+                                    <li>Quality testing and sorting</li>
+                                    <li>Packaging in moisture-proof materials</li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <h4 class="heading text-lg font-semibold text-gray-900 mb-2">Quality Standards</h4>
+                        <p class="text-gray-600" id="qualityStandards">
+                            Our zeodary roots meet international quality standards including ISO, FSSAI, and USDA
+                            specifications. We maintain strict hygiene protocols throughout the production process to
+                            ensure product safety and efficacy. All our products are tested for essential oil content,
+                            curcuminoids, and absence of contaminants.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Related Products -->
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-12 pb-6">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="heading text-xl font-semibold mb-4">Abhinandan International</h3>
+                    <p class="text-gray-400 mb-4">
+                        Premium quality spices and food products sourced directly from farms across India
+                        and Asia.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#"
+                            class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-gray-700">
+                            <i class="ri-facebook-fill"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-gray-700">
+                            <i class="ri-instagram-line"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-gray-700">
+                            <i class="ri-twitter-fill"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-gray-700">
+                            <i class="ri-linkedin-fill"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="heading text-xl font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="Home.html" class="text-gray-400 hover:text-white">Home</a></li>
+                        <li><a href="Product.html" class="text-gray-400 hover:text-white">Products</a></li>
+                        <li><a href="Aboutus.html" class="text-gray-400 hover:text-white">About Us</a></li>
+                        <li><a href="Contact.html" class="text-gray-400 hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="heading text-xl font-semibold mb-4">Products</h3>
+                    <ul class="space-y-2">
+                        <li><a href="Product.html#spices" class="text-gray-400 hover:text-white">Spices</a></li>
+                        <li><a href="Product.html#raisins" class="text-gray-400 hover:text-white">Raisins</a></li>
+                        <li><a href="Product.html#herbs" class="text-gray-400 hover:text-white">Herbs</a></li>
+                        <li><a href="Product.html#grains" class="text-gray-400 hover:text-white">Grains</a></li>
+                        <li><a href="Product.html#oil-seeds" class="text-gray-400 hover:text-white">Oil Seeds</a></li>
+                        <li><a href="Product.html#dehydrated-vegetables" class="text-gray-400 hover:text-white">Dehydrated Vegetables</a></li>
+                        <li><a href="Product.html#coconut-products" class="text-gray-400 hover:text-white">Coconut Products</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="heading text-xl font-semibold mb-4">Contact Us</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="ri-map-pin-line mt-1 mr-2"></i>
+                            <span class="text-gray-400">123 Spice Street, Mumbai, India 400001</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-phone-line mt-1 mr-2"></i>
+                            <span class="text-gray-400">+91 98765 43210</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-mail-line mt-1 mr-2"></i>
+                            <span class="text-gray-400">info@abhinandan.com</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-time-line mt-1 mr-2"></i>
+                            <span class="text-gray-400">Mon-Fri: 9AM - 6PM</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-6">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-400 mb-4 md:mb-0">
+                        &copy; 2025 Abhinandan International. All rights reserved.
+                    </p>
+                    <div class="flex space-x-6">
+                        <a href="#" class="text-gray-400 hover:text-white">Privacy Policy</a>
+                        <a href="#" class="text-gray-400 hover:text-white">Terms of Service</a>
+                        <a href="#" class="text-gray-400 hover:text-white">Shipping Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Product data
+        const products = {
+            'zeodary-roots': {
+                name: 'Zeodary Roots',
+                description: 'Zeodary roots, also known as Curcuma zedoaria, are aromatic rhizomes with a bitter and pungent taste. Our premium quality zeodary roots are carefully harvested, cleaned, and dried to preserve their essential oils and medicinal properties. These roots have a pale yellow interior with a distinct earthy aroma.',
+                color: 'Pale yellow to brown',
+                moisture: 'Max 10%',
+                size: '5-10cm pieces',
+                packaging: '10kg, 25kg, 50kg bags',
+                storage: 'Store in a cool, dry place away from direct sunlight. Keep in airtight containers to maintain freshness and prevent moisture absorption. Ideal storage temperature is below 25°C with relative humidity below 65%. Avoid storing near strong-smelling substances as the roots can absorb odors.',
+                culinaryUses: 'Zeodary roots have been used for centuries in traditional medicine and culinary applications. They are valued for their:',
+                culinaryList: [
+                    'Flavoring agent in traditional Asian cuisine',
+                    'Essential ingredient in Ayurvedic and Chinese medicine',
+                    'Digestive aid and appetite stimulant',
+                    'Anti-inflammatory and antioxidant properties',
+                    'Natural remedy for respiratory ailments',
+                    'Ingredient in herbal teas and tonics'
+                ],
+                industrialUses: 'Beyond culinary and medicinal applications, zeodary roots have several industrial uses:',
+                industrialList: [
+                    'Essential oil extraction for perfumery',
+                    'Natural food coloring agent',
+                    'Ingredient in cosmetic preparations',
+                    'Flavoring in alcoholic beverages'
+                ],
+                varietiesDescription: 'We offer several forms of zeodary root products to meet different industrial and medicinal needs:',
+                varieties: [
+                    {
+                        name: 'Whole Dried Roots',
+                        details: '<span class="font-medium">Size:</span> 5-10cm pieces<br><span class="font-medium">Color:</span> Pale yellow to brown<br><span class="font-medium">Moisture:</span> Max 10%<br><span class="font-medium">Use:</span> Traditional medicine, culinary applications'
+                    },
+                    {
+                        name: 'Zeodary Root Powder',
+                        details: '<span class="font-medium">Mesh Size:</span> 80-100<br><span class="font-medium">Color:</span> Light yellow<br><span class="font-medium">Moisture:</span> Max 8%<br><span class="font-medium">Use:</span> Pharmaceutical preparations, food industry'
+                    },
+                    {
+                        name: 'Zeodary Essential Oil',
+                        details: '<span class="font-medium">Extraction Method:</span> Steam distillation<br><span class="font-medium">Color:</span> Pale yellow<br><span class="font-medium">Purity:</span> 100% pure<br><span class="font-medium">Use:</span> Aromatherapy, perfumery, cosmetics'
+                    }
+                ],
+                namesDescription: 'Zeodary root is known by various names across different cultures and regions:',
+                names: {
+                    indian: [
+                        ['Hindi', 'Kachur'],
+                        ['Tamil', 'Kichilikizhangu'],
+                        ['Telugu', 'Kachoram'],
+                        ['Kannada', 'Kachora'],
+                        ['Malayalam', 'Kachooram'],
+                        ['Bengali', 'Kachur'],
+                        ['Gujarati', 'Shatkachuro'],
+                        ['Marathi', 'Kachora']
+                    ],
+                    international: [
+                        ['Scientific', 'Curcuma zedoaria'],
+                        ['English', 'Zeodary, White turmeric'],
+                        ['Chinese', 'E zhu'],
+                        ['Japanese', 'Gajutsu'],
+                        ['Arabic', 'Jadwar'],
+                        ['French', 'Zédoaire'],
+                        ['German', 'Zitwer'],
+                        ['Spanish', 'Cedoaria']
+                    ]
+                },
+                originDescription: 'Zeodary root is native to Southeast Asia and has been cultivated for thousands of years for its medicinal properties. Modern zeodary root products are produced from high-quality plants grown in optimal conditions.',
+                growingRegions: 'The best quality zeodary roots come from these regions:',
+                regionsList: [
+                    'Northeast India - known for high essential oil content',
+                    'Indonesia - traditional cultivation areas',
+                    'Thailand - produces premium quality roots',
+                    'Bangladesh - wild and cultivated varieties',
+                    'South China - used in traditional Chinese medicine'
+                ],
+                processingMethod: 'Our processing method preserves maximum medicinal properties:',
+                processList: [
+                    'Selection of mature 2-3 year old plants',
+                    'Careful harvesting to preserve rhizomes',
+                    'Thorough cleaning and washing',
+                    'Precision cutting to required sizes',
+                    'Controlled drying at optimal temperatures',
+                    'Quality testing and sorting',
+                    'Packaging in moisture-proof materials'
+                ],
+                qualityStandards: 'Our zeodary roots meet international quality standards including ISO, FSSAI, and USDA specifications. We maintain strict hygiene protocols throughout the production process to ensure product safety and efficacy. All our products are tested for essential oil content, curcuminoids, and absence of contaminants.'
+            },
+            'sena-leaves-pods': {
+                name: 'Sena Leaves & Pods',
+                description: 'Sena leaves and pods, derived from the Cassia angustifolia plant, are valued for their medicinal properties. Our premium quality sena leaves and pods are carefully harvested, cleaned, and dried to preserve their active compounds. These natural products have a mild aroma and slightly bitter taste.',
+                color: 'Green to brown (leaves), dark brown (pods)',
+                moisture: 'Max 8% (leaves), Max 10% (pods)',
+                size: 'Whole leaves and pods',
+                packaging: '10kg, 25kg, 50kg bags',
+                storage: 'Store in a cool, dry place away from direct sunlight. Keep in airtight containers to maintain freshness and prevent moisture absorption. Ideal storage temperature is below 25°C with relative humidity below 60%.',
+                culinaryUses: 'Sena leaves and pods are primarily used for their medicinal properties:',
+                culinaryList: [
+                    'Natural laxative and digestive aid',
+                    'Detoxification and cleansing preparations',
+                    'Ingredient in herbal teas',
+                    'Ayurvedic formulations',
+                    'Weight management products',
+                    'Colon cleansing preparations'
+                ],
+                industrialUses: 'Beyond medicinal applications, sena leaves and pods have several industrial uses:',
+                industrialList: [
+                    'Pharmaceutical preparations',
+                    'Herbal supplement manufacturing',
+                    'Natural cosmetic ingredients',
+                    'Animal feed additives'
+                ],
+                varietiesDescription: 'We offer several forms of sena products to meet different industrial needs:',
+                varieties: [
+                    {
+                        name: 'Whole Sena Leaves',
+                        details: '<span class="font-medium">Form:</span> Whole dried leaves<br><span class="font-medium">Color:</span> Green to brown<br><span class="font-medium">Moisture:</span> Max 8%<br><span class="font-medium">Use:</span> Herbal teas, medicinal preparations'
+                    },
+                    {
+                        name: 'Sena Pods',
+                        details: '<span class="font-medium">Form:</span> Whole dried pods<br><span class="font-medium">Color:</span> Dark brown<br><span class="font-medium">Moisture:</span> Max 10%<br><span class="font-medium">Use:</span> Traditional medicine, laxative preparations'
+                    },
+                    {
+                        name: 'Sena Leaf Powder',
+                        details: '<span class="font-medium">Mesh Size:</span> 80-100<br><span class="font-medium">Color:</span> Light green to brown<br><span class="font-medium">Moisture:</span> Max 6%<br><span class="font-medium">Use:</span> Capsule filling, pharmaceutical industry'
+                    }
+                ],
+                namesDescription: 'Sena is known by various names across different cultures and regions:',
+                names: {
+                    indian: [
+                        ['Hindi', 'Sanaya'],
+                        ['Tamil', 'Nilavirai'],
+                        ['Telugu', 'Nelatangedu'],
+                        ['Kannada', 'Sonamukhi'],
+                        ['Malayalam', 'Chonnappana'],
+                        ['Bengali', 'Sonapata'],
+                        ['Gujarati', 'Mindhiaval'],
+                        ['Marathi', 'Sonamukhi']
+                    ],
+                    international: [
+                        ['Scientific', 'Cassia angustifolia'],
+                        ['English', 'Sena, Alexandrian sena'],
+                        ['Arabic', 'Sana makki'],
+                        ['Chinese', 'Fan xie ye'],
+                        ['French', 'Séné'],
+                        ['German', 'Sennesblätter'],
+                        ['Spanish', 'Sen'],
+                        ['Italian', 'Senna']
+                    ]
+                },
+                originDescription: 'Sena is native to North Africa and the Middle East but has been cultivated in India for centuries. Modern sena products are produced from high-quality plants grown in optimal conditions.',
+                growingRegions: 'The best quality sena comes from these regions:',
+                regionsList: [
+                    'Rajasthan, India - largest producer',
+                    'Gujarat, India - known for high quality',
+                    'Tamil Nadu, India - traditional cultivation',
+                    'Sudan - native growing region',
+                    'Egypt - historical cultivation areas'
+                ],
+                processingMethod: 'Our processing method preserves maximum active compounds:',
+                processList: [
+                    'Selection of mature plants',
+                    'Careful harvesting of leaves and pods',
+                    'Thorough cleaning and sorting',
+                    'Gentle drying at optimal temperatures',
+                    'Quality testing for sennoside content',
+                    'Packaging in moisture-proof materials'
+                ],
+                qualityStandards: 'Our sena leaves and pods meet international quality standards including ISO, FSSAI, and USDA specifications. We maintain strict hygiene protocols throughout the production process to ensure product safety and efficacy.'
+            },
+            'basil-seeds': {
+                name: 'Basil Seeds',
+                description: 'Basil seeds, also known as Sabja seeds, are small black seeds derived from the Ocimum basilicum plant. Our premium quality basil seeds are carefully cleaned and sorted to ensure purity. When soaked in water, these seeds develop a gelatinous coating and are valued for their cooling properties and health benefits.',
+                color: 'Black',
+                moisture: 'Max 8%',
+                size: '1-2mm diameter',
+                packaging: '5kg, 10kg, 25kg bags',
+                storage: 'Store in a cool, dry place away from direct sunlight. Keep in airtight containers to maintain freshness and prevent moisture absorption. Ideal storage temperature is below 25°C with relative humidity below 60%.',
+                culinaryUses: 'Basil seeds are widely used in culinary applications for their texture and health benefits:',
+                culinaryList: [
+                    'Cooling drinks and beverages',
+                    'Desserts and puddings',
+                    'Yogurt and smoothie toppings',
+                    'Traditional Indian drinks like falooda',
+                    'Vegan egg substitutes',
+                    'Thickening agent in recipes'
+                ],
+                industrialUses: 'Beyond culinary applications, basil seeds have several industrial uses:',
+                industrialList: [
+                    'Dietary supplement manufacturing',
+                    'Functional food ingredients',
+                    'Natural thickeners in food industry',
+                    'Cosmetic preparations'
+                ],
+                varietiesDescription: 'We offer several forms of basil seed products to meet different industrial needs:',
+                varieties: [
+                    {
+                        name: 'Whole Basil Seeds',
+                        details: '<span class="font-medium">Form:</span> Whole cleaned seeds<br><span class="font-medium">Color:</span> Black<br><span class="font-medium">Moisture:</span> Max 8%<br><span class="font-medium">Use:</span> Culinary applications, beverages'
+                    },
+                    {
+                        name: 'Basil Seed Powder',
+                        details: '<span class="font-medium">Mesh Size:</span> 80-100<br><span class="font-medium">Color:</span> Dark brown<br><span class="font-medium">Moisture:</span> Max 6%<br><span class="font-medium">Use:</span> Food industry, supplements'
+                    },
+                    {
+                        name: 'Organic Basil Seeds',
+                        details: '<span class="font-medium">Certification:</span> USDA Organic<br><span class="font-medium">Color:</span> Black<br><span class="font-medium">Moisture:</span> Max 8%<br><span class="font-medium">Use:</span> Health food products'
+                    }
+                ],
+                namesDescription: 'Basil seeds are known by various names across different cultures and regions:',
+                names: {
+                    indian: [
+                        ['Hindi', 'Sabja'],
+                        ['Tamil', 'Sabja'],
+                        ['Telugu', 'Sabja ginjalu'],
+                        ['Kannada', 'Kamalakasturi'],
+                        ['Malayalam', 'Sabbakka'],
+                        ['Bengali', 'Saboo'],
+                        ['Gujarati', 'Sabja'],
+                        ['Marathi', 'Sabja']
+                    ],
+                    international: [
+                        ['Scientific', 'Ocimum basilicum'],
+                        ['English', 'Basil seeds, Sweet basil seeds'],
+                        ['Arabic', 'Bazbaz'],
+                        ['Chinese', 'Luo le zi'],
+                        ['French', 'Graines de basilic'],
+                        ['German', 'Basilikumsamen'],
+                        ['Spanish', 'Semillas de albahaca'],
+                        ['Italian', 'Semi di basilico']
+                    ]
+                },
+                originDescription: 'Basil is native to tropical regions from central Africa to Southeast Asia but is now cultivated worldwide. Modern basil seed products are produced from high-quality plants grown in optimal conditions.',
+                growingRegions: 'The best quality basil seeds come from these regions:',
+                regionsList: [
+                    'Tamil Nadu, India - largest producer',
+                    'Andhra Pradesh, India - known for high quality',
+                    'Maharashtra, India - traditional cultivation',
+                    'Thailand - premium varieties',
+                    'Vietnam - organic production'
+                ],
+                processingMethod: 'Our processing method ensures maximum quality:',
+                processList: [
+                    'Selection of mature plants',
+                    'Careful harvesting of seed pods',
+                    'Thorough cleaning and winnowing',
+                    'Precision sorting by size',
+                    'Quality testing for purity',
+                    'Packaging in moisture-proof materials'
+                ],
+                qualityStandards: 'Our basil seeds meet international quality standards including ISO, FSSAI, and USDA specifications. We maintain strict hygiene protocols throughout the production process to ensure product safety.'
+            },
+            'cassia-small': {
+                name: 'Cassia Small',
+                description: 'Small cassia, derived from Cinnamomum cassia, is a premium quality cinnamon variety with a sweet and woody aroma. Our small cassia sticks are carefully harvested from young branches, featuring a thin bark with intense flavor. These aromatic sticks are perfect for culinary and medicinal applications.',
+                color: 'Reddish-brown',
+                moisture: 'Max 10%',
+                size: '10-15cm length, 1-2cm diameter',
+                packaging: '5kg, 10kg, 25kg bags',
+                storage: 'Store in a cool, dry place away from direct sunlight. Keep in airtight containers to maintain aroma and prevent moisture absorption. Ideal storage temperature is below 25°C with relative humidity below 60%.',
+                culinaryUses: 'Small cassia is widely used in culinary applications for its intense flavor:',
+                culinaryList: [
+                    'Flavoring in desserts and baked goods',
+                    'Spice blends and masalas',
+                    'Hot beverages and teas',
+                    'Meat and poultry seasoning',
+                    'Traditional Asian cuisine',
+                    'Aromatic rice dishes'
+                ],
+                industrialUses: 'Beyond culinary applications, small cassia has several industrial uses:',
+                industrialList: [
+                    'Essential oil extraction',
+                    'Pharmaceutical preparations',
+                    'Aromatherapy products',
+                    'Natural food preservatives'
+                ],
+                varietiesDescription: 'We offer several forms of small cassia products to meet different industrial needs:',
+                varieties: [
+                    {
+                        name: 'Whole Cassia Sticks',
+                        details: '<span class="font-medium">Form:</span> Whole sticks<br><span class="font-medium">Color:</span> Reddish-brown<br><span class="font-medium">Moisture:</span> Max 10%<br><span class="font-medium">Use:</span> Culinary applications, retail'
+                    },
+                    {
+                        name: 'Cassia Powder',
+                        details: '<span class="font-medium">Mesh Size:</span> 80-100<br><span class="font-medium">Color:</span> Light brown<br><span class="font-medium">Moisture:</span> Max 8%<br><span class="font-medium">Use:</span> Food industry, supplements'
+                    },
+                    {
+                        name: 'Cassia Essential Oil',
+                        details: '<span class="font-medium">Extraction:</span> Steam distillation<br><span class="font-medium">Color:</span> Pale yellow<br><span class="font-medium">Purity:</span> 100% pure<br><span class="font-medium">Use:</span> Aromatherapy, cosmetics'
+                    }
+                ],
+                namesDescription: 'Small cassia is known by various names across different cultures and regions:',
+                names: {
+                    indian: [
+                        ['Hindi', 'Dalchini'],
+                        ['Tamil', 'Lavangappattai'],
+                        ['Telugu', 'Lavangamu'],
+                        ['Kannada', 'Lavanga'],
+                        ['Malayalam', 'Karuvapatta'],
+                        ['Bengali', 'Daruchini'],
+                        ['Gujarati', 'Taj'],
+                        ['Marathi', 'Dalchini']
+                    ],
+                    international: [
+                        ['Scientific', 'Cinnamomum cassia'],
+                        ['English', 'Cassia, Chinese cinnamon'],
+                        ['Chinese', 'Rou gui'],
+                        ['Arabic', 'Qirfa'],
+                        ['French', 'Cannelle de Chine'],
+                        ['German', 'Kassie'],
+                        ['Spanish', 'Canela china'],
+                        ['Italian', 'Cassia']
+                    ]
+                },
+                originDescription: 'Small cassia is native to southern China and has been cultivated for thousands of years. Modern cassia products are produced from high-quality plants grown in optimal conditions.',
+                growingRegions: 'The best quality small cassia comes from these regions:',
+                regionsList: [
+                    'Southern China - native growing region',
+                    'Vietnam - premium quality',
+                    'Indonesia - traditional cultivation',
+                    'Sri Lanka - similar to true cinnamon',
+                    'Madagascar - organic production'
+                ],
+                processingMethod: 'Our processing method preserves maximum flavor and aroma:',
+                processList: [
+                    'Selection of young branches',
+                    'Careful peeling of bark',
+                    'Precision rolling into sticks',
+                    'Controlled drying process',
+                    'Quality testing for essential oil content',
+                    'Packaging in aroma-proof materials'
+                ],
+                qualityStandards: 'Our small cassia meets international quality standards including ISO, FSSAI, and USDA specifications. We maintain strict hygiene protocols throughout the production process to ensure product quality.'
+            },
+            'cassia-big': {
+                name: 'Cassia Big',
+                description: 'Big cassia, derived from mature Cinnamomum cassia trees, features thick bark with a robust flavor profile. Our premium big cassia sticks are carefully harvested from mature branches, offering a strong, sweet-spicy aroma. These large sticks are ideal for commercial culinary applications and extraction purposes.',
+                color: 'Dark reddish-brown',
+                moisture: 'Max 12%',
+                size: '15-20cm length, 2-3cm diameter',
+                packaging: '10kg, 25kg, 50kg bags',
+                storage: 'Store in a cool, dry place away from direct sunlight. Keep in airtight containers to maintain aroma and prevent moisture absorption. Ideal storage temperature is below 25°C with relative humidity below 60%.',
+                culinaryUses: 'Big cassia is primarily used in commercial food production for its strong flavor:',
+                culinaryList: [
+                    'Industrial food flavoring',
+                    'Beverage industry applications',
+                    'Large-scale bakery products',
+                    'Meat processing industry',
+                    'Pickling and preserving',
+                    'Commercial spice blends'
+                ],
+                industrialUses: 'Big cassia has several specialized industrial uses:',
+                industrialList: [
+                    'Essential oil extraction (higher yield)',
+                    'Pharmaceutical industry',
+                    'Flavor and fragrance industry',
+                    'Natural preservative manufacturing'
+                ],
+                varietiesDescription: 'We offer several forms of big cassia products for industrial applications:',
+                varieties: [
+                    {
+                        name: 'Whole Big Cassia Sticks',
+                        details: '<span class="font-medium">Form:</span> Whole thick sticks<br><span class="font-medium">Color:</span> Dark reddish-brown<br><span class="font-medium">Moisture:</span> Max 12%<br><span class="font-medium">Use:</span> Commercial culinary, extraction'
+                    },
+                    {
+                        name: 'Cassia Chips',
+                        details: '<span class="font-medium">Form:</span> Broken pieces<br><span class="font-medium">Color:</span> Dark brown<br><span class="font-medium">Moisture:</span> Max 12%<br><span class="font-medium">Use:</span> Oil extraction, industrial use'
+                    },
+                    {
+                        name: 'Cassia Bark Powder',
+                        details: '<span class="font-medium">Mesh Size:</span> 60-80<br><span class="font-medium">Color:</span> Dark brown<br><span class="font-medium">Moisture:</span> Max 10%<br><span class="font-medium">Use:</span> Food industry, supplements'
+                    }
+                ],
+                namesDescription: 'Big cassia shares names with small cassia but is distinguished by size:',
+                names: {
+                    indian: [
+                        ['Hindi', 'Badi dalchini'],
+                        ['Tamil', 'Periya lavangappattai'],
+                        ['Telugu', 'Peddha lavangamu'],
+                        ['Kannada', 'Dodda lavanga'],
+                        ['Malayalam', 'Valiya karuvapatta'],
+                        ['Bengali', 'Boro daruchini'],
+                        ['Gujarati', 'Motu taj'],
+                        ['Marathi', 'Mothi dalchini']
+                    ],
+                    international: [
+                        ['Scientific', 'Cinnamomum cassia'],
+                        ['English', 'Cassia, Chinese cinnamon'],
+                        ['Chinese', 'Rou gui (thick)'],
+                        ['Arabic', 'Qirfa kabira'],
+                        ['French', 'Grosse cannelle de Chine'],
+                        ['German', 'Dicke Kassie'],
+                        ['Spanish', 'Canela china grande'],
+                        ['Italian', 'Cassia grande']
+                    ]
+                },
+                originDescription: 'Big cassia comes from mature Cinnamomum cassia trees, primarily grown in southern China and Southeast Asia. The thicker bark develops more complex flavor compounds over time.',
+                growingRegions: 'The best quality big cassia comes from these regions:',
+                regionsList: [
+                    'Guangxi, China - largest production',
+                    'Vietnam - premium thick bark',
+                    'Laos - traditional cultivation',
+                    'Myanmar - wild harvested',
+                    'Indonesia - commercial plantations'
+                ],
+                processingMethod: 'Our specialized processing for big cassia:',
+                processList: [
+                    'Selection of mature trees (8-10 years old)',
+                    'Careful harvesting of thick bark sections',
+                    'Precision cutting to required sizes',
+                    'Extended drying process for thick bark',
+                    'Quality testing for coumarin content',
+                    'Industrial-grade packaging'
+                ],
+                qualityStandards: 'Our big cassia meets international quality standards including ISO, FSSAI, and USDA specifications. We maintain strict protocols for heavy metal and pesticide residue testing.'
+            },
+            'annato-seeds': {
+                name: 'Annato Seeds',
+                description: 'Annato seeds, derived from the Bixa orellana plant, are small reddish seeds valued for their natural coloring properties. Our premium annato seeds are carefully cleaned and sorted to ensure maximum pigment content. These seeds produce vibrant yellow to orange colors and have mild peppery flavor notes.',
+                color: 'Reddish-brown',
+                moisture: 'Max 8%',
+                size: '3-5mm diameter',
+                packaging: '5kg, 10kg, 25kg bags',
+                storage: 'Store in a cool, dry place away from direct sunlight. Keep in airtight containers to maintain color potency and prevent moisture absorption. Ideal storage temperature is below 25°C with relative humidity below 60%.',
+                culinaryUses: 'Annato seeds are primarily used as a natural food coloring:',
+                culinaryList: [
+                    'Cheese coloring (especially cheddar)',
+                    'Butter and margarine coloring',
+                    'Rice dishes (like arroz con pollo)',
+                    'Traditional Latin American cuisine',
+                    'Meat and fish seasonings',
+                    'Snack food coloring'
+                ],
+                industrialUses: 'Beyond culinary applications, annato seeds have several industrial uses:',
+                industrialList: [
+                    'Natural food color manufacturing',
+                    'Cosmetic and soap coloring',
+                    'Textile dye production',
+                    'Pharmaceutical coatings'
+                ],
+                varietiesDescription: 'We offer several forms of annato products to meet different industrial needs:',
+                varieties: [
+                    {
+                        name: 'Whole Annato Seeds',
+                        details: '<span class="font-medium">Form:</span> Whole cleaned seeds<br><span class="font-medium">Color:</span> Reddish-brown<br><span class="font-medium">Moisture:</span> Max 8%<br><span class="font-medium">Use:</span> Traditional cooking, extraction'
+                    },
+                    {
+                        name: 'Annato Powder',
+                        details: '<span class="font-medium">Mesh Size:</span> 80-100<br><span class="font-medium">Color:</span> Orange-red<br><span class="font-medium">Moisture:</span> Max 6%<br><span class="font-medium">Use:</span> Food industry, direct coloring'
+                    },
+                    {
+                        name: 'Annato Oil Extract',
+                        details: '<span class="font-medium">Form:</span> Oil-soluble extract<br><span class="font-medium">Color:</span> Deep orange<br><span class="font-medium">Purity:</span> 100% natural<br><span class="font-medium">Use:</span> Industrial food coloring'
+                    }
+                ],
+                namesDescription: 'Annato seeds are known by various names across different cultures:',
+                names: {
+                    indian: [
+                        ['Hindi', 'Latkan'],
+                        ['Tamil', 'Kurangumanjal'],
+                        ['Telugu', 'Jafra ginjalu'],
+                        ['Kannada', 'Kumkuma beeja'],
+                        ['Malayalam', 'Kurangumanjal'],
+                        ['Bengali', 'Latkan'],
+                        ['Gujarati', 'Sinduri'],
+                        ['Marathi', 'Shendri']
+                    ],
+                    international: [
+                        ['Scientific', 'Bixa orellana'],
+                        ['English', 'Annato, Achiote'],
+                        ['Spanish', 'Achiote'],
+                        ['French', 'Rocou'],
+                        ['Portuguese', 'Urucum'],
+                        ['German', 'Annattostrauch'],
+                        ['Dutch', 'Annatto'],
+                        ['Filipino', 'Atsuete']
+                    ]
+                },
+                originDescription: 'Annato is native to tropical regions of the Americas but is now cultivated in many tropical countries. The seeds have been used as a coloring agent since pre-Columbian times.',
+                growingRegions: 'The best quality annato seeds come from these regions:',
+                regionsList: [
+                    'Brazil - largest producer',
+                    'Peru - traditional varieties',
+                    'Mexico - commercial production',
+                    'India - increasing cultivation',
+                    'Kenya - African production'
+                ],
+                processingMethod: 'Our processing method ensures maximum color potency:',
+                processList: [
+                    'Selection of ripe seed pods',
+                    'Careful extraction of seeds',
+                    'Thorough cleaning and winnowing',
+                    'Precision sorting by color intensity',
+                    'Quality testing for bixin content',
+                    'Packaging in light-proof materials'
+                ],
+                qualityStandards: 'Our annato seeds meet international quality standards including ISO, FSSAI, and USDA specifications. We maintain strict protocols for color potency and absence of contaminants.'
+            }
+        };
+
+        // Change product function
+        function changeProduct(productId) {
+            const product = products[productId];
+
+            // Update breadcrumb
+            document.getElementById('productNameBreadcrumb').textContent = product.name;
+
+            // Update main product info
+            document.getElementById('productName').textContent = product.name;
+            document.getElementById('productDescription').textContent = product.description;
+            document.getElementById('productColor').textContent = product.color;
+            document.getElementById('productMoisture').textContent = product.moisture;
+            document.getElementById('productSize').textContent = product.size;
+            document.getElementById('productPackaging').textContent = product.packaging;
+            document.getElementById('productStorage').textContent = product.storage;
+
+            // Update selector
+            document.getElementById('productSelector').value = productId;
+
+            // Update uses tab
+            document.getElementById('culinaryUses').textContent = product.culinaryUses;
+            document.getElementById('industrialUses').textContent = product.industrialUses;
+
+            let culinaryList = document.getElementById('culinaryList');
+            culinaryList.innerHTML = '';
+            product.culinaryList.forEach(item => {
+                let li = document.createElement('li');
+                li.textContent = item;
+                culinaryList.appendChild(li);
+            });
+
+            let industrialList = document.getElementById('industrialList');
+            industrialList.innerHTML = '';
+            product.industrialList.forEach(item => {
+                let li = document.createElement('li');
+                li.textContent = item;
+                industrialList.appendChild(li);
+            });
+
+            // Update varieties tab
+            document.getElementById('varietiesDescription').textContent = product.varietiesDescription;
+
+            let varietiesContainer = document.getElementById('varietiesContainer');
+            varietiesContainer.innerHTML = '';
+            product.varieties.forEach(variety => {
+                let div = document.createElement('div');
+                div.className = 'border border-gray-200 rounded-lg p-4';
+                div.innerHTML = `
+                    <h4 class="heading text-lg font-semibold text-gray-900 mb-2">${variety.name}</h4>
+                    <p class="text-gray-600 mb-2">${variety.details}</p>
+                `;
+                varietiesContainer.appendChild(div);
+            });
+
+            // Update names tab
+            document.getElementById('namesDescription').textContent = product.namesDescription;
+
+            let namesContainer = document.getElementById('namesContainer');
+            namesContainer.innerHTML = '';
+
+            // Indian names
+            let indianDiv = document.createElement('div');
+            indianDiv.className = 'border border-gray-200 rounded-lg p-4';
+            indianDiv.innerHTML = '<h4 class="heading text-lg font-semibold text-gray-900 mb-2">Indian Languages</h4><ul class="space-y-1 text-gray-600"></ul>';
+            let indianList = indianDiv.querySelector('ul');
+            product.names.indian.forEach(name => {
+                let li = document.createElement('li');
+                li.innerHTML = `<span class="font-medium">${name[0]}:</span> ${name[1]}`;
+                indianList.appendChild(li);
+            });
+            namesContainer.appendChild(indianDiv);
+
+            // International names
+            let intlDiv = document.createElement('div');
+            intlDiv.className = 'border border-gray-200 rounded-lg p-4';
+            intlDiv.innerHTML = '<h4 class="heading text-lg font-semibold text-gray-900 mb-2">International Names</h4><ul class="space-y-1 text-gray-600"></ul>';
+            let intlList = intlDiv.querySelector('ul');
+            product.names.international.forEach(name => {
+                let li = document.createElement('li');
+                li.innerHTML = `<span class="font-medium">${name[0]}:</span> ${name[1]}`;
+                intlList.appendChild(li);
+            });
+            namesContainer.appendChild(intlDiv);
+
+            // Update origin tab
+            document.getElementById('originDescription').textContent = product.originDescription;
+            document.getElementById('growingRegions').textContent = product.growingRegions;
+            document.getElementById('processingMethod').textContent = product.processingMethod;
+            document.getElementById('qualityStandards').textContent = product.qualityStandards;
+
+            let regionsList = document.getElementById('regionsList');
+            regionsList.innerHTML = '';
+            product.regionsList.forEach(item => {
+                let li = document.createElement('li');
+                li.textContent = item;
+                regionsList.appendChild(li);
+            });
+
+            let processList = document.getElementById('processList');
+            processList.innerHTML = '';
+            product.processList.forEach(item => {
+                let li = document.createElement('li');
+                li.textContent = item;
+                processList.appendChild(li);
+            });
+
+            // Update images (placeholder - in a real app you would use actual product images)
+            document.getElementById('mainImage').src = `./Product/Herbs/${productId}.jpg`;
+            document.getElementById('mainImage').alt = product.name;
+
+            // Reset tab to uses
+            const activeTabButton = document.querySelector('.tab-button.text-primary');
+            if (activeTabButton) {
+                activeTabButton.classList.remove('text-primary', 'border-primary');
+                activeTabButton.classList.add('text-gray-500', 'border-transparent');
+            }
+
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+
+            document.getElementById('uses').classList.add('active');
+            const usesTabButton = document.querySelector('[onclick="openTab(event, \'uses\')"]');
+            if (usesTabButton) {
+                usesTabButton.classList.add('text-primary', 'border-primary');
+                usesTabButton.classList.remove('text-gray-500', 'border-transparent');
+            }
+        }
+
+        // Initialize with zeodary roots
+        document.addEventListener('DOMContentLoaded', function () {
+            const params = new URLSearchParams(window.location.search);
+            const productId = params.get('product') || 'zeodary-roots';
+
+            // Only run if productId exists in the product object
+            if (products[productId]) {
+                changeProduct(productId);
+            }
+
+            const selector = document.getElementById('productSelector');
+            if (selector) {
+                selector.addEventListener('change', function () {
+                    if (products[this.value]) {
+                        changeProduct(this.value);
+                    }
+                });
+            }
+        });
+
+
+        // Image gallery functionality
+        function changeImage(src) {
+            document.getElementById('mainImage').src = src;
+
+            // Update active thumbnail
+            const thumbnails = document.querySelectorAll('.product-gallery-thumbnail');
+            thumbnails.forEach(thumb => {
+                thumb.classList.remove('active');
+                if (thumb.querySelector('img').src === src) {
+                    thumb.classList.add('active');
+                }
+            });
+        }
+
+        // Tab functionality
+        function openTab(evt, tabName) {
+            const tabContents = document.getElementsByClassName('tab-content');
+            for (let i = 0; i < tabContents.length; i++) {
+                tabContents[i].classList.remove('active');
+            }
+
+            const tabButtons = document.getElementsByClassName('tab-button');
+            for (let i = 0; i < tabButtons.length; i++) {
+                tabButtons[i].classList.remove('text-primary', 'border-primary');
+                tabButtons[i].classList.add('text-gray-500', 'border-transparent');
+            }
+
+            document.getElementById(tabName).classList.add('active');
+            evt.currentTarget.classList.remove('text-gray-500', 'border-transparent');
+            evt.currentTarget.classList.add('text-primary', 'border-primary');
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const params = new URLSearchParams(window.location.search);
+            const productId = params.get('product');
+
+            if (productId) {
+                changeProduct(productId);
+            }
+        });
+    </script>
+</body>
+
+</html>

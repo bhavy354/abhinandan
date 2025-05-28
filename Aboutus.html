@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Abhinandan International</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#8B4513',
+                        secondary: '#6B8E23'
+                    },
+                    borderRadius: {
+                        'none': '0px',
+                        'sm': '4px',
+                        DEFAULT: '8px',
+                        'md': '12px',
+                        'lg': '16px',
+                        'xl': '20px',
+                        '2xl': '24px',
+                        '3xl': '32px',
+                        'full': '9999px',
+                        'button': '8px'
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <style>
+        [class^="ri-"]::before {
+            font-family: remixicon !important;
+            font-style: normal;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .heading {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .about-hero {
+            background-image: url('./photo/AboutUs/SpicesBg.jpg');
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .timeline-item:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            left: 1.5rem;
+            top: 2.5rem;
+            height: calc(100% - 2.5rem);
+            width: 2px;
+            background: #8B4513;
+        }
+
+        .process-step {
+            transition: all 0.3s ease;
+        }
+
+        .process-step:hover {
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+
+<body class="bg-white">
+    <!-- Header Section -->
+    <header class="sticky top-0 z-50 bg-white shadow-sm">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                    <!-- <a href="#" class="text-3xl font-['Pacifico'] text-primary">Abhinandan</a> -->
+                    <a href="#" class="flex items-center">
+                        <img src="photo/logo-4kk-1.png" alt="Abhinandan Logo" class="h-10 w-auto mr-4">
+                    </a>
+                    <nav class="hidden md:flex ml-10">
+                        <ul class="flex space-x-8">
+                            <li><a href="Home.html"
+                                    class="text-gray-800 font-medium hover:text-primary transition-colors">Home</a></li>
+                            <li><a href="Product.html"
+                                    class="text-gray-800 font-medium hover:text-primary transition-colors">Products</a>
+                            </li>
+                            <li><a href="Aboutus.html"
+                                    class="text-primary font-medium hover:text-primary transition-colors">About Us</a>
+                            </li>
+                            <li><a href="Contact.html"
+                                    class="text-gray-800 font-medium hover:text-primary transition-colors">Contact</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="flex items-center">
+                    <div class="relative mr-4">
+                        <input type="text" placeholder="Search products..."
+                            class="pl-10 pr-4 py-2 rounded-full bg-gray-100 text-sm w-48 border-none">
+                        <div
+                            class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 flex items-center justify-center text-gray-500">
+                            <i class="ri-search-line"></i>
+                        </div>
+                    </div>
+                
+                    <button
+                        class="ml-4 md:flex items-center px-4 py-2 bg-primary text-white rounded-button hover:bg-opacity-90 transition-colors whitespace-nowrap hidden">
+                        <span>Get Quote</span>
+                    </button>
+                    <div class="md:hidden w-10 h-10 flex items-center justify-center">
+                        <i class="ri-menu-line text-xl"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="about-hero w-full min-h-[400px] relative">
+        <div class="absolute inset-0 bg-black/40"></div>
+        <div class="container mx-auto px-6 py-20 relative z-10 flex items-center min-h-[400px]">
+            <div class="max-w-2xl text-center mx-auto">
+                <h1 class="heading text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">Our Spice Legacy</h1>
+                <p class="text-xl text-white/90 mb-8">Three generations of expertise in sourcing, processing and
+                    delivering India's finest spices to the world</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Family Heritage Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <img src="https://deepseek.ai/generate-image?prompt=A%20multi-generational%20Indian%20family%20portrait%20in%20traditional%20and%20modern%20attire%20standing%20in%20front%20of%20their%20spice%20processing%20facility%20in%20Unjha%2C%20Gujarat.%20The%20image%20should%20show%20three%20generations%20from%20grandfather%20to%20grandson%20with%20warm%20expressions%20conveying%20family%20values%20and%20business%20heritage"
+                        alt="Family" class="w-full rounded-xl shadow-lg">
+                </div>
+                <div>
+                    <h2 class="heading text-3xl md:text-4xl font-bold text-gray-900 mb-6">A Family Legacy of Excellence
+                    </h2>
+                    <p class="text-gray-600 mb-6">Abhinandan International is a family-owned export business that has
+                        grown through three generations of knowledge, expertise, and experience. This rich heritage has
+                        enabled us to consistently procure and deliver the highest quality products to international
+                        markets.</p>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center mr-4 mt-1">
+                                <i class="ri-leaf-line text-primary"></i>
+                            </div>
+                            <p class="text-gray-600">Founded on traditional knowledge passed down through generations
+                            </p>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center mr-4 mt-1">
+                                <i class="ri-global-line text-primary"></i>
+                            </div>
+                            <p class="text-gray-600">Expanded globally while maintaining our family values and
+                                commitment to quality</p>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center mr-4 mt-1">
+                                <i class="ri-lightbulb-flash-line text-primary"></i>
+                            </div>
+                            <p class="text-gray-600">Combines ancestral wisdom with modern processing techniques</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Unjha Advantage Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="heading text-3xl md:text-4xl font-bold text-gray-900 mb-4">The Unjha Advantage</h2>
+                <p class="max-w-2xl mx-auto text-gray-600">Strategically located in India's spice capital with direct
+                    access to premium raw materials</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <img src="./photo/AboutUs/APMC-Unjha.png"
+                        alt="Unjha APMC Market" class="w-full rounded-xl shadow-lg">
+                </div>
+                <div>
+                    <h3 class="heading text-2xl font-semibold text-gray-900 mb-4">India's Spice Hub</h3>
+                    <p class="text-gray-600 mb-6">We leverage Unjha's unique position as the hub for Indian spices,
+                        herbs, and oil seeds including:</p>
+                    <div class="grid grid-cols-2 gap-4 mb-8">
+                        <div class="flex items-center">
+                            <div class="w-6 h-6 bg-primary/10 rounded-full flex items-center justify-center mr-2">
+                                <i class="ri-check-line text-primary text-xs"></i>
+                            </div>
+                            <span class="text-gray-700">Cumin</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-6 h-6 bg-primary/10 rounded-full flex items-center justify-center mr-2">
+                                <i class="ri-check-line text-primary text-xs"></i>
+                            </div>
+                            <span class="text-gray-700">Fennel</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-6 h-6 bg-primary/10 rounded-full flex items-center justify-center mr-2">
+                                <i class="ri-check-line text-primary text-xs"></i>
+                            </div>
+                            <span class="text-gray-700">Fenugreek</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-6 h-6 bg-primary/10 rounded-full flex items-center justify-center mr-2">
+                                <i class="ri-check-line text-primary text-xs"></i>
+                            </div>
+                            <span class="text-gray-700">Coriander</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-6 h-6 bg-primary/10 rounded-full flex items-center justify-center mr-2">
+                                <i class="ri-check-line text-primary text-xs"></i>
+                            </div>
+                            <span class="text-gray-700">Mustard</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-6 h-6 bg-primary/10 rounded-full flex items-center justify-center mr-2">
+                                <i class="ri-check-line text-primary text-xs"></i>
+                            </div>
+                            <span class="text-gray-700">Ajwain</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-6 h-6 bg-primary/10 rounded-full flex items-center justify-center mr-2">
+                                <i class="ri-check-line text-primary text-xs"></i>
+                            </div>
+                            <span class="text-gray-700">Sesame</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-6 h-6 bg-primary/10 rounded-full flex items-center justify-center mr-2">
+                                <i class="ri-check-line text-primary text-xs"></i>
+                            </div>
+                            <span class="text-gray-700">Soybeans</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">Farmers from three states - Gujarat, Rajasthan and Madhya Pradesh - bring
+                        their produce to the Unjha APMC (Agriculture Produce Market Committee) market, a government
+                        platform where farmers can directly sell to merchant traders and exporters through transparent
+                        auctions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Processing Excellence Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="heading text-3xl md:text-4xl font-bold text-gray-900 mb-4">State-of-the-Art Processing</h2>
+                <p class="max-w-2xl mx-auto text-gray-600">Modern facilities ensuring purity and quality at every step
+                </p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-md process-step">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="ri-building-2-line text-2xl text-primary"></i>
+                    </div>
+                    <h3 class="heading text-xl font-semibold text-gray-900 mb-3 text-center">Strategic Locations</h3>
+                    <p class="text-gray-600 text-center">Our processing units in Unjha (Gujarat), Guntur & Nizamabad
+                        (Andhra Pradesh) ensure we're close to the source of premium raw materials.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-md process-step">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="ri-cpu-line text-2xl text-primary"></i>
+                    </div>
+                    <h3 class="heading text-xl font-semibold text-gray-900 mb-3 text-center">Advanced Cleaning</h3>
+                    <p class="text-gray-600 text-center">All spices undergo machine cleaning and Sortex cleaning to
+                        remove impurities while preserving natural flavors and aromas.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-md process-step">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="ri-eye-line text-2xl text-primary"></i>
+                    </div>
+                    <h3 class="heading text-xl font-semibold text-gray-900 mb-3 text-center">Personal Supervision</h3>
+                    <p class="text-gray-600 text-center">From raw material procurement to container loading, every step
+                        is personally supervised by our representatives.</p>
+                </div>
+            </div>
+            <div class="mt-16">
+                <img src="./photo/AboutUs/outputa.jpg"
+                    alt="Processing Facility" class="w-full rounded-xl shadow-lg">
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Mission Section -->
+    <section class="py-20 bg-primary text-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto text-center">
+                <div class="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="ri-flower-line text-2xl"></i>
+                </div>
+                <h2 class="heading text-3xl md:text-4xl font-bold mb-6">Bridging Nature's Traditions to the Modern World
+                </h2>
+                <p class="text-lg mb-8">At Abhinandan International, we are committed to delivering and spreading the
+                    natural taste and aroma of authentic Indian spices around the globe. Quality has always been at the
+                    center of our focus, and we remain dedicated to the health and wellness of people worldwide.</p>
+                <div class="flex justify-center space-x-6">
+                    <div class="text-center">
+                        <div class="text-4xl font-bold mb-2">35+</div>
+                        <div class="text-sm">Countries Served</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-4xl font-bold mb-2">500+</div>
+                        <div class="text-sm">Farmers Partnered</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-4xl font-bold mb-2">3</div>
+                        <div class="text-sm">Generations of Expertise</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="heading text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Journey Through Time</h2>
+                    <p class="max-w-2xl mx-auto text-gray-600">From humble beginnings to becoming a globally recognized
+                        spice exporter</p>
+                </div>
+
+                <div class="relative">
+                    <!-- Timeline -->
+                    <div class="space-y-8">
+                        <!-- Timeline Item 1 -->
+                        <div class="timeline-item relative pl-16">
+                            <div
+                                class="absolute left-0 top-0 w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white">
+                                <span class="text-sm font-bold">1989</span>
+                            </div>
+                            <div class="bg-white p-6 rounded-lg shadow-sm">
+                                <h3 class="heading text-xl font-semibold text-gray-900 mb-2">The Foundation</h3>
+                                <p class="text-gray-600">Founded in Unjha, Gujarat by the Patel family with a vision to
+                                    bring authentic Indian spices to global kitchens. Started with just three spices:
+                                    cumin, fennel, and coriander.</p>
+                            </div>
+                        </div>
+
+                        <!-- Timeline Item 2 -->
+                        <div class="timeline-item relative pl-16">
+                            <div
+                                class="absolute left-0 top-0 w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white">
+                                <span class="text-sm font-bold">1995</span>
+                            </div>
+                            <div class="bg-white p-6 rounded-lg shadow-sm">
+                                <h3 class="heading text-xl font-semibold text-gray-900 mb-2">First International Export
+                                </h3>
+                                <p class="text-gray-600">Shipped our first container of premium cumin to the Middle
+                                    East, establishing our reputation for quality in international markets.</p>
+                            </div>
+                        </div>
+
+                        <!-- Timeline Item 3 -->
+                        <div class="timeline-item relative pl-16">
+                            <div
+                                class="absolute left-0 top-0 w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white">
+                                <span class="text-sm font-bold">2003</span>
+                            </div>
+                            <div class="bg-white p-6 rounded-lg shadow-sm">
+                                <h3 class="heading text-xl font-semibold text-gray-900 mb-2">Modern Processing Facility
+                                </h3>
+                                <p class="text-gray-600">Invested in state-of-the-art cleaning and sorting equipment,
+                                    becoming one of the first in the region to implement automated quality control.</p>
+                            </div>
+                        </div>
+
+                        <!-- Timeline Item 4 -->
+                        <div class="timeline-item relative pl-16">
+                            <div
+                                class="absolute left-0 top-0 w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white">
+                                <span class="text-sm font-bold">2012</span>
+                            </div>
+                            <div class="bg-white p-6 rounded-lg shadow-sm">
+                                <h3 class="heading text-xl font-semibold text-gray-900 mb-2">Organic Certification</h3>
+                                <p class="text-gray-600">Achieved USDA Organic and EU Organic certifications, expanding
+                                    our product line to meet growing global demand for organic spices.</p>
+                            </div>
+                        </div>
+
+                        <!-- Timeline Item 5 -->
+                        <div class="timeline-item relative pl-16">
+                            <div
+                                class="absolute left-0 top-0 w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white">
+                                <span class="text-sm font-bold">2020</span>
+                            </div>
+                            <div class="bg-white p-6 rounded-lg shadow-sm">
+                                <h3 class="heading text-xl font-semibold text-gray-900 mb-2">Global Recognition</h3>
+                                <p class="text-gray-600">Awarded "Excellence in Spice Export" by the Spices Board of
+                                    India, now serving over 35 countries across six continents with processing
+                                    facilities in Gujarat and Andhra Pradesh.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-primary">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="heading text-3xl font-bold text-white mb-6">Experience the Abhinandan Difference</h2>
+                <p class="text-white/90 mb-8">Join our global family of satisfied customers who trust us for premium
+                    quality Indian spices.</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button
+                        class="px-6 py-3 bg-white text-primary rounded-button hover:bg-opacity-90 transition-colors whitespace-nowrap">
+                        Request a Quote
+                    </button>
+                    <button
+                        class="px-6 py-3 border-2 border-white text-white rounded-button hover:bg-white/10 transition-colors whitespace-nowrap">
+                        Contact Our Team
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <a href="#" class="text-3xl font-['Pacifico'] text-white mb-6 block">Abhinandan</a>
+                    <p class="text-gray-400 mb-6">We Process Quality, We Harvest Trust - Your trusted partner in premium
+                        Indian spices.</p>
+                    <div class="flex space-x-4">
+                        <a href="#"
+                            class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-primary transition-colors">
+                            <i class="ri-facebook-fill"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-primary transition-colors">
+                            <i class="ri-instagram-line"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-primary transition-colors">
+                            <i class="ri-twitter-x-line"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-primary transition-colors">
+                            <i class="ri-linkedin-fill text-xl"></i>
+                        </a>
+                        
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="./Home.html" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="./Product.html" class="text-gray-400 hover:text-white transition-colors">Products</a></li>
+                        <li><a href="./Aboutus.html" class="text-gray-400 hover:text-white transition-colors text-white">About Us</a></li>
+                        <li><a href="./Contact.html" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contact Us</h4>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <div class="w-5 h-5 flex items-center justify-center mr-2 mt-1">
+                                <i class="ri-map-pin-line text-primary"></i>
+                            </div>
+                            <span class="text-gray-400">Spice House, Unjha APMC Market, Gujarat, India</span>
+                        </li>
+                        <li class="flex items-center">
+                            <div class="w-5 h-5 flex items-center justify-center mr-2">
+                                <i class="ri-phone-line text-primary"></i>
+                            </div>
+                            <span class="text-gray-400">+91 98765 43210</span>
+                        </li>
+                        <li class="flex items-center">
+                            <div class="w-5 h-5 flex items-center justify-center mr-2">
+                                <i class="ri-mail-line text-primary"></i>
+                            </div>
+                            <span class="text-gray-400">info@abhinandan.com</span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    
+                    <h4 class="text-lg font-semibold mt-6 mb-4">Certifications</h4>
+                    <div class="flex flex-wrap gap-3">
+                        <img src="https://deepseek.ai/generate-image?prompt=A%20USDA%20Organic%20certification%20logo%20in%20a%20clean%2C%20modern%20design%20with%20green%20and%20white%20colors"
+                            alt="Organic Certification" class="h-10 object-contain">
+                        <img src="https://deepseek.ai/generate-image?prompt=An%20EU%20Organic%20certification%20logo%20with%20a%20leaf%20symbol%20and%20stars%20in%20green%20and%20white"
+                            alt="EU Organic" class="h-10 object-contain">
+                        <img src="https://deepseek.ai/generate-image?prompt=A%20Spices%20Board%20of%20India%20certification%20logo%20with%20traditional%20Indian%20design%20elements"
+                            alt="Spices Board India" class="h-10 object-contain">
+                    </div>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-gray-800 text-center text-gray-500 text-sm">
+                <p>© 2025 Abhinandan International. All rights reserved. | <a href="#"
+                        class="hover:text-white transition-colors">Privacy Policy</a> | <a href="#"
+                        class="hover:text-white transition-colors">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Mobile menu toggle functionality can be added here if needed
+        });
+    </script>
+</body>
+
+</html>

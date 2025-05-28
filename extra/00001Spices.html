@@ -1,0 +1,2941 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Herbs | Abhinandan International</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#8B4513',
+                        secondary: '#6B8E23'
+                    },
+                    borderRadius: {
+                        'none': '0px',
+                        'sm': '4px',
+                        DEFAULT: '8px',
+                        'md': '12px',
+                        'lg': '16px',
+                        'xl': '20px',
+                        '2xl': '24px',
+                        '3xl': '32px',
+                        'full': '9999px',
+                        'button': '8px'
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <style>
+        :where([class^="ri-"])::before {
+            content: "\f3c2";
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .heading {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .custom-input:focus {
+            outline: none;
+        }
+
+        .custom-checkbox {
+            appearance: none;
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #8B4513;
+            border-radius: 4px;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .custom-checkbox:checked {
+            background-color: #8B4513;
+        }
+
+        .custom-checkbox:checked::after {
+            content: "";
+            position: absolute;
+            width: 5px;
+            height: 10px;
+            border: solid white;
+            border-width: 0 2px 2px 0;
+            top: 2px;
+            left: 6px;
+            transform: rotate(45deg);
+        }
+
+        .product-gallery-thumbnail {
+            transition: all 0.3s ease;
+        }
+
+        .product-gallery-thumbnail:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-gallery-thumbnail.active {
+            border: 2px solid #8B4513;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Header Section -->
+    <header class="sticky top-0 z-50 bg-white shadow-sm">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                    <a href="#" class="text-3xl font-['Pacifico'] text-primary">Abhinandan</a>
+                    <nav class="hidden md:flex ml-10">
+                        <ul class="flex space-x-8">
+                            <li><a href="Home.html"
+                                    class="text-gray-800 font-medium hover:text-primary transition-colors">Home</a></li>
+                            <li><a href="Product.html"
+                                    class="text-primary font-medium hover:text-primary transition-colors">Products</a>
+                            </li>
+                            <li><a href="Aboutus.html"
+                                    class="text-gray-800 font-medium hover:text-primary transition-colors">About Us</a>
+                            </li>
+                            <li><a href="Contact.html"
+                                    class="text-gray-800 font-medium hover:text-primary transition-colors">Contact</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="flex items-center">
+                    <div class="relative mr-4">
+                        <input type="text" placeholder="Search products..."
+                            class="custom-input pl-10 pr-4 py-2 rounded-full bg-gray-100 text-sm w-48 border-none">
+                        <div
+                            class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 flex items-center justify-center text-gray-500">
+                            <i class="ri-search-line"></i>
+                        </div>
+                    </div>
+
+                    <button
+                        class="ml-4 md:flex items-center px-4 py-2 bg-primary text-white rounded-button hover:bg-opacity-90 transition-colors whitespace-nowrap hidden">
+                        <span>Get Quote</span>
+                    </button>
+                    <div class="md:hidden w-10 h-10 flex items-center justify-center">
+                        <i class="ri-menu-line text-xl"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Product Detail Section -->
+    <section class="py-12 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <!-- Breadcrumb -->
+            <div class="flex items-center text-sm text-gray-600 mb-6">
+                <a href="Home.html" class="hover:text-primary">Home</a>
+                <i class="ri-arrow-right-s-line mx-2"></i>
+                <a href="Product.html" class="hover:text-primary">Products</a>
+                <i class="ri-arrow-right-s-line mx-2"></i>
+                <a href="Product.html#spices" class="hover:text-primary">Spices</a>
+                <i class="ri-arrow-right-s-line mx-2"></i>
+                <span class="text-primary" id="productNameBreadcrumb">Mustard Kernels</span>
+            </div>
+
+            <div class="flex flex-col lg:flex-row gap-8">
+                <!-- Product Gallery -->
+                <div class="lg:w-1/2">
+                    <div class="bg-white rounded-lg shadow-md p-4 mb-4">
+                        <div class="h-96 overflow-hidden rounded-lg mb-4">
+                            <img id="mainImage"
+                                src="./Product/Herbs/sena-leaves-pods.jpg" alt="Mustard Kernels" class="w-full h-full object-contain">
+                    </div>
+                </div>
+
+                <!-- Product Info -->
+                <div class="lg:w-1/2">
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <h1 class="heading text-3xl font-bold text-gray-900" id="productName">Mustard Kernels</h1>
+                            <div class="relative">
+                                <select id="productSelector"
+                                    class="appearance-none bg-gray-100 border border-gray-300 text-gray-700 py-2 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-primary">
+                                    <option value="mustard-kernels">Mustard Kernels</option>
+                                    <option value="mustard-flakes">Mustard Flakes</option>
+                                    <option value="mustard-seeds">Mustard Seeds</option>
+                                    <option value="fenugreek-seeds">Fenugreek Seeds</option>
+                                    <option value="chillies">Chillies</option>
+                                    <option value="turmeric-finger">Turmeric Finger</option>
+                                    <option value="fennel-seeds">Fennel Seeds</option>
+                                    <option value="cumin-seeds">Cumin Seeds</option>
+                                    <option value="black-cumin">Black Cumin</option>
+                                    <option value="celery-seeds">Celery Seeds</option>
+                                    <option value="ginger-fried">Ginger Fried</option>
+                                    <option value="nutmeg-mace">Nutmeg & Mace</option>
+                                    <option value="coriander-seeds">Coriander Seeds</option>
+                                    <option value="garlic">Garlic</option>
+                                    <option value="tamarind">Tamarind</option>
+                                    <option value="bay-leaf">Bay Leaf</option>
+                                    <option value="big-cardamon">Big Cardamon</option>
+                                    <option value="ajwain">Ajwain Seeds</option>
+                                    <option value="clove">Clove</option>
+                                    <option value="curry-leaf">Curry Leaf</option>
+                                    <option value="black-pepper">Black Pepper</option>
+                                    <option value="white-pepper">White Pepper</option>
+                                    <option value="green-pepper">Green Pepper</option>
+                                    <option value="curry-powder">Curry Powder</option>
+                                </select>
+                                <div
+                                    class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                                    <i class="ri-arrow-down-s-line"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-6">
+                            <h3 class="text-lg font-semibold text-gray-900 mb-2">Description</h3>
+                            <p class="text-gray-600 mb-4" id="productDescription">
+                                Our premium mustard kernels are carefully selected from the finest mustard plants,
+                                cleaned and processed to maintain their natural pungency and flavor. These golden-yellow
+                                kernels are rich in essential oils and are perfect for various culinary applications.
+                            </p>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                                <div class="flex items-start">
+                                    <i class="ri-checkbox-circle-fill text-green-500 mt-1 mr-2"></i>
+                                    <span class="text-gray-600">100% natural with no additives</span>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="ri-checkbox-circle-fill text-green-500 mt-1 mr-2"></i>
+                                    <span class="text-gray-600">Long shelf life (up to 2 years)</span>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="ri-checkbox-circle-fill text-green-500 mt-1 mr-2"></i>
+                                    <span class="text-gray-600">Rich in essential oils</span>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="ri-checkbox-circle-fill text-green-500 mt-1 mr-2"></i>
+                                    <span class="text-gray-600">High pungency level</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-6">
+                            <h3 class="text-lg font-semibold text-gray-900 mb-2">Specifications</h3>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <p class="text-gray-600"><span class="font-medium">Color:</span> <span
+                                            id="productColor">Golden yellow</span></p>
+                                    <p class="text-gray-600"><span class="font-medium">Moisture:</span> <span
+                                            id="productMoisture">Max 8%</span></p>
+                                </div>
+                                <div>
+                                    <p class="text-gray-600"><span class="font-medium">Purity:</span> <span
+                                            id="productPurity">99.5%</span></p>
+                                    <p class="text-gray-600"><span class="font-medium">Packaging:</span> <span
+                                            id="productPackaging">5kg, 10kg, 25kg bags</span></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-6">
+                            <h3 class="text-lg font-semibold text-gray-900 mb-2">Storage Instructions</h3>
+                            <p class="text-gray-600" id="productStorage">
+                                Store in a cool, dry place away from direct sunlight. Keep in airtight containers to
+                                maintain freshness and prevent moisture absorption. Ideal storage temperature is below
+                                25°C with relative humidity below 60%.
+                            </p>
+                        </div>
+
+                        <div class="flex flex-col sm:flex-row gap-3 mb-6">
+                            <button
+                                class="flex-1 px-6 py-3 bg-primary text-white rounded-button hover:bg-opacity-90 transition-colors">
+                                Request Sample
+                            </button>
+                            <button
+                                class="flex-1 px-6 py-3 bg-secondary text-white rounded-button hover:bg-opacity-90 transition-colors">
+                                Enquiry Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Tabs -->
+            <div class="mt-12 bg-white rounded-lg shadow-md overflow-hidden">
+                <div class="border-b border-gray-200">
+                    <nav class="flex flex-col sm:flex-row">
+                        <button onclick="openTab(event, 'uses')"
+                            class="tab-button py-4 px-6 text-center border-b-2 font-medium text-primary border-primary">
+                            Uses
+                        </button>
+                        <button onclick="openTab(event, 'varieties')"
+                            class="tab-button py-4 px-6 text-center border-b-2 font-medium text-gray-500 border-transparent hover:text-gray-700 hover:border-gray-300">
+                            Varieties
+                        </button>
+                        <button onclick="openTab(event, 'names')"
+                            class="tab-button py-4 px-6 text-center border-b-2 font-medium text-gray-500 border-transparent hover:text-gray-700 hover:border-gray-300">
+                            Names in Different Languages
+                        </button>
+                        <button onclick="openTab(event, 'origin')"
+                            class="tab-button py-4 px-6 text-center border-b-2 font-medium text-gray-500 border-transparent hover:text-gray-700 hover:border-gray-300">
+                            Origin & Cultivation
+                        </button>
+                    </nav>
+                </div>
+
+                <div class="p-6">
+                    <!-- Uses Tab -->
+                    <div id="uses" class="tab-content active">
+                        <h3 class="heading text-xl font-semibold text-gray-900 mb-4">Culinary Uses</h3>
+                        <p class="text-gray-600 mb-4" id="culinaryUses">
+                            Mustard kernels are widely used in food processing and culinary applications where their
+                            distinctive flavor and pungency are desired. They can be used in:
+                        </p>
+                        <ul class="list-disc pl-5 text-gray-600 mb-6 space-y-2" id="culinaryList">
+                            <li>Pickles and chutneys</li>
+                            <li>Curries and gravies</li>
+                            <li>Seasoning blends and spice mixes</li>
+                            <li>Meat products and marinades</li>
+                            <li>Salad dressings and dips</li>
+                            <li>Baked goods and savory snacks</li>
+                        </ul>
+
+                        <h3 class="heading text-xl font-semibold text-gray-900 mb-4">Industrial & Other Uses</h3>
+                        <p class="text-gray-600 mb-4" id="industrialUses">
+                            Beyond culinary applications, mustard kernels have several other uses:
+                        </p>
+                        <ul class="list-disc pl-5 text-gray-600 mb-6 space-y-2" id="industrialList">
+                            <li>Mustard oil production</li>
+                            <li>Pharmaceutical preparations</li>
+                            <li>Nutritional supplements</li>
+                            <li>Natural preservative</li>
+                        </ul>
+                    </div>
+
+                    <!-- Varieties Tab -->
+                    <div id="varieties" class="tab-content">
+                        <h3 class="heading text-xl font-semibold text-gray-900 mb-4">Product Varieties</h3>
+                        <p class="text-gray-600 mb-4" id="varietiesDescription">
+                            We offer several varieties of mustard products to meet different culinary and industrial
+                            needs:
+                        </p>
+
+                        <div class="space-y-4" id="varietiesContainer">
+                            <div class="border border-gray-200 rounded-lg p-4">
+                                <h4 class="heading text-lg font-semibold text-gray-900 mb-2">Yellow Mustard Kernels</h4>
+                                <p class="text-gray-600 mb-2">
+                                    <span class="font-medium">Color:</span> Bright yellow<br>
+                                    <span class="font-medium">Pungency:</span> Medium<br>
+                                    <span class="font-medium">Moisture:</span> Max 8%<br>
+                                    <span class="font-medium">Use:</span> General culinary applications
+                                </p>
+                            </div>
+
+                            <div class="border border-gray-200 rounded-lg p-4">
+                                <h4 class="heading text-lg font-semibold text-gray-900 mb-2">Black Mustard Kernels</h4>
+                                <p class="text-gray-600 mb-2">
+                                    <span class="font-medium">Color:</span> Dark brown<br>
+                                    <span class="font-medium">Pungency:</span> High<br>
+                                    <span class="font-medium">Moisture:</span> Max 7%<br>
+                                    <span class="font-medium">Use:</span> For strong flavor in pickles and curries
+                                </p>
+                            </div>
+
+                            <div class="border border-gray-200 rounded-lg p-4">
+                                <h4 class="heading text-lg font-semibold text-gray-900 mb-2">Organic Mustard Kernels
+                                </h4>
+                                <p class="text-gray-600 mb-2">
+                                    <span class="font-medium">Certification:</span> USDA Organic<br>
+                                    <span class="font-medium">Color:</span> Golden yellow<br>
+                                    <span class="font-medium">Moisture:</span> Max 7%<br>
+                                    <span class="font-medium">Use:</span> Premium organic food products
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Names Tab -->
+                    <div id="names" class="tab-content">
+                        <h3 class="heading text-xl font-semibold text-gray-900 mb-4">Names in Different Languages</h3>
+                        <p class="text-gray-600 mb-4" id="namesDescription">
+                            Mustard is known by various names across different cultures and regions:
+                        </p>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="namesContainer">
+                            <div class="border border-gray-200 rounded-lg p-4">
+                                <h4 class="heading text-lg font-semibold text-gray-900 mb-2">Indian Languages</h4>
+                                <ul class="space-y-1 text-gray-600">
+                                    <li><span class="font-medium">Hindi:</span> Sarson</li>
+                                    <li><span class="font-medium">Tamil:</span> Kadugu</li>
+                                    <li><span class="font-medium">Telugu:</span> Avalu</li>
+                                    <li><span class="font-medium">Kannada:</span> Sasuve</li>
+                                    <li><span class="font-medium">Malayalam:</span> Kaduku</li>
+                                    <li><span class="font-medium">Bengali:</span> Sorshe</li>
+                                    <li><span class="font-medium">Gujarati:</span> Rai</li>
+                                    <li><span class="font-medium">Marathi:</span> Mohari</li>
+                                </ul>
+                            </div>
+
+                            <div class="border border-gray-200 rounded-lg p-4">
+                                <h4 class="heading text-lg font-semibold text-gray-900 mb-2">International Names</h4>
+                                <ul class="space-y-1 text-gray-600">
+                                    <li><span class="font-medium">Spanish:</span> Mostaza</li>
+                                    <li><span class="font-medium">French:</span> Moutarde</li>
+                                    <li><span class="font-medium">German:</span> Senf</li>
+                                    <li><span class="font-medium">Italian:</span> Senape</li>
+                                    <li><span class="font-medium">Arabic:</span> Khardal</li>
+                                    <li><span class="font-medium">Chinese:</span> Jie zi</li>
+                                    <li><span class="font-medium">Japanese:</span> Karashi</li>
+                                    <li><span class="font-medium">Russian:</span> Gorchitsa</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Origin Tab -->
+                    <div id="origin" class="tab-content">
+                        <h3 class="heading text-xl font-semibold text-gray-900 mb-4">Origin & Cultivation</h3>
+                        <p class="text-gray-600 mb-4" id="originDescription">
+                            Mustard has been cultivated for thousands of years, with evidence of its use dating back
+                            to ancient civilizations. Modern mustard products are produced from high-quality mustard
+                            plants grown in optimal conditions.
+                        </p>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <h4 class="heading text-lg font-semibold text-gray-900 mb-2">Growing Regions</h4>
+                                <p class="text-gray-600 mb-2" id="growingRegions">
+                                    The best quality mustard for kernels comes from these regions:
+                                </p>
+                                <ul class="list-disc pl-5 text-gray-600 space-y-1" id="regionsList">
+                                    <li>Rajasthan, India - known for high oil content</li>
+                                    <li>Punjab, India - produces large quantities</li>
+                                    <li>Uttar Pradesh, India - known for quality</li>
+                                    <li>Canada - major global producer</li>
+                                    <li>Nepal - known for organic varieties</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <h4 class="heading text-lg font-semibold text-gray-900 mb-2">Processing Method</h4>
+                                <p class="text-gray-600 mb-2" id="processingMethod">
+                                    Our processing method preserves maximum flavor and nutrients:
+                                </p>
+                                <ol class="list-decimal pl-5 text-gray-600 space-y-1" id="processList">
+                                    <li>Selection of premium quality mustard seeds</li>
+                                    <li>Thorough cleaning and sorting</li>
+                                    <li>Precision dehulling to remove outer shell</li>
+                                    <li>Quality grading by size and color</li>
+                                    <li>Moisture control and packaging</li>
+                                    <li>Quality testing and certification</li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <h4 class="heading text-lg font-semibold text-gray-900 mb-2">Quality Standards</h4>
+                        <p class="text-gray-600" id="qualityStandards">
+                            Our mustard kernels meet international quality standards including ISO, FSSAI, and USDA
+                            specifications. We maintain strict hygiene protocols throughout the production process to
+                            ensure food safety and quality.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Related Products -->
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-12 pb-6">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="heading text-xl font-semibold mb-4">Abhinandan International</h3>
+                    <p class="text-gray-400 mb-4">
+                        Premium quality spices and food products sourced directly from farms across India
+                        and Asia.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#"
+                            class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-gray-700">
+                            <i class="ri-facebook-fill"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-gray-700">
+                            <i class="ri-instagram-line"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-gray-700">
+                            <i class="ri-twitter-fill"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-gray-700">
+                            <i class="ri-linkedin-fill"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="heading text-xl font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <<li><a href="Home.html" class="text-gray-400 hover:text-white">Home</a></li>
+                            <li><a href="Product.html" class="text-gray-400 hover:text-white">Products</a></li>
+                            <li><a href="Aboutus.html" class="text-gray-400 hover:text-white">About Us</a></li>
+                            <li><a href="Contact.html" class="text-gray-400 hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="heading text-xl font-semibold mb-4">Products</h3>
+                    <ul class="space-y-2">
+                        <li><a href="Product.html#spices" class="text-gray-400 hover:text-white">Spices</a></li>
+                        <li><a href="Product.html#raisins" class="text-gray-400 hover:text-white">Raisins</a></li>
+                        <li><a href="Product.html#herbs" class="text-gray-400 hover:text-white">Herbs</a></li>
+                        <li><a href="Product.html#grains" class="text-gray-400 hover:text-white">Grains</a></li>
+                        <li><a href="Product.html#oil-seeds" class="text-gray-400 hover:text-white">Oil Seeds</a></li>
+                        <li><a href="Product.html#dehydrated-vegetables"
+                                class="text-gray-400 hover:text-white">Dehydrated Vegetables</a></li>
+                        <li><a href="Product.html#coconut-products" class="text-gray-400 hover:text-white">Coconut
+                                Products</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="heading text-xl font-semibold mb-4">Contact Us</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="ri-map-pin-line mt-1 mr-2"></i>
+                            <span class="text-gray-400">123 Spice Street, Mumbai, India 400001</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-phone-line mt-1 mr-2"></i>
+                            <span class="text-gray-400">+91 98765 43210</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-mail-line mt-1 mr-2"></i>
+                            <span class="text-gray-400">info@abhinandan.com</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-time-line mt-1 mr-2"></i>
+                            <span class="text-gray-400">Mon-Fri: 9AM - 6PM</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-6">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-400 mb-4 md:mb-0">
+                        &copy; 2025 Abhinandan International. All rights reserved.
+                    </p>
+                    <div class="flex space-x-6">
+                        <a href="#" class="text-gray-400 hover:text-white">Privacy Policy</a>
+                        <a href="#" class="text-gray-400 hover:text-white">Terms of Service</a>
+                        <a href="#" class="text-gray-400 hover:text-white">Shipping Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Product data
+        const products = {
+            'mustard-kernels': {
+                name: 'Mustard Kernels',
+                description: 'Our premium mustard kernels are carefully selected from the finest mustard plants, cleaned and processed to maintain their natural pungency and flavor. These golden-yellow kernels are rich in essential oils and are perfect for various culinary applications.',
+                color: 'Golden yellow',
+                moisture: 'Max 8%',
+                purity: '99.5%',
+                packaging: '5kg, 10kg, 25kg bags',
+                storage: 'Store in a cool, dry place away from direct sunlight. Keep in airtight containers to maintain freshness and prevent moisture absorption. Ideal storage temperature is below 25°C with relative humidity below 60%.',
+                rating: '4.5 (23 reviews)',
+                badge: 'Premium',
+                culinaryUses: 'Mustard kernels are widely used in food processing and culinary applications where their distinctive flavor and pungency are desired. They can be used in:',
+                culinaryList: [
+                    'Pickles and chutneys',
+                    'Curries and gravies',
+                    'Seasoning blends and spice mixes',
+                    'Meat products and marinades',
+                    'Salad dressings and dips',
+                    'Baked goods and savory snacks'
+                ],
+                industrialUses: 'Beyond culinary applications, mustard kernels have several other uses:',
+                industrialList: [
+                    'Mustard oil production',
+                    'Pharmaceutical preparations',
+                    'Nutritional supplements',
+                    'Natural preservative'
+                ],
+                varietiesDescription: 'We offer several varieties of mustard products to meet different culinary and industrial needs:',
+                varieties: [
+                    {
+                        name: 'Yellow Mustard Kernels',
+                        details: '<span class="font-medium">Color:</span> Bright yellow<br><span class="font-medium">Pungency:</span> Medium<br><span class="font-medium">Moisture:</span> Max 8%<br><span class="font-medium">Use:</span> General culinary applications'
+                    },
+                    {
+                        name: 'Black Mustard Kernels',
+                        details: '<span class="font-medium">Color:</span> Dark brown<br><span class="font-medium">Pungency:</span> High<br><span class="font-medium">Moisture:</span> Max 7%<br><span class="font-medium">Use:</span> For strong flavor in pickles and curries'
+                    },
+                    {
+                        name: 'Organic Mustard Kernels',
+                        details: '<span class="font-medium">Certification:</span> USDA Organic<br><span class="font-medium">Color:</span> Golden yellow<br><span class="font-medium">Moisture:</span> Max 7%<br><span class="font-medium">Use:</span> Premium organic food products'
+                    }
+                ],
+                namesDescription: 'Mustard is known by various names across different cultures and regions:',
+                names: {
+                    indian: [
+                        ['Hindi', 'Sarson'],
+                        ['Tamil', 'Kadugu'],
+                        ['Telugu', 'Avalu'],
+                        ['Kannada', 'Sasuve'],
+                        ['Malayalam', 'Kaduku'],
+                        ['Bengali', 'Sorshe'],
+                        ['Gujarati', 'Rai'],
+                        ['Marathi', 'Mohari']
+                    ],
+                    international: [
+                        ['Spanish', 'Mostaza'],
+                        ['French', 'Moutarde'],
+                        ['German', 'Senf'],
+                        ['Italian', 'Senape'],
+                        ['Arabic', 'Khardal'],
+                        ['Chinese', 'Jie zi'],
+                        ['Japanese', 'Karashi'],
+                        ['Russian', 'Gorchitsa']
+                    ]
+                },
+                originDescription: 'Mustard has been cultivated for thousands of years, with evidence of its use dating back to ancient civilizations. Modern mustard products are produced from high-quality mustard plants grown in optimal conditions.',
+                growingRegions: 'The best quality mustard for kernels comes from these regions:',
+                regionsList: [
+                    'Rajasthan, India - known for high oil content',
+                    'Punjab, India - produces large quantities',
+                    'Uttar Pradesh, India - known for quality',
+                    'Canada - major global producer',
+                    'Nepal - known for organic varieties'
+                ],
+                processingMethod: 'Our processing method preserves maximum flavor and nutrients:',
+                processList: [
+                    'Selection of premium quality mustard seeds',
+                    'Thorough cleaning and sorting',
+                    'Precision dehulling to remove outer shell',
+                    'Quality grading by size and color',
+                    'Moisture control and packaging',
+                    'Quality testing and certification'
+                ],
+                qualityStandards: 'Our mustard kernels meet international quality standards including ISO, FSSAI, and USDA specifications. We maintain strict hygiene protocols throughout the production process to ensure food safety and quality.'
+            },
+            'mustard-flakes': {
+                name: 'Mustard Flakes',
+                description: 'Our premium mustard flakes are made from carefully selected mustard seeds that are cleaned, processed and flaked to maintain their natural pungency and flavor. These golden flakes are perfect for various culinary applications where texture is important.',
+                color: 'Golden yellow to light brown',
+                moisture: 'Max 7%',
+                purity: '99%',
+                packaging: '5kg, 10kg, 25kg bags',
+                storage: 'Store in a cool, dry place away from direct sunlight. Keep in airtight containers to maintain freshness and prevent moisture absorption. Ideal storage temperature is below 25°C with relative humidity below 60%.',
+                rating: '4.3 (18 reviews)',
+                badge: 'Popular',
+                culinaryUses: 'Mustard flakes are widely used in food processing and culinary applications where texture and flavor are important. They can be used in:',
+                culinaryList: [
+                    'Pickles and preserves',
+                    'Salad dressings',
+                    'Meat rubs and marinades',
+                    'Bread and cracker toppings',
+                    'Seasoning blends',
+                    'Ready-to-eat meals'
+                ],
+                industrialUses: 'Beyond culinary applications, mustard flakes have several other uses:',
+                industrialList: [
+                    'Mustard oil production',
+                    'Pharmaceutical preparations',
+                    'Nutritional supplements',
+                    'Natural preservative'
+                ],
+                varietiesDescription: 'We offer several varieties of mustard flakes to meet different culinary and industrial needs:',
+                varieties: [
+                    {
+                        name: 'Regular Mustard Flakes',
+                        details: '<span class="font-medium">Size:</span> 2-4mm flakes<br><span class="font-medium">Color:</span> Golden yellow<br><span class="font-medium">Pungency:</span> Medium<br><span class="font-medium">Use:</span> General culinary applications'
+                    },
+                    {
+                        name: 'Black Mustard Flakes',
+                        details: '<span class="font-medium">Size:</span> 2-4mm flakes<br><span class="font-medium">Color:</span> Dark brown<br><span class="font-medium">Pungency:</span> High<br><span class="font-medium">Use:</span> For strong flavor in dishes'
+                    },
+                    {
+                        name: 'Toasted Mustard Flakes',
+                        details: '<span class="font-medium">Size:</span> 2-4mm flakes<br><span class="font-medium">Color:</span> Light brown<br><span class="font-medium">Pungency:</span> Mild<br><span class="font-medium">Use:</span> For nutty flavor in dishes'
+                    }
+                ],
+                namesDescription: 'Mustard is known by various names across different cultures and regions:',
+                names: {
+                    indian: [
+                        ['Hindi', 'Sarson ke tukde'],
+                        ['Tamil', 'Kadugu thakkali'],
+                        ['Telugu', 'Avalu pieces'],
+                        ['Kannada', 'Sasuve pieces'],
+                        ['Malayalam', 'Kaduku pieces'],
+                        ['Bengali', 'Sorshe flakes'],
+                        ['Gujarati', 'Rai flakes'],
+                        ['Marathi', 'Mohari flakes']
+                    ],
+                    international: [
+                        ['Spanish', 'Copos de mostaza'],
+                        ['French', 'Flocons de moutarde'],
+                        ['German', 'Senfflocken'],
+                        ['Italian', 'Fiocchi di senape'],
+                        ['Arabic', 'Khardal flakes'],
+                        ['Chinese', 'Jie zi flakes'],
+                        ['Japanese', 'Karashi flakes'],
+                        ['Russian', 'Gorchitsa flakes']
+                    ]
+                },
+                originDescription: 'Mustard has been cultivated for thousands of years, with evidence of its use dating back to ancient civilizations. Modern mustard flakes are produced from high-quality mustard seeds grown in optimal conditions.',
+                growingRegions: 'The best quality mustard for flakes comes from these regions:',
+                regionsList: [
+                    'Rajasthan, India - known for high oil content',
+                    'Punjab, India - produces large quantities',
+                    'Uttar Pradesh, India - known for quality',
+                    'Canada - major global producer',
+                    'Nepal - known for organic varieties'
+                ],
+                processingMethod: 'Our flaking process preserves maximum flavor and nutrients:',
+                processList: [
+                    'Selection of premium quality mustard seeds',
+                    'Thorough cleaning and sorting',
+                    'Conditioning to optimal moisture level',
+                    'Flaking between rollers',
+                    'Quality grading by size and color',
+                    'Packaging in moisture-proof materials'
+                ],
+                qualityStandards: 'Our mustard flakes meet international quality standards including ISO, FSSAI, and USDA specifications. We maintain strict hygiene protocols throughout the production process to ensure food safety and quality.'
+            },
+            'mustard-seeds': {
+                name: 'Mustard Seeds',
+                description: 'Our premium mustard seeds are carefully selected from the finest mustard plants, cleaned and processed to maintain their natural pungency and flavor. These seeds are rich in essential oils and are perfect for various culinary applications, oil extraction, and sprouting.',
+                color: 'Yellow to dark brown',
+                moisture: 'Max 9%',
+                purity: '99.9%',
+                packaging: '5kg, 10kg, 25kg, 50kg bags',
+                storage: 'Store in a cool, dry place away from direct sunlight. Keep in airtight containers to maintain freshness and prevent moisture absorption. Ideal storage temperature is below 25°C with relative humidity below 60%.',
+                rating: '4.7 (32 reviews)',
+                badge: 'Best Seller',
+                culinaryUses: 'Mustard seeds are widely used in food processing and culinary applications where their distinctive flavor and pungency are desired. They can be used in:',
+                culinaryList: [
+                    'Tempering for Indian curries',
+                    'Pickling and preserving',
+                    'Mustard oil production',
+                    'Sprouting for salads',
+                    'Spice blends and masalas',
+                    'Bread and cracker toppings'
+                ],
+                industrialUses: 'Beyond culinary applications, mustard seeds have several other uses:',
+                industrialList: [
+                    'Mustard oil production',
+                    'Pharmaceutical preparations',
+                    'Nutritional supplements',
+                    'Natural preservative',
+                    'Animal feed'
+                ],
+                varietiesDescription: 'We offer several varieties of mustard seeds to meet different culinary and industrial needs:',
+                varieties: [
+                    {
+                        name: 'Yellow Mustard Seeds',
+                        details: '<span class="font-medium">Color:</span> Bright yellow<br><span class="font-medium">Pungency:</span> Mild<br><span class="font-medium">Moisture:</span> Max 9%<br><span class="font-medium">Use:</span> General culinary applications'
+                    },
+                    {
+                        name: 'Brown Mustard Seeds',
+                        details: '<span class="font-medium">Color:</span> Light brown<br><span class="font-medium">Pungency:</span> Medium<br><span class="font-medium">Moisture:</span> Max 8%<br><span class="font-medium">Use:</span> For moderate flavor'
+                    },
+                    {
+                        name: 'Black Mustard Seeds',
+                        details: '<span class="font-medium">Color:</span> Dark brown<br><span class="font-medium">Pungency:</span> High<br><span class="font-medium">Moisture:</span> Max 8%<br><span class="font-medium">Use:</span> For strong flavor in dishes'
+                    }
+                ],
+                namesDescription: 'Mustard is known by various names across different cultures and regions:',
+                names: {
+                    indian: [
+                        ['Hindi', 'Sarson'],
+                        ['Tamil', 'Kadugu'],
+                        ['Telugu', 'Avalu'],
+                        ['Kannada', 'Sasuve'],
+                        ['Malayalam', 'Kaduku'],
+                        ['Bengali', 'Sorshe'],
+                        ['Gujarati', 'Rai'],
+                        ['Marathi', 'Mohari']
+                    ],
+                    international: [
+                        ['Spanish', 'Semillas de mostaza'],
+                        ['French', 'Graines de moutarde'],
+                        ['German', 'Senfsamen'],
+                        ['Italian', 'Semi di senape'],
+                        ['Arabic', 'Buzur al-khardal'],
+                        ['Chinese', 'Jie zi'],
+                        ['Japanese', 'Karashi no tane'],
+                        ['Russian', 'Semena gorchitsy']
+                    ]
+                },
+                originDescription: 'Mustard has been cultivated for thousands of years, with evidence of its use dating back to ancient civilizations. Modern mustard seeds are produced from high-quality mustard plants grown in optimal conditions.',
+                growingRegions: 'The best quality mustard seeds come from these regions:',
+                regionsList: [
+                    'Rajasthan, India - known for high oil content',
+                    'Punjab, India - produces large quantities',
+                    'Uttar Pradesh, India - known for quality',
+                    'Canada - major global producer',
+                    'Nepal - known for organic varieties'
+                ],
+                processingMethod: 'Our processing method preserves maximum flavor and nutrients:',
+                processList: [
+                    'Selection of premium quality mustard plants',
+                    'Harvesting at optimal maturity',
+                    'Threshing to separate seeds',
+                    'Thorough cleaning and sorting',
+                    'Quality grading by size and color',
+                    'Packaging in moisture-proof materials'
+                ],
+                qualityStandards: 'Our mustard seeds meet international quality standards including ISO, FSSAI, and USDA specifications. We maintain strict hygiene protocols throughout the production process to ensure food safety and quality.'
+            },
+            'fenugreek-seeds': {
+                name: 'Fenugreek Seeds',
+                description: 'Our premium fenugreek seeds are carefully selected from the finest fenugreek plants, cleaned and processed to maintain their natural flavor and nutritional value. These golden-brown seeds are rich in protein, fiber and have numerous health benefits, making them perfect for various culinary and medicinal applications.',
+                color: 'Amber to light brown',
+                moisture: 'Max 8%',
+                purity: '99.5%',
+                packaging: '5kg, 10kg, 25kg bags',
+                storage: 'Store in a cool, dry place away from direct sunlight. Keep in airtight containers to maintain freshness and prevent moisture absorption. Ideal storage temperature is below 25°C with relative humidity below 60%.',
+                rating: '4.6 (28 reviews)',
+                badge: 'Premium',
+                culinaryUses: 'Fenugreek seeds are widely used in food processing and culinary applications where their distinctive flavor and health benefits are desired. They can be used in:',
+                culinaryList: [
+                    'Indian curries and dals',
+                    'Pickles and chutneys',
+                    'Spice blends and masalas',
+                    'Bread and baked goods',
+                    'Sprouting for salads',
+                    'Herbal teas'
+                ],
+                industrialUses: 'Beyond culinary applications, fenugreek seeds have several other uses:',
+                industrialList: [
+                    'Pharmaceutical preparations',
+                    'Nutritional supplements',
+                    'Cosmetic products',
+                    'Animal feed',
+                    'Traditional medicine'
+                ],
+                varietiesDescription: 'We offer several varieties of fenugreek seeds to meet different culinary and industrial needs:',
+                varieties: [
+                    {
+                        name: 'Regular Fenugreek Seeds',
+                        details: '<span class="font-medium">Size:</span> 3-4mm<br><span class="font-medium">Color:</span> Amber to light brown<br><span class="font-medium">Aroma:</span> Strong<br><span class="font-medium">Use:</span> General culinary applications'
+                    },
+                    {
+                        name: 'Large Fenugreek Seeds',
+                        details: '<span class="font-medium">Size:</span> 4-5mm<br><span class="font-medium">Color:</span> Light brown<br><span class="font-medium">Aroma:</span> Mild<br><span class="font-medium">Use:</span> For sprouting and premium dishes'
+                    },
+                    {
+                        name: 'Organic Fenugreek Seeds',
+                        details: '<span class="font-medium">Certification:</span> USDA Organic<br><span class="font-medium">Color:</span> Golden brown<br><span class="font-medium">Aroma:</span> Strong<br><span class="font-medium">Use:</span> Premium organic food products'
+                    }
+                ],
+                namesDescription: 'Fenugreek is known by various names across different cultures and regions:',
+                names: {
+                    indian: [
+                        ['Hindi', 'Methi'],
+                        ['Tamil', 'Vendayam'],
+                        ['Telugu', 'Menthulu'],
+                        ['Kannada', 'Menthya'],
+                        ['Malayalam', 'Uluva'],
+                        ['Bengali', 'Methi'],
+                        ['Gujarati', 'Methi'],
+                        ['Marathi', 'Methi']
+                    ],
+                    international: [
+                        ['Spanish', 'Alholva'],
+                        ['French', 'Fenugrec'],
+                        ['German', 'Bockshornklee'],
+                        ['Italian', 'Fieno greco'],
+                        ['Arabic', 'Hilba'],
+                        ['Chinese', 'Hu lu ba'],
+                        ['Japanese', 'Koroha'],
+                        ['Russian', 'Pazhitnik']
+                    ]
+                },
+                originDescription: 'Fenugreek has been cultivated for thousands of years, with evidence of its use dating back to ancient civilizations. Modern fenugreek seeds are produced from high-quality fenugreek plants grown in optimal conditions.',
+                growingRegions: 'The best quality fenugreek seeds come from these regions:',
+                regionsList: [
+                    'Rajasthan, India - known for strong aroma',
+                    'Gujarat, India - produces large quantities',
+                    'Madhya Pradesh, India - known for quality',
+                    'Morocco - major global producer',
+                    'Egypt - known for premium varieties'
+                ],
+                processingMethod: 'Our processing method preserves maximum flavor and nutrients:',
+                processList: [
+                    'Selection of premium quality fenugreek plants',
+                    'Harvesting at optimal maturity',
+                    'Threshing to separate seeds',
+                    'Thorough cleaning and sorting',
+                    'Quality grading by size and color',
+                    'Packaging in moisture-proof materials'
+                ],
+                qualityStandards: 'Our fenugreek seeds meet international quality standards including ISO, FSSAI, and USDA specifications. We maintain strict hygiene protocols throughout the production process to ensure food safety and quality.'
+            },
+            'chillies': {
+                name: 'Chillies',
+                description: 'Our premium chillies are carefully selected from the finest chilli plants, cleaned and processed to maintain their natural heat and flavor. These vibrant red chillies are rich in capsaicin and have numerous health benefits, making them perfect for various culinary applications.',
+                color: 'Deep red',
+                moisture: 'Max 10%',
+                purity: '99%',
+                packaging: '5kg, 10kg, 25kg bags',
+                storage: 'Store in a cool, dry place away from direct sunlight. Keep in airtight containers to maintain freshness and prevent moisture absorption. Ideal storage temperature is below 25°C with relative humidity below 60%.',
+                rating: '4.8 (45 reviews)',
+                badge: 'Hot Seller',
+                culinaryUses: 'Chillies are widely used in food processing and culinary applications where heat and flavor are desired. They can be used in:',
+                culinaryList: [
+                    'Curries and gravies',
+                    'Pickles and chutneys',
+                    'Spice blends and masalas',
+                    'Marinades and rubs',
+                    'Sauces and salsas',
+                    'Ready-to-eat meals'
+                ],
+                industrialUses: 'Beyond culinary applications, chillies have several other uses:',
+                industrialList: [
+                    'Capsaicin extraction',
+                    'Pharmaceutical preparations',
+                    'Nutritional supplements',
+                    'Natural food coloring',
+                    'Animal repellents'
+                ],
+                varietiesDescription: 'We offer several varieties of chillies to meet different culinary and industrial needs:',
+                varieties: [
+                    {
+                        name: 'Byadgi Chillies',
+                        details: '<span class="font-medium">Heat Level:</span> Mild<br><span class="font-medium">Color:</span> Deep red<br><span class="font-medium">Use:</span> For color in dishes'
+                    },
+                    {
+                        name: 'Guntur Chillies',
+                        details: '<span class="font-medium">Heat Level:</span> High<br><span class="font-medium">Color:</span> Dark red<br><span class="font-medium">Use:</span> For heat in dishes'
+                    },
+                    {
+                        name: 'Kashmiri Chillies',
+                        details: '<span class="font-medium">Heat Level:</span> Medium<br><span class="font-medium">Color:</span> Bright red<br><span class="font-medium">Use:</span> For balanced flavor'
+                    }
+                ],
+                namesDescription: 'Chillies are known by various names across different cultures and regions:',
+                names: {
+                    indian: [
+                        ['Hindi', 'Mirch'],
+                        ['Tamil', 'Milagai'],
+                        ['Telugu', 'Mirapa'],
+                        ['Kannada', 'Menasinakayi'],
+                        ['Malayalam', 'Mulaku'],
+                        ['Bengali', 'Lanka'],
+                        ['Gujarati', 'Marcha'],
+                        ['Marathi', 'Mirchi']
+                    ],
+                    international: [
+                        ['Spanish', 'Chile'],
+                        ['French', 'Piment'],
+                        ['German', 'Chili'],
+                        ['Italian', 'Peperoncino'],
+                        ['Arabic', 'Filfil'],
+                        ['Chinese', 'La jiao'],
+                        ['Japanese', 'Togarashi'],
+                        ['Russian', 'Pereц']
+                    ]
+                },
+                originDescription: 'Chillies originated in the Americas and were introduced to the rest of the world after Columbus. Modern chilli products are produced from high-quality chilli plants grown in optimal conditions.',
+                growingRegions: 'The best quality chillies come from these regions:',
+                regionsList: [
+                    'Andhra Pradesh, India - known for heat',
+                    'Karnataka, India - produces large quantities',
+                    'Gujarat, India - known for quality',
+                    'Mexico - origin of chillies',
+                    'China - major global producer'
+                ],
+                processingMethod: 'Our processing method preserves maximum flavor and heat:',
+                processList: [
+                    'Selection of premium quality chilli plants',
+                    'Harvesting at optimal maturity',
+                    'Sun drying to preserve color',
+                    'Thorough cleaning and sorting',
+                    'Quality grading by size and color',
+                    'Packaging in moisture-proof materials'
+                ],
+                qualityStandards: 'Our chillies meet international quality standards including ISO, FSSAI, and USDA specifications. We maintain strict hygiene protocols throughout the production process to ensure food safety and quality.'
+            },
+            'turmeric-finger': {
+                name: 'Turmeric Finger',
+                description: 'Our premium turmeric fingers are carefully selected from the finest turmeric plants, cleaned and processed to maintain their natural color, flavor and health benefits. These golden fingers are rich in curcumin and have numerous health benefits, making them perfect for various culinary and medicinal applications.',
+                color: 'Deep orange to golden yellow',
+                moisture: 'Max 10%',
+                purity: '99%',
+                packaging: '5kg, 10kg, 25kg bags',
+                storage: 'Store in a cool, dry place away from direct sunlight. Keep in airtight containers to maintain freshness and prevent moisture absorption. Ideal storage temperature is below 25°C with relative humidity below 60%.',
+                rating: '4.9 (52 reviews)',
+                badge: 'Premium',
+                culinaryUses: 'Turmeric fingers are widely used in food processing and culinary applications where color and health benefits are desired. They can be used in:',
+                culinaryList: [
+                    'Curries and gravies',
+                    'Pickles and chutneys',
+                    'Spice blends and masalas',
+                    'Rice dishes',
+                    'Beverages like golden milk',
+                    'Ready-to-eat meals'
+                ],
+                industrialUses: 'Beyond culinary applications, turmeric fingers have several other uses:',
+                industrialList: [
+                    'Curcumin extraction',
+                    'Pharmaceutical preparations',
+                    'Nutritional supplements',
+                    'Natural food coloring',
+                    'Cosmetic products'
+                ],
+                varietiesDescription: 'We offer several varieties of turmeric fingers to meet different culinary and industrial needs:',
+                varieties: [
+                    {
+                        name: 'Alleppey Turmeric',
+                        details: '<span class="font-medium">Color:</span> Deep yellow<br><span class="font-medium">Curcumin:</span> High (5-6.5%)<br><span class="font-medium">Use:</span> For strong color and flavor'
+                    },
+                    {
+                        name: 'Madras Turmeric',
+                        details: '<span class="font-medium">Color:</span> Light yellow<br><span class="font-medium">Curcumin:</span> Medium (2-3.5%)<br><span class="font-medium">Use:</span> For mild flavor'
+                    },
+                    {
+                        name: 'Organic Turmeric',
+                        details: '<span class="font-medium">Certification:</span> USDA Organic<br><span class="font-medium">Color:</span> Golden yellow<br><span class="font-medium">Use:</span> Premium organic food products'
+                    }
+                ],
+                namesDescription: 'Turmeric is known by various names across different cultures and regions:',
+                names: {
+                    indian: [
+                        ['Hindi', 'Haldi'],
+                        ['Tamil', 'Manjal'],
+                        ['Telugu', 'Pasupu'],
+                        ['Kannada', 'Arishina'],
+                        ['Malayalam', 'Manjal'],
+                        ['Bengali', 'Halud'],
+                        ['Gujarati', 'Haldar'],
+                        ['Marathi', 'Halad']
+                    ],
+                    international: [
+                        ['Spanish', 'Cúrcuma'],
+                        ['French', 'Curcuma'],
+                        ['German', 'Kurkuma'],
+                        ['Italian', 'Curcuma'],
+                        ['Arabic', 'Kurkum'],
+                        ['Chinese', 'Jiang huang'],
+                        ['Japanese', 'Ukiron'],
+                        ['Russian', 'Kurkuma']
+                    ]
+                },
+                originDescription: 'Turmeric has been cultivated for thousands of years in South Asia. Modern turmeric products are produced from high-quality turmeric plants grown in optimal conditions.',
+                growingRegions: 'The best quality turmeric comes from these regions:',
+                regionsList: [
+                    'Kerala, India - known for Alleppey variety',
+                    'Tamil Nadu, India - produces large quantities',
+                    'Maharashtra, India - known for quality',
+                    'Andhra Pradesh, India - major producer',
+                    'Odisha, India - known for organic varieties'
+                ],
+                processingMethod: 'Our processing method preserves maximum color and nutrients:',
+                processList: [
+                    'Selection of premium quality turmeric plants',
+                    'Harvesting at optimal maturity',
+                    'Boiling and drying process',
+                    'Polishing to enhance appearance',
+                    'Quality grading by size and color',
+                    'Packaging in moisture-proof materials'
+                ],
+                qualityStandards: 'Our turmeric fingers meet international quality standards including ISO, FSSAI, and USDA specifications. We maintain strict hygiene protocols throughout the production process to ensure food safety and quality.'
+            },
+
+            'fennel-seeds': {
+                name: 'Fennel Seeds',
+                description: 'Our premium fennel seeds are carefully selected from the finest crops, known for their sweet, licorice-like flavor and aromatic properties. These seeds are sun-dried to perfection, retaining their essential oils and nutritional benefits. Ideal for both culinary and medicinal uses.',
+                color: 'Light green to pale brown',
+                moisture: 'Max 8%',
+                size: '3-4mm length',
+                packaging: '25kg, 50kg bags or as per requirement',
+                origin: 'Gujarat, India',
+                purity: '99.5%',
+                storage: 'Store in a cool, dry place away from direct sunlight. Keep in airtight containers to maintain freshness and prevent moisture absorption. Ideal storage temperature is below 25°C with relative humidity below 60%. For best quality, use within 12 months of packaging.',
+                culinaryUses: 'Fennel seeds are widely used in various cuisines around the world for their distinctive sweet flavor and aroma:',
+                culinaryList: [
+                    'Essential in Indian cooking for curries, pickles, and spice blends',
+                    'Used in Italian sausages and meat dishes',
+                    'Flavoring for breads, cookies, and cakes in European cuisine',
+                    'Key ingredient in Chinese five-spice powder',
+                    'Used to flavor teas and herbal infusions',
+                    'Added to fish and seafood dishes for enhanced flavor'
+                ],
+                industrialUses: 'Beyond culinary applications, fennel seeds have several health benefits and other uses:',
+                industrialList: [
+                    'Traditional remedy for digestive issues and bloating',
+                    'Natural breath freshener and mouth cleanser',
+                    'Used in Ayurvedic medicine for its cooling properties',
+                    'Essential oil used in aromatherapy and perfumery',
+                    'Ingredient in natural cough syrups and lozenges'
+                ],
+                varietiesDescription: 'We offer several varieties of fennel seeds to meet different culinary and industrial needs:',
+                varieties: [
+                    {
+                        name: 'Premium Fennel Seeds',
+                        details: '<span class="font-medium">Color:</span> Bright green<br><span class="font-medium">Size:</span> 3-4mm length<br><span class="font-medium">Aroma:</span> Strong, sweet<br><span class="font-medium">Use:</span> Premium culinary applications'
+                    },
+                    {
+                        name: 'Organic Fennel Seeds',
+                        details: '<span class="font-medium">Color:</span> Pale green<br><span class="font-medium">Size:</span> 3-4mm length<br><span class="font-medium">Aroma:</span> Mild, sweet<br><span class="font-medium">Use:</span> Organic food products and supplements'
+                    },
+                    {
+                        name: 'Crushed Fennel',
+                        details: '<span class="font-medium">Color:</span> Green to brown<br><span class="font-medium">Size:</span> 1-2mm particles<br><span class="font-medium">Aroma:</span> Intense<br><span class="font-medium">Use:</span> Seasoning blends and ready-to-use applications'
+                    }
+                ],
+                namesDescription: 'Fennel is known by various names across different cultures and regions:',
+                names: {
+                    indian: [
+                        ['Hindi', 'Saunf'],
+                        ['Tamil', 'Sombu'],
+                        ['Telugu', 'Sopu'],
+                        ['Kannada', 'Badi-sopu'],
+                        ['Malayalam', 'Perumjeerakam'],
+                        ['Bengali', 'Mouri'],
+                        ['Gujarati', 'Variyali'],
+                        ['Marathi', 'Badishep']
+                    ],
+                    international: [
+                        ['Spanish', 'Hinojo'],
+                        ['French', 'Fenouil'],
+                        ['German', 'Fenchel'],
+                        ['Italian', 'Finocchio'],
+                        ['Arabic', 'Shamar'],
+                        ['Chinese', 'Hui xiang'],
+                        ['Japanese', 'Uikyō'],
+                        ['Russian', 'Fyenkhel']
+                    ]
+                },
+                originDescription: 'Fennel is native to the Mediterranean region but has been cultivated worldwide for centuries. India is now one of the largest producers and exporters of high-quality fennel seeds, particularly from the states of Gujarat and Rajasthan.',
+                growingRegions: 'The best quality fennel seeds come from these regions:',
+                regionsList: [
+                    'Gujarat, India - known for sweet, aromatic varieties',
+                    'Rajasthan, India - produces large quantities',
+                    'Mediterranean region - original cultivation area',
+                    'Egypt - known for high essential oil content',
+                    'China - major global producer'
+                ],
+                processingMethod: 'Our processing ensures maximum flavor and quality:',
+                processList: [
+                    'Selection of premium quality fennel plants',
+                    'Careful harvesting at optimal maturity',
+                    'Natural sun drying to preserve essential oils',
+                    'Mechanical cleaning and sorting',
+                    'Quality testing for aroma, color, and purity',
+                    'Packaging in moisture-proof materials'
+                ],
+                qualityStandards: 'Our fennel seeds meet international quality standards including ISO, FSSAI, USDA Organic, and EU Organic certifications. We maintain strict hygiene protocols throughout the production process to ensure food safety and traceability.'
+            },
+            'cumin-seeds': {
+                name: 'Cumin Seeds',
+                description: 'Our premium cumin seeds are known for their distinctive earthy, nutty flavor with a warm aroma. Carefully sourced from the best growing regions, these seeds are rich in essential oils and have excellent shelf life. Ideal for adding depth to various dishes.',
+                color: 'Brown to dark brown',
+                moisture: 'Max 9%',
+                size: '4-6mm length',
+                packaging: '25kg, 50kg bags or as per requirement',
+                origin: 'Rajasthan, India',
+                purity: '99%',
+                storage: 'Store in a cool, dry place away from direct sunlight. Keep in airtight containers to maintain freshness. Ideal storage temperature is below 25°C with relative humidity below 65%.',
+                culinaryUses: 'Cumin seeds are a staple in many global cuisines:',
+                culinaryList: [
+                    'Essential in Indian curries, dals, and spice blends',
+                    'Used in Mexican dishes like tacos and chili',
+                    'Flavoring for Middle Eastern dishes and breads',
+                    'Key ingredient in North African spice mixes',
+                    'Used to flavor cheeses and sausages',
+                    'Added to soups and stews for depth of flavor'
+                ],
+                industrialUses: 'Beyond culinary applications, cumin seeds have several other uses:',
+                industrialList: [
+                    'Traditional remedy for digestive health',
+                    'Used in Ayurvedic medicine for its warming properties',
+                    'Essential oil used in aromatherapy',
+                    'Ingredient in natural digestive supplements',
+                    'Used in some cosmetic preparations'
+                ],
+                varietiesDescription: 'We offer several varieties of cumin seeds:',
+                varieties: [
+                    {
+                        name: 'Premium Cumin Seeds',
+                        details: '<span class="font-medium">Color:</span> Dark brown<br><span class="font-medium">Size:</span> 4-6mm length<br><span class="font-medium">Aroma:</span> Strong, earthy<br><span class="font-medium">Use:</span> Premium culinary applications'
+                    },
+                    {
+                        name: 'Organic Cumin Seeds',
+                        details: '<span class="font-medium">Color:</span> Light brown<br><span class="font-medium">Size:</span> 4-6mm length<br><span class="font-medium">Aroma:</span> Mild, nutty<br><span class="font-medium">Use:</span> Organic food products'
+                    },
+                    {
+                        name: 'Crushed Cumin',
+                        details: '<span class="font-medium">Color:</span> Brown<br><span class="font-medium">Size:</span> 1-3mm particles<br><span class="font-medium">Aroma:</span> Intense<br><span class="font-medium">Use:</span> Ready-to-use seasoning'
+                    }
+                ],
+                namesDescription: 'Cumin is known by various names across different cultures:',
+                names: {
+                    indian: [
+                        ['Hindi', 'Jeera'],
+                        ['Tamil', 'Jeerakam'],
+                        ['Telugu', 'Jeelakarra'],
+                        ['Kannada', 'Jeerige'],
+                        ['Malayalam', 'Jeerakam'],
+                        ['Bengali', 'Jeera'],
+                        ['Gujarati', 'Jeeru'],
+                        ['Marathi', 'Jeere']
+                    ],
+                    international: [
+                        ['Spanish', 'Comino'],
+                        ['French', 'Cumin'],
+                        ['German', 'Kreuzkümmel'],
+                        ['Italian', 'Cumino'],
+                        ['Arabic', 'Kamoun'],
+                        ['Chinese', 'Zi ran'],
+                        ['Japanese', 'Hime-unne'],
+                        ['Russian', 'Zira']
+                    ]
+                },
+                originDescription: 'Cumin is native to the eastern Mediterranean region and has been cultivated for thousands of years. Today, India is the largest producer of high-quality cumin seeds.',
+                growingRegions: 'The best quality cumin comes from these regions:',
+                regionsList: [
+                    'Rajasthan, India - produces 70% of world supply',
+                    'Gujarat, India - known for premium quality',
+                    'Iran - known for distinctive flavor',
+                    'Turkey - traditional growing region',
+                    'Syria - produces small but flavorful seeds'
+                ],
+                processingMethod: 'Our processing ensures maximum flavor retention:',
+                processList: [
+                    'Selection of premium quality cumin plants',
+                    'Careful harvesting at optimal maturity',
+                    'Gentle drying to preserve essential oils',
+                    'Mechanical cleaning and sorting',
+                    'Quality testing for aroma and color',
+                    'Packaging in moisture-proof materials'
+                ],
+                qualityStandards: 'Our cumin seeds meet international quality standards including ISO, FSSAI, and USDA specifications. We maintain strict quality control throughout production.'
+            },
+            'black-cumin': {
+                name: 'Black Cumin',
+                description: 'Our premium black cumin (Nigella sativa) seeds, also known as kalonji, are prized for their distinctive flavor and numerous health benefits. These small black seeds have a slightly bitter, peppery taste with notes of onion and oregano. Widely used in traditional medicine and cooking.',
+                color: 'Matte black',
+                moisture: 'Max 7%',
+                size: '2-3mm length',
+                packaging: '25kg, 50kg bags or as per requirement',
+                origin: 'Middle East/India',
+                purity: '99%',
+                storage: 'Store in a cool, dry place away from direct sunlight. Keep in airtight containers to maintain freshness. Ideal storage temperature is below 25°C with relative humidity below 60%.',
+                culinaryUses: 'Black cumin seeds are used in various culinary traditions:',
+                culinaryList: [
+                    'Essential in Indian breads like naan and paratha',
+                    'Used in Middle Eastern za\'atar spice blends',
+                    'Flavoring for pickles and chutneys',
+                    'Sprinkled on salads and yogurt dips',
+                    'Used in Bengali spice mixes (panch phoron)',
+                    'Added to cheese and savory pastries'
+                ],
+                industrialUses: 'Black cumin has numerous traditional uses:',
+                industrialList: [
+                    'Known as "the seed of blessing" in traditional medicine',
+                    'Used in Ayurveda for its warming properties',
+                    'Essential oil used in wellness products',
+                    'Ingredient in natural health supplements',
+                    'Used in some cosmetic preparations'
+                ],
+                varietiesDescription: 'We offer several varieties of black cumin:',
+                varieties: [
+                    {
+                        name: 'Premium Black Cumin',
+                        details: '<span class="font-medium">Color:</span> Deep black<br><span class="font-medium">Size:</span> 2-3mm length<br><span class="font-medium">Aroma:</span> Peppery, onion-like<br><span class="font-medium">Use:</span> Premium culinary applications'
+                    },
+                    {
+                        name: 'Organic Black Cumin',
+                        details: '<span class="font-medium">Color:</span> Matte black<br><span class="font-medium">Size:</span> 2-3mm length<br><span class="font-medium">Aroma:</span> Mild, earthy<br><span class="font-medium">Use:</span> Organic food products'
+                    },
+                    {
+                        name: 'Black Cumin Oil',
+                        details: '<span class="font-medium">Form:</span> Cold-pressed oil<br><span class="font-medium">Color:</span> Golden brown<br><span class="font-medium">Aroma:</span> Intense, herbal<br><span class="font-medium">Use:</span> Wellness products'
+                    }
+                ],
+                namesDescription: 'Black cumin is known by various names:',
+                names: {
+                    indian: [
+                        ['Hindi', 'Kalonji'],
+                        ['Tamil', 'Karum jeerakam'],
+                        ['Telugu', 'Nalla jeelakarra'],
+                        ['Kannada', 'Kari jeerige'],
+                        ['Malayalam', 'Karim jeerakam'],
+                        ['Bengali', 'Kalo jeera'],
+                        ['Gujarati', 'Kalo jeeru'],
+                        ['Marathi', 'Kale jeere']
+                    ],
+                    international: [
+                        ['Arabic', 'Habbat al-barakah'],
+                        ['Persian', 'Shonaiz'],
+                        ['Turkish', 'Çörek otu'],
+                        ['English', 'Black seed'],
+                        ['Latin', 'Nigella sativa'],
+                        ['French', 'Nigelle'],
+                        ['German', 'Schwarzkümmel'],
+                        ['Spanish', 'Ajenuz']
+                    ]
+                },
+                originDescription: 'Black cumin is native to Southwest Asia and has been cultivated for thousands of years. It was found in Tutankhamun\'s tomb, showing its ancient importance.',
+                growingRegions: 'The best quality black cumin comes from:',
+                regionsList: [
+                    'Middle East - original growing region',
+                    'India - major producer of quality seeds',
+                    'Egypt - known for traditional cultivation',
+                    'Mediterranean region - smaller production',
+                    'North Africa - traditional growing areas'
+                ],
+                processingMethod: 'Our careful processing preserves quality:',
+                processList: [
+                    'Selection of premium quality plants',
+                    'Gentle harvesting to prevent damage',
+                    'Natural drying in shade',
+                    'Mechanical cleaning and sorting',
+                    'Quality testing for purity',
+                    'Careful packaging to preserve freshness'
+                ],
+                qualityStandards: 'Our black cumin meets international quality standards including ISO, FSSAI, and organic certifications where applicable.'
+            },
+            'celery-seeds': {
+                name: 'Celery Seeds',
+                description: 'Our premium celery seeds are harvested from the finest celery plants, offering a strong, concentrated celery flavor with slight bitter notes. These tiny seeds pack a powerful punch and are perfect for adding depth to dishes where fresh celery would be impractical.',
+                color: 'Light to dark brown',
+                moisture: 'Max 7%',
+                size: '1-2mm diameter',
+                packaging: '25kg, 50kg bags or as per requirement',
+                origin: 'India/France',
+                purity: '99%',
+                storage: 'Store in a cool, dry place away from direct sunlight. Keep in airtight containers to maintain freshness. Ideal storage temperature is below 25°C with relative humidity below 60%.',
+                culinaryUses: 'Celery seeds are versatile in cooking:',
+                culinaryList: [
+                    'Essential in pickling spice blends',
+                    'Used in coleslaw and potato salads',
+                    'Flavoring for Bloody Mary cocktails',
+                    'Added to breads and crackers',
+                    'Used in salad dressings and marinades',
+                    'Seasoning for soups and stews'
+                ],
+                industrialUses: 'Beyond culinary applications:',
+                industrialList: [
+                    'Used in traditional medicine for joint health',
+                    'Essential oil used in aromatherapy',
+                    'Ingredient in natural health supplements',
+                    'Used in some cosmetic preparations',
+                    'Flavoring agent in food industry'
+                ],
+                varietiesDescription: 'We offer several varieties:',
+                varieties: [
+                    {
+                        name: 'Premium Celery Seeds',
+                        details: '<span class="font-medium">Color:</span> Dark brown<br><span class="font-medium">Size:</span> 1-2mm<br><span class="font-medium">Aroma:</span> Strong, concentrated<br><span class="font-medium">Use:</span> Premium culinary applications'
+                    },
+                    {
+                        name: 'Organic Celery Seeds',
+                        details: '<span class="font-medium">Color:</span> Light brown<br><span class="font-medium">Size:</span> 1-2mm<br><span class="font-medium">Aroma:</span> Mild, herbal<br><span class="font-medium">Use:</span> Organic food products'
+                    },
+                    {
+                        name: 'Celery Salt',
+                        details: '<span class="font-medium">Form:</span> Ground with salt<br><span class="font-medium">Color:</span> Light brown<br><span class="font-medium">Aroma:</span> Balanced<br><span class="font-medium">Use:</span> Ready-to-use seasoning'
+                    }
+                ],
+                namesDescription: 'Celery seeds are known by various names:',
+                names: {
+                    indian: [
+                        ['Hindi', 'Shalari'],
+                        ['Tamil', 'Celery vitai'],
+                        ['Telugu', 'Celery ginjalu'],
+                        ['Kannada', 'Celery bija'],
+                        ['Malayalam', 'Celery vittana'],
+                        ['Bengali', 'Celery bij'],
+                        ['Gujarati', 'Celery bij'],
+                        ['Marathi', 'Celery bi']
+                    ],
+                    international: [
+                        ['French', 'Graines de céleri'],
+                        ['German', 'Selleriesamen'],
+                        ['Italian', 'Semi di sedano'],
+                        ['Spanish', 'Semillas de apio'],
+                        ['Dutch', 'Selderijzaad'],
+                        ['Portuguese', 'Sementes de aipo'],
+                        ['Russian', 'Semyena sel\'dereya'],
+                        ['Chinese', 'Qin cai zi']
+                    ]
+                },
+                originDescription: 'Celery seeds come from the same plant as stalk celery (Apium graveolens), which originated in the Mediterranean region. The seeds have been used since ancient times.',
+                growingRegions: 'The best quality comes from:',
+                regionsList: [
+                    'India - major producer',
+                    'France - known for premium quality',
+                    'United States - commercial production',
+                    'China - large-scale cultivation',
+                    'Eastern Europe - traditional growing areas'
+                ],
+                processingMethod: 'Our careful processing:',
+                processList: [
+                    'Selection of premium quality plants',
+                    'Gentle harvesting at optimal maturity',
+                    'Natural drying process',
+                    'Mechanical cleaning and sorting',
+                    'Quality testing for aroma and color',
+                    'Packaging in moisture-proof materials'
+                ],
+                qualityStandards: 'Our celery seeds meet international quality standards including ISO, FSSAI, and USDA specifications.'
+            },
+            'ginger-fried': {
+                name: 'Ginger Fried',
+                description: 'Our premium fried ginger is made from carefully selected fresh ginger roots that are peeled, sliced, and fried to perfection. This product offers concentrated ginger flavor with a crispy texture, perfect for adding to dishes where fresh ginger would be impractical.',
+                color: 'Golden brown',
+                moisture: 'Max 6%',
+                size: '3-5mm pieces',
+                packaging: '25kg, 50kg bags or as per requirement',
+                origin: 'Kerala, India',
+                purity: '98%',
+                storage: 'Store in a cool, dry place away from direct sunlight. Keep in airtight containers to maintain crispness. Ideal storage temperature is below 25°C with relative humidity below 60%.',
+                culinaryUses: 'Fried ginger is versatile in cooking:',
+                culinaryList: [
+                    'Added to stir-fries and Asian dishes',
+                    'Used in soups and noodle dishes',
+                    'Flavoring for tea and herbal drinks',
+                    'Added to baked goods and desserts',
+                    'Used in spice blends and marinades',
+                    'Garnish for salads and rice dishes'
+                ],
+                industrialUses: 'Beyond culinary applications:',
+                industrialList: [
+                    'Used in traditional medicine for digestion',
+                    'Ingredient in natural health supplements',
+                    'Flavoring agent in food industry',
+                    'Used in some cosmetic preparations',
+                    'Component of herbal remedies'
+                ],
+                varietiesDescription: 'We offer several varieties:',
+                varieties: [
+                    {
+                        name: 'Premium Fried Ginger',
+                        details: '<span class="font-medium">Color:</span> Golden brown<br><span class="font-medium">Size:</span> 3-5mm<br><span class="font-medium">Aroma:</span> Strong, spicy<br><span class="font-medium">Use:</span> Premium culinary applications'
+                    },
+                    {
+                        name: 'Organic Fried Ginger',
+                        details: '<span class="font-medium">Color:</span> Light brown<br><span class="font-medium">Size:</span> 3-5mm<br><span class="font-medium">Aroma:</span> Mild, sweet<br><span class="font-medium">Use:</span> Organic food products'
+                    },
+                    {
+                        name: 'Ginger Powder',
+                        details: '<span class="font-medium">Form:</span> Ground<br><span class="font-medium">Color:</span> Light brown<br><span class="font-medium">Aroma:</span> Intense<br><span class="font-medium">Use:</span> Ready-to-use seasoning'
+                    }
+                ],
+                namesDescription: 'Ginger is known by various names:',
+                names: {
+                    indian: [
+                        ['Hindi', 'Adrak'],
+                        ['Tamil', 'Inji'],
+                        ['Telugu', 'Allam'],
+                        ['Kannada', 'Shunti'],
+                        ['Malayalam', 'Inchi'],
+                        ['Bengali', 'Ada'],
+                        ['Gujarati', 'Adu'],
+                        ['Marathi', 'Ale']
+                    ],
+                    international: [
+                        ['French', 'Gingembre'],
+                        ['German', 'Ingwer'],
+                        ['Italian', 'Zenzero'],
+                        ['Spanish', 'Jengibre'],
+                        ['Arabic', 'Zanjabeel'],
+                        ['Chinese', 'Jiang'],
+                        ['Japanese', 'Shōga'],
+                        ['Russian', 'Imbir']
+                    ]
+                },
+                originDescription: 'Ginger originated in Southeast Asia and has been cultivated for thousands of years. It was one of the first spices exported from the Orient.',
+                growingRegions: 'The best quality comes from:',
+                regionsList: [
+                    'Kerala, India - known for premium quality',
+                    'China - largest producer',
+                    'Nigeria - significant production',
+                    'Thailand - known for aromatic varieties',
+                    'Jamaica - prized for mild flavor'
+                ],
+                processingMethod: 'Our careful processing:',
+                processList: [
+                    'Selection of premium quality roots',
+                    'Thorough cleaning and peeling',
+                    'Precision slicing to uniform thickness',
+                    'Controlled frying at optimal temperature',
+                    'Quality testing for crispness and flavor',
+                    'Packaging in moisture-proof materials'
+                ],
+                qualityStandards: 'Our fried ginger meets international quality standards including ISO, FSSAI, and USDA specifications.'
+            },
+            'nutmeg-mace': {
+                name: 'Nutmeg & Mace',
+                description: 'Our premium nutmeg and mace come from the same fruit (Myristica fragrans) - nutmeg being the seed and mace being the lacy covering (aril) of the seed. Both offer warm, sweet flavors with nutmeg being slightly sweeter and mace more delicate. These spices are hand-selected for their superior quality and aroma.',
+                color: 'Nutmeg: Brown; Mace: Orange-red',
+                moisture: 'Max 8%',
+                size: 'Nutmeg: 20-30mm; Mace: flakes',
+                packaging: '25kg, 50kg bags or as per requirement',
+                origin: 'Indonesia/India',
+                purity: '99%',
+                storage: 'Store in a cool, dry place away from direct sunlight. Keep in airtight containers to maintain freshness. Whole nutmeg retains flavor longer than ground. Ideal storage temperature is below 25°C with relative humidity below 60%.',
+                culinaryUses: 'Nutmeg and mace are versatile in cooking:',
+                culinaryList: [
+                    'Essential in baking for cakes and cookies',
+                    'Used in béchamel sauce and cream dishes',
+                    'Flavoring for eggnog and warm drinks',
+                    'Added to meat rubs and sausages',
+                    'Used in spice blends like garam masala',
+                    'Flavoring for vegetables like spinach'
+                ],
+                industrialUses: 'Beyond culinary applications:',
+                industrialList: [
+                    'Used in traditional medicine for digestion',
+                    'Essential oil used in aromatherapy',
+                    'Ingredient in natural health supplements',
+                    'Used in some cosmetic preparations',
+                    'Flavoring agent in food industry'
+                ],
+                varietiesDescription: 'We offer several varieties:',
+                varieties: [
+                    {
+                        name: 'Whole Nutmeg',
+                        details: '<span class="font-medium">Color:</span> Brown<br><span class="font-medium">Size:</span> 20-30mm<br><span class="font-medium">Aroma:</span> Warm, sweet<br><span class="font-medium">Use:</span> Premium culinary applications'
+                    },
+                    {
+                        name: 'Mace Blades',
+                        details: '<span class="font-medium">Color:</span> Orange-red<br><span class="font-medium">Form:</span> Whole blades<br><span class="font-medium">Aroma:</span> Delicate, floral<br><span class="font-medium">Use:</span> Gourmet cooking'
+                    },
+                    {
+                        name: 'Ground Nutmeg',
+                        details: '<span class="font-medium">Form:</span> Powder<br><span class="font-medium">Color:</span> Light brown<br><span class="font-medium">Aroma:</span> Intense<br><span class="font-medium">Use:</span> Ready-to-use seasoning'
+                    }
+                ],
+                namesDescription: 'Nutmeg and mace are known by various names:',
+                names: {
+                    indian: [
+                        ['Hindi', 'Jaiphal (nutmeg), Javitri (mace)'],
+                        ['Tamil', 'Jathikai (nutmeg), Pathiri (mace)'],
+                        ['Telugu', 'Jajikaya (nutmeg), Jajipatri (mace)'],
+                        ['Kannada', 'Jaikai (nutmeg), Japatri (mace)'],
+                        ['Malayalam', 'Jathikka (nutmeg), Pathiri (mace)'],
+                        ['Bengali', 'Jaiphal (nutmeg), Javitri (mace)'],
+                        ['Gujarati', 'Jaiphal (nutmeg), Javatri (mace)'],
+                        ['Marathi', 'Jaiphal (nutmeg), Jaipatri (mace)']
+                    ],
+                    international: [
+                        ['French', 'Noix de muscade (nutmeg), Macis (mace)'],
+                        ['German', 'Muskatnuss (nutmeg), Muskatblüte (mace)'],
+                        ['Italian', 'Noce moscata (nutmeg), Macis (mace)'],
+                        ['Spanish', 'Nuez moscada (nutmeg), Macis (mace)'],
+                        ['Dutch', 'Nootmuskaat (nutmeg), Foelie (mace)'],
+                        ['Arabic', 'Jawz at-tiyb (nutmeg), Basbasa (mace)'],
+                        ['Chinese', 'Rou dou kou (nutmeg), Rou dou kou pi (mace)'],
+                        ['Japanese', 'Nikuzuku (nutmeg), Meisu (mace)']
+                    ]
+                },
+                originDescription: 'Nutmeg is native to the Banda Islands of Indonesia and was highly prized in medieval Europe. The Dutch maintained a monopoly on nutmeg production for centuries.',
+                growingRegions: 'The best quality comes from:',
+                regionsList: [
+                    'Indonesia - original growing region',
+                    'Grenada - known as "Isle of Spice"',
+                    'India - Kerala and Tamil Nadu',
+                    'Sri Lanka - small production',
+                    'Caribbean islands - introduced cultivation'
+                ],
+                processingMethod: 'Our careful processing:',
+                processList: [
+                    'Hand selection of premium quality fruits',
+                    'Careful separation of mace from nutmeg',
+                    'Natural drying process',
+                    'Quality sorting and grading',
+                    'Precision grinding (for powder products)',
+                    'Packaging in moisture-proof materials'
+                ],
+                qualityStandards: 'Our nutmeg and mace meet international quality standards including ISO, FSSAI, and USDA specifications.'
+            },
+
+            'coriander-seeds': {
+                name: 'Coriander Seeds',
+                description: 'Our premium coriander seeds are carefully selected from the finest crops, known for their aromatic fragrance and slightly citrusy flavor. These golden-brown seeds are sun-dried to perfection, retaining their essential oils and nutritional value.',
+                color: 'Golden brown',
+                moisture: 'Max 9%',
+                size: '3-5mm',
+                packaging: '25kg, 50kg bags',
+                shelfLife: '24 months',
+                purity: '99.5%',
+                origin: 'India',
+                rating: '4.8',
+                reviews: '120+ Reviews',
+                storage: 'Store in a cool, dry place away from direct sunlight. Keep in airtight containers to maintain freshness and prevent moisture absorption. Ideal storage temperature is below 25°C with relative humidity below 65%.',
+                culinaryUses: 'Coriander seeds are a versatile spice used in various cuisines around the world. They add a warm, nutty, and slightly citrusy flavor to dishes:',
+                culinaryList: [
+                    'Essential in Indian curries, dals, and spice blends like garam masala',
+                    'Used in pickling spices and brines',
+                    'Flavoring for sausages and cured meats',
+                    'Baking ingredient in breads and pastries',
+                    'Brewing component in some Belgian wheat beers',
+                    'Flavoring for stews and soups'
+                ],
+                industrialUses: 'Beyond culinary applications, coriander seeds have several health benefits and other uses:',
+                industrialList: [
+                    'Digestive aid and carminative properties',
+                    'Traditional remedy for insomnia and anxiety',
+                    'Natural diuretic',
+                    'Used in aromatherapy and perfumery',
+                    'Component in some natural skincare products'
+                ],
+                varietiesDescription: 'We offer several varieties of coriander seeds to meet different culinary and industrial needs:',
+                varieties: [
+                    {
+                        name: 'Indian Coriander (Regular)',
+                        details: '<span class="font-medium">Size:</span> 3-5mm<br><span class="font-medium">Color:</span> Golden brown<br><span class="font-medium">Aroma:</span> Strong, citrusy<br><span class="font-medium">Use:</span> General culinary applications'
+                    },
+                    {
+                        name: 'European Coriander',
+                        details: '<span class="font-medium">Size:</span> 2-4mm<br><span class="font-medium">Color:</span> Light brown<br><span class="font-medium">Aroma:</span> Mild, sweet<br><span class="font-medium">Use:</span> Baking and confectionery'
+                    },
+                    {
+                        name: 'Organic Coriander',
+                        details: '<span class="font-medium">Size:</span> 3-5mm<br><span class="font-medium">Color:</span> Dark brown<br><span class="font-medium">Aroma:</span> Intense, earthy<br><span class="font-medium">Use:</span> Health food and organic products'
+                    }
+                ],
+                namesDescription: 'Coriander is known by various names across different cultures and regions:',
+                names: {
+                    indian: [
+                        ['Hindi', 'Dhaniya'],
+                        ['Tamil', 'Kothamalli'],
+                        ['Telugu', 'Dhaniyalu'],
+                        ['Kannada', 'Kottambari'],
+                        ['Malayalam', 'Malli'],
+                        ['Bengali', 'Dhone'],
+                        ['Gujarati', 'Dhana'],
+                        ['Marathi', 'Dhane']
+                    ],
+                    international: [
+                        ['Spanish', 'Cilantro (leaves), Coriandro (seeds)'],
+                        ['French', 'Coriandre'],
+                        ['German', 'Koriander'],
+                        ['Italian', 'Coriandolo'],
+                        ['Arabic', 'Kuzbara'],
+                        ['Chinese', 'Hu sui'],
+                        ['Japanese', 'Koyendoro'],
+                        ['Russian', 'Koriandr']
+                    ]
+                },
+                originDescription: 'Coriander has been cultivated since ancient times, with evidence of its use dating back to 5000 BC. It is native to regions spanning from Southern Europe and Northern Africa to Southwestern Asia.',
+                growingRegions: 'The best quality coriander seeds come from these regions:',
+                regionsList: [
+                    'Rajasthan, India - largest producer with strong aroma varieties',
+                    'Madhya Pradesh, India - known for high oil content',
+                    'Morocco - produces sweet and mild varieties',
+                    'Russia - cold-resistant varieties',
+                    'Canada - premium organic production'
+                ],
+                processingMethod: 'Our coriander seeds are produced through careful cultivation:',
+                processList: [
+                    'Selection of premium quality seeds for planting',
+                    'Organic farming practices with natural fertilizers',
+                    'Careful irrigation management',
+                    'Harvesting at peak maturity',
+                    'Sun-drying to preserve essential oils',
+                    'Mechanical cleaning and sorting'
+                ],
+                qualityStandards: 'Our coriander seeds meet international quality standards including ISO, FSSAI, USDA Organic, and EU Organic specifications. We maintain strict quality control throughout the production process to ensure food safety and premium quality.',
+                nutrition: [
+                    { name: 'Dietary Fiber', value: 42 },
+                    { name: 'Protein', value: 12 },
+                    { name: 'Iron', value: 85 },
+                    { name: 'Calcium', value: 65 },
+                    { name: 'Vitamin C', value: 35 }
+                ],
+                relatedProducts: ['garlic', 'tamarind', 'bay-leaf', 'big-cardamon', 'cumin-seeds']
+            },
+            'garlic': {
+                name: 'Garlic',
+                description: 'Our premium garlic is sun-dried to perfection, retaining its strong aroma and health benefits. Carefully selected from the finest crops, our garlic is known for its pungent flavor and medicinal properties.',
+                color: 'Cream to light brown',
+                moisture: 'Max 6.5%',
+                size: '3-5cm bulbs',
+                packaging: '10kg, 20kg mesh bags',
+                shelfLife: '18 months',
+                purity: '99%',
+                origin: 'India',
+                rating: '4.7',
+                reviews: '95+ Reviews',
+                storage: 'Store in a cool, dry place with good ventilation. Avoid plastic bags as they can cause condensation. Ideal storage temperature is between 15-18°C with relative humidity below 60%.',
+                culinaryUses: 'Garlic is a fundamental flavoring in cuisines worldwide and has numerous culinary applications:',
+                culinaryList: [
+                    'Essential in Indian curries, chutneys, and pickles',
+                    'Base for sauces like aioli and toum',
+                    'Flavoring for meats, seafood, and vegetables',
+                    'Key ingredient in Mediterranean and Asian cuisines',
+                    'Roasted as a spread or condiment',
+                    'Pickled in vinegar or oil'
+                ],
+                industrialUses: 'Beyond culinary uses, garlic has significant health benefits and other applications:',
+                industrialList: [
+                    'Natural antibiotic and immune booster',
+                    'Cardiovascular health support',
+                    'Antioxidant properties',
+                    'Used in traditional medicine systems',
+                    'Component in some natural pesticides'
+                ],
+                varietiesDescription: 'We offer several varieties of garlic to meet different culinary and industrial needs:',
+                varieties: [
+                    {
+                        name: 'Indian Garlic (Regular)',
+                        details: '<span class="font-medium">Size:</span> Medium bulbs<br><span class="font-medium">Color:</span> White with purple tinge<br><span class="font-medium">Aroma:</span> Strong, pungent<br><span class="font-medium">Use:</span> General culinary applications'
+                    },
+                    {
+                        name: 'Chinese Garlic',
+                        details: '<span class="font-medium">Size:</span> Large bulbs<br><span class="font-medium">Color:</span> Pure white<br><span class="font-medium">Aroma:</span> Mild<br><span class="font-medium">Use:</span> Commercial food processing'
+                    },
+                    {
+                        name: 'Organic Garlic',
+                        details: '<span class="font-medium">Size:</span> Small to medium<br><span class="font-medium">Color:</span> Off-white<br><span class="font-medium">Aroma:</span> Intense, complex<br><span class="font-medium">Use:</span> Health food and organic products'
+                    }
+                ],
+                namesDescription: 'Garlic is known by various names across different cultures and regions:',
+                names: {
+                    indian: [
+                        ['Hindi', 'Lahsun'],
+                        ['Tamil', 'Poondu'],
+                        ['Telugu', 'Vellulli'],
+                        ['Kannada', 'Bellulli'],
+                        ['Malayalam', 'Veluthulli'],
+                        ['Bengali', 'Rasuna'],
+                        ['Gujarati', 'Lasun'],
+                        ['Marathi', 'Lasun']
+                    ],
+                    international: [
+                        ['Spanish', 'Ajo'],
+                        ['French', 'Ail'],
+                        ['German', 'Knoblauch'],
+                        ['Italian', 'Aglio'],
+                        ['Arabic', 'Thum'],
+                        ['Chinese', 'Da suan'],
+                        ['Japanese', 'Ninniku'],
+                        ['Russian', 'Chesnok']
+                    ]
+                },
+                originDescription: 'Garlic has been cultivated for over 5,000 years and is native to Central Asia. It has been used both as a food flavoring and as a traditional medicine in many cultures throughout history.',
+                growingRegions: 'The best quality garlic comes from these regions:',
+                regionsList: [
+                    'Madhya Pradesh, India - known for strong flavor',
+                    'Rajasthan, India - produces large quantities',
+                    'China - world\'s largest producer',
+                    'Spain - premium quality varieties',
+                    'California, USA - commercial production'
+                ],
+                processingMethod: 'Our garlic is processed through careful methods to preserve quality:',
+                processList: [
+                    'Selection of premium quality bulbs',
+                    'Natural sun-drying process',
+                    'Careful cleaning and sorting',
+                    'Grading by size and quality',
+                    'Quality testing for moisture and purity',
+                    'Packaging in breathable materials'
+                ],
+                qualityStandards: 'Our garlic meets international quality standards including ISO, FSSAI, and USDA specifications. We maintain strict hygiene protocols throughout the production process to ensure food safety.',
+                nutrition: [
+                    { name: 'Allicin Content', value: 90 },
+                    { name: 'Vitamin B6', value: 65 },
+                    { name: 'Vitamin C', value: 38 },
+                    { name: 'Manganese', value: 73 },
+                    { name: 'Selenium', value: 25 }
+                ],
+                relatedProducts: ['coriander-seeds', 'tamarind', 'bay-leaf', 'cumin-seeds', 'black-pepper']
+            },
+            'tamarind': {
+                name: 'Tamarind',
+                description: 'Our premium tamarind is carefully selected for its perfect balance of sweet and sour flavors. Sourced from the finest orchards, our tamarind is naturally sun-dried and hand-sorted to ensure consistent quality and taste.',
+                color: 'Dark brown to reddish-brown',
+                moisture: 'Max 20%',
+                size: 'Whole pods or pulp blocks',
+                packaging: '25kg, 50kg jute bags or plastic-lined boxes',
+                shelfLife: '24 months',
+                purity: '99%',
+                origin: 'India',
+                rating: '4.6',
+                reviews: '85+ Reviews',
+                storage: 'Store in a cool, dry place away from direct sunlight. For pulp blocks, keep in airtight containers once opened. Ideal storage temperature is below 25°C with relative humidity below 65%.',
+                culinaryUses: 'Tamarind is a versatile ingredient used in various cuisines for its unique sweet-sour flavor:',
+                culinaryList: [
+                    'Essential in Indian curries, chutneys, and rasam',
+                    'Base for Southeast Asian sauces and soups',
+                    'Key ingredient in Mexican candies and beverages',
+                    'Flavoring agent in Worcestershire sauce',
+                    'Used in Middle Eastern meat dishes',
+                    'Component in refreshing drinks and sherbets'
+                ],
+                industrialUses: 'Beyond culinary applications, tamarind has several other uses:',
+                industrialList: [
+                    'Natural digestive aid',
+                    'Metal polish due to tartaric acid content',
+                    'Traditional medicine for various ailments',
+                    'Textile dye and mordant',
+                    'Component in some natural cleaning products'
+                ],
+                varietiesDescription: 'We offer several varieties of tamarind to meet different culinary and industrial needs:',
+                varieties: [
+                    {
+                        name: 'Indian Tamarind (Regular)',
+                        details: '<span class="font-medium">Form:</span> Whole pods or pulp blocks<br><span class="font-medium">Color:</span> Dark brown<br><span class="font-medium">Flavor:</span> Balanced sweet-sour<br><span class="font-medium">Use:</span> General culinary applications'
+                    },
+                    {
+                        name: 'Sweet Tamarind',
+                        details: '<span class="font-medium">Form:</span> Whole pods<br><span class="font-medium">Color:</span> Light brown<br><span class="font-medium">Flavor:</span> Predominantly sweet<br><span class="font-medium">Use:</span> Confectionery and snacks'
+                    },
+                    {
+                        name: 'Seedless Tamarind',
+                        details: '<span class="font-medium">Form:</span> Pulp blocks<br><span class="font-medium">Color:</span> Reddish-brown<br><span class="font-medium">Flavor:</span> Intense sour<br><span class="font-medium">Use:</span> Commercial food processing'
+                    }
+                ],
+                namesDescription: 'Tamarind is known by various names across different cultures and regions:',
+                names: {
+                    indian: [
+                        ['Hindi', 'Imli'],
+                        ['Tamil', 'Puli'],
+                        ['Telugu', 'Chintapandu'],
+                        ['Kannada', 'Hunase'],
+                        ['Malayalam', 'Puli'],
+                        ['Bengali', 'Tentul'],
+                        ['Gujarati', 'Amli'],
+                        ['Marathi', 'Chinch']
+                    ],
+                    international: [
+                        ['Spanish', 'Tamarindo'],
+                        ['French', 'Tamarindier'],
+                        ['German', 'Tamarinde'],
+                        ['Italian', 'Tamarindo'],
+                        ['Arabic', 'Tamar hindi'],
+                        ['Chinese', 'Suan jiao'],
+                        ['Japanese', 'Tamarindo'],
+                        ['Russian', 'Tamarind']
+                    ]
+                },
+                originDescription: 'Tamarind is native to tropical Africa but has been cultivated in India for so long that it is often considered indigenous. It has been an important crop in India for at least 4,000 years.',
+                growingRegions: 'The best quality tamarind comes from these regions:',
+                regionsList: [
+                    'Madhya Pradesh, India - known for balanced flavor',
+                    'Maharashtra, India - produces large quantities',
+                    'Thailand - sweet varieties',
+                    'Mexico - commercial production',
+                    'Sudan - wild varieties'
+                ],
+                processingMethod: 'Our tamarind is processed through traditional methods to preserve quality:',
+                processList: [
+                    'Selection of ripe pods',
+                    'Natural sun-drying process',
+                    'Hand-shelling and deseeding',
+                    'Pressing into pulp blocks (for some varieties)',
+                    'Quality testing for moisture and purity',
+                    'Packaging in appropriate materials'
+                ],
+                qualityStandards: 'Our tamarind meets international quality standards including ISO, FSSAI, and USDA specifications. We maintain strict hygiene protocols throughout the production process to ensure food safety.',
+                nutrition: [
+                    { name: 'Tartaric Acid', value: 75 },
+                    { name: 'Vitamin B1', value: 34 },
+                    { name: 'Potassium', value: 62 },
+                    { name: 'Magnesium', value: 45 },
+                    { name: 'Dietary Fiber', value: 55 }
+                ],
+                relatedProducts: ['coriander-seeds', 'garlic', 'bay-leaf', 'black-pepper', 'cumin-seeds']
+            },
+            'bay-leaf': {
+                name: 'Bay Leaf',
+                description: 'Our premium bay leaves are hand-picked from mature trees, carefully dried to preserve their aromatic oils and distinctive flavor. These fragrant leaves add depth and complexity to dishes with their subtle bitterness and herbal aroma.',
+                color: 'Olive green to dark green',
+                moisture: 'Max 10%',
+                size: '5-8cm length',
+                packaging: '5kg, 10kg carton boxes',
+                shelfLife: '36 months',
+                purity: '99.5%',
+                origin: 'India',
+                rating: '4.5',
+                reviews: '75+ Reviews',
+                storage: 'Store in a cool, dry place away from direct sunlight. Keep in airtight containers to maintain aroma. Ideal storage temperature is below 25°C with relative humidity below 60%.',
+                culinaryUses: 'Bay leaves are a classic culinary herb used to flavor a wide variety of dishes:',
+                culinaryList: [
+                    'Essential in soups, stews, and stocks',
+                    'Flavoring for meats and seafood dishes',
+                    'Key ingredient in biryanis and pulaos',
+                    'Used in pickling and preserving',
+                    'Component in bouquet garni',
+                    'Flavoring for sauces and gravies'
+                ],
+                industrialUses: 'Beyond culinary applications, bay leaves have several other uses:',
+                industrialList: [
+                    'Traditional medicine for respiratory issues',
+                    'Natural insect repellent',
+                    'Aromatherapy and potpourri',
+                    'Component in some cosmetic products',
+                    'Used in traditional Ayurvedic medicine'
+                ],
+                varietiesDescription: 'We offer several varieties of bay leaves to meet different culinary needs:',
+                varieties: [
+                    {
+                        name: 'Indian Bay Leaf (Tej Patta)',
+                        details: '<span class="font-medium">Size:</span> 5-8cm<br><span class="font-medium">Color:</span> Dark green<br><span class="font-medium">Aroma:</span> Strong, cinnamon-like<br><span class="font-medium">Use:</span> Indian cuisine'
+                    },
+                    {
+                        name: 'Mediterranean Bay Leaf',
+                        details: '<span class="font-medium">Size:</span> 6-10cm<br><span class="font-medium">Color:</span> Olive green<br><span class="font-medium">Aroma:</span> Subtle, herbal<br><span class="font-medium">Use:</span> European cuisine'
+                    },
+                    {
+                        name: 'California Bay Leaf',
+                        details: '<span class="font-medium">Size:</span> 8-12cm<br><span class="font-medium">Color:</span> Bright green<br><span class="font-medium">Aroma:</span> Intense, eucalyptus-like<br><span class="font-medium">Use:</span> Strong flavor applications'
+                    }
+                ],
+                namesDescription: 'Bay leaf is known by various names across different cultures and regions:',
+                names: {
+                    indian: [
+                        ['Hindi', 'Tej Patta'],
+                        ['Tamil', 'Birinji Ilai'],
+                        ['Telugu', 'Talisha Chettu'],
+                        ['Kannada', 'Tamalpatra'],
+                        ['Malayalam', 'Karuga Vayana'],
+                        ['Bengali', 'Tej Pata'],
+                        ['Gujarati', 'Tamal Patra'],
+                        ['Marathi', 'Tamal Patra']
+                    ],
+                    international: [
+                        ['Spanish', 'Laurel'],
+                        ['French', 'Laurier'],
+                        ['German', 'Lorbeer'],
+                        ['Italian', 'Alloro'],
+                        ['Arabic', 'Waraq Ghar'],
+                        ['Chinese', 'Yue gui'],
+                        ['Japanese', 'Gekkeiju'],
+                        ['Russian', 'Lavr']
+                    ]
+                },
+                originDescription: 'Bay leaves come from several plants of the Lauraceae family. The Indian bay leaf (Tej Patta) is from a different species than the Mediterranean bay leaf, though both are used similarly in cooking. Bay leaves have been used since ancient times for both culinary and medicinal purposes.',
+                growingRegions: 'The best quality bay leaves come from these regions:',
+                regionsList: [
+                    'Himalayan foothills, India - for Tej Patta',
+                    'Turkey - for Mediterranean varieties',
+                    'California, USA - for strong-flavored varieties',
+                    'Greece - premium quality',
+                    'Morocco - commercial production'
+                ],
+                processingMethod: 'Our bay leaves are processed through careful methods to preserve quality:',
+                processList: [
+                    'Selection of mature leaves',
+                    'Natural shade-drying process',
+                    'Hand-sorting and cleaning',
+                    'Quality testing for aroma and color',
+                    'Packaging in moisture-proof materials'
+                ],
+                qualityStandards: 'Our bay leaves meet international quality standards including ISO, FSSAI, and USDA specifications. We maintain strict quality control throughout the production process to ensure premium quality.',
+                nutrition: [
+                    { name: 'Essential Oils', value: 85 },
+                    { name: 'Vitamin A', value: 65 },
+                    { name: 'Vitamin C', value: 45 },
+                    { name: 'Iron', value: 55 },
+                    { name: 'Manganese', value: 40 }
+                ],
+                relatedProducts: ['coriander-seeds', 'garlic', 'tamarind', 'big-cardamon', 'black-pepper']
+            },
+            'big-cardamon': {
+                name: 'Big Cardamom',
+                description: 'Our premium big cardamom (black cardamom) is carefully harvested from mature pods, sun-dried to perfection to develop its distinctive smoky aroma. These large, dark brown pods contain numerous small seeds with a complex flavor profile combining smokiness, camphor, and mild sweetness.',
+                color: 'Dark brown to black',
+                moisture: 'Max 12%',
+                size: '2-3cm pods',
+                packaging: '10kg, 25kg jute bags',
+                shelfLife: '36 months',
+                purity: '99%',
+                origin: 'India',
+                rating: '4.4',
+                reviews: '65+ Reviews',
+                storage: 'Store in a cool, dry place away from direct sunlight. Keep in airtight containers to maintain aroma. Ideal storage temperature is below 25°C with relative humidity below 60%.',
+                culinaryUses: 'Big cardamom is an essential spice in many Asian cuisines, valued for its unique smoky flavor:',
+                culinaryList: [
+                    'Key ingredient in Indian garam masala',
+                    'Flavoring for biryanis and pulaos',
+                    'Used in meat curries and stews',
+                    'Component in Chinese five-spice powder',
+                    'Flavoring for pickles and chutneys',
+                    'Used in some Scandinavian baked goods'
+                ],
+                industrialUses: 'Beyond culinary applications, big cardamom has several other uses:',
+                industrialList: [
+                    'Traditional medicine for digestive issues',
+                    'Aromatherapy and perfumery',
+                    'Component in some natural mouthwashes',
+                    'Used in Ayurvedic preparations',
+                    'Flavoring for some tobacco products'
+                ],
+                varietiesDescription: 'We offer several varieties of big cardamom to meet different culinary needs:',
+                varieties: [
+                    {
+                        name: 'Indian Black Cardamom',
+                        details: '<span class="font-medium">Size:</span> 2-3cm pods<br><span class="font-medium">Color:</span> Dark brown<br><span class="font-medium">Aroma:</span> Intense, smoky<br><span class="font-medium">Use:</span> Indian cuisine'
+                    },
+                    {
+                        name: 'Nepalese Black Cardamom',
+                        details: '<span class="font-medium">Size:</span> 3-4cm pods<br><span class="font-medium">Color:</span> Black<br><span class="font-medium">Aroma:</span> Strong, camphor-like<br><span class="font-medium">Use:</span> Premium applications'
+                    },
+                    {
+                        name: 'Chinese Black Cardamom',
+                        details: '<span class="font-medium">Size:</span> 1.5-2.5cm pods<br><span class="font-medium">Color:</span> Brown<br><span class="font-medium">Aroma:</span> Mild, less smoky<br><span class="font-medium">Use:</span> Chinese cuisine'
+                    }
+                ],
+                namesDescription: 'Big cardamom is known by various names across different cultures and regions:',
+                names: {
+                    indian: [
+                        ['Hindi', 'Badi Elaichi'],
+                        ['Tamil', 'Periya Elakkai'],
+                        ['Telugu', 'Pedda Elakkulu'],
+                        ['Kannada', 'Dodda Elakki'],
+                        ['Malayalam', 'Valiya Elakka'],
+                        ['Bengali', 'Boro Elach'],
+                        ['Gujarati', 'Moti Elchi'],
+                        ['Marathi', 'Mothi Elachi']
+                    ],
+                    international: [
+                        ['Spanish', 'Cardamomo negro'],
+                        ['French', 'Cardamome noire'],
+                        ['German', 'Schwarzer Kardamom'],
+                        ['Italian', 'Cardamomo nero'],
+                        ['Arabic', 'Qaqulla sawda'],
+                        ['Chinese', 'Sha ren'],
+                        ['Japanese', 'Kuro karudamon'],
+                        ['Russian', 'Chyornyi kardamon']
+                    ]
+                },
+                originDescription: 'Big cardamom is native to the eastern Himalayan region and has been cultivated in India, Nepal, and Bhutan for centuries. Unlike green cardamom, it is typically dried over fire, which gives it its characteristic smoky flavor.',
+                growingRegions: 'The best quality big cardamom comes from these regions:',
+                regionsList: [
+                    'Sikkim, India - premium quality',
+                    'Nepal - large, aromatic pods',
+                    'Bhutan - organic varieties',
+                    'China - commercial production',
+                    'Vietnam - smaller varieties'
+                ],
+                processingMethod: 'Our big cardamom is processed through traditional methods to preserve quality:',
+                processList: [
+                    'Selection of mature pods',
+                    'Traditional smoke-drying process',
+                    'Hand-sorting and cleaning',
+                    'Quality testing for aroma and size',
+                    'Packaging in moisture-proof materials'
+                ],
+                qualityStandards: 'Our big cardamom meets international quality standards including ISO, FSSAI, and USDA specifications. We maintain strict quality control throughout the production process to ensure premium quality.',
+                nutrition: [
+                    { name: 'Essential Oils', value: 75 },
+                    { name: 'Cineole Content', value: 70 },
+                    { name: 'Potassium', value: 45 },
+                    { name: 'Calcium', value: 35 },
+                    { name: 'Iron', value: 40 }
+                ],
+                relatedProducts: ['coriander-seeds', 'bay-leaf', 'black-pepper', 'cumin-seeds', 'cloves']
+            },
+
+            'ajwain': {
+                name: 'Ajwain Seeds',
+                description: 'Ajwain (Trachyspermum ammi), also known as carom seeds, are small, oval-shaped seeds with a bitter, pungent taste and strong aroma similar to thyme. Our premium quality ajwain seeds are carefully sourced from the best farms in Rajasthan, India, known for producing the most aromatic and flavorful ajwain.',
+                color: 'Light brown to dark brown',
+                moisture: 'Max 10%',
+                size: '1.5-2.5mm',
+                packaging: '5kg, 10kg, 25kg bags',
+                shelfLife: '12-18 months',
+                foreign: 'Max 1%',
+                storage: 'Store in a cool, dry place away from direct sunlight and moisture. Keep in airtight containers to maintain freshness and prevent loss of essential oils. Ideal storage temperature is below 25°C with relative humidity below 60%.',
+                culinaryUses: 'Ajwain seeds are widely used in Indian cuisine and have various culinary applications:',
+                culinaryList: [
+                    'Essential in flavoring breads like parathas and puris',
+                    'Used in tempering (tadka) for dals and curries',
+                    'Added to pickles for digestive benefits',
+                    'Flavoring agent in snacks and fried foods',
+                    'Used in spice blends like panch phoron',
+                    'Flavoring for biscuits and savory baked goods'
+                ],
+                medicinalUses: 'Ajwain has been used in traditional medicine for centuries due to its therapeutic properties:',
+                medicinalList: [
+                    'Relief from indigestion and flatulence',
+                    'Natural remedy for cold and cough',
+                    'Used in Ayurvedic preparations',
+                    'Essential oil used in aromatherapy',
+                    'Antimicrobial properties',
+                    'Used in herbal tooth powders'
+                ],
+                varietiesDescription: 'We offer several varieties of ajwain products to meet different culinary and industrial needs:',
+                varieties: [
+                    {
+                        name: 'Premium Ajwain Seeds',
+                        details: '<span class="font-medium">Origin:</span> Rajasthan, India<br><span class="font-medium">Color:</span> Light brown<br><span class="font-medium">Essential Oil:</span> Min 2.5%<br><span class="font-medium">Use:</span> Culinary and medicinal'
+                    },
+                    {
+                        name: 'Organic Ajwain',
+                        details: '<span class="font-medium">Certification:</span> USDA Organic, India Organic<br><span class="font-medium">Color:</span> Dark brown<br><span class="font-medium">Essential Oil:</span> Min 2%<br><span class="font-medium">Use:</span> Health food industry'
+                    },
+                    {
+                        name: 'Ajwain Powder',
+                        details: '<span class="font-medium">Mesh Size:</span> 60-80<br><span class="font-medium">Color:</span> Light brown<br><span class="font-medium">Essential Oil:</span> Min 1.8%<br><span class="font-medium">Use:</span> Seasoning blends, supplements'
+                    }
+                ],
+                namesDescription: 'Ajwain is known by various names across different cultures and regions:',
+                names: {
+                    indian: [
+                        ['Hindi', 'Ajwain'],
+                        ['Tamil', 'Omam'],
+                        ['Telugu', 'Vamu'],
+                        ['Kannada', 'Oma'],
+                        ['Malayalam', 'Ayamodakam'],
+                        ['Bengali', 'Jowan'],
+                        ['Gujarati', 'Ajmo'],
+                        ['Marathi', 'Ova']
+                    ],
+                    international: [
+                        ['English', 'Carom seeds, Bishop\'s weed'],
+                        ['Latin', 'Trachyspermum ammi'],
+                        ['Arabic', 'Kamun al-muluki'],
+                        ['French', 'Ajowan'],
+                        ['German', 'Ajowan'],
+                        ['Spanish', 'Ajowan'],
+                        ['Chinese', 'A jiao wei'],
+                        ['Persian', 'Nanakhaha']
+                    ]
+                },
+                originDescription: 'Ajwain is believed to have originated in the eastern Mediterranean region, possibly Egypt, and was introduced to India through the Middle East. It has been cultivated in India for thousands of years and is now primarily grown in Rajasthan, Gujarat, and Maharashtra.',
+                growingRegions: 'The best quality ajwain comes from these regions:',
+                regionsList: [
+                    'Rajasthan, India - produces 70% of India\'s ajwain',
+                    'Gujarat, India - known for high essential oil content',
+                    'Maharashtra, India - organic cultivation',
+                    'Iran - traditional growing region',
+                    'Egypt - original native region'
+                ],
+                cultivationProcess: 'Ajwain is cultivated as a winter crop in India:',
+                cultivationList: [
+                    'Sowing in October-November',
+                    'Requires well-drained sandy loam soil',
+                    'Minimal irrigation needed',
+                    'Harvesting in February-March',
+                    'Threshing to separate seeds',
+                    'Sun drying before packaging'
+                ],
+                qualityStandards: 'Our ajwain seeds meet international quality standards including ISO, FSSAI, and USDA specifications. We maintain strict hygiene protocols throughout the production process to ensure food safety and quality. Our ajwain is tested for essential oil content, moisture, and purity before packaging.',
+                nutritionFacts: [
+                    { name: 'Energy', value: '305 kcal' },
+                    { name: 'Protein', value: '17.1 g' },
+                    { name: 'Fat', value: '21.8 g' },
+                    { name: 'Carbohydrates', value: '43.4 g' },
+                    { name: 'Fiber', value: '39.3 g' }
+                ]
+            },
+            'clove': {
+                name: 'Clove',
+                description: 'Cloves are the aromatic flower buds of the Syzygium aromaticum tree, native to the Maluku Islands in Indonesia. Our premium quality cloves are hand-picked at the perfect stage of maturity, then carefully dried to preserve their intense aroma and flavor. Known for their warm, sweet, and slightly bitter taste, cloves are a staple in both sweet and savory dishes worldwide.',
+                color: 'Dark brown',
+                moisture: 'Max 12%',
+                size: '12-16mm length',
+                packaging: '5kg, 10kg, 25kg bags',
+                shelfLife: '24-36 months',
+                foreign: 'Max 1%',
+                storage: 'Store in a cool, dry place away from direct sunlight. Keep in airtight containers to maintain freshness and prevent loss of essential oils. Ideal storage temperature is below 25°C with relative humidity below 65%.',
+                culinaryUses: 'Cloves are widely used in global cuisines and have various culinary applications:',
+                culinaryList: [
+                    'Essential in spice blends like garam masala',
+                    'Used in mulled wines and hot beverages',
+                    'Flavoring for meats and stews',
+                    'Key ingredient in Indian biryanis',
+                    'Used in baking (gingerbread, fruitcakes)',
+                    'Flavoring for pickles and chutneys'
+                ],
+                medicinalUses: 'Cloves have been used in traditional medicine for centuries due to their therapeutic properties:',
+                medicinalList: [
+                    'Natural remedy for toothache and oral health',
+                    'Digestive aid and carminative',
+                    'Antimicrobial and antiviral properties',
+                    'Used in Ayurvedic and Chinese medicine',
+                    'Essential oil used in aromatherapy',
+                    'Anti-inflammatory properties'
+                ],
+                varietiesDescription: 'We offer several varieties of clove products to meet different culinary and industrial needs:',
+                varieties: [
+                    {
+                        name: 'Premium Whole Cloves',
+                        details: '<span class="font-medium">Origin:</span> Zanzibar, Madagascar<br><span class="font-medium">Color:</span> Dark brown<br><span class="font-medium">Essential Oil:</span> Min 15%<br><span class="font-medium">Use:</span> Culinary and medicinal'
+                    },
+                    {
+                        name: 'Organic Cloves',
+                        details: '<span class="font-medium">Certification:</span> USDA Organic, EU Organic<br><span class="font-medium">Color:</span> Dark brown<br><span class="font-medium">Essential Oil:</span> Min 14%<br><span class="font-medium">Use:</span> Health food industry'
+                    },
+                    {
+                        name: 'Clove Powder',
+                        details: '<span class="font-medium">Mesh Size:</span> 60-80<br><span class="font-medium">Color:</span> Dark brown<br><span class="font-medium">Essential Oil:</span> Min 12%<br><span class="font-medium">Use:</span> Seasoning blends, supplements'
+                    }
+                ],
+                namesDescription: 'Clove is known by various names across different cultures and regions:',
+                names: {
+                    indian: [
+                        ['Hindi', 'Laung'],
+                        ['Tamil', 'Kirambu'],
+                        ['Telugu', 'Lavangam'],
+                        ['Kannada', 'Lavanga'],
+                        ['Malayalam', 'Grambu'],
+                        ['Bengali', 'Lobongo'],
+                        ['Gujarati', 'Laving'],
+                        ['Marathi', 'Lavang']
+                    ],
+                    international: [
+                        ['English', 'Clove'],
+                        ['Latin', 'Syzygium aromaticum'],
+                        ['Arabic', 'Qaranful'],
+                        ['French', 'Clou de girofle'],
+                        ['German', 'Gewürznelke'],
+                        ['Spanish', 'Clavo de olor'],
+                        ['Chinese', 'Ding xiang'],
+                        ['Indonesian', 'Cengkeh']
+                    ]
+                },
+                originDescription: 'Cloves are native to the Maluku Islands (formerly known as the Spice Islands) of Indonesia and have been traded for over 2,000 years. The clove trade was historically controlled by the Dutch, who restricted cultivation to maintain high prices. Today, cloves are grown in many tropical countries including Zanzibar, Madagascar, India, and Sri Lanka.',
+                growingRegions: 'The best quality cloves come from these regions:',
+                regionsList: [
+                    'Zanzibar - known for premium quality cloves',
+                    'Madagascar - major global producer',
+                    'Indonesia - original native region',
+                    'Sri Lanka - known for high oil content',
+                    'India - Kerala and Tamil Nadu'
+                ],
+                cultivationProcess: 'Cloves are cultivated through a careful process:',
+                cultivationList: [
+                    'Trees begin flowering after 5-7 years',
+                    'Buds are hand-picked when they turn pink',
+                    'Careful sun drying for 4-5 days',
+                    'Buds turn dark brown during drying',
+                    'Sorting by size and quality',
+                    'Packaging in moisture-proof materials'
+                ],
+                qualityStandards: 'Our cloves meet international quality standards including ISO, FSSAI, and USDA specifications. We maintain strict hygiene protocols throughout the production process to ensure food safety and quality. Our cloves are tested for essential oil content (eugenol), moisture, and purity before packaging.',
+                nutritionFacts: [
+                    { name: 'Energy', value: '274 kcal' },
+                    { name: 'Protein', value: '6 g' },
+                    { name: 'Fat', value: '13 g' },
+                    { name: 'Carbohydrates', value: '65 g' },
+                    { name: 'Fiber', value: '33.9 g' }
+                ]
+            },
+            'curry-leaf': {
+                name: 'Curry Leaf',
+                description: 'Curry leaves (Murraya koenigii) are aromatic leaves used extensively in South Indian and Sri Lankan cooking. Our premium quality curry leaves are carefully hand-picked from mature trees, then gently dried to preserve their distinctive citrus-like aroma and slightly bitter taste. These leaves are an essential flavoring agent in many Indian dishes and are known for their numerous health benefits.',
+                color: 'Dark green to olive green',
+                moisture: 'Max 8%',
+                size: '2-4cm length',
+                packaging: '5kg, 10kg, 25kg bags',
+                shelfLife: '12-18 months',
+                foreign: 'Max 1%',
+                storage: 'Store in a cool, dry place away from direct sunlight. Keep in airtight containers to maintain freshness and prevent loss of aroma. Ideal storage temperature is below 25°C with relative humidity below 60%. For best results, store in refrigerator.',
+                culinaryUses: 'Curry leaves are fundamental to Indian cooking and have various culinary applications:',
+                culinaryList: [
+                    'Essential tempering (tadka) for dals and curries',
+                    'Flavoring for South Indian dishes like sambar',
+                    'Used in chutneys and spice blends',
+                    'Flavoring for rice dishes like lemon rice',
+                    'Added to snacks and fried foods',
+                    'Used in marinades for meats'
+                ],
+                medicinalUses: 'Curry leaves have been used in Ayurvedic medicine for centuries due to their therapeutic properties:',
+                medicinalList: [
+                    'Natural remedy for digestive issues',
+                    'Helps control blood sugar levels',
+                    'Rich in antioxidants',
+                    'Promotes hair growth and health',
+                    'Anti-inflammatory properties',
+                    'Supports liver health'
+                ],
+                varietiesDescription: 'We offer several varieties of curry leaf products to meet different culinary and industrial needs:',
+                varieties: [
+                    {
+                        name: 'Premium Dried Curry Leaves',
+                        details: '<span class="font-medium">Origin:</span> Tamil Nadu, India<br><span class="font-medium">Color:</span> Dark green<br><span class="font-medium">Aroma:</span> Strong, citrusy<br><span class="font-medium">Use:</span> Culinary and medicinal'
+                    },
+                    {
+                        name: 'Organic Curry Leaves',
+                        details: '<span class="font-medium">Certification:</span> India Organic, USDA Organic<br><span class="font-medium">Color:</span> Olive green<br><span class="font-medium">Aroma:</span> Strong, citrusy<br><span class="font-medium">Use:</span> Health food industry'
+                    },
+                    {
+                        name: 'Curry Leaf Powder',
+                        details: '<span class="font-medium">Mesh Size:</span> 60-80<br><span class="font-medium">Color:</span> Green<br><span class="font-medium">Aroma:</span> Mild, earthy<br><span class="font-medium">Use:</span> Seasoning blends, supplements'
+                    }
+                ],
+                namesDescription: 'Curry leaf is known by various names across different cultures and regions:',
+                names: {
+                    indian: [
+                        ['Hindi', 'Kadi patta'],
+                        ['Tamil', 'Kariveppilai'],
+                        ['Telugu', 'Karivepaku'],
+                        ['Kannada', 'Karibevu'],
+                        ['Malayalam', 'Kariveppila'],
+                        ['Bengali', 'Curry pata'],
+                        ['Gujarati', 'Mitho limbdo'],
+                        ['Marathi', 'Kadhipatta']
+                    ],
+                    international: [
+                        ['English', 'Curry leaf'],
+                        ['Latin', 'Murraya koenigii'],
+                        ['Sinhala', 'Karapincha'],
+                        ['Thai', 'Bai karee'],
+                        ['Malay', 'Daun kari'],
+                        ['Burmese', 'Pindosin'],
+                        ['Vietnamese', 'Lá cà ri'],
+                        ['Nepali', 'Meetha neem']
+                    ]
+                },
+                originDescription: 'Curry leaf is native to India and Sri Lanka, where it has been used in cooking and traditional medicine for thousands of years. The plant grows as a small tree or shrub in tropical and subtropical regions. While often associated with curry powder in Western countries, curry leaves are actually a distinct ingredient with their own unique flavor profile.',
+                growingRegions: 'The best quality curry leaves come from these regions:',
+                regionsList: [
+                    'Tamil Nadu, India - known for most aromatic leaves',
+                    'Kerala, India - traditional growing region',
+                    'Sri Lanka - wild varieties with strong flavor',
+                    'Andhra Pradesh, India - commercial cultivation',
+                    'Karnataka, India - organic farming'
+                ],
+                cultivationProcess: 'Curry leaves are cultivated through a careful process:',
+                cultivationList: [
+                    'Propagated from seeds or cuttings',
+                    'Plants begin yielding after 1-2 years',
+                    'Leaves are hand-picked from mature branches',
+                    'Careful shade drying for 3-4 days',
+                    'Leaves retain dark green color when properly dried',
+                    'Sorting by size and quality'
+                ],
+                qualityStandards: 'Our curry leaves meet international quality standards including ISO, FSSAI, and USDA specifications. We maintain strict hygiene protocols throughout the production process to ensure food safety and quality. Our curry leaves are tested for aroma, color, moisture, and purity before packaging.',
+                nutritionFacts: [
+                    { name: 'Energy', value: '108 kcal' },
+                    { name: 'Protein', value: '6.1 g' },
+                    { name: 'Fat', value: '1 g' },
+                    { name: 'Carbohydrates', value: '18.7 g' },
+                    { name: 'Fiber', value: '6.4 g' }
+                ]
+            },
+            'black-pepper': {
+                name: 'Black Pepper',
+                description: 'Black pepper (Piper nigrum) is the world\'s most traded spice, known as the "King of Spices". Our premium quality black pepper is harvested at peak ripeness from vines grown in the lush Western Ghats of India, then carefully sun-dried to develop its characteristic pungent aroma and sharp, slightly hot flavor. These whole peppercorns are perfect for grinding fresh to enhance any dish.',
+                color: 'Dark brown to black',
+                moisture: 'Max 12%',
+                size: '4-5mm diameter',
+                packaging: '5kg, 10kg, 25kg bags',
+                shelfLife: '24-36 months',
+                foreign: 'Max 1%',
+                storage: 'Store in a cool, dry place away from direct sunlight. Keep in airtight containers to maintain freshness and prevent loss of aroma. For best flavor, grind just before use. Ideal storage temperature is below 25°C with relative humidity below 65%.',
+                culinaryUses: 'Black pepper is used in cuisines worldwide and has various culinary applications:',
+                culinaryList: [
+                    'Table condiment (ground or whole)',
+                    'Essential in spice blends and rubs',
+                    'Flavoring for soups and sauces',
+                    'Used in marinades for meats',
+                    'Key ingredient in pickling',
+                    'Flavoring for cheeses and baked goods'
+                ],
+                medicinalUses: 'Black pepper has been used in traditional medicine for centuries due to its therapeutic properties:',
+                medicinalList: [
+                    'Digestive aid and carminative',
+                    'Enhances nutrient absorption (piperine)',
+                    'Antioxidant and anti-inflammatory',
+                    'Used in Ayurvedic preparations',
+                    'May support respiratory health',
+                    'Potential metabolic benefits'
+                ],
+                varietiesDescription: 'We offer several varieties of black pepper products to meet different culinary and industrial needs:',
+                varieties: [
+                    {
+                        name: 'Malabar Garbled Black Pepper',
+                        details: '<span class="font-medium">Origin:</span> Kerala, India<br><span class="font-medium">Color:</span> Deep black<br><span class="font-medium">Piperine:</span> Min 4%<br><span class="font-medium">Use:</span> Premium culinary applications'
+                    },
+                    {
+                        name: 'Tellicherry Black Pepper',
+                        details: '<span class="font-medium">Origin:</span> Kerala, India<br><span class="font-medium">Color:</span> Dark brown<br><span class="font-medium">Piperine:</span> Min 5%<br><span class="font-medium">Use:</span> Gourmet cooking'
+                    },
+                    {
+                        name: 'Organic Black Pepper',
+                        details: '<span class="font-medium">Certification:</span> USDA Organic, EU Organic<br><span class="font-medium">Color:</span> Black<br><span class="font-medium">Piperine:</span> Min 3.5%<br><span class="font-medium">Use:</span> Health food industry'
+                    }
+                ],
+                namesDescription: 'Black pepper is known by various names across different cultures and regions:',
+                names: {
+                    indian: [
+                        ['Hindi', 'Kali mirch'],
+                        ['Tamil', 'Milagu'],
+                        ['Telugu', 'Miriyalu'],
+                        ['Kannada', 'Kari menasu'],
+                        ['Malayalam', 'Kurumulaku'],
+                        ['Bengali', 'Gol morich'],
+                        ['Gujarati', 'Kala mari'],
+                        ['Marathi', 'Kali miri']
+                    ],
+                    international: [
+                        ['English', 'Black pepper'],
+                        ['Latin', 'Piper nigrum'],
+                        ['Arabic', 'Filfil aswad'],
+                        ['French', 'Poivre noir'],
+                        ['German', 'Schwarzer Pfeffer'],
+                        ['Spanish', 'Pimienta negra'],
+                        ['Chinese', 'Hei hu jiao'],
+                        ['Indonesian', 'Lada hitam']
+                    ]
+                },
+                originDescription: 'Black pepper is native to the Malabar Coast of India (present-day Kerala) and has been traded since ancient times. It was so valuable in medieval Europe that it was often used as currency. The spice trade routes for pepper shaped world history, motivating European exploration and colonization. Today, India remains one of the largest producers of high-quality black pepper.',
+                growingRegions: 'The best quality black pepper comes from these regions:',
+                regionsList: [
+                    'Kerala, India - Malabar and Tellicherry varieties',
+                    'Karnataka, India - high piperine content',
+                    'Sri Lanka - traditional growing region',
+                    'Vietnam - largest global producer',
+                    'Indonesia - Lampong variety'
+                ],
+                cultivationProcess: 'Black pepper is cultivated through a careful process:',
+                cultivationList: [
+                    'Grown on supporting trees or poles',
+                    'Berries harvested when nearly ripe (reddish)',
+                    'Sun-dried for 7-10 days until black and wrinkled',
+                    'Hand-sorted to remove stems and debris',
+                    'Graded by size and density',
+                    'Packaged in moisture-proof materials'
+                ],
+                qualityStandards: 'Our black pepper meets international quality standards including ISO, ASTA, FSSAI, and USDA specifications. We maintain strict hygiene protocols throughout the production process to ensure food safety and quality. Our pepper is tested for piperine content, moisture, and purity before packaging.',
+                nutritionFacts: [
+                    { name: 'Energy', value: '251 kcal' },
+                    { name: 'Protein', value: '10.4 g' },
+                    { name: 'Fat', value: '3.3 g' },
+                    { name: 'Carbohydrates', value: '63.9 g' },
+                    { name: 'Fiber', value: '25.3 g' }
+                ]
+            },
+            'white-pepper': {
+                name: 'White Pepper',
+                description: 'White pepper is made from fully ripe pepper berries (Piper nigrum) that have had the outer skin removed before drying. Our premium quality white pepper is produced using traditional methods in Kerala, India, resulting in a cleaner, slightly fermented flavor compared to black pepper. With its pale cream color and refined heat, white pepper is preferred in light-colored dishes where black specks would be undesirable.',
+                color: 'Cream to light brown',
+                moisture: 'Max 12%',
+                size: '3-4mm diameter',
+                packaging: '5kg, 10kg, 25kg bags',
+                shelfLife: '24-36 months',
+                foreign: 'Max 1%',
+                storage: 'Store in a cool, dry place away from direct sunlight. Keep in airtight containers to maintain freshness and prevent loss of aroma. For best flavor, grind just before use. Ideal storage temperature is below 25°C with relative humidity below 65%.',
+                culinaryUses: 'White pepper is widely used in global cuisines and has various culinary applications:',
+                culinaryList: [
+                    'Essential in light-colored sauces and soups',
+                    'Preferred in European cuisine (French, Swedish)',
+                    'Used in mayonnaise and cream sauces',
+                    'Flavoring for delicate fish and poultry dishes',
+                    'Key ingredient in Chinese hot and sour soup',
+                    'Used in sausages and processed meats'
+                ],
+                medicinalUses: 'White pepper shares many of black pepper\'s health benefits:',
+                medicinalList: [
+                    'Digestive aid and carminative',
+                    'Contains piperine for nutrient absorption',
+                    'Antioxidant properties',
+                    'May support circulatory health',
+                    'Used in traditional Chinese medicine',
+                    'Potential anti-inflammatory effects'
+                ],
+                varietiesDescription: 'We offer several varieties of white pepper products to meet different culinary and industrial needs:',
+                varieties: [
+                    {
+                        name: 'Muntok White Pepper',
+                        details: '<span class="font-medium">Origin:</span> Indonesia<br><span class="font-medium">Color:</span> Cream<br><span class="font-medium">Piperine:</span> Min 4%<br><span class="font-medium">Use:</span> Premium culinary applications'
+                    },
+                    {
+                        name: 'Indian White Pepper',
+                        details: '<span class="font-medium">Origin:</span> Kerala, India<br><span class="font-medium">Color:</span> Light brown<br><span class="font-medium">Piperine:</span> Min 3.5%<br><span class="font-medium">Use:</span> Gourmet cooking'
+                    },
+                    {
+                        name: 'Organic White Pepper',
+                        details: '<span class="font-medium">Certification:</span> USDA Organic, EU Organic<br><span class="font-medium">Color:</span> Cream<br><span class="font-medium">Piperine:</span> Min 3%<br><span class="font-medium">Use:</span> Health food industry'
+                    }
+                ],
+                namesDescription: 'White pepper is known by various names across different cultures and regions:',
+                names: {
+                    indian: [
+                        ['Hindi', 'Safed mirch'],
+                        ['Tamil', 'Vellai milagu'],
+                        ['Telugu', 'Tella miriyalu'],
+                        ['Kannada', 'Bili menasu'],
+                        ['Malayalam', 'Vella kurumulaku'],
+                        ['Bengali', 'Sada gol morich'],
+                        ['Gujarati', 'Dhara mari'],
+                        ['Marathi', 'Pandhara miri']
+                    ],
+                    international: [
+                        ['English', 'White pepper'],
+                        ['Latin', 'Piper nigrum'],
+                        ['Arabic', 'Filfil abyad'],
+                        ['French', 'Poivre blanc'],
+                        ['German', 'Weißer Pfeffer'],
+                        ['Spanish', 'Pimienta blanca'],
+                        ['Chinese', 'Bai hu jiao'],
+                        ['Indonesian', 'Lada putih']
+                    ]
+                },
+                originDescription: 'White pepper comes from the same plant as black pepper (Piper nigrum) but is processed differently. The traditional method involves soaking ripe berries in water for about a week, during which the outer skin softens and decomposes. The berries are then rubbed to remove the skin and dried. This process, developed in Southeast Asia, results in a cleaner, more uniform flavor preferred in many cuisines.',
+                growingRegions: 'The best quality white pepper comes from these regions:',
+                regionsList: [
+                    'Indonesia (Muntok) - famous for premium white pepper',
+                    'India (Kerala) - traditional processing methods',
+                    'Vietnam - large-scale production',
+                    'Malaysia (Sarawak) - high quality',
+                    'China (Hainan) - special varieties'
+                ],
+                cultivationProcess: 'White pepper is produced through a careful process:',
+                cultivationList: [
+                    'Berries allowed to fully ripen on vine (red color)',
+                    'Harvested and soaked in water for 7-10 days',
+                    'Outer skin removed by rubbing or machine',
+                    'Sun-dried for 5-7 days until hard and light',
+                    'Sorted by size and density',
+                    'Packaged in moisture-proof materials'
+                ],
+                qualityStandards: 'Our white pepper meets international quality standards including ISO, ASTA, FSSAI, and USDA specifications. We maintain strict hygiene protocols throughout the production process to ensure food safety and quality. Our pepper is tested for piperine content, moisture, and purity before packaging.',
+                nutritionFacts: [
+                    { name: 'Energy', value: '296 kcal' },
+                    { name: 'Protein', value: '10.4 g' },
+                    { name: 'Fat', value: '2.1 g' },
+                    { name: 'Carbohydrates', value: '68.9 g' },
+                    { name: 'Fiber', value: '26.2 g' }
+                ]
+            },
+            'green-pepper': {
+                name: 'Green Pepper',
+                description: 'Green pepper is made from unripe pepper berries (Piper nigrum) that are preserved through special drying or freeze-drying processes. Our premium quality green pepper retains its vibrant green color and fresh, slightly fruity flavor with mild heat. These whole peppercorns add a distinctive flavor and visual appeal to dishes, making them popular in gourmet cooking and fusion cuisine.',
+                color: 'Bright green to olive green',
+                moisture: 'Max 12%',
+                size: '4-5mm diameter',
+                packaging: '5kg, 10kg, 25kg bags',
+                shelfLife: '18-24 months',
+                foreign: 'Max 1%',
+                storage: 'Store in a cool, dry place away from direct sunlight. Keep in airtight containers to maintain color and freshness. For best results, store in refrigerator. Ideal storage temperature is below 20°C with relative humidity below 60%.',
+                culinaryUses: 'Green pepper is prized in gourmet cooking and has various culinary applications:',
+                culinaryList: [
+                    'Used in French nouvelle cuisine',
+                    'Flavoring for cream sauces and soups',
+                    'Key ingredient in steak au poivre',
+                    'Added to pâtés and terrines',
+                    'Flavoring for seafood dishes',
+                    'Used in fusion and modern cuisine'
+                ],
+                medicinalUses: 'Green pepper shares many of black pepper\'s health benefits with milder effects:',
+                medicinalList: [
+                    'Digestive aid',
+                    'Contains antioxidants',
+                    'Mild stimulant properties',
+                    'May support circulatory health',
+                    'Used in traditional medicine',
+                    'Potential metabolic benefits'
+                ],
+                varietiesDescription: 'We offer several varieties of green pepper products to meet different culinary needs:',
+                varieties: [
+                    {
+                        name: 'Freeze-Dried Green Pepper',
+                        details: '<span class="font-medium">Process:</span> Freeze-dried<br><span class="font-medium">Color:</span> Bright green<br><span class="font-medium">Flavor:</span> Fresh, vibrant<br><span class="font-medium">Use:</span> Premium culinary applications'
+                    },
+                    {
+                        name: 'Dehydrated Green Pepper',
+                        details: '<span class="font-medium">Process:</span> Special drying<br><span class="font-medium">Color:</span> Olive green<br><span class="font-medium">Flavor:</span> Mild, fruity<br><span class="font-medium">Use:</span> Gourmet cooking'
+                    },
+                    {
+                        name: 'Organic Green Pepper',
+                        details: '<span class="font-medium">Certification:</span> USDA Organic, EU Organic<br><span class="font-medium">Color:</span> Green<br><span class="font-medium">Flavor:</span> Fresh<br><span class="font-medium">Use:</span> Health food industry'
+                    }
+                ],
+                namesDescription: 'Green pepper is known by various names across different cultures and regions:',
+                names: {
+                    indian: [
+                        ['Hindi', 'Hari mirch'],
+                        ['Tamil', 'Pachai milagu'],
+                        ['Telugu', 'Pacha miriyalu'],
+                        ['Kannada', 'Hasu menasu'],
+                        ['Malayalam', 'Pacha kurumulaku'],
+                        ['Bengali', 'Kacha gol morich'],
+                        ['Gujarati', 'Lila mari'],
+                        ['Marathi', 'Hirva miri']
+                    ],
+                    international: [
+                        ['English', 'Green pepper'],
+                        ['Latin', 'Piper nigrum'],
+                        ['Arabic', 'Filfil akhdar'],
+                        ['French', 'Poivre vert'],
+                        ['German', 'Grüner Pfeffer'],
+                        ['Spanish', 'Pimienta verde'],
+                        ['Chinese', 'Qing hu jiao'],
+                        ['Thai', 'Prik thai khieo']
+                    ]
+                },
+                originDescription: 'Green pepper comes from the same plant as black and white pepper (Piper nigrum) but is processed differently to preserve the unripe berries. Traditional methods involve brining or vinegar preservation, while modern techniques use freeze-drying or special dehydration to maintain the green color and fresh flavor. This form of pepper became popular in French cuisine in the 20th century and is now used worldwide.',
+                growingRegions: 'The best quality green pepper comes from these regions:',
+                regionsList: [
+                    'India (Kerala) - traditional growing region',
+                    'Brazil - innovative processing methods',
+                    'Madagascar - high quality',
+                    'Indonesia - large-scale production',
+                    'Vietnam - commercial cultivation'
+                ],
+                cultivationProcess: 'Green pepper is produced through a careful process:',
+                cultivationList: [
+                    'Berries harvested when fully grown but still green',
+                    'Quickly processed to prevent ripening',
+                    'Preserved through freeze-drying or special drying',
+                    'Color stabilized to maintain green hue',
+                    'Sorted by size and quality',
+                    'Packaged in moisture-proof materials'
+                ],
+                qualityStandards: 'Our green pepper meets international quality standards including ISO, FSSAI, and USDA specifications. We maintain strict hygiene protocols throughout the production process to ensure food safety and quality. Our pepper is tested for color retention, moisture, and purity before packaging.',
+                nutritionFacts: [
+                    { name: 'Energy', value: '251 kcal' },
+                    { name: 'Protein', value: '10.4 g' },
+                    { name: 'Fat', value: '3.3 g' },
+                    { name: 'Carbohydrates', value: '63.9 g' },
+                    { name: 'Fiber', value: '25.3 g' }
+                ]
+            },
+            'curry-powder': {
+                name: 'Curry Powder',
+                origin: 'India',
+                description: 'Our authentic curry powder is a carefully balanced blend of premium spices including turmeric, coriander, cumin, fenugreek, and other aromatic ingredients. This golden-yellow powder delivers the perfect balance of warmth, earthiness, and subtle heat that is characteristic of traditional Indian cuisine.',
+                color: 'Golden yellow',
+                moisture: 'Max 10%',
+                size: '80-100 mesh',
+                packaging: '500g, 1kg, 5kg, 25kg bags',
+                storage: 'Store in a cool, dry place away from direct sunlight and strong odors. Keep in airtight containers to maintain freshness and prevent moisture absorption. Ideal storage temperature is below 25°C with relative humidity below 60%. Refrigeration can extend shelf life.',
+                culinaryUses: 'Curry powder is a versatile spice blend that forms the foundation of many dishes across various cuisines. It can be used in:',
+                culinaryList: [
+                    'Traditional Indian curries and gravies',
+                    'Marinades for meats, poultry, and seafood',
+                    'Seasoning for rice dishes like biryani and pilaf',
+                    'Flavoring for soups, stews, and lentil dishes',
+                    'Spice rubs for grilling and roasting',
+                    'Flavoring for snacks and street foods'
+                ],
+                healthBenefits: 'Beyond its culinary applications, curry powder offers several health benefits:',
+                healthList: [
+                    'Anti-inflammatory properties from turmeric',
+                    'Digestive aid from cumin and coriander',
+                    'Antioxidant effects from various spice components',
+                    'Potential immune-boosting properties',
+                    'May help regulate blood sugar levels'
+                ],
+                varietiesDescription: 'We offer several varieties of curry powder to meet different culinary needs and regional preferences:',
+                varieties: [
+                    {
+                        name: 'Madras Curry Powder',
+                        heat: 'Medium-Hot',
+                        color: 'Deep golden',
+                        ingredients: 'Extra chili, black pepper, mustard seeds',
+                        use: 'South Indian and Sri Lankan dishes',
+                        badge: 'Hot'
+                    },
+                    {
+                        name: 'Mild Curry Powder',
+                        heat: 'Mild',
+                        color: 'Light yellow',
+                        ingredients: 'More coriander, less chili',
+                        use: 'Western-style curries, children\'s dishes',
+                        badge: 'Mild'
+                    },
+                    {
+                        name: 'Garam Masala',
+                        heat: 'Warm',
+                        color: 'Brownish',
+                        ingredients: 'Cinnamon, cardamom, cloves',
+                        use: 'North Indian dishes, finishing spice',
+                        badge: 'Aromatic'
+                    }
+                ],
+                namesDescription: 'Curry powder is known by various names across different cultures and regions:',
+                names: {
+                    indian: [
+                        ['Hindi', 'Curry Powder'],
+                        ['Tamil', 'Kaari Podi'],
+                        ['Telugu', 'Kaari Podi'],
+                        ['Kannada', 'Kaari Pudi'],
+                        ['Malayalam', 'Kaari Podi'],
+                        ['Bengali', 'Curry Guroo'],
+                        ['Gujarati', 'Curry Powder'],
+                        ['Marathi', 'Curry Powder']
+                    ],
+                    international: [
+                        ['Spanish', 'Polvo de curry'],
+                        ['French', 'Poudre de curry'],
+                        ['German', 'Currypulver'],
+                        ['Italian', 'Polvere di curry'],
+                        ['Arabic', 'Boora kari'],
+                        ['Chinese', 'Gālí fěn'],
+                        ['Japanese', 'Karē ko'],
+                        ['Russian', 'Priprava kari']
+                    ]
+                },
+                originDescription: 'While "curry powder" as a blend was popularized by British colonialists in India, the concept of spice blends for flavoring dishes dates back thousands of years in Indian culinary traditions.',
+                growingRegions: 'The spices used in curry powder come from various regions known for their quality:',
+                regionsList: [
+                    'Kerala, India - for black pepper and cardamom',
+                    'Gujarat, India - for cumin and coriander',
+                    'Tamil Nadu, India - for chili and mustard seeds',
+                    'Madhya Pradesh, India - for turmeric',
+                    'Sri Lanka - for cinnamon and curry leaves'
+                ],
+                processingMethod: 'Our traditional production process ensures maximum flavor and aroma:',
+                processList: [
+                    'Sourcing of premium quality whole spices',
+                    'Careful cleaning and sorting',
+                    'Precision roasting to enhance flavors',
+                    'Grinding to perfect consistency',
+                    'Blending in precise proportions',
+                    'Quality testing and packaging'
+                ],
+                qualityStandards: 'Our curry powder meets international quality standards including ISO, FSSAI, and USDA specifications. We maintain strict hygiene protocols throughout the production process to ensure food safety and consistent quality.',
+                flavorProfile: {
+                    spicy: 70,
+                    earthy: 80,
+                    sweet: 30,
+                    bitter: 20,
+                    umami: 60
+                },
+
+            }
+        };
+
+
+
+        // Change product function
+        function changeProduct(productId) {
+            const product = products[productId];
+
+            // Update breadcrumb
+            document.getElementById('productNameBreadcrumb').textContent = product.name;
+
+            // Update main product info
+            document.getElementById('productName').textContent = product.name;
+            document.getElementById('productDescription').textContent = product.description;
+            document.getElementById('productColor').textContent = product.color;
+            document.getElementById('productMoisture').textContent = product.moisture;
+            document.getElementById('productSize').textContent = product.size;
+            document.getElementById('productPurity').textContent = product.purity;
+            document.getElementById('productPackaging').textContent = product.packaging;
+            document.getElementById('productStorage').textContent = product.storage;
+            document.getElementById('productRating').textContent = product.rating;
+            document.getElementById('productBadge').textContent = product.badge;
+            document.getElementById('productSize').textContent = product.size;
+            document.getElementById('productShelfLife').textContent = product.shelfLife;
+            document.getElementById('productOrigin').textContent = product.origin;
+            document.getElementById('productReviews').textContent = product.reviews;
+
+            // Update selector
+            document.getElementById('productSelector').value = productId;
+
+            // Update uses tab
+            document.getElementById('culinaryUses').textContent = product.culinaryUses;
+            document.getElementById('industrialUses').textContent = product.industrialUses;
+
+            let culinaryList = document.getElementById('culinaryList');
+            culinaryList.innerHTML = '';
+            product.culinaryList.forEach(item => {
+                let li = document.createElement('li');
+                li.textContent = item;
+                culinaryList.appendChild(li);
+            });
+
+            let industrialList = document.getElementById('industrialList');
+            industrialList.innerHTML = '';
+            product.industrialList.forEach(item => {
+                let li = document.createElement('li');
+                li.textContent = item;
+                industrialList.appendChild(li);
+            });
+
+            // Update varieties tab
+            document.getElementById('varietiesDescription').textContent = product.varietiesDescription;
+
+            let varietiesContainer = document.getElementById('varietiesContainer');
+            varietiesContainer.innerHTML = '';
+            product.varieties.forEach(variety => {
+                let div = document.createElement('div');
+                div.className = 'border border-gray-200 rounded-lg p-4';
+                div.innerHTML = `
+                    <h4 class="heading text-lg font-semibold text-gray-900 mb-2">${variety.name}</h4>
+                    <p class="text-gray-600 mb-2">${variety.details}</p>
+                `;
+                varietiesContainer.appendChild(div);
+            });
+
+            // Update names tab
+            document.getElementById('namesDescription').textContent = product.namesDescription;
+
+            let namesContainer = document.getElementById('namesContainer');
+            namesContainer.innerHTML = '';
+
+            // Indian names
+            let indianDiv = document.createElement('div');
+            indianDiv.className = 'border border-gray-200 rounded-lg p-4';
+            indianDiv.innerHTML = '<h4 class="heading text-lg font-semibold text-gray-900 mb-2">Indian Languages</h4><ul class="space-y-1 text-gray-600"></ul>';
+            let indianList = indianDiv.querySelector('ul');
+            product.names.indian.forEach(name => {
+                let li = document.createElement('li');
+                li.innerHTML = `<span class="font-medium">${name[0]}:</span> ${name[1]}`;
+                indianList.appendChild(li);
+            });
+            namesContainer.appendChild(indianDiv);
+
+            // International names
+            let intlDiv = document.createElement('div');
+            intlDiv.className = 'border border-gray-200 rounded-lg p-4';
+            intlDiv.innerHTML = '<h4 class="heading text-lg font-semibold text-gray-900 mb-2">International Names</h4><ul class="space-y-1 text-gray-600"></ul>';
+            let intlList = intlDiv.querySelector('ul');
+            product.names.international.forEach(name => {
+                let li = document.createElement('li');
+                li.innerHTML = `<span class="font-medium">${name[0]}:</span> ${name[1]}`;
+                intlList.appendChild(li);
+            });
+            namesContainer.appendChild(intlDiv);
+
+            // Update origin tab
+            document.getElementById('originDescription').textContent = product.originDescription;
+            document.getElementById('growingRegions').textContent = product.growingRegions;
+            document.getElementById('processingMethod').textContent = product.processingMethod;
+            document.getElementById('qualityStandards').textContent = product.qualityStandards;
+
+            let regionsList = document.getElementById('regionsList');
+            regionsList.innerHTML = '';
+            product.regionsList.forEach(item => {
+                let li = document.createElement('li');
+                li.textContent = item;
+                regionsList.appendChild(li);
+            });
+
+            let processList = document.getElementById('processList');
+            processList.innerHTML = '';
+            product.processList.forEach(item => {
+                let li = document.createElement('li');
+                li.textContent = item;
+                processList.appendChild(li);
+            });
+
+            // Update images (placeholder - in a real app you would use actual product images)
+            document.getElementById('mainImage').src = `./Product/Herbs/${productId}.jpg`;
+            document.getElementById('mainImage').alt = product.name;
+
+            // Reset tab to uses
+            const activeTabButton = document.querySelector('.tab-button.text-primary');
+            if (activeTabButton) {
+                activeTabButton.classList.remove('text-primary', 'border-primary');
+                activeTabButton.classList.add('text-gray-500', 'border-transparent');
+            }
+
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+
+            document.getElementById('uses').classList.add('active');
+            const usesTabButton = document.querySelector('[onclick="openTab(event, \'uses\')"]');
+            if (usesTabButton) {
+                usesTabButton.classList.add('text-primary', 'border-primary');
+                usesTabButton.classList.remove('text-gray-500', 'border-transparent');
+            }
+        }
+
+        // Initialize with zeodary roots
+        document.addEventListener('DOMContentLoaded', function () {
+            const params = new URLSearchParams(window.location.search);
+            const productId = params.get('product') || 'zeodary-roots';
+
+            // Only run if productId exists in the product object
+            if (products[productId]) {
+                changeProduct(productId);
+            }
+
+            const selector = document.getElementById('productSelector');
+            if (selector) {
+                selector.addEventListener('change', function () {
+                    if (products[this.value]) {
+                        changeProduct(this.value);
+                    }
+                });
+            }
+        });
+
+        // Image gallery functionality
+        function changeImage(src) {
+            document.getElementById('mainImage').src = src;
+
+            // Update active thumbnail
+            const thumbnails = document.querySelectorAll('.product-gallery-thumbnail');
+            thumbnails.forEach(thumb => {
+                thumb.classList.remove('active');
+                if (thumb.querySelector('img').src === src) {
+                    thumb.classList.add('active');
+                }
+            });
+        }
+
+        // Tab functionality
+        function openTab(evt, tabName) {
+            const tabContents = document.getElementsByClassName('tab-content');
+            for (let i = 0; i < tabContents.length; i++) {
+                tabContents[i].classList.remove('active');
+            }
+
+            const tabButtons = document.getElementsByClassName('tab-button');
+            for (let i = 0; i < tabButtons.length; i++) {
+                tabButtons[i].classList.remove('text-primary', 'border-primary');
+                tabButtons[i].classList.add('text-gray-500', 'border-transparent');
+            }
+
+            document.getElementById(tabName).classList.add('active');
+            evt.currentTarget.classList.remove('text-gray-500', 'border-transparent');
+            evt.currentTarget.classList.add('text-primary', 'border-primary');
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const params = new URLSearchParams(window.location.search);
+            const productId = params.get('product');
+
+            if (productId) {
+                changeProduct(productId);
+            }
+        });
+    </script>
+</body>
+
+</html>

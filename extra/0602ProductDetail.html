@@ -1,0 +1,1326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Spices | Abhinandan International</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#8B4513',
+                        secondary: '#6B8E23'
+                    },
+                    borderRadius: {
+                        'none': '0px',
+                        'sm': '4px',
+                        DEFAULT: '8px',
+                        'md': '12px',
+                        'lg': '16px',
+                        'xl': '20px',
+                        '2xl': '24px',
+                        '3xl': '32px',
+                        'full': '9999px',
+                        'button': '8px'
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <style>
+        :where([class^="ri-"])::before {
+            content: "\f3c2";
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .heading {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .custom-input:focus {
+            outline: none;
+        }
+
+        .product-gallery-thumbnail {
+            transition: all 0.3s ease;
+        }
+
+        .product-gallery-thumbnail:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-gallery-thumbnail.active {
+            border: 2px solid #8B4513;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+        
+        .spice-badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        .organic-badge {
+            background-color: #6B8E23;
+            color: white;
+        }
+        
+        .premium-badge {
+            background-color: #8B4513;
+            color: white;
+        }
+        
+        .export-badge {
+            background-color: #1E40AF;
+            color: white;
+        }
+    </style>
+</head>
+
+<body class="bg-white">
+    <!-- Header Section -->
+    <header class="sticky top-0 z-50 bg-white shadow-sm">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                    <!-- <a href="#" class="text-3xl font-['Pacifico'] text-primary">Abhinandan</a> -->
+                    <a href="#" class="flex items-center">
+                        <img src="photo/logo-4kk-1.png" alt="Abhinandan Logo" class="h-10 w-auto mr-4">
+                    </a>
+                    <nav class="hidden md:flex ml-10">
+                        <ul class="flex space-x-8">
+                            <li><a href="Home.html"
+                                    class="text-gray-800 font-medium hover:text-primary transition-colors">Home</a></li>
+                            <li><a href="Product.html"
+                                    class="text-primary font-medium hover:text-primary transition-colors">Products</a>
+                            </li>
+                            <li><a href="Aboutus.html"
+                                    class="text-gray-800 font-medium hover:text-primary transition-colors">About Us</a>
+                            </li>
+                            <li><a href="Contact.html"
+                                    class="text-gray-800 font-medium hover:text-primary transition-colors">Contact</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="flex items-center">
+                    <div class="relative mr-4">
+                        <input type="text" placeholder="Search spices..."
+                            class="custom-input pl-10 pr-4 py-2 rounded-full bg-gray-100 text-sm w-48 border-none">
+                        <div
+                            class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 flex items-center justify-center text-gray-500">
+                            <i class="ri-search-line"></i>
+                        </div>
+                    </div>
+
+                    <button
+                        class="ml-4 md:flex items-center px-4 py-2 bg-primary text-white rounded-button hover:bg-opacity-90 transition-colors whitespace-nowrap hidden">
+                        <span>Get Quote</span>
+                    </button>
+                    <div class="md:hidden w-10 h-10 flex items-center justify-center">
+                        <i class="ri-menu-line text-xl"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Product Detail Section -->
+    <section class="py-12 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <!-- Breadcrumb -->
+            <div class="flex items-center text-sm text-gray-600 mb-6">
+                <a href="Home.html" class="hover:text-primary">Home</a>
+                <i class="ri-arrow-right-s-line mx-2"></i>
+                <a href="Product.html" class="hover:text-primary">Spices</a>
+                <i class="ri-arrow-right-s-line mx-2"></i>
+                <span class="text-primary" id="productNameBreadcrumb">Fennel Seeds</span>
+            </div>
+
+            <div class="flex flex-col lg:flex-row gap-8">
+                <!-- Product Gallery -->
+                <div class="lg:w-1/2">
+                    <div class="bg-white rounded-lg shadow-md p-4 mb-4">
+                        <div class="h-96 overflow-hidden rounded-lg mb-4">
+                            <img id="mainImage"
+                                src="https://images.unsplash.com/photo-1603048719539-d2581f4b2b9a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+                                alt="Fennel Seeds" class="w-full h-full object-contain">
+                        </div>
+                        <div class="grid grid-cols-4 gap-2">
+                            <div class="product-gallery-thumbnail active cursor-pointer" onclick="changeImage('https://images.unsplash.com/photo-1603048719539-d2581f4b2b9a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80')">
+                                <img src="https://images.unsplash.com/photo-1603048719539-d2581f4b2b9a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" 
+                                     alt="Fennel Seeds" class="w-full h-20 object-cover rounded">
+                            </div>
+                            <div class="product-gallery-thumbnail cursor-pointer" onclick="changeImage('https://images.unsplash.com/photo-1603048719539-d2581f4b2b9a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80')">
+                                <img src="https://images.unsplash.com/photo-1603048719539-d2581f4b2b9a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" 
+                                     alt="Fennel Seeds" class="w-full h-20 object-cover rounded">
+                            </div>
+                            <div class="product-gallery-thumbnail cursor-pointer" onclick="changeImage('https://images.unsplash.com/photo-1603048719539-d2581f4b2b9a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80')">
+                                <img src="https://images.unsplash.com/photo-1603048719539-d2581f4b2b9a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" 
+                                     alt="Fennel Seeds" class="w-full h-20 object-cover rounded">
+                            </div>
+                            <div class="product-gallery-thumbnail cursor-pointer" onclick="changeImage('https://images.unsplash.com/photo-1603048719539-d2581f4b2b9a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80')">
+                                <img src="https://images.unsplash.com/photo-1603048719539-d2581f4b2b9a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" 
+                                     alt="Fennel Seeds" class="w-full h-20 object-cover rounded">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Info -->
+                <div class="lg:w-1/2">
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h1 class="heading text-3xl font-bold text-gray-900" id="productName">Fennel Seeds</h1>
+                                <div class="flex gap-2 mt-2">
+                                    <span class="spice-badge organic-badge">Organic</span>
+                                    <span class="spice-badge premium-badge">Premium</span>
+                                    <span class="spice-badge export-badge">Export Quality</span>
+                                </div>
+                            </div>
+                            <div class="relative">
+                                <select id="productSelector"
+                                    class="appearance-none bg-gray-100 border border-gray-300 text-gray-700 py-2 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-primary">
+                                    <option value="fennel-seeds">Fennel Seeds</option>
+                                    <option value="cumin-seeds">Cumin Seeds</option>
+                                    <option value="black-cumin">Black Cumin</option>
+                                    <option value="celery-seeds">Celery Seeds</option>
+                                    <option value="ginger-fried">Ginger Fried</option>
+                                    <option value="nutmeg-mace">Nutmeg & Mace</option>
+                                </select>
+                                <div
+                                    class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                                    <i class="ri-arrow-down-s-line"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-6">
+                            <h3 class="text-lg font-semibold text-gray-900 mb-2">Description</h3>
+                            <p class="text-gray-600 mb-4" id="productDescription">
+                                Our premium fennel seeds are carefully selected from the finest crops, known for their sweet, licorice-like flavor and aromatic properties. These seeds are sun-dried to perfection, retaining their essential oils and nutritional benefits. Ideal for both culinary and medicinal uses.
+                            </p>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                                <div class="flex items-start">
+                                    <i class="ri-checkbox-circle-fill text-green-500 mt-1 mr-2"></i>
+                                    <span class="text-gray-600">100% natural with no additives</span>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="ri-checkbox-circle-fill text-green-500 mt-1 mr-2"></i>
+                                    <span class="text-gray-600">Rich in antioxidants and fiber</span>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="ri-checkbox-circle-fill text-green-500 mt-1 mr-2"></i>
+                                    <span class="text-gray-600">Retains original flavor and nutrients</span>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="ri-checkbox-circle-fill text-green-500 mt-1 mr-2"></i>
+                                    <span class="text-gray-600">Long shelf life (up to 2 years)</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-6">
+                            <h3 class="text-lg font-semibold text-gray-900 mb-2">Specifications</h3>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <p class="text-gray-600"><span class="font-medium">Color:</span> <span
+                                            id="productColor">Light green to pale brown</span></p>
+                                    <p class="text-gray-600"><span class="font-medium">Moisture:</span> <span
+                                            id="productMoisture">Max 8%</span></p>
+                                    <p class="text-gray-600"><span class="font-medium">Purity:</span> <span
+                                            id="productPurity">99.5%</span></p>
+                                </div>
+                                <div>
+                                    <p class="text-gray-600"><span class="font-medium">Size:</span> <span
+                                            id="productSize">3-4mm length</span></p>
+                                    <p class="text-gray-600"><span class="font-medium">Packaging:</span> <span
+                                            id="productPackaging">25kg, 50kg bags or as per requirement</span></p>
+                                    <p class="text-gray-600"><span class="font-medium">Origin:</span> <span
+                                            id="productOrigin">Gujarat, India</span></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-6">
+                            <h3 class="text-lg font-semibold text-gray-900 mb-2">Storage Instructions</h3>
+                            <p class="text-gray-600" id="productStorage">
+                                Store in a cool, dry place away from direct sunlight. Keep in airtight containers to maintain freshness and prevent moisture absorption. Ideal storage temperature is below 25°C with relative humidity below 60%. For best quality, use within 12 months of packaging.
+                            </p>
+                        </div>
+
+                        <div class="flex flex-col sm:flex-row gap-3 mb-6">
+                            <button
+                                class="flex-1 px-6 py-3 bg-primary text-white rounded-button hover:bg-opacity-90 transition-colors">
+                                Request Sample
+                            </button>
+                            <button
+                                class="flex-1 px-6 py-3 bg-secondary text-white rounded-button hover:bg-opacity-90 transition-colors">
+                                Enquiry Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Tabs -->
+            <div class="mt-12 bg-white rounded-lg shadow-md overflow-hidden">
+                <div class="border-b border-gray-200">
+                    <nav class="flex flex-col sm:flex-row">
+                        <button onclick="openTab(event, 'uses')"
+                            class="tab-button py-4 px-6 text-center border-b-2 font-medium text-primary border-primary">
+                            Uses
+                        </button>
+                        <button onclick="openTab(event, 'varieties')"
+                            class="tab-button py-4 px-6 text-center border-b-2 font-medium text-gray-500 border-transparent hover:text-gray-700 hover:border-gray-300">
+                            Varieties
+                        </button>
+                        <button onclick="openTab(event, 'names')"
+                            class="tab-button py-4 px-6 text-center border-b-2 font-medium text-gray-500 border-transparent hover:text-gray-700 hover:border-gray-300">
+                            Names in Different Languages
+                        </button>
+                        <button onclick="openTab(event, 'origin')"
+                            class="tab-button py-4 px-6 text-center border-b-2 font-medium text-gray-500 border-transparent hover:text-gray-700 hover:border-gray-300">
+                            Origin & Cultivation
+                        </button>
+                    </nav>
+                </div>
+
+                <div class="p-6">
+                    <!-- Uses Tab -->
+                    <div id="uses" class="tab-content active">
+                        <h3 class="heading text-xl font-semibold text-gray-900 mb-4">Culinary Uses</h3>
+                        <p class="text-gray-600 mb-4" id="culinaryUses">
+                            Fennel seeds are widely used in various cuisines around the world for their distinctive sweet flavor and aroma:
+                        </p>
+                        <ul class="list-disc pl-5 text-gray-600 mb-6 space-y-2" id="culinaryList">
+                            <li>Essential in Indian cooking for curries, pickles, and spice blends</li>
+                            <li>Used in Italian sausages and meat dishes</li>
+                            <li>Flavoring for breads, cookies, and cakes in European cuisine</li>
+                            <li>Key ingredient in Chinese five-spice powder</li>
+                            <li>Used to flavor teas and herbal infusions</li>
+                            <li>Added to fish and seafood dishes for enhanced flavor</li>
+                        </ul>
+
+                        <h3 class="heading text-xl font-semibold text-gray-900 mb-4">Medicinal & Other Uses</h3>
+                        <p class="text-gray-600 mb-4" id="industrialUses">
+                            Beyond culinary applications, fennel seeds have several health benefits and other uses:
+                        </p>
+                        <ul class="list-disc pl-5 text-gray-600 mb-6 space-y-2" id="industrialList">
+                            <li>Traditional remedy for digestive issues and bloating</li>
+                            <li>Natural breath freshener and mouth cleanser</li>
+                            <li>Used in Ayurvedic medicine for its cooling properties</li>
+                            <li>Essential oil used in aromatherapy and perfumery</li>
+                            <li>Ingredient in natural cough syrups and lozenges</li>
+                        </ul>
+                    </div>
+
+                    <!-- Varieties Tab -->
+                    <div id="varieties" class="tab-content">
+                        <h3 class="heading text-xl font-semibold text-gray-900 mb-4">Product Varieties</h3>
+                        <p class="text-gray-600 mb-4" id="varietiesDescription">
+                            We offer several varieties of fennel seeds to meet different culinary and industrial needs:
+                        </p>
+
+                        <div class="space-y-4" id="varietiesContainer">
+                            <div class="border border-gray-200 rounded-lg p-4">
+                                <h4 class="heading text-lg font-semibold text-gray-900 mb-2">Premium Fennel Seeds</h4>
+                                <p class="text-gray-600 mb-2">
+                                    <span class="font-medium">Color:</span> Bright green<br>
+                                    <span class="font-medium">Size:</span> 3-4mm length<br>
+                                    <span class="font-medium">Aroma:</span> Strong, sweet<br>
+                                    <span class="font-medium">Use:</span> Premium culinary applications
+                                </p>
+                            </div>
+
+                            <div class="border border-gray-200 rounded-lg p-4">
+                                <h4 class="heading text-lg font-semibold text-gray-900 mb-2">Organic Fennel Seeds</h4>
+                                <p class="text-gray-600 mb-2">
+                                    <span class="font-medium">Color:</span> Pale green<br>
+                                    <span class="font-medium">Size:</span> 3-4mm length<br>
+                                    <span class="font-medium">Aroma:</span> Mild, sweet<br>
+                                    <span class="font-medium">Use:</span> Organic food products and supplements
+                                </p>
+                            </div>
+
+                            <div class="border border-gray-200 rounded-lg p-4">
+                                <h4 class="heading text-lg font-semibold text-gray-900 mb-2">Crushed Fennel</h4>
+                                <p class="text-gray-600 mb-2">
+                                    <span class="font-medium">Color:</span> Green to brown<br>
+                                    <span class="font-medium">Size:</span> 1-2mm particles<br>
+                                    <span class="font-medium">Aroma:</span> Intense<br>
+                                    <span class="font-medium">Use:</span> Seasoning blends and ready-to-use applications
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Names Tab -->
+                    <div id="names" class="tab-content">
+                        <h3 class="heading text-xl font-semibold text-gray-900 mb-4">Names in Different Languages</h3>
+                        <p class="text-gray-600 mb-4" id="namesDescription">
+                            Fennel is known by various names across different cultures and regions:
+                        </p>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="namesContainer">
+                            <div class="border border-gray-200 rounded-lg p-4">
+                                <h4 class="heading text-lg font-semibold text-gray-900 mb-2">Indian Languages</h4>
+                                <ul class="space-y-1 text-gray-600">
+                                    <li><span class="font-medium">Hindi:</span> Saunf</li>
+                                    <li><span class="font-medium">Tamil:</span> Sombu</li>
+                                    <li><span class="font-medium">Telugu:</span> Sopu</li>
+                                    <li><span class="font-medium">Kannada:</span> Badi-sopu</li>
+                                    <li><span class="font-medium">Malayalam:</span> Perumjeerakam</li>
+                                    <li><span class="font-medium">Bengali:</span> Mouri</li>
+                                    <li><span class="font-medium">Gujarati:</span> Variyali</li>
+                                    <li><span class="font-medium">Marathi:</span> Badishep</li>
+                                </ul>
+                            </div>
+
+                            <div class="border border-gray-200 rounded-lg p-4">
+                                <h4 class="heading text-lg font-semibold text-gray-900 mb-2">International Names</h4>
+                                <ul class="space-y-1 text-gray-600">
+                                    <li><span class="font-medium">Spanish:</span> Hinojo</li>
+                                    <li><span class="font-medium">French:</span> Fenouil</li>
+                                    <li><span class="font-medium">German:</span> Fenchel</li>
+                                    <li><span class="font-medium">Italian:</span> Finocchio</li>
+                                    <li><span class="font-medium">Arabic:</span> Shamar</li>
+                                    <li><span class="font-medium">Chinese:</span> Hui xiang</li>
+                                    <li><span class="font-medium">Japanese:</span> Uikyō</li>
+                                    <li><span class="font-medium">Russian:</span> Fyenkhel</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Origin Tab -->
+                    <div id="origin" class="tab-content">
+                        <h3 class="heading text-xl font-semibold text-gray-900 mb-4">Origin & Cultivation</h3>
+                        <p class="text-gray-600 mb-4" id="originDescription">
+                            Fennel is native to the Mediterranean region but has been cultivated worldwide for centuries. India is now one of the largest producers and exporters of high-quality fennel seeds, particularly from the states of Gujarat and Rajasthan.
+                        </p>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <h4 class="heading text-lg font-semibold text-gray-900 mb-2">Growing Regions</h4>
+                                <p class="text-gray-600 mb-2" id="growingRegions">
+                                    The best quality fennel seeds come from these regions:
+                                </p>
+                                <ul class="list-disc pl-5 text-gray-600 space-y-1" id="regionsList">
+                                    <li>Gujarat, India - known for sweet, aromatic varieties</li>
+                                    <li>Rajasthan, India - produces large quantities</li>
+                                    <li>Mediterranean region - original cultivation area</li>
+                                    <li>Egypt - known for high essential oil content</li>
+                                    <li>China - major global producer</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <h4 class="heading text-lg font-semibold text-gray-900 mb-2">Processing Method</h4>
+                                <p class="text-gray-600 mb-2" id="processingMethod">
+                                    Our processing ensures maximum flavor and quality:
+                                </p>
+                                <ol class="list-decimal pl-5 text-gray-600 space-y-1" id="processList">
+                                    <li>Selection of premium quality fennel plants</li>
+                                    <li>Careful harvesting at optimal maturity</li>
+                                    <li>Natural sun drying to preserve essential oils</li>
+                                    <li>Mechanical cleaning and sorting</li>
+                                    <li>Quality testing for aroma, color, and purity</li>
+                                    <li>Packaging in moisture-proof materials</li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <h4 class="heading text-lg font-semibold text-gray-900 mb-2">Quality Standards</h4>
+                        <p class="text-gray-600" id="qualityStandards">
+                            Our fennel seeds meet international quality standards including ISO, FSSAI, USDA Organic, and EU Organic certifications. We maintain strict hygiene protocols throughout the production process to ensure food safety and traceability.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Related Products -->
+            <div class="mt-12">
+                <h2 class="heading text-2xl font-bold text-gray-900 mb-6">Other Premium Spices</h2>
+                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6" id="relatedProducts">
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                        <div class="h-48 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1603048719539-d2581f4b2b9a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+                                alt="Cumin Seeds" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold text-gray-900 mb-1">Cumin Seeds</h3>
+                            <div class="flex justify-between items-center">
+                                <button onclick="changeProduct('cumin-seeds')"
+                                    class="px-4 py-2 bg-primary text-white rounded-button hover:bg-opacity-90 transition-colors text-sm">
+                                    View Details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                        <div class="h-48 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1603048719539-d2581f4b2b9a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+                                alt="Black Cumin" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold text-gray-900 mb-1">Black Cumin</h3>
+                            <div class="flex justify-between items-center">
+                                <button onclick="changeProduct('black-cumin')"
+                                    class="px-4 py-2 bg-primary text-white rounded-button hover:bg-opacity-90 transition-colors text-sm">
+                                    View Details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                        <div class="h-48 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1603048719539-d2581f4b2b9a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+                                alt="Celery Seeds" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold text-gray-900 mb-1">Celery Seeds</h3>
+                            <div class="flex justify-between items-center">
+                                <button onclick="changeProduct('celery-seeds')"
+                                    class="px-4 py-2 bg-primary text-white rounded-button hover:bg-opacity-90 transition-colors text-sm">
+                                    View Details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                        <div class="h-48 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1603048719539-d2581f4b2b9a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+                                alt="Ginger Fried" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold text-gray-900 mb-1">Ginger Fried</h3>
+                            <div class="flex justify-between items-center">
+                                <button onclick="changeProduct('ginger-fried')"
+                                    class="px-4 py-2 bg-primary text-white rounded-button hover:bg-opacity-90 transition-colors text-sm">
+                                    View Details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-12 pb-6">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="heading text-xl font-semibold mb-4">Abhinandan International</h3>
+                    <p class="text-gray-400 mb-4">
+                        Premium quality spices and food products sourced directly from farms across India
+                        and Asia.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#"
+                            class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-gray-700">
+                            <i class="ri-facebook-fill"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-gray-700">
+                            <i class="ri-instagram-line"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-gray-700">
+                            <i class="ri-twitter-fill"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-gray-700">
+                            <i class="ri-linkedin-fill"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="heading text-xl font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Home</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Products</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">About Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="heading text-xl font-semibold mb-4">Products</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Spices</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Raisins</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Herbs</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Grains</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Oil Seeds</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Dehydrated Vegetables</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Coconut Products</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="heading text-xl font-semibold mb-4">Contact Us</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="ri-map-pin-line mt-1 mr-2"></i>
+                            <span class="text-gray-400">123 Spice Street, Mumbai, India 400001</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-phone-line mt-1 mr-2"></i>
+                            <span class="text-gray-400">+91 98765 43210</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-mail-line mt-1 mr-2"></i>
+                            <span class="text-gray-400">info@abhinandan.com</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-time-line mt-1 mr-2"></i>
+                            <span class="text-gray-400">Mon-Fri: 9AM - 6PM</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-6">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-400 mb-4 md:mb-0">
+                        &copy; 2023 Abhinandan International. All rights reserved.
+                    </p>
+                    <div class="flex space-x-6">
+                        <a href="#" class="text-gray-400 hover:text-white">Privacy Policy</a>
+                        <a href="#" class="text-gray-400 hover:text-white">Terms of Service</a>
+                        <a href="#" class="text-gray-400 hover:text-white">Shipping Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Product data for spices
+        const products = {
+            'fennel-seeds': {
+                name: 'Fennel Seeds',
+                description: 'Our premium fennel seeds are carefully selected from the finest crops, known for their sweet, licorice-like flavor and aromatic properties. These seeds are sun-dried to perfection, retaining their essential oils and nutritional benefits. Ideal for both culinary and medicinal uses.',
+                color: 'Light green to pale brown',
+                moisture: 'Max 8%',
+                size: '3-4mm length',
+                packaging: '25kg, 50kg bags or as per requirement',
+                origin: 'Gujarat, India',
+                purity: '99.5%',
+                storage: 'Store in a cool, dry place away from direct sunlight. Keep in airtight containers to maintain freshness and prevent moisture absorption. Ideal storage temperature is below 25°C with relative humidity below 60%. For best quality, use within 12 months of packaging.',
+                culinaryUses: 'Fennel seeds are widely used in various cuisines around the world for their distinctive sweet flavor and aroma:',
+                culinaryList: [
+                    'Essential in Indian cooking for curries, pickles, and spice blends',
+                    'Used in Italian sausages and meat dishes',
+                    'Flavoring for breads, cookies, and cakes in European cuisine',
+                    'Key ingredient in Chinese five-spice powder',
+                    'Used to flavor teas and herbal infusions',
+                    'Added to fish and seafood dishes for enhanced flavor'
+                ],
+                industrialUses: 'Beyond culinary applications, fennel seeds have several health benefits and other uses:',
+                industrialList: [
+                    'Traditional remedy for digestive issues and bloating',
+                    'Natural breath freshener and mouth cleanser',
+                    'Used in Ayurvedic medicine for its cooling properties',
+                    'Essential oil used in aromatherapy and perfumery',
+                    'Ingredient in natural cough syrups and lozenges'
+                ],
+                varietiesDescription: 'We offer several varieties of fennel seeds to meet different culinary and industrial needs:',
+                varieties: [
+                    {
+                        name: 'Premium Fennel Seeds',
+                        details: '<span class="font-medium">Color:</span> Bright green<br><span class="font-medium">Size:</span> 3-4mm length<br><span class="font-medium">Aroma:</span> Strong, sweet<br><span class="font-medium">Use:</span> Premium culinary applications'
+                    },
+                    {
+                        name: 'Organic Fennel Seeds',
+                        details: '<span class="font-medium">Color:</span> Pale green<br><span class="font-medium">Size:</span> 3-4mm length<br><span class="font-medium">Aroma:</span> Mild, sweet<br><span class="font-medium">Use:</span> Organic food products and supplements'
+                    },
+                    {
+                        name: 'Crushed Fennel',
+                        details: '<span class="font-medium">Color:</span> Green to brown<br><span class="font-medium">Size:</span> 1-2mm particles<br><span class="font-medium">Aroma:</span> Intense<br><span class="font-medium">Use:</span> Seasoning blends and ready-to-use applications'
+                    }
+                ],
+                namesDescription: 'Fennel is known by various names across different cultures and regions:',
+                names: {
+                    indian: [
+                        ['Hindi', 'Saunf'],
+                        ['Tamil', 'Sombu'],
+                        ['Telugu', 'Sopu'],
+                        ['Kannada', 'Badi-sopu'],
+                        ['Malayalam', 'Perumjeerakam'],
+                        ['Bengali', 'Mouri'],
+                        ['Gujarati', 'Variyali'],
+                        ['Marathi', 'Badishep']
+                    ],
+                    international: [
+                        ['Spanish', 'Hinojo'],
+                        ['French', 'Fenouil'],
+                        ['German', 'Fenchel'],
+                        ['Italian', 'Finocchio'],
+                        ['Arabic', 'Shamar'],
+                        ['Chinese', 'Hui xiang'],
+                        ['Japanese', 'Uikyō'],
+                        ['Russian', 'Fyenkhel']
+                    ]
+                },
+                originDescription: 'Fennel is native to the Mediterranean region but has been cultivated worldwide for centuries. India is now one of the largest producers and exporters of high-quality fennel seeds, particularly from the states of Gujarat and Rajasthan.',
+                growingRegions: 'The best quality fennel seeds come from these regions:',
+                regionsList: [
+                    'Gujarat, India - known for sweet, aromatic varieties',
+                    'Rajasthan, India - produces large quantities',
+                    'Mediterranean region - original cultivation area',
+                    'Egypt - known for high essential oil content',
+                    'China - major global producer'
+                ],
+                processingMethod: 'Our processing ensures maximum flavor and quality:',
+                processList: [
+                    'Selection of premium quality fennel plants',
+                    'Careful harvesting at optimal maturity',
+                    'Natural sun drying to preserve essential oils',
+                    'Mechanical cleaning and sorting',
+                    'Quality testing for aroma, color, and purity',
+                    'Packaging in moisture-proof materials'
+                ],
+                qualityStandards: 'Our fennel seeds meet international quality standards including ISO, FSSAI, USDA Organic, and EU Organic certifications. We maintain strict hygiene protocols throughout the production process to ensure food safety and traceability.'
+            },
+            'cumin-seeds': {
+                name: 'Cumin Seeds',
+                description: 'Our premium cumin seeds are known for their distinctive earthy, nutty flavor with a warm aroma. Carefully sourced from the best growing regions, these seeds are rich in essential oils and have excellent shelf life. Ideal for adding depth to various dishes.',
+                color: 'Brown to dark brown',
+                moisture: 'Max 9%',
+                size: '4-6mm length',
+                packaging: '25kg, 50kg bags or as per requirement',
+                origin: 'Rajasthan, India',
+                purity: '99%',
+                storage: 'Store in a cool, dry place away from direct sunlight. Keep in airtight containers to maintain freshness. Ideal storage temperature is below 25°C with relative humidity below 65%.',
+                culinaryUses: 'Cumin seeds are a staple in many global cuisines:',
+                culinaryList: [
+                    'Essential in Indian curries, dals, and spice blends',
+                    'Used in Mexican dishes like tacos and chili',
+                    'Flavoring for Middle Eastern dishes and breads',
+                    'Key ingredient in North African spice mixes',
+                    'Used to flavor cheeses and sausages',
+                    'Added to soups and stews for depth of flavor'
+                ],
+                industrialUses: 'Beyond culinary applications, cumin seeds have several other uses:',
+                industrialList: [
+                    'Traditional remedy for digestive health',
+                    'Used in Ayurvedic medicine for its warming properties',
+                    'Essential oil used in aromatherapy',
+                    'Ingredient in natural digestive supplements',
+                    'Used in some cosmetic preparations'
+                ],
+                varietiesDescription: 'We offer several varieties of cumin seeds:',
+                varieties: [
+                    {
+                        name: 'Premium Cumin Seeds',
+                        details: '<span class="font-medium">Color:</span> Dark brown<br><span class="font-medium">Size:</span> 4-6mm length<br><span class="font-medium">Aroma:</span> Strong, earthy<br><span class="font-medium">Use:</span> Premium culinary applications'
+                    },
+                    {
+                        name: 'Organic Cumin Seeds',
+                        details: '<span class="font-medium">Color:</span> Light brown<br><span class="font-medium">Size:</span> 4-6mm length<br><span class="font-medium">Aroma:</span> Mild, nutty<br><span class="font-medium">Use:</span> Organic food products'
+                    },
+                    {
+                        name: 'Crushed Cumin',
+                        details: '<span class="font-medium">Color:</span> Brown<br><span class="font-medium">Size:</span> 1-3mm particles<br><span class="font-medium">Aroma:</span> Intense<br><span class="font-medium">Use:</span> Ready-to-use seasoning'
+                    }
+                ],
+                namesDescription: 'Cumin is known by various names across different cultures:',
+                names: {
+                    indian: [
+                        ['Hindi', 'Jeera'],
+                        ['Tamil', 'Jeerakam'],
+                        ['Telugu', 'Jeelakarra'],
+                        ['Kannada', 'Jeerige'],
+                        ['Malayalam', 'Jeerakam'],
+                        ['Bengali', 'Jeera'],
+                        ['Gujarati', 'Jeeru'],
+                        ['Marathi', 'Jeere']
+                    ],
+                    international: [
+                        ['Spanish', 'Comino'],
+                        ['French', 'Cumin'],
+                        ['German', 'Kreuzkümmel'],
+                        ['Italian', 'Cumino'],
+                        ['Arabic', 'Kamoun'],
+                        ['Chinese', 'Zi ran'],
+                        ['Japanese', 'Hime-unne'],
+                        ['Russian', 'Zira']
+                    ]
+                },
+                originDescription: 'Cumin is native to the eastern Mediterranean region and has been cultivated for thousands of years. Today, India is the largest producer of high-quality cumin seeds.',
+                growingRegions: 'The best quality cumin comes from these regions:',
+                regionsList: [
+                    'Rajasthan, India - produces 70% of world supply',
+                    'Gujarat, India - known for premium quality',
+                    'Iran - known for distinctive flavor',
+                    'Turkey - traditional growing region',
+                    'Syria - produces small but flavorful seeds'
+                ],
+                processingMethod: 'Our processing ensures maximum flavor retention:',
+                processList: [
+                    'Selection of premium quality cumin plants',
+                    'Careful harvesting at optimal maturity',
+                    'Gentle drying to preserve essential oils',
+                    'Mechanical cleaning and sorting',
+                    'Quality testing for aroma and color',
+                    'Packaging in moisture-proof materials'
+                ],
+                qualityStandards: 'Our cumin seeds meet international quality standards including ISO, FSSAI, and USDA specifications. We maintain strict quality control throughout production.'
+            },
+            'black-cumin': {
+                name: 'Black Cumin',
+                description: 'Our premium black cumin (Nigella sativa) seeds, also known as kalonji, are prized for their distinctive flavor and numerous health benefits. These small black seeds have a slightly bitter, peppery taste with notes of onion and oregano. Widely used in traditional medicine and cooking.',
+                color: 'Matte black',
+                moisture: 'Max 7%',
+                size: '2-3mm length',
+                packaging: '25kg, 50kg bags or as per requirement',
+                origin: 'Middle East/India',
+                purity: '99%',
+                storage: 'Store in a cool, dry place away from direct sunlight. Keep in airtight containers to maintain freshness. Ideal storage temperature is below 25°C with relative humidity below 60%.',
+                culinaryUses: 'Black cumin seeds are used in various culinary traditions:',
+                culinaryList: [
+                    'Essential in Indian breads like naan and paratha',
+                    'Used in Middle Eastern za\'atar spice blends',
+                    'Flavoring for pickles and chutneys',
+                    'Sprinkled on salads and yogurt dips',
+                    'Used in Bengali spice mixes (panch phoron)',
+                    'Added to cheese and savory pastries'
+                ],
+                industrialUses: 'Black cumin has numerous traditional uses:',
+                industrialList: [
+                    'Known as "the seed of blessing" in traditional medicine',
+                    'Used in Ayurveda for its warming properties',
+                    'Essential oil used in wellness products',
+                    'Ingredient in natural health supplements',
+                    'Used in some cosmetic preparations'
+                ],
+                varietiesDescription: 'We offer several varieties of black cumin:',
+                varieties: [
+                    {
+                        name: 'Premium Black Cumin',
+                        details: '<span class="font-medium">Color:</span> Deep black<br><span class="font-medium">Size:</span> 2-3mm length<br><span class="font-medium">Aroma:</span> Peppery, onion-like<br><span class="font-medium">Use:</span> Premium culinary applications'
+                    },
+                    {
+                        name: 'Organic Black Cumin',
+                        details: '<span class="font-medium">Color:</span> Matte black<br><span class="font-medium">Size:</span> 2-3mm length<br><span class="font-medium">Aroma:</span> Mild, earthy<br><span class="font-medium">Use:</span> Organic food products'
+                    },
+                    {
+                        name: 'Black Cumin Oil',
+                        details: '<span class="font-medium">Form:</span> Cold-pressed oil<br><span class="font-medium">Color:</span> Golden brown<br><span class="font-medium">Aroma:</span> Intense, herbal<br><span class="font-medium">Use:</span> Wellness products'
+                    }
+                ],
+                namesDescription: 'Black cumin is known by various names:',
+                names: {
+                    indian: [
+                        ['Hindi', 'Kalonji'],
+                        ['Tamil', 'Karum jeerakam'],
+                        ['Telugu', 'Nalla jeelakarra'],
+                        ['Kannada', 'Kari jeerige'],
+                        ['Malayalam', 'Karim jeerakam'],
+                        ['Bengali', 'Kalo jeera'],
+                        ['Gujarati', 'Kalo jeeru'],
+                        ['Marathi', 'Kale jeere']
+                    ],
+                    international: [
+                        ['Arabic', 'Habbat al-barakah'],
+                        ['Persian', 'Shonaiz'],
+                        ['Turkish', 'Çörek otu'],
+                        ['English', 'Black seed'],
+                        ['Latin', 'Nigella sativa'],
+                        ['French', 'Nigelle'],
+                        ['German', 'Schwarzkümmel'],
+                        ['Spanish', 'Ajenuz']
+                    ]
+                },
+                originDescription: 'Black cumin is native to Southwest Asia and has been cultivated for thousands of years. It was found in Tutankhamun\'s tomb, showing its ancient importance.',
+                growingRegions: 'The best quality black cumin comes from:',
+                regionsList: [
+                    'Middle East - original growing region',
+                    'India - major producer of quality seeds',
+                    'Egypt - known for traditional cultivation',
+                    'Mediterranean region - smaller production',
+                    'North Africa - traditional growing areas'
+                ],
+                processingMethod: 'Our careful processing preserves quality:',
+                processList: [
+                    'Selection of premium quality plants',
+                    'Gentle harvesting to prevent damage',
+                    'Natural drying in shade',
+                    'Mechanical cleaning and sorting',
+                    'Quality testing for purity',
+                    'Careful packaging to preserve freshness'
+                ],
+                qualityStandards: 'Our black cumin meets international quality standards including ISO, FSSAI, and organic certifications where applicable.'
+            },
+            'celery-seeds': {
+                name: 'Celery Seeds',
+                description: 'Our premium celery seeds are harvested from the finest celery plants, offering a strong, concentrated celery flavor with slight bitter notes. These tiny seeds pack a powerful punch and are perfect for adding depth to dishes where fresh celery would be impractical.',
+                color: 'Light to dark brown',
+                moisture: 'Max 7%',
+                size: '1-2mm diameter',
+                packaging: '25kg, 50kg bags or as per requirement',
+                origin: 'India/France',
+                purity: '99%',
+                storage: 'Store in a cool, dry place away from direct sunlight. Keep in airtight containers to maintain freshness. Ideal storage temperature is below 25°C with relative humidity below 60%.',
+                culinaryUses: 'Celery seeds are versatile in cooking:',
+                culinaryList: [
+                    'Essential in pickling spice blends',
+                    'Used in coleslaw and potato salads',
+                    'Flavoring for Bloody Mary cocktails',
+                    'Added to breads and crackers',
+                    'Used in salad dressings and marinades',
+                    'Seasoning for soups and stews'
+                ],
+                industrialUses: 'Beyond culinary applications:',
+                industrialList: [
+                    'Used in traditional medicine for joint health',
+                    'Essential oil used in aromatherapy',
+                    'Ingredient in natural health supplements',
+                    'Used in some cosmetic preparations',
+                    'Flavoring agent in food industry'
+                ],
+                varietiesDescription: 'We offer several varieties:',
+                varieties: [
+                    {
+                        name: 'Premium Celery Seeds',
+                        details: '<span class="font-medium">Color:</span> Dark brown<br><span class="font-medium">Size:</span> 1-2mm<br><span class="font-medium">Aroma:</span> Strong, concentrated<br><span class="font-medium">Use:</span> Premium culinary applications'
+                    },
+                    {
+                        name: 'Organic Celery Seeds',
+                        details: '<span class="font-medium">Color:</span> Light brown<br><span class="font-medium">Size:</span> 1-2mm<br><span class="font-medium">Aroma:</span> Mild, herbal<br><span class="font-medium">Use:</span> Organic food products'
+                    },
+                    {
+                        name: 'Celery Salt',
+                        details: '<span class="font-medium">Form:</span> Ground with salt<br><span class="font-medium">Color:</span> Light brown<br><span class="font-medium">Aroma:</span> Balanced<br><span class="font-medium">Use:</span> Ready-to-use seasoning'
+                    }
+                ],
+                namesDescription: 'Celery seeds are known by various names:',
+                names: {
+                    indian: [
+                        ['Hindi', 'Shalari'],
+                        ['Tamil', 'Celery vitai'],
+                        ['Telugu', 'Celery ginjalu'],
+                        ['Kannada', 'Celery bija'],
+                        ['Malayalam', 'Celery vittana'],
+                        ['Bengali', 'Celery bij'],
+                        ['Gujarati', 'Celery bij'],
+                        ['Marathi', 'Celery bi']
+                    ],
+                    international: [
+                        ['French', 'Graines de céleri'],
+                        ['German', 'Selleriesamen'],
+                        ['Italian', 'Semi di sedano'],
+                        ['Spanish', 'Semillas de apio'],
+                        ['Dutch', 'Selderijzaad'],
+                        ['Portuguese', 'Sementes de aipo'],
+                        ['Russian', 'Semyena sel\'dereya'],
+                        ['Chinese', 'Qin cai zi']
+                    ]
+                },
+                originDescription: 'Celery seeds come from the same plant as stalk celery (Apium graveolens), which originated in the Mediterranean region. The seeds have been used since ancient times.',
+                growingRegions: 'The best quality comes from:',
+                regionsList: [
+                    'India - major producer',
+                    'France - known for premium quality',
+                    'United States - commercial production',
+                    'China - large-scale cultivation',
+                    'Eastern Europe - traditional growing areas'
+                ],
+                processingMethod: 'Our careful processing:',
+                processList: [
+                    'Selection of premium quality plants',
+                    'Gentle harvesting at optimal maturity',
+                    'Natural drying process',
+                    'Mechanical cleaning and sorting',
+                    'Quality testing for aroma and color',
+                    'Packaging in moisture-proof materials'
+                ],
+                qualityStandards: 'Our celery seeds meet international quality standards including ISO, FSSAI, and USDA specifications.'
+            },
+            'ginger-fried': {
+                name: 'Ginger Fried',
+                description: 'Our premium fried ginger is made from carefully selected fresh ginger roots that are peeled, sliced, and fried to perfection. This product offers concentrated ginger flavor with a crispy texture, perfect for adding to dishes where fresh ginger would be impractical.',
+                color: 'Golden brown',
+                moisture: 'Max 6%',
+                size: '3-5mm pieces',
+                packaging: '25kg, 50kg bags or as per requirement',
+                origin: 'Kerala, India',
+                purity: '98%',
+                storage: 'Store in a cool, dry place away from direct sunlight. Keep in airtight containers to maintain crispness. Ideal storage temperature is below 25°C with relative humidity below 60%.',
+                culinaryUses: 'Fried ginger is versatile in cooking:',
+                culinaryList: [
+                    'Added to stir-fries and Asian dishes',
+                    'Used in soups and noodle dishes',
+                    'Flavoring for tea and herbal drinks',
+                    'Added to baked goods and desserts',
+                    'Used in spice blends and marinades',
+                    'Garnish for salads and rice dishes'
+                ],
+                industrialUses: 'Beyond culinary applications:',
+                industrialList: [
+                    'Used in traditional medicine for digestion',
+                    'Ingredient in natural health supplements',
+                    'Flavoring agent in food industry',
+                    'Used in some cosmetic preparations',
+                    'Component of herbal remedies'
+                ],
+                varietiesDescription: 'We offer several varieties:',
+                varieties: [
+                    {
+                        name: 'Premium Fried Ginger',
+                        details: '<span class="font-medium">Color:</span> Golden brown<br><span class="font-medium">Size:</span> 3-5mm<br><span class="font-medium">Aroma:</span> Strong, spicy<br><span class="font-medium">Use:</span> Premium culinary applications'
+                    },
+                    {
+                        name: 'Organic Fried Ginger',
+                        details: '<span class="font-medium">Color:</span> Light brown<br><span class="font-medium">Size:</span> 3-5mm<br><span class="font-medium">Aroma:</span> Mild, sweet<br><span class="font-medium">Use:</span> Organic food products'
+                    },
+                    {
+                        name: 'Ginger Powder',
+                        details: '<span class="font-medium">Form:</span> Ground<br><span class="font-medium">Color:</span> Light brown<br><span class="font-medium">Aroma:</span> Intense<br><span class="font-medium">Use:</span> Ready-to-use seasoning'
+                    }
+                ],
+                namesDescription: 'Ginger is known by various names:',
+                names: {
+                    indian: [
+                        ['Hindi', 'Adrak'],
+                        ['Tamil', 'Inji'],
+                        ['Telugu', 'Allam'],
+                        ['Kannada', 'Shunti'],
+                        ['Malayalam', 'Inchi'],
+                        ['Bengali', 'Ada'],
+                        ['Gujarati', 'Adu'],
+                        ['Marathi', 'Ale']
+                    ],
+                    international: [
+                        ['French', 'Gingembre'],
+                        ['German', 'Ingwer'],
+                        ['Italian', 'Zenzero'],
+                        ['Spanish', 'Jengibre'],
+                        ['Arabic', 'Zanjabeel'],
+                        ['Chinese', 'Jiang'],
+                        ['Japanese', 'Shōga'],
+                        ['Russian', 'Imbir']
+                    ]
+                },
+                originDescription: 'Ginger originated in Southeast Asia and has been cultivated for thousands of years. It was one of the first spices exported from the Orient.',
+                growingRegions: 'The best quality comes from:',
+                regionsList: [
+                    'Kerala, India - known for premium quality',
+                    'China - largest producer',
+                    'Nigeria - significant production',
+                    'Thailand - known for aromatic varieties',
+                    'Jamaica - prized for mild flavor'
+                ],
+                processingMethod: 'Our careful processing:',
+                processList: [
+                    'Selection of premium quality roots',
+                    'Thorough cleaning and peeling',
+                    'Precision slicing to uniform thickness',
+                    'Controlled frying at optimal temperature',
+                    'Quality testing for crispness and flavor',
+                    'Packaging in moisture-proof materials'
+                ],
+                qualityStandards: 'Our fried ginger meets international quality standards including ISO, FSSAI, and USDA specifications.'
+            },
+            'nutmeg-mace': {
+                name: 'Nutmeg & Mace',
+                description: 'Our premium nutmeg and mace come from the same fruit (Myristica fragrans) - nutmeg being the seed and mace being the lacy covering (aril) of the seed. Both offer warm, sweet flavors with nutmeg being slightly sweeter and mace more delicate. These spices are hand-selected for their superior quality and aroma.',
+                color: 'Nutmeg: Brown; Mace: Orange-red',
+                moisture: 'Max 8%',
+                size: 'Nutmeg: 20-30mm; Mace: flakes',
+                packaging: '25kg, 50kg bags or as per requirement',
+                origin: 'Indonesia/India',
+                purity: '99%',
+                storage: 'Store in a cool, dry place away from direct sunlight. Keep in airtight containers to maintain freshness. Whole nutmeg retains flavor longer than ground. Ideal storage temperature is below 25°C with relative humidity below 60%.',
+                culinaryUses: 'Nutmeg and mace are versatile in cooking:',
+                culinaryList: [
+                    'Essential in baking for cakes and cookies',
+                    'Used in béchamel sauce and cream dishes',
+                    'Flavoring for eggnog and warm drinks',
+                    'Added to meat rubs and sausages',
+                    'Used in spice blends like garam masala',
+                    'Flavoring for vegetables like spinach'
+                ],
+                industrialUses: 'Beyond culinary applications:',
+                industrialList: [
+                    'Used in traditional medicine for digestion',
+                    'Essential oil used in aromatherapy',
+                    'Ingredient in natural health supplements',
+                    'Used in some cosmetic preparations',
+                    'Flavoring agent in food industry'
+                ],
+                varietiesDescription: 'We offer several varieties:',
+                varieties: [
+                    {
+                        name: 'Whole Nutmeg',
+                        details: '<span class="font-medium">Color:</span> Brown<br><span class="font-medium">Size:</span> 20-30mm<br><span class="font-medium">Aroma:</span> Warm, sweet<br><span class="font-medium">Use:</span> Premium culinary applications'
+                    },
+                    {
+                        name: 'Mace Blades',
+                        details: '<span class="font-medium">Color:</span> Orange-red<br><span class="font-medium">Form:</span> Whole blades<br><span class="font-medium">Aroma:</span> Delicate, floral<br><span class="font-medium">Use:</span> Gourmet cooking'
+                    },
+                    {
+                        name: 'Ground Nutmeg',
+                        details: '<span class="font-medium">Form:</span> Powder<br><span class="font-medium">Color:</span> Light brown<br><span class="font-medium">Aroma:</span> Intense<br><span class="font-medium">Use:</span> Ready-to-use seasoning'
+                    }
+                ],
+                namesDescription: 'Nutmeg and mace are known by various names:',
+                names: {
+                    indian: [
+                        ['Hindi', 'Jaiphal (nutmeg), Javitri (mace)'],
+                        ['Tamil', 'Jathikai (nutmeg), Pathiri (mace)'],
+                        ['Telugu', 'Jajikaya (nutmeg), Jajipatri (mace)'],
+                        ['Kannada', 'Jaikai (nutmeg), Japatri (mace)'],
+                        ['Malayalam', 'Jathikka (nutmeg), Pathiri (mace)'],
+                        ['Bengali', 'Jaiphal (nutmeg), Javitri (mace)'],
+                        ['Gujarati', 'Jaiphal (nutmeg), Javatri (mace)'],
+                        ['Marathi', 'Jaiphal (nutmeg), Jaipatri (mace)']
+                    ],
+                    international: [
+                        ['French', 'Noix de muscade (nutmeg), Macis (mace)'],
+                        ['German', 'Muskatnuss (nutmeg), Muskatblüte (mace)'],
+                        ['Italian', 'Noce moscata (nutmeg), Macis (mace)'],
+                        ['Spanish', 'Nuez moscada (nutmeg), Macis (mace)'],
+                        ['Dutch', 'Nootmuskaat (nutmeg), Foelie (mace)'],
+                        ['Arabic', 'Jawz at-tiyb (nutmeg), Basbasa (mace)'],
+                        ['Chinese', 'Rou dou kou (nutmeg), Rou dou kou pi (mace)'],
+                        ['Japanese', 'Nikuzuku (nutmeg), Meisu (mace)']
+                    ]
+                },
+                originDescription: 'Nutmeg is native to the Banda Islands of Indonesia and was highly prized in medieval Europe. The Dutch maintained a monopoly on nutmeg production for centuries.',
+                growingRegions: 'The best quality comes from:',
+                regionsList: [
+                    'Indonesia - original growing region',
+                    'Grenada - known as "Isle of Spice"',
+                    'India - Kerala and Tamil Nadu',
+                    'Sri Lanka - small production',
+                    'Caribbean islands - introduced cultivation'
+                ],
+                processingMethod: 'Our careful processing:',
+                processList: [
+                    'Hand selection of premium quality fruits',
+                    'Careful separation of mace from nutmeg',
+                    'Natural drying process',
+                    'Quality sorting and grading',
+                    'Precision grinding (for powder products)',
+                    'Packaging in moisture-proof materials'
+                ],
+                qualityStandards: 'Our nutmeg and mace meet international quality standards including ISO, FSSAI, and USDA specifications.'
+            }
+        };
+
+        // Change product function
+        function changeProduct(productId) {
+            const product = products[productId];
+
+            // Update breadcrumb
+            document.getElementById('productNameBreadcrumb').textContent = product.name;
+
+            // Update main product info
+            document.getElementById('productName').textContent = product.name;
+            document.getElementById('productDescription').textContent = product.description;
+            document.getElementById('productColor').textContent = product.color;
+            document.getElementById('productMoisture').textContent = product.moisture;
+            document.getElementById('productSize').textContent = product.size;
+            document.getElementById('productPackaging').textContent = product.packaging;
+            document.getElementById('productOrigin').textContent = product.origin;
+            document.getElementById('productPurity').textContent = product.purity;
+            document.getElementById('productStorage').textContent = product.storage;
+
+            // Update selector
+            document.getElementById('productSelector').value = productId;
+
+            // Update uses tab
+            document.getElementById('culinaryUses').textContent = product.culinaryUses;
+            document.getElementById('industrialUses').textContent = product.industrialUses;
+
+            let culinaryList = document.getElementById('culinaryList');
+            culinaryList.innerHTML = '';
+            product.culinaryList.forEach(item => {
+                let li = document.createElement('li');
+                li.textContent = item;
+                culinaryList.appendChild(li);
+            });
+
+            let industrialList = document.getElementById('industrialList');
+            industrialList.innerHTML = '';
+            product.industrialList.forEach(item => {
+                let li = document.createElement('li');
+                li.textContent = item;
+                industrialList.appendChild(li);
+            });
+
+            // Update varieties tab
+            document.getElementById('varietiesDescription').textContent = product.varietiesDescription;
+
+            let varietiesContainer = document.getElementById('varietiesContainer');
+            varietiesContainer.innerHTML = '';
+            product.varieties.forEach(variety => {
+                let div = document.createElement('div');
+                div.className = 'border border-gray-200 rounded-lg p-4';
+                div.innerHTML = `
+                    <h4 class="heading text-lg font-semibold text-gray-900 mb-2">${variety.name}</h4>
+                    <p class="text-gray-600 mb-2">${variety.details}</p>
+                `;
+                varietiesContainer.appendChild(div);
+            });
+
+            // Update names tab
+            document.getElementById('namesDescription').textContent = product.namesDescription;
+
+            let namesContainer = document.getElementById('namesContainer');
+            namesContainer.innerHTML = '';
+
+            // Indian names
+            let indianDiv = document.createElement('div');
+            indianDiv.className = 'border border-gray-200 rounded-lg p-4';
+            indianDiv.innerHTML = '<h4 class="heading text-lg font-semibold text-gray-900 mb-2">Indian Languages</h4><ul class="space-y-1 text-gray-600"></ul>';
+            let indianList = indianDiv.querySelector('ul');
+            product.names.indian.forEach(name => {
+                let li = document.createElement('li');
+                li.innerHTML = `<span class="font-medium">${name[0]}:</span> ${name[1]}`;
+                indianList.appendChild(li);
+            });
+            namesContainer.appendChild(indianDiv);
+
+            // International names
+            let intlDiv = document.createElement('div');
+            intlDiv.className = 'border border-gray-200 rounded-lg p-4';
+            intlDiv.innerHTML = '<h4 class="heading text-lg font-semibold text-gray-900 mb-2">International Names</h4><ul class="space-y-1 text-gray-600"></ul>';
+            let intlList = intlDiv.querySelector('ul');
+            product.names.international.forEach(name => {
+                let li = document.createElement('li');
+                li.innerHTML = `<span class="font-medium">${name[0]}:</span> ${name[1]}`;
+                intlList.appendChild(li);
+            });
+            namesContainer.appendChild(intlDiv);
+
+            // Update origin tab
+            document.getElementById('originDescription').textContent = product.originDescription;
+            document.getElementById('growingRegions').textContent = product.growingRegions;
+            document.getElementById('processingMethod').textContent = product.processingMethod;
+            document.getElementById('qualityStandards').textContent = product.qualityStandards;
+
+            let regionsList = document.getElementById('regionsList');
+            regionsList.innerHTML = '';
+            product.regionsList.forEach(item => {
+                let li = document.createElement('li');
+                li.textContent = item;
+                regionsList.appendChild(li);
+            });
+
+            let processList = document.getElementById('processList');
+            processList.innerHTML = '';
+            product.processList.forEach(item => {
+                let li = document.createElement('li');
+                li.textContent = item;
+                processList.appendChild(li);
+            });
+
+            // Update images (placeholder - in a real app you would use actual product images)
+            document.getElementById('mainImage').src = `https://images.unsplash.com/photo-1603048719539-d2581f4b2b9a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80&product=${productId}`;
+            document.getElementById('mainImage').alt = product.name;
+
+            // Reset tab to uses
+            document.querySelector('.tab-button.text-primary').classList.remove('text-primary', 'border-primary');
+            document.querySelector('.tab-button.text-primary').classList.add('text-gray-500', 'border-transparent');
+
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+
+            document.getElementById('uses').classList.add('active');
+            document.querySelector('[onclick="openTab(event, \'uses\')"]').classList.add('text-primary', 'border-primary');
+            document.querySelector('[onclick="openTab(event, \'uses\')"]').classList.remove('text-gray-500', 'border-transparent');
+        }
+
+        // Initialize with fennel seeds
+        document.addEventListener('DOMContentLoaded', function () {
+            changeProduct('fennel-seeds');
+
+            // Set up product selector change event
+            document.getElementById('productSelector').addEventListener('change', function () {
+                changeProduct(this.value);
+            });
+        });
+
+        // Image gallery functionality
+        function changeImage(src) {
+            document.getElementById('mainImage').src = src;
+
+            // Update active thumbnail
+            const thumbnails = document.querySelectorAll('.product-gallery-thumbnail');
+            thumbnails.forEach(thumb => {
+                thumb.classList.remove('active');
+                if (thumb.querySelector('img').src === src) {
+                    thumb.classList.add('active');
+                }
+            });
+        }
+
+        // Tab functionality
+        function openTab(evt, tabName) {
+            const tabContents = document.getElementsByClassName('tab-content');
+            for (let i = 0; i < tabContents.length; i++) {
+                tabContents[i].classList.remove('active');
+            }
+
+            const tabButtons = document.getElementsByClassName('tab-button');
+            for (let i = 0; i < tabButtons.length; i++) {
+                tabButtons[i].classList.remove('text-primary', 'border-primary');
+                tabButtons[i].classList.add('text-gray-500', 'border-transparent');
+            }
+
+            document.getElementById(tabName).classList.add('active');
+            evt.currentTarget.classList.remove('text-gray-500', 'border-transparent');
+            evt.currentTarget.classList.add('text-primary', 'border-primary');
+        }
+    </script>
+</body>
+
+</html>

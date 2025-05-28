@@ -1,0 +1,1161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raisins | Abhinandan International</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#8B4513',
+                        secondary: '#6B8E23'
+                    },
+                    borderRadius: {
+                        'none': '0px',
+                        'sm': '4px',
+                        DEFAULT: '8px',
+                        'md': '12px',
+                        'lg': '16px',
+                        'xl': '20px',
+                        '2xl': '24px',
+                        '3xl': '32px',
+                        'full': '9999px',
+                        'button': '8px'
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <style>
+        :where([class^="ri-"])::before {
+            content: "\f3c2";
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .heading {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .custom-input:focus {
+            outline: none;
+        }
+
+        .custom-checkbox {
+            appearance: none;
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #8B4513;
+            border-radius: 4px;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .custom-checkbox:checked {
+            background-color: #8B4513;
+        }
+
+        .custom-checkbox:checked::after {
+            content: "";
+            position: absolute;
+            width: 5px;
+            height: 10px;
+            border: solid white;
+            border-width: 0 2px 2px 0;
+            top: 2px;
+            left: 6px;
+            transform: rotate(45deg);
+        }
+
+        .product-gallery-thumbnail {
+            transition: all 0.3s ease;
+        }
+
+        .product-gallery-thumbnail:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-gallery-thumbnail.active {
+            border: 2px solid #8B4513;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-white">
+    <!-- Header Section -->
+    <header class="sticky top-0 z-50 bg-white shadow-sm">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                    <!-- <a href="#" class="text-3xl font-['Pacifico'] text-primary">Abhinandan</a> -->
+                    <a href="#" class="flex items-center">
+                        <img src="photo/logo-4kk-1.png" alt="Abhinandan Logo" class="h-10 w-auto mr-4">
+                    </a>
+                    <nav class="hidden md:flex ml-10">
+                        <ul class="flex space-x-8">
+                            <li><a href="Home.html"
+                                    class="text-gray-800 font-medium hover:text-primary transition-colors">Home</a></li>
+                            <li><a href="Product.html"
+                                    class="text-primary font-medium hover:text-primary transition-colors">Products</a>
+                            </li>
+                            <li><a href="Aboutus.html"
+                                    class="text-gray-800 font-medium hover:text-primary transition-colors">About Us</a>
+                            </li>
+                            <li><a href="Contact.html"
+                                    class="text-gray-800 font-medium hover:text-primary transition-colors">Contact</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="flex items-center">
+                    <div class="relative mr-4">
+                        <input type="text" placeholder="Search products..."
+                            class="custom-input pl-10 pr-4 py-2 rounded-full bg-gray-100 text-sm w-48 border-none">
+                        <div
+                            class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 flex items-center justify-center text-gray-500">
+                            <i class="ri-search-line"></i>
+                        </div>
+                    </div>
+
+                    <button
+                        class="ml-4 md:flex items-center px-4 py-2 bg-primary text-white rounded-button hover:bg-opacity-90 transition-colors whitespace-nowrap hidden">
+                        <span>Get Quote</span>
+                    </button>
+                    <div class="md:hidden w-10 h-10 flex items-center justify-center">
+                        <i class="ri-menu-line text-xl"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Product Detail Section -->
+    <section class="py-12 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <!-- Breadcrumb -->
+            <div class="flex items-center text-sm text-gray-600 mb-6">
+                <a href="Home.html" class="hover:text-primary">Home</a>
+                <i class="ri-arrow-right-s-line mx-2"></i>
+                <a href="Product.html" class="hover:text-primary">Products</a>
+                <i class="ri-arrow-right-s-line mx-2"></i>
+                <a href="Product.html?section#raisins" class="hover:text-primary">Raisins</a>
+                <i class="ri-arrow-right-s-line mx-2"></i>
+                <span class="text-primary" id="productNameBreadcrumb">Golden Raisins</span>
+            </div>
+
+            <div class="flex flex-col lg:flex-row gap-8">
+                <!-- Product Gallery -->
+                <div class="lg:w-1/2">
+                    <div class="bg-white rounded-lg shadow-md p-4 mb-4">
+                        <div class="h-96 overflow-hidden rounded-lg mb-4">
+                            <img id="mainImage" src="./Product/Raisins/golden.jpg" alt="Golden Raisins"
+                                class="w-full h-full object-contain">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Info -->
+                <div class="lg:w-1/2">
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <h1 class="heading text-3xl font-bold text-gray-900" id="productName">Golden Raisins</h1>
+                            <div class="relative">
+                                <select id="productSelector"
+                                    class="appearance-none bg-gray-100 border border-gray-300 text-gray-700 py-2 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-primary">
+                                    <option value="golden">Golden Raisins</option>
+                                    <option value="black">Black Raisins</option>
+                                    <option value="brown">Brown Raisins</option>
+                                    <option value="malayar">Malayar Raisins</option>
+                                    <option value="green">Green Raisins</option>
+                                </select>
+                                <div
+                                    class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                                    <i class="ri-arrow-down-s-line"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-6">
+                            <h3 class="text-lg font-semibold text-gray-900 mb-2">Description</h3>
+                            <p class="text-gray-600 mb-4" id="productDescription">
+                                Golden raisins are made from selected seedless green grapes that are dried to
+                                perfection. Our premium golden raisins are treated with sulfur dioxide to preserve their
+                                golden color and then dried in controlled conditions. They have a sweet, tangy flavor
+                                with a soft, chewy texture, making them perfect for baking, cooking, or snacking.
+                            </p>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                                <div class="flex items-start">
+                                    <i class="ri-checkbox-circle-fill text-green-500 mt-1 mr-2"></i>
+                                    <span class="text-gray-600">100% natural with no additives</span>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="ri-checkbox-circle-fill text-green-500 mt-1 mr-2"></i>
+                                    <span class="text-gray-600">Rich in iron, potassium and antioxidants</span>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="ri-checkbox-circle-fill text-green-500 mt-1 mr-2"></i>
+                                    <span class="text-gray-600">Long shelf life (up to 1 year)</span>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="ri-checkbox-circle-fill text-green-500 mt-1 mr-2"></i>
+                                    <span class="text-gray-600">Retains natural sweetness and flavor</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-6">
+                            <h3 class="text-lg font-semibold text-gray-900 mb-2">Specifications</h3>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <p class="text-gray-600"><span class="font-medium">Color:</span> <span
+                                            id="productColor">Golden yellow</span></p>
+                                    <p class="text-gray-600"><span class="font-medium">Moisture:</span> <span
+                                            id="productMoisture">Max 16%</span></p>
+                                </div>
+                                <div>
+                                    <p class="text-gray-600"><span class="font-medium">Size:</span> <span
+                                            id="productSize">Medium (300-500 berries/100g)</span></p>
+                                    <p class="text-gray-600"><span class="font-medium">Packaging:</span> <span
+                                            id="productPackaging">10kg, 25kg cartons or as per requirement</span></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-6">
+                            <h3 class="text-lg font-semibold text-gray-900 mb-2">Storage Instructions</h3>
+                            <p class="text-gray-600" id="productStorage">
+                                Store in a cool, dry place at temperatures below 25°C with relative humidity below 50%.
+                                Keep in airtight containers to maintain freshness and prevent moisture absorption. For
+                                long-term storage, refrigeration is recommended. Avoid exposure to direct sunlight and
+                                strong odors as raisins can absorb surrounding smells.
+                            </p>
+                        </div>
+
+                        <div class="flex flex-col sm:flex-row gap-3 mb-6">
+                            <button
+                                class="flex-1 px-6 py-3 bg-primary text-white rounded-button hover:bg-opacity-90 transition-colors">
+                                Request Sample
+                            </button>
+                            <button
+                                class="flex-1 px-6 py-3 bg-secondary text-white rounded-button hover:bg-opacity-90 transition-colors">
+                                Enquiry Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Tabs -->
+            <div class="mt-12 bg-white rounded-lg shadow-md overflow-hidden">
+                <div class="border-b border-gray-200">
+                    <nav class="flex flex-col sm:flex-row">
+                        <button onclick="openTab(event, 'uses')"
+                            class="tab-button py-4 px-6 text-center border-b-2 font-medium text-primary border-primary">
+                            Uses
+                        </button>
+                        <button onclick="openTab(event, 'varieties')"
+                            class="tab-button py-4 px-6 text-center border-b-2 font-medium text-gray-500 border-transparent hover:text-gray-700 hover:border-gray-300">
+                            Varieties
+                        </button>
+                        <button onclick="openTab(event, 'names')"
+                            class="tab-button py-4 px-6 text-center border-b-2 font-medium text-gray-500 border-transparent hover:text-gray-700 hover:border-gray-300">
+                            Names in Different Languages
+                        </button>
+                        <button onclick="openTab(event, 'origin')"
+                            class="tab-button py-4 px-6 text-center border-b-2 font-medium text-gray-500 border-transparent hover:text-gray-700 hover:border-gray-300">
+                            Origin & Cultivation
+                        </button>
+                    </nav>
+                </div>
+
+                <div class="p-6">
+                    <!-- Uses Tab -->
+                    <div id="uses" class="tab-content active">
+                        <h3 class="heading text-xl font-semibold text-gray-900 mb-4">Culinary & Nutritional Uses</h3>
+                        <p class="text-gray-600 mb-4" id="culinaryUses">
+                            Golden raisins are versatile ingredients used in various culinary applications and valued
+                            for their nutritional benefits:
+                        </p>
+                        <ul class="list-disc pl-5 text-gray-600 mb-6 space-y-2" id="culinaryList">
+                            <li>Baking ingredient in cakes, cookies, and breads</li>
+                            <li>Salad topping for added sweetness and texture</li>
+                            <li>Trail mix component with nuts and seeds</li>
+                            <li>Natural sweetener in cereals and yogurt</li>
+                            <li>Traditional ingredient in Middle Eastern and Indian cuisine</li>
+                            <li>Source of quick energy for athletes and hikers</li>
+                        </ul>
+
+                        <h3 class="heading text-xl font-semibold text-gray-900 mb-4">Health Benefits</h3>
+                        <p class="text-gray-600 mb-4" id="healthBenefits">
+                            Golden raisins offer numerous health benefits due to their rich nutrient profile:
+                        </p>
+                        <ul class="list-disc pl-5 text-gray-600 mb-6 space-y-2" id="healthList">
+                            <li>Rich in iron which helps prevent anemia</li>
+                            <li>Good source of potassium for heart health</li>
+                            <li>Contains antioxidants that fight free radicals</li>
+                            <li>Natural source of fiber for digestive health</li>
+                            <li>Provides calcium and boron for bone strength</li>
+                        </ul>
+                    </div>
+
+                    <!-- Varieties Tab -->
+                    <div id="varieties" class="tab-content">
+                        <h3 class="heading text-xl font-semibold text-gray-900 mb-4">Product Varieties</h3>
+                        <p class="text-gray-600 mb-4" id="varietiesDescription">
+                            We offer several grades of golden raisins to meet different culinary and industrial needs:
+                        </p>
+
+                        <div class="space-y-4" id="varietiesContainer">
+                            <div class="border border-gray-200 rounded-lg p-4">
+                                <h4 class="heading text-lg font-semibold text-gray-900 mb-2">Premium Grade</h4>
+                                <p class="text-gray-600 mb-2">
+                                    <span class="font-medium">Size:</span> Large (200-300 berries/100g)<br>
+                                    <span class="font-medium">Color:</span> Uniform golden yellow<br>
+                                    <span class="font-medium">Moisture:</span> Max 14%<br>
+                                    <span class="font-medium">Use:</span> Premium retail packaging, gourmet cooking
+                                </p>
+                            </div>
+
+                            <div class="border border-gray-200 rounded-lg p-4">
+                                <h4 class="heading text-lg font-semibold text-gray-900 mb-2">Standard Grade</h4>
+                                <p class="text-gray-600 mb-2">
+                                    <span class="font-medium">Size:</span> Medium (300-500 berries/100g)<br>
+                                    <span class="font-medium">Color:</span> Light golden<br>
+                                    <span class="font-medium">Moisture:</span> Max 16%<br>
+                                    <span class="font-medium">Use:</span> Bulk food service, industrial baking
+                                </p>
+                            </div>
+
+                            <div class="border border-gray-200 rounded-lg p-4">
+                                <h4 class="heading text-lg font-semibold text-gray-900 mb-2">Organic Golden Raisins</h4>
+                                <p class="text-gray-600 mb-2">
+                                    <span class="font-medium">Certification:</span> USDA Organic<br>
+                                    <span class="font-medium">Size:</span> Mixed sizes<br>
+                                    <span class="font-medium">Color:</span> Natural golden<br>
+                                    <span class="font-medium">Use:</span> Health food stores, organic products
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Names Tab -->
+                    <div id="names" class="tab-content">
+                        <h3 class="heading text-xl font-semibold text-gray-900 mb-4">Names in Different Languages</h3>
+                        <p class="text-gray-600 mb-4" id="namesDescription">
+                            Golden raisins are known by various names across different cultures and regions:
+                        </p>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="namesContainer">
+                            <div class="border border-gray-200 rounded-lg p-4">
+                                <h4 class="heading text-lg font-semibold text-gray-900 mb-2">Indian Languages</h4>
+                                <ul class="space-y-1 text-gray-600">
+                                    <li><span class="font-medium">Hindi:</span> Sona Kishmish</li>
+                                    <li><span class="font-medium">Tamil:</span> Pon Ular Dhirakshai</li>
+                                    <li><span class="font-medium">Telugu:</span> Bangaru Draksha</li>
+                                    <li><span class="font-medium">Kannada:</span> Sona Drakshi</li>
+                                    <li><span class="font-medium">Malayalam:</span> Swarna Unakka Mundiri</li>
+                                    <li><span class="font-medium">Bengali:</span> Sonar Kismis</li>
+                                    <li><span class="font-medium">Gujarati:</span> Sonali Draksh</li>
+                                    <li><span class="font-medium">Marathi:</span> Sone Draksha</li>
+                                </ul>
+                            </div>
+
+                            <div class="border border-gray-200 rounded-lg p-4">
+                                <h4 class="heading text-lg font-semibold text-gray-900 mb-2">International Names</h4>
+                                <ul class="space-y-1 text-gray-600">
+                                    <li><span class="font-medium">Scientific:</span> Vitis vinifera</li>
+                                    <li><span class="font-medium">English:</span> Golden raisins, Sultanas</li>
+                                    <li><span class="font-medium">Arabic:</span> Zabeeb asfar</li>
+                                    <li><span class="font-medium">Chinese:</span> Jin se pu tao gan</li>
+                                    <li><span class="font-medium">French:</span> Raisins blonds</li>
+                                    <li><span class="font-medium">German:</span> Goldene Rosinen</li>
+                                    <li><span class="font-medium">Spanish:</span> Pasas rubias</li>
+                                    <li><span class="font-medium">Italian:</span> Uva sultanina dorata</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Origin Tab -->
+                    <div id="origin" class="tab-content">
+                        <h3 class="heading text-xl font-semibold text-gray-900 mb-4">Origin & Cultivation</h3>
+                        <p class="text-gray-600 mb-4" id="originDescription">
+                            Golden raisins originated in the Mediterranean region and are now produced in several
+                            countries with suitable climates. Modern golden raisin production involves careful selection
+                            of grape varieties and controlled drying processes to ensure consistent quality.
+                        </p>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <h4 class="heading text-lg font-semibold text-gray-900 mb-2">Growing Regions</h4>
+                                <p class="text-gray-600 mb-2" id="growingRegions">
+                                    The best quality golden raisins come from these regions:
+                                </p>
+                                <ul class="list-disc pl-5 text-gray-600 space-y-1" id="regionsList">
+                                    <li>California, USA - largest producer with advanced technology</li>
+                                    <li>Turkey - traditional production methods</li>
+                                    <li>Iran - premium quality with natural sweetness</li>
+                                    <li>Afghanistan - organic cultivation</li>
+                                    <li>India - increasing production in Maharashtra and Karnataka</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <h4 class="heading text-lg font-semibold text-gray-900 mb-2">Processing Method</h4>
+                                <p class="text-gray-600 mb-2" id="processingMethod">
+                                    Our golden raisins are processed using these steps to ensure quality:
+                                </p>
+                                <ol class="list-decimal pl-5 text-gray-600 space-y-1" id="processList">
+                                    <li>Harvesting seedless green grapes at optimal sugar content</li>
+                                    <li>Washing and treatment with food-grade sulfur dioxide</li>
+                                    <li>Drying in controlled temperature tunnels for 24-48 hours</li>
+                                    <li>Mechanical turning for even drying</li>
+                                    <li>Cooling and moisture equalization</li>
+                                    <li>Cleaning and removal of stems and debris</li>
+                                    <li>Grading by size and color uniformity</li>
+                                    <li>Packaging in food-grade materials</li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <h4 class="heading text-lg font-semibold text-gray-900 mb-2">Quality Standards</h4>
+                        <p class="text-gray-600" id="qualityStandards">
+                            Our golden raisins meet international quality standards including ISO, FSSAI, and USDA
+                            specifications. We maintain strict hygiene protocols throughout the production process to
+                            ensure product safety. All our raisins are tested for moisture content, sugar levels, and
+                            absence of contaminants like pesticides and heavy metals.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-12 pb-6">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="heading text-xl font-semibold mb-4">Abhinandan International</h3>
+                    <p class="text-gray-400 mb-4">
+                        Premium quality spices and food products sourced directly from farms across India
+                        and Asia.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#"
+                            class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-gray-700">
+                            <i class="ri-facebook-fill"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-gray-700">
+                            <i class="ri-instagram-line"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-gray-700">
+                            <i class="ri-twitter-fill"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-gray-700">
+                            <i class="ri-linkedin-fill"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="heading text-xl font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="Home.html" class="text-gray-400 hover:text-white">Home</a></li>
+                        <li><a href="Product.html" class="text-gray-400 hover:text-white">Products</a></li>
+                        <li><a href="Aboutus.html" class="text-gray-400 hover:text-white">About Us</a></li>
+                        <li><a href="Contact.html" class="text-gray-400 hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="heading text-xl font-semibold mb-4">Products</h3>
+                    <ul class="space-y-2">
+                        <li><a href="Product.html#spices" class="text-gray-400 hover:text-white">Spices</a></li>
+                        <li><a href="Product.html#raisins" class="text-gray-400 hover:text-white">Raisins</a></li>
+                        <li><a href="Product.html#herbs" class="text-gray-400 hover:text-white">Herbs</a></li>
+                        <li><a href="Product.html#grains" class="text-gray-400 hover:text-white">Grains</a></li>
+                        <li><a href="Product.html#oil-seeds" class="text-gray-400 hover:text-white">Oil Seeds</a></li>
+                        <li><a href="dehydrated-vegetables" class="text-gray-400 hover:text-white">Dehydrated Vegetables</a></li>
+                        <li><a href="Product.html#coconut-products" class="text-gray-400 hover:text-white">Coconut Products</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="heading text-xl font-semibold mb-4">Contact Us</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="ri-map-pin-line mt-1 mr-2"></i>
+                            <span class="text-gray-400">123 Spice Street, Mumbai, India 400001</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-phone-line mt-1 mr-2"></i>
+                            <span class="text-gray-400">+91 98765 43210</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-mail-line mt-1 mr-2"></i>
+                            <span class="text-gray-400">info@abhinandan.com</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-time-line mt-1 mr-2"></i>
+                            <span class="text-gray-400">Mon-Fri: 9AM - 6PM</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-6">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-400 mb-4 md:mb-0">
+                        &copy; 2025 Abhinandan International. All rights reserved.
+                    </p>
+                    <div class="flex space-x-6">
+                        <a href="#" class="text-gray-400 hover:text-white">Privacy Policy</a>
+                        <a href="#" class="text-gray-400 hover:text-white">Terms of Service</a>
+                        <a href="#" class="text-gray-400 hover:text-white">Shipping Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Product data
+        const products = {
+            'golden': {
+                name: 'Golden Raisins',
+                description: 'Golden raisins are made from selected seedless green grapes that are dried to perfection. Our premium golden raisins are treated with sulfur dioxide to preserve their golden color and then dried in controlled conditions. They have a sweet, tangy flavor with a soft, chewy texture, making them perfect for baking, cooking, or snacking.',
+                color: 'Golden yellow',
+                moisture: 'Max 16%',
+                size: 'Medium (300-500 berries/100g)',
+                packaging: '10kg, 25kg cartons or as per requirement',
+                storage: 'Store in a cool, dry place at temperatures below 25°C with relative humidity below 50%. Keep in airtight containers to maintain freshness and prevent moisture absorption. For long-term storage, refrigeration is recommended. Avoid exposure to direct sunlight and strong odors as raisins can absorb surrounding smells.',
+                culinaryUses: 'Golden raisins are versatile ingredients used in various culinary applications and valued for their nutritional benefits:',
+                culinaryList: [
+                    'Baking ingredient in cakes, cookies, and breads',
+                    'Salad topping for added sweetness and texture',
+                    'Trail mix component with nuts and seeds',
+                    'Natural sweetener in cereals and yogurt',
+                    'Traditional ingredient in Middle Eastern and Indian cuisine',
+                    'Source of quick energy for athletes and hikers'
+                ],
+                healthBenefits: 'Golden raisins offer numerous health benefits due to their rich nutrient profile:',
+                healthList: [
+                    'Rich in iron which helps prevent anemia',
+                    'Good source of potassium for heart health',
+                    'Contains antioxidants that fight free radicals',
+                    'Natural source of fiber for digestive health',
+                    'Provides calcium and boron for bone strength'
+                ],
+                varietiesDescription: 'We offer several grades of golden raisins to meet different culinary and industrial needs:',
+                varieties: [
+                    {
+                        name: 'Premium Grade',
+                        details: '<span class="font-medium">Size:</span> Large (200-300 berries/100g)<br><span class="font-medium">Color:</span> Uniform golden yellow<br><span class="font-medium">Moisture:</span> Max 14%<br><span class="font-medium">Use:</span> Premium retail packaging, gourmet cooking'
+                    },
+                    {
+                        name: 'Standard Grade',
+                        details: '<span class="font-medium">Size:</span> Medium (300-500 berries/100g)<br><span class="font-medium">Color:</span> Light golden<br><span class="font-medium">Moisture:</span> Max 16%<br><span class="font-medium">Use:</span> Bulk food service, industrial baking'
+                    },
+                    {
+                        name: 'Organic Golden Raisins',
+                        details: '<span class="font-medium">Certification:</span> USDA Organic<br><span class="font-medium">Size:</span> Mixed sizes<br><span class="font-medium">Color:</span> Natural golden<br><span class="font-medium">Use:</span> Health food stores, organic products'
+                    }
+                ],
+                namesDescription: 'Golden raisins are known by various names across different cultures and regions:',
+                names: {
+                    indian: [
+                        ['Hindi', 'Sona Kishmish'],
+                        ['Tamil', 'Pon Ular Dhirakshai'],
+                        ['Telugu', 'Bangaru Draksha'],
+                        ['Kannada', 'Sona Drakshi'],
+                        ['Malayalam', 'Swarna Unakka Mundiri'],
+                        ['Bengali', 'Sonar Kismis'],
+                        ['Gujarati', 'Sonali Draksh'],
+                        ['Marathi', 'Sone Draksha']
+                    ],
+                    international: [
+                        ['Scientific', 'Vitis vinifera'],
+                        ['English', 'Golden raisins, Sultanas'],
+                        ['Arabic', 'Zabeeb asfar'],
+                        ['Chinese', 'Jin se pu tao gan'],
+                        ['French', 'Raisins blonds'],
+                        ['German', 'Goldene Rosinen'],
+                        ['Spanish', 'Pasas rubias'],
+                        ['Italian', 'Uva sultanina dorata']
+                    ]
+                },
+                originDescription: 'Golden raisins originated in the Mediterranean region and are now produced in several countries with suitable climates. Modern golden raisin production involves careful selection of grape varieties and controlled drying processes to ensure consistent quality.',
+                growingRegions: 'The best quality golden raisins come from these regions:',
+                regionsList: [
+                    'California, USA - largest producer with advanced technology',
+                    'Turkey - traditional production methods',
+                    'Iran - premium quality with natural sweetness',
+                    'Afghanistan - organic cultivation',
+                    'India - increasing production in Maharashtra and Karnataka'
+                ],
+                processingMethod: 'Our golden raisins are processed using these steps to ensure quality:',
+                processList: [
+                    'Harvesting seedless green grapes at optimal sugar content',
+                    'Washing and treatment with food-grade sulfur dioxide',
+                    'Drying in controlled temperature tunnels for 24-48 hours',
+                    'Mechanical turning for even drying',
+                    'Cooling and moisture equalization',
+                    'Cleaning and removal of stems and debris',
+                    'Grading by size and color uniformity',
+                    'Packaging in food-grade materials'
+                ],
+                qualityStandards: 'Our golden raisins meet international quality standards including ISO, FSSAI, and USDA specifications. We maintain strict hygiene protocols throughout the production process to ensure product safety. All our raisins are tested for moisture content, sugar levels, and absence of contaminants like pesticides and heavy metals.'
+            },
+            'black': {
+                name: 'Black Raisins',
+                description: 'Black raisins are made from sun-dried black grapes, resulting in a dark color and rich, intense flavor. Our premium black raisins are naturally sweet with a chewy texture and are packed with essential nutrients. They are produced without any chemical treatment, making them a healthy snack choice.',
+                color: 'Dark purple to black',
+                moisture: 'Max 18%',
+                size: 'Medium to large (250-400 berries/100g)',
+                packaging: '10kg, 25kg cartons or as per requirement',
+                storage: 'Store in a cool, dry place below 25°C with relative humidity below 55%. Keep in airtight containers away from direct sunlight. Refrigeration can extend shelf life but is not required for short-term storage.',
+                culinaryUses: 'Black raisins are widely used in various culinary applications:',
+                culinaryList: [
+                    'Traditional Indian sweets and desserts',
+                    'Flavor enhancer in biryanis and pulaos',
+                    'Healthy snack mix with nuts',
+                    'Baking ingredient in breads and muffins',
+                    'Natural sweetener in smoothies',
+                    'Ayurvedic medicinal preparations'
+                ],
+                healthBenefits: 'Black raisins offer exceptional health benefits:',
+                healthList: [
+                    'High in iron and helps combat anemia',
+                    'Rich in antioxidants like resveratrol',
+                    'Natural source of energy and carbohydrates',
+                    'Contains boron which aids calcium absorption',
+                    'Helps regulate blood pressure'
+                ],
+                varietiesDescription: 'We offer different grades of black raisins to suit various needs:',
+                varieties: [
+                    {
+                        name: 'Jumbo Black Raisins',
+                        details: '<span class="font-medium">Size:</span> Extra large (150-250 berries/100g)<br><span class="font-medium">Color:</span> Deep black<br><span class="font-medium">Moisture:</span> Max 16%<br><span class="font-medium">Use:</span> Premium retail, gift packs'
+                    },
+                    {
+                        name: 'Standard Black Raisins',
+                        details: '<span class="font-medium">Size:</span> Medium (300-400 berries/100g)<br><span class="font-medium">Color:</span> Dark purple<br><span class="font-medium">Moisture:</span> Max 18%<br><span class="font-medium">Use:</span> Bulk food service, industrial use'
+                    },
+                    {
+                        name: 'Seedless Black Raisins',
+                        details: '<span class="font-medium">Variety:</span> Thompson seedless<br><span class="font-medium">Color:</span> Dark brown<br><span class="font-medium">Moisture:</span> Max 16%<br><span class="font-medium">Use:</span> Baking, confectionery'
+                    }
+                ],
+                namesDescription: 'Black raisins are known by different names worldwide:',
+                names: {
+                    indian: [
+                        ['Hindi', 'Kali Kishmish'],
+                        ['Tamil', 'Karuppu Ular Dhirakshai'],
+                        ['Telugu', 'Nalla Draksha'],
+                        ['Kannada', 'Kappu Drakshi'],
+                        ['Malayalam', 'Karuppu Unakka Mundiri'],
+                        ['Bengali', 'Kalo Kismis'],
+                        ['Gujarati', 'Kali Draksh'],
+                        ['Marathi', 'Kali Draksha']
+                    ],
+                    international: [
+                        ['Scientific', 'Vitis vinifera'],
+                        ['English', 'Black raisins, Black currants'],
+                        ['Arabic', 'Zabeeb aswad'],
+                        ['Chinese', 'Hei se pu tao gan'],
+                        ['French', 'Raisins noirs'],
+                        ['German', 'Schwarze Rosinen'],
+                        ['Spanish', 'Pasas negras'],
+                        ['Italian', 'Uva passa nera']
+                    ]
+                },
+                originDescription: 'Black raisins have been produced for centuries in the Middle East and Mediterranean regions. Modern production focuses on quality grape varieties and optimal drying techniques to preserve nutrients and flavor.',
+                growingRegions: 'Premium black raisins come from these regions:',
+                regionsList: [
+                    'Afghanistan - famous for large, sweet raisins',
+                    'Iran - traditional production areas',
+                    'Turkey - high-quality sun-dried raisins',
+                    'India - Maharashtra and Karnataka regions',
+                    'Chile - new production areas with advanced techniques'
+                ],
+                processingMethod: 'Our traditional processing method:',
+                processList: [
+                    'Selection of ripe black grapes',
+                    'Sun drying on clean surfaces for 2-3 weeks',
+                    'Regular turning for even drying',
+                    'Hand sorting to remove impurities',
+                    'Grading by size and quality',
+                    'Packing in hygienic conditions'
+                ],
+                qualityStandards: 'Our black raisins meet stringent quality standards with testing for moisture content, sugar levels, and absence of contaminants. We adhere to ISO, FSSAI, and international food safety regulations.'
+            },
+            'brown': {
+                name: 'Brown Raisins',
+                description: 'Brown raisins are naturally sun-dried grapes with a rich brown color and robust flavor. Our premium brown raisins are made from select grape varieties without any chemical treatment, resulting in a product that retains maximum natural goodness. They have a perfect balance of sweetness and tartness with a soft, chewy texture.',
+                color: 'Deep brown',
+                moisture: 'Max 17%',
+                size: 'Medium (300-450 berries/100g)',
+                packaging: '10kg, 25kg cartons or as per requirement',
+                storage: 'Store in cool, dry conditions below 25°C with relative humidity below 60%. Airtight packaging is recommended to maintain freshness. Refrigeration can extend shelf life but may cause sugar crystallization.',
+                culinaryUses: 'Brown raisins are versatile in culinary applications:',
+                culinaryList: [
+                    'Breakfast cereals and muesli ingredient',
+                    'Baking in cookies, cakes and breads',
+                    'Trail mixes with nuts and seeds',
+                    'Stuffing for meats and poultry',
+                    'Yogurt and dessert topping',
+                    'Traditional medicine preparations'
+                ],
+                healthBenefits: 'Brown raisins provide significant health benefits:',
+                healthList: [
+                    'Excellent source of dietary fiber',
+                    'Rich in potassium and magnesium',
+                    'Contains natural fruit sugars for quick energy',
+                    'Provides iron and B vitamins',
+                    'Helps maintain digestive health'
+                ],
+                varietiesDescription: 'We offer different types of brown raisins:',
+                varieties: [
+                    {
+                        name: 'Natural Brown Raisins',
+                        details: '<span class="font-medium">Process:</span> Sun-dried naturally<br><span class="font-medium">Color:</span> Deep brown<br><span class="font-medium">Moisture:</span> Max 17%<br><span class="font-medium">Use:</span> Health food, natural products'
+                    },
+                    {
+                        name: 'Jumbo Brown Raisins',
+                        details: '<span class="font-medium">Size:</span> Large (200-300 berries/100g)<br><span class="font-medium">Color:</span> Uniform brown<br><span class="font-medium">Moisture:</span> Max 16%<br><span class="font-medium">Use:</span> Premium retail, gourmet cooking'
+                    },
+                    {
+                        name: 'Organic Brown Raisins',
+                        details: '<span class="font-medium">Certification:</span> USDA Organic<br><span class="font-medium">Color:</span> Light brown<br><span class="font-medium">Moisture:</span> Max 16%<br><span class="font-medium">Use:</span> Organic food industry'
+                    }
+                ],
+                namesDescription: 'Brown raisins are known by various names:',
+                names: {
+                    indian: [
+                        ['Hindi', 'Bhoora Kishmish'],
+                        ['Tamil', 'Pazhaya Ular Dhirakshai'],
+                        ['Telugu', 'Bommala Draksha'],
+                        ['Kannada', 'Boodu Drakshi'],
+                        ['Malayalam', 'Chara Unakka Mundiri'],
+                        ['Bengali', 'Badami Kismis'],
+                        ['Gujarati', 'Bhura Draksh'],
+                        ['Marathi', 'Bhakar Draksha']
+                    ],
+                    international: [
+                        ['Scientific', 'Vitis vinifera'],
+                        ['English', 'Brown raisins'],
+                        ['Arabic', 'Zabeeb bunni'],
+                        ['Chinese', 'Zong se pu tao gan'],
+                        ['French', 'Raisins bruns'],
+                        ['German', 'Braune Rosinen'],
+                        ['Spanish', 'Pasas marrones'],
+                        ['Italian', 'Uva passa marrone']
+                    ]
+                },
+                originDescription: 'Brown raisins have been produced traditionally in Mediterranean and Middle Eastern countries. Modern production combines traditional drying methods with quality control measures to ensure consistent product quality.',
+                growingRegions: 'Premium brown raisins come from:',
+                regionsList: [
+                    'Turkey - largest producer with ideal climate',
+                    'Iran - traditional production areas',
+                    'California, USA - controlled drying conditions',
+                    'South Africa - emerging production region',
+                    'India - Maharashtra and Andhra Pradesh'
+                ],
+                processingMethod: 'Our production process includes:',
+                processList: [
+                    'Harvesting grapes at optimal maturity',
+                    'Sun drying on clean racks for 2-3 weeks',
+                    'Regular inspection and turning',
+                    'Mechanical cleaning and sorting',
+                    'Moisture content testing',
+                    'Quality grading and packaging'
+                ],
+                qualityStandards: 'Our brown raisins meet international quality standards with testing for moisture, sugar content, and food safety parameters. We comply with ISO, FSSAI, and global food regulations.'
+            },
+            'malayar': {
+                name: 'Malayar Raisins',
+                description: 'Malayar raisins are a special variety known for their large size, golden-brown color, and exceptional sweetness. Grown in specific regions of Afghanistan, these premium raisins have a unique flavor profile with hints of caramel. Our Malayar raisins are carefully hand-sorted to ensure only the best quality reaches our customers.',
+                color: 'Golden brown',
+                moisture: 'Max 15%',
+                size: 'Extra large (100-200 berries/100g)',
+                packaging: '5kg, 10kg, 25kg cartons or as per requirement',
+                storage: 'Store in cool, dry conditions below 25°C with relative humidity below 50%. Vacuum packaging is recommended for long-term storage. Avoid temperature fluctuations to prevent moisture absorption.',
+                culinaryUses: 'Malayar raisins are prized for gourmet applications:',
+                culinaryList: [
+                    'Premium baking in pastries and desserts',
+                    'Luxury gift packs and hampers',
+                    'Gourmet cheese platters',
+                    'High-end confectionery',
+                    'Specialty breads and cakes',
+                    'Fine dining restaurant use'
+                ],
+                healthBenefits: 'Malayar raisins offer premium health benefits:',
+                healthList: [
+                    'Rich in natural sugars for quick energy',
+                    'High in dietary fiber',
+                    'Contains essential minerals like iron and potassium',
+                    'Source of antioxidants',
+                    'Helps maintain healthy digestion'
+                ],
+                varietiesDescription: 'We offer different grades of Malayar raisins:',
+                varieties: [
+                    {
+                        name: 'Premium Malayar',
+                        details: '<span class="font-medium">Size:</span> Jumbo (100-150 berries/100g)<br><span class="font-medium">Color:</span> Uniform golden brown<br><span class="font-medium">Moisture:</span> Max 14%<br><span class="font-medium">Use:</span> Luxury retail, gourmet cooking'
+                    },
+                    {
+                        name: 'Select Malayar',
+                        details: '<span class="font-medium">Size:</span> Large (150-200 berries/100g)<br><span class="font-medium">Color:</span> Light golden brown<br><span class="font-medium">Moisture:</span> Max 15%<br><span class="font-medium">Use:</span> Premium food service, high-end baking'
+                    },
+                    {
+                        name: 'Organic Malayar',
+                        details: '<span class="font-medium">Certification:</span> USDA Organic<br><span class="font-medium">Size:</span> Mixed large<br><span class="font-medium">Color:</span> Natural brown<br><span class="font-medium">Use:</span> Organic food industry'
+                    }
+                ],
+                namesDescription: 'Malayar raisins are known by these names:',
+                names: {
+                    indian: [
+                        ['Hindi', 'Malayar Kishmish'],
+                        ['Tamil', 'Malayar Ular Dhirakshai'],
+                        ['Telugu', 'Malayar Draksha'],
+                        ['Kannada', 'Malayar Drakshi'],
+                        ['Malayalam', 'Malayar Unakka Mundiri'],
+                        ['Bengali', 'Malayar Kismis'],
+                        ['Gujarati', 'Malayar Draksh'],
+                        ['Marathi', 'Malayar Draksha']
+                    ],
+                    international: [
+                        ['Scientific', 'Vitis vinifera'],
+                        ['English', 'Malayar raisins'],
+                        ['Arabic', 'Zabeeb Malayar'],
+                        ['Chinese', 'Ma lai ya pu tao gan'],
+                        ['French', 'Raisins Malayar'],
+                        ['German', 'Malayar Rosinen'],
+                        ['Spanish', 'Pasas Malayar'],
+                        ['Italian', 'Uva passa Malayar']
+                    ]
+                },
+                originDescription: 'Malayar raisins originate from specific regions of Afghanistan where unique soil and climate conditions produce grapes with exceptional sweetness and size. The traditional drying methods have been perfected over generations.',
+                growingRegions: 'Authentic Malayar raisins come from:',
+                regionsList: [
+                    'Kandahar, Afghanistan - primary production area',
+                    'Herat, Afghanistan - limited production',
+                    'Balkh, Afghanistan - small quantities',
+                    'Northern Afghanistan - similar varieties'
+                ],
+                processingMethod: 'Traditional processing methods:',
+                processList: [
+                    'Hand harvesting at perfect ripeness',
+                    'Natural sun drying in mountain air',
+                    'Daily turning and inspection',
+                    'Hand sorting by experienced workers',
+                    'Grading by size and color',
+                    'Special packaging to preserve quality'
+                ],
+                qualityStandards: 'Our Malayar raisins meet the highest quality standards with rigorous testing for size consistency, moisture content, and purity. We adhere to international food safety regulations and provide certificates of analysis.'
+            },
+            'green': {
+                name: 'Green Raisins',
+                description: 'Green raisins are made from premium seedless green grapes that are carefully dried to preserve their natural light green color. Our green raisins have a delicate, sweet flavor with a slightly tart finish and soft, chewy texture. They are produced without sulfur dioxide treatment, making them a natural choice for health-conscious consumers.',
+                color: 'Light green to golden green',
+                moisture: 'Max 16%',
+                size: 'Medium (300-500 berries/100g)',
+                packaging: '10kg, 25kg cartons or as per requirement',
+                storage: 'Store in a cool, dry place below 25°C with relative humidity below 55%. Airtight packaging is essential to maintain color and freshness. Refrigeration can help preserve the green color for longer periods.',
+                culinaryUses: 'Green raisins are valued for their delicate flavor:',
+                culinaryList: [
+                    'Fine baking in pastries and desserts',
+                    'Gourmet cooking and plating',
+                    'Specialty breads and rolls',
+                    'Health food products',
+                    'Natural sweetener in cereals',
+                    'Salad toppings and garnishes'
+                ],
+                healthBenefits: 'Green raisins provide excellent health benefits:',
+                healthList: [
+                    'Natural source of energy without additives',
+                    'Rich in iron and potassium',
+                    'Contains antioxidants',
+                    'Good source of dietary fiber',
+                    'Helps maintain healthy digestion'
+                ],
+                varietiesDescription: 'We offer different types of green raisins:',
+                varieties: [
+                    {
+                        name: 'Natural Green Raisins',
+                        details: '<span class="font-medium">Process:</span> Naturally dried<br><span class="font-medium">Color:</span> Light green<br><span class="font-medium">Moisture:</span> Max 16%<br><span class="font-medium">Use:</span> Health food, natural products'
+                    },
+                    {
+                        name: 'Jumbo Green Raisins',
+                        details: '<span class="font-medium">Size:</span> Large (200-300 berries/100g)<br><span class="font-medium">Color:</span> Uniform green<br><span class="font-medium">Moisture:</span> Max 15%<br><span class="font-medium">Use:</span> Premium retail, gourmet use'
+                    },
+                    {
+                        name: 'Organic Green Raisins',
+                        details: '<span class="font-medium">Certification:</span> USDA Organic<br><span class="font-medium">Color:</span> Natural green<br><span class="font-medium">Moisture:</span> Max 15%<br><span class="font-medium">Use:</span> Organic food industry'
+                    }
+                ],
+                namesDescription: 'Green raisins are known by various names:',
+                names: {
+                    indian: [
+                        ['Hindi', 'Hara Kishmish'],
+                        ['Tamil', 'Pachai Ular Dhirakshai'],
+                        ['Telugu', 'Aakulu Draksha'],
+                        ['Kannada', 'Hasiru Drakshi'],
+                        ['Malayalam', 'Pachcha Unakka Mundiri'],
+                        ['Bengali', 'Shobuj Kismis'],
+                        ['Gujarati', 'Lila Draksh'],
+                        ['Marathi', 'Hirva Draksha']
+                    ],
+                    international: [
+                        ['Scientific', 'Vitis vinifera'],
+                        ['English', 'Green raisins'],
+                        ['Arabic', 'Zabeeb akhdar'],
+                        ['Chinese', 'Lü se pu tao gan'],
+                        ['French', 'Raisins verts'],
+                        ['German', 'Grüne Rosinen'],
+                        ['Spanish', 'Pasas verdes'],
+                        ['Italian', 'Uva passa verde']
+                    ]
+                },
+                originDescription: 'Green raisins are produced in regions with ideal climate conditions that allow for gentle drying while preserving the green color. Modern production focuses on quality grape selection and controlled drying techniques.',
+                growingRegions: 'Premium green raisins come from:',
+                regionsList: [
+                    'California, USA - controlled drying conditions',
+                    'Turkey - traditional production areas',
+                    'Chile - emerging production region',
+                    'South Africa - limited production',
+                    'Australia - specialty varieties'
+                ],
+                processingMethod: 'Our specialized processing:',
+                processList: [
+                    'Selection of premium green grape varieties',
+                    'Gentle washing and preparation',
+                    'Controlled temperature drying',
+                    'Color preservation techniques',
+                    'Hand sorting and quality control',
+                    'Special packaging to maintain color'
+                ],
+                qualityStandards: 'Our green raisins meet stringent quality standards with testing for color consistency, moisture content, and purity. We comply with international food safety regulations including ISO and FSSAI standards.'
+            }
+        };
+
+        // Change product function
+        function changeProduct(productId) {
+            const product = products[productId];
+
+            // Update breadcrumb
+            document.getElementById('productNameBreadcrumb').textContent = product.name;
+
+            // Update main product info
+            document.getElementById('productName').textContent = product.name;
+            document.getElementById('productDescription').textContent = product.description;
+            document.getElementById('productColor').textContent = product.color;
+            document.getElementById('productMoisture').textContent = product.moisture;
+            document.getElementById('productSize').textContent = product.size;
+            document.getElementById('productPackaging').textContent = product.packaging;
+            document.getElementById('productStorage').textContent = product.storage;
+
+            // Update selector
+            document.getElementById('productSelector').value = productId;
+
+            // Update uses tab
+            document.getElementById('culinaryUses').textContent = product.culinaryUses;
+            document.getElementById('healthBenefits').textContent = product.healthBenefits;
+
+            let culinaryList = document.getElementById('culinaryList');
+            culinaryList.innerHTML = '';
+            product.culinaryList.forEach(item => {
+                let li = document.createElement('li');
+                li.textContent = item;
+                culinaryList.appendChild(li);
+            });
+
+            let healthList = document.getElementById('healthList');
+            healthList.innerHTML = '';
+            product.healthList.forEach(item => {
+                let li = document.createElement('li');
+                li.textContent = item;
+                healthList.appendChild(li);
+            });
+
+            // Update varieties tab
+            document.getElementById('varietiesDescription').textContent = product.varietiesDescription;
+
+            let varietiesContainer = document.getElementById('varietiesContainer');
+            varietiesContainer.innerHTML = '';
+            product.varieties.forEach(variety => {
+                let div = document.createElement('div');
+                div.className = 'border border-gray-200 rounded-lg p-4';
+                div.innerHTML = `
+                    <h4 class="heading text-lg font-semibold text-gray-900 mb-2">${variety.name}</h4>
+                    <p class="text-gray-600 mb-2">${variety.details}</p>
+                `;
+                varietiesContainer.appendChild(div);
+            });
+
+            // Update names tab
+            document.getElementById('namesDescription').textContent = product.namesDescription;
+
+            let namesContainer = document.getElementById('namesContainer');
+            namesContainer.innerHTML = '';
+
+            // International names
+            let intlDiv = document.createElement('div');
+            intlDiv.className = 'border border-gray-200 rounded-lg p-4';
+            intlDiv.innerHTML = '<h4 class="heading text-lg font-semibold text-gray-900 mb-2">International Names</h4><ul class="space-y-1 text-gray-600"></ul>';
+            let intlList = intlDiv.querySelector('ul');
+            product.names.international.forEach(name => {
+                let li = document.createElement('li');
+                li.innerHTML = `<span class="font-medium">${name[0]}:</span> ${name[1]}`;
+                intlList.appendChild(li);
+            });
+            namesContainer.appendChild(intlDiv);
+
+            // Update origin tab
+            document.getElementById('originDescription').textContent = product.originDescription;
+            document.getElementById('growingRegions').textContent = product.growingRegions;
+            document.getElementById('processingMethod').textContent = product.processingMethod;
+            document.getElementById('qualityStandards').textContent = product.qualityStandards;
+
+            let regionsList = document.getElementById('regionsList');
+            regionsList.innerHTML = '';
+            product.regionsList.forEach(item => {
+                let li = document.createElement('li');
+                li.textContent = item;
+                regionsList.appendChild(li);
+            });
+
+            let processList = document.getElementById('processList');
+            processList.innerHTML = '';
+            product.processList.forEach(item => {
+                let li = document.createElement('li');
+                li.textContent = item;
+                processList.appendChild(li);
+            });
+
+            // Update images (placeholder - in a real app you would use actual product images)
+            document.getElementById('mainImage').src = `./Product/Raisins/${productId}.jpg`;
+            document.getElementById('mainImage').alt = product.name;
+
+            // Reset tab to uses
+            const activeTabButton = document.querySelector('.tab-button.text-primary');
+            if (activeTabButton) {
+                activeTabButton.classList.remove('text-primary', 'border-primary');
+                activeTabButton.classList.add('text-gray-500', 'border-transparent');
+            }
+
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+
+            document.getElementById('uses').classList.add('active');
+            const usesTabButton = document.querySelector('[onclick="openTab(event, \'uses\')"]');
+            if (usesTabButton) {
+                usesTabButton.classList.add('text-primary', 'border-primary');
+                usesTabButton.classList.remove('text-gray-500', 'border-transparent');
+            }            
+        }
+
+        // Initialize with onion flakes
+        document.addEventListener('DOMContentLoaded', function () {
+            const params = new URLSearchParams(window.location.search);
+            const productId = params.get('product') || 'golden';
+
+            // Only run if productId exists in the product object
+            if (products[productId]) {
+                changeProduct(productId);
+            }
+
+            const selector = document.getElementById('productSelector');
+            if (selector) {
+                selector.addEventListener('change', function () {
+                    if (products[this.value]) {
+                        changeProduct(this.value);
+                    }
+                });
+            }
+        });
+
+
+        // Image gallery functionality
+        function changeImage(src) {
+            document.getElementById('mainImage').src = src;
+
+            // Update active thumbnail
+            const thumbnails = document.querySelectorAll('.gallery-thumbnail');
+            thumbnails.forEach(thumb => {
+                thumb.classList.remove('active');
+                if (thumb.querySelector('img').src === src) {
+                    thumb.classList.add('active');
+                }
+            });
+        }
+
+        // Tab functionality
+        function openTab(evt, tabName) {
+            const tabContents = document.getElementsByClassName('tab-content');
+            for (let i = 0; i < tabContents.length; i++) {
+                tabContents[i].classList.remove('active');
+            }
+
+            const tabButtons = document.getElementsByClassName('tab-button');
+            for (let i = 0; i < tabButtons.length; i++) {
+                tabButtons[i].classList.remove('text-primary', 'border-primary');
+                tabButtons[i].classList.add('text-gray-500', 'border-transparent');
+            }
+
+            document.getElementById(tabName).classList.add('active');
+            evt.currentTarget.classList.remove('text-gray-500', 'border-transparent');
+            evt.currentTarget.classList.add('text-primary', 'border-primary');
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const params = new URLSearchParams(window.location.search);
+            const productId = params.get('product');
+
+            if (productId) {
+                changeProduct(productId);
+            }
+        });
+    </script>
+</body>
+
+</html>

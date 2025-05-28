@@ -1,0 +1,1312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Spices | Abhinandan International</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#8B4513',
+                        secondary: '#6B8E23',
+                        accent: '#D2691E'
+                    },
+                    borderRadius: {
+                        'none': '0px',
+                        'sm': '4px',
+                        DEFAULT: '8px',
+                        'md': '12px',
+                        'lg': '16px',
+                        'xl': '20px',
+                        '2xl': '24px',
+                        '3xl': '32px',
+                        'full': '9999px',
+                        'button': '8px'
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <style>
+        :where([class^="ri-"])::before {
+            content: "\f3c2";
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .heading {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .custom-input:focus {
+            outline: none;
+        }
+
+        .product-gallery-thumbnail {
+            transition: all 0.3s ease;
+        }
+
+        .product-gallery-thumbnail:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-gallery-thumbnail.active {
+            border: 2px solid #8B4513;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .spice-card {
+            transition: all 0.3s ease;
+        }
+
+        .spice-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .nutrient-meter {
+            height: 8px;
+            background-color: #e5e7eb;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .nutrient-meter-fill {
+            height: 100%;
+            background-color: #8B4513;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+
+<body class="bg-white">
+    <!-- Header Section -->
+    <header class="sticky top-0 z-50 bg-white shadow-sm">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                    <!-- <a href="#" class="text-3xl font-['Pacifico'] text-primary">Abhinandan</a> -->
+                    <a href="#" class="flex items-center">
+                        <img src="photo/logo-4kk-1.png" alt="Abhinandan Logo" class="h-10 w-auto mr-4">
+                    </a>
+                    <nav class="hidden md:flex ml-10">
+                        <ul class="flex space-x-8">
+                            <li><a href="Home.html"
+                                    class="text-gray-800 font-medium hover:text-primary transition-colors">Home</a></li>
+                            <li><a href="Product.html"
+                                    class="text-primary font-medium hover:text-primary transition-colors">Products</a>
+                            </li>
+                            <li><a href="Aboutus.html"
+                                    class="text-gray-800 font-medium hover:text-primary transition-colors">About Us</a>
+                            </li>
+                            <li><a href="Contact.html"
+                                    class="text-gray-800 font-medium hover:text-primary transition-colors">Contact</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="flex items-center">
+                    <div class="relative mr-4">
+                        <input type="text" placeholder="Search spices..."
+                            class="custom-input pl-10 pr-4 py-2 rounded-full bg-gray-100 text-sm w-48 border-none">
+                        <div
+                            class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 flex items-center justify-center text-gray-500">
+                            <i class="ri-search-line"></i>
+                        </div>
+                    </div>
+
+                    <button
+                        class="ml-4 md:flex items-center px-4 py-2 bg-primary text-white rounded-button hover:bg-opacity-90 transition-colors whitespace-nowrap hidden">
+                        <span>Get Quote</span>
+                    </button>
+                    <div class="md:hidden w-10 h-10 flex items-center justify-center">
+                        <i class="ri-menu-line text-xl"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Product Detail Section -->
+    <section class="py-12 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <!-- Breadcrumb -->
+            <div class="flex items-center text-sm text-gray-600 mb-6">
+                <a href="Home.html" class="hover:text-primary">Home</a>
+                <i class="ri-arrow-right-s-line mx-2"></i>
+                <a href="Product.html" class="hover:text-primary">Spices</a>
+                <i class="ri-arrow-right-s-line mx-2"></i>
+                <span class="text-primary" id="productNameBreadcrumb">Coriander Seeds</span>
+            </div>
+
+            <div class="flex flex-col lg:flex-row gap-8">
+                <!-- Product Gallery -->
+                <div class="lg:w-1/2">
+                    <div class="bg-white rounded-lg shadow-md p-4 mb-4">
+                        <div class="h-96 overflow-hidden rounded-lg mb-4">
+                            <img id="mainImage"
+                                src="https://images.unsplash.com/photo-1598170845058-32a9af54d873?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+                                alt="Coriander Seeds" class="w-full h-full object-contain">
+                        </div>
+                        <div class="grid grid-cols-4 gap-2" id="thumbnailGallery">
+                            <!-- Thumbnails will be added dynamically -->
+                        </div>
+                    </div>
+                    
+                    <!-- Nutritional Info -->
+                    <div class="bg-white rounded-lg shadow-md p-6 mb-4">
+                        <h3 class="heading text-xl font-semibold text-gray-900 mb-4">Nutritional Information</h3>
+                        <div class="space-y-3" id="nutritionInfo">
+                            <!-- Nutritional info will be added dynamically -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Info -->
+                <div class="lg:w-1/2">
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <h1 class="heading text-3xl font-bold text-gray-900" id="productName">Coriander Seeds</h1>
+                            <div class="flex items-center bg-accent/10 px-3 py-1 rounded-full">
+                                <span class="text-accent text-sm font-medium" id="productOrigin">India</span>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center mb-4">
+                            <div class="flex items-center mr-4">
+                                <i class="ri-star-fill text-yellow-400 mr-1"></i>
+                                <span class="text-gray-700 font-medium" id="productRating">4.8</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="ri-user-fill text-gray-500 mr-1"></i>
+                                <span class="text-gray-600 text-sm" id="productReviews">120+ Reviews</span>
+                            </div>
+                        </div>
+
+                        <div class="mb-6">
+                            <h3 class="text-lg font-semibold text-gray-900 mb-2">Description</h3>
+                            <p class="text-gray-600 mb-4" id="productDescription">
+                                Our premium coriander seeds are carefully selected from the finest crops, known for their aromatic fragrance and slightly citrusy flavor. These golden-brown seeds are sun-dried to perfection, retaining their essential oils and nutritional value.
+                            </p>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                                <div class="flex items-start">
+                                    <i class="ri-checkbox-circle-fill text-green-500 mt-1 mr-2"></i>
+                                    <span class="text-gray-600">100% natural with no additives</span>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="ri-checkbox-circle-fill text-green-500 mt-1 mr-2"></i>
+                                    <span class="text-gray-600">Rich in antioxidants and fiber</span>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="ri-checkbox-circle-fill text-green-500 mt-1 mr-2"></i>
+                                    <span class="text-gray-600">Long shelf life (up to 2 years)</span>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="ri-checkbox-circle-fill text-green-500 mt-1 mr-2"></i>
+                                    <span class="text-gray-600">Retains original flavor and nutrients</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-6">
+                            <h3 class="text-lg font-semibold text-gray-900 mb-2">Specifications</h3>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <p class="text-gray-600"><span class="font-medium">Color:</span> <span
+                                            id="productColor">Golden brown</span></p>
+                                    <p class="text-gray-600"><span class="font-medium">Moisture:</span> <span
+                                            id="productMoisture">Max 9%</span></p>
+                                    <p class="text-gray-600"><span class="font-medium">Purity:</span> <span
+                                            id="productPurity">99.5%</span></p>
+                                </div>
+                                <div>
+                                    <p class="text-gray-600"><span class="font-medium">Size:</span> <span
+                                            id="productSize">3-5mm</span></p>
+                                    <p class="text-gray-600"><span class="font-medium">Packaging:</span> <span
+                                            id="productPackaging">25kg, 50kg bags</span></p>
+                                    <p class="text-gray-600"><span class="font-medium">Shelf Life:</span> <span
+                                            id="productShelfLife">24 months</span></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-6">
+                            <h3 class="text-lg font-semibold text-gray-900 mb-2">Storage Instructions</h3>
+                            <p class="text-gray-600" id="productStorage">
+                                Store in a cool, dry place away from direct sunlight. Keep in airtight containers to maintain freshness and prevent moisture absorption. Ideal storage temperature is below 25°C with relative humidity below 65%.
+                            </p>
+                        </div>
+
+                        <div class="flex flex-col sm:flex-row gap-3 mb-6">
+                            <button
+                                class="flex-1 px-6 py-3 bg-primary text-white rounded-button hover:bg-opacity-90 transition-colors">
+                                Request Sample
+                            </button>
+                            <button
+                                class="flex-1 px-6 py-3 bg-secondary text-white rounded-button hover:bg-opacity-90 transition-colors">
+                                Enquiry Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Tabs -->
+            <div class="mt-12 bg-white rounded-lg shadow-md overflow-hidden">
+                <div class="border-b border-gray-200">
+                    <nav class="flex flex-col sm:flex-row">
+                        <button onclick="openTab(event, 'uses')"
+                            class="tab-button py-4 px-6 text-center border-b-2 font-medium text-primary border-primary">
+                            Uses
+                        </button>
+                        <button onclick="openTab(event, 'varieties')"
+                            class="tab-button py-4 px-6 text-center border-b-2 font-medium text-gray-500 border-transparent hover:text-gray-700 hover:border-gray-300">
+                            Varieties
+                        </button>
+                        <button onclick="openTab(event, 'names')"
+                            class="tab-button py-4 px-6 text-center border-b-2 font-medium text-gray-500 border-transparent hover:text-gray-700 hover:border-gray-300">
+                            Names in Different Languages
+                        </button>
+                        <button onclick="openTab(event, 'origin')"
+                            class="tab-button py-4 px-6 text-center border-b-2 font-medium text-gray-500 border-transparent hover:text-gray-700 hover:border-gray-300">
+                            Origin & Cultivation
+                        </button>
+                    </nav>
+                </div>
+
+                <div class="p-6">
+                    <!-- Uses Tab -->
+                    <div id="uses" class="tab-content active">
+                        <h3 class="heading text-xl font-semibold text-gray-900 mb-4">Culinary Uses</h3>
+                        <p class="text-gray-600 mb-4" id="culinaryUses">
+                            Coriander seeds are a versatile spice used in various cuisines around the world. They add a warm, nutty, and slightly citrusy flavor to dishes:
+                        </p>
+                        <ul class="list-disc pl-5 text-gray-600 mb-6 space-y-2" id="culinaryList">
+                            <li>Essential in Indian curries, dals, and spice blends like garam masala</li>
+                            <li>Used in pickling spices and brines</li>
+                            <li>Flavoring for sausages and cured meats</li>
+                            <li>Baking ingredient in breads and pastries</li>
+                            <li>Brewing component in some Belgian wheat beers</li>
+                            <li>Flavoring for stews and soups</li>
+                        </ul>
+
+                        <h3 class="heading text-xl font-semibold text-gray-900 mb-4">Medicinal & Other Uses</h3>
+                        <p class="text-gray-600 mb-4" id="industrialUses">
+                            Beyond culinary applications, coriander seeds have several health benefits and other uses:
+                        </p>
+                        <ul class="list-disc pl-5 text-gray-600 mb-6 space-y-2" id="industrialList">
+                            <li>Digestive aid and carminative properties</li>
+                            <li>Traditional remedy for insomnia and anxiety</li>
+                            <li>Natural diuretic</li>
+                            <li>Used in aromatherapy and perfumery</li>
+                            <li>Component in some natural skincare products</li>
+                        </ul>
+                    </div>
+
+                    <!-- Varieties Tab -->
+                    <div id="varieties" class="tab-content">
+                        <h3 class="heading text-xl font-semibold text-gray-900 mb-4">Product Varieties</h3>
+                        <p class="text-gray-600 mb-4" id="varietiesDescription">
+                            We offer several varieties of coriander seeds to meet different culinary and industrial needs:
+                        </p>
+
+                        <div class="space-y-4" id="varietiesContainer">
+                            <div class="border border-gray-200 rounded-lg p-4">
+                                <h4 class="heading text-lg font-semibold text-gray-900 mb-2">Indian Coriander (Regular)</h4>
+                                <p class="text-gray-600 mb-2">
+                                    <span class="font-medium">Size:</span> 3-5mm<br>
+                                    <span class="font-medium">Color:</span> Golden brown<br>
+                                    <span class="font-medium">Aroma:</span> Strong, citrusy<br>
+                                    <span class="font-medium">Use:</span> General culinary applications
+                                </p>
+                            </div>
+
+                            <div class="border border-gray-200 rounded-lg p-4">
+                                <h4 class="heading text-lg font-semibold text-gray-900 mb-2">European Coriander</h4>
+                                <p class="text-gray-600 mb-2">
+                                    <span class="font-medium">Size:</span> 2-4mm<br>
+                                    <span class="font-medium">Color:</span> Light brown<br>
+                                    <span class="font-medium">Aroma:</span> Mild, sweet<br>
+                                    <span class="font-medium">Use:</span> Baking and confectionery
+                                </p>
+                            </div>
+
+                            <div class="border border-gray-200 rounded-lg p-4">
+                                <h4 class="heading text-lg font-semibold text-gray-900 mb-2">Organic Coriander</h4>
+                                <p class="text-gray-600 mb-2">
+                                    <span class="font-medium">Size:</span> 3-5mm<br>
+                                    <span class="font-medium">Color:</span> Dark brown<br>
+                                    <span class="font-medium">Aroma:</span> Intense, earthy<br>
+                                    <span class="font-medium">Use:</span> Health food and organic products
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Names Tab -->
+                    <div id="names" class="tab-content">
+                        <h3 class="heading text-xl font-semibold text-gray-900 mb-4">Names in Different Languages</h3>
+                        <p class="text-gray-600 mb-4" id="namesDescription">
+                            Coriander is known by various names across different cultures and regions:
+                        </p>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="namesContainer">
+                            <div class="border border-gray-200 rounded-lg p-4">
+                                <h4 class="heading text-lg font-semibold text-gray-900 mb-2">Indian Languages</h4>
+                                <ul class="space-y-1 text-gray-600">
+                                    <li><span class="font-medium">Hindi:</span> Dhaniya</li>
+                                    <li><span class="font-medium">Tamil:</span> Kothamalli</li>
+                                    <li><span class="font-medium">Telugu:</span> Dhaniyalu</li>
+                                    <li><span class="font-medium">Kannada:</span> Kottambari</li>
+                                    <li><span class="font-medium">Malayalam:</span> Malli</li>
+                                    <li><span class="font-medium">Bengali:</span> Dhone</li>
+                                    <li><span class="font-medium">Gujarati:</span> Dhana</li>
+                                    <li><span class="font-medium">Marathi:</span> Dhane</li>
+                                </ul>
+                            </div>
+
+                            <div class="border border-gray-200 rounded-lg p-4">
+                                <h4 class="heading text-lg font-semibold text-gray-900 mb-2">International Names</h4>
+                                <ul class="space-y-1 text-gray-600">
+                                    <li><span class="font-medium">Spanish:</span> Cilantro (leaves), Coriandro (seeds)</li>
+                                    <li><span class="font-medium">French:</span> Coriandre</li>
+                                    <li><span class="font-medium">German:</span> Koriander</li>
+                                    <li><span class="font-medium">Italian:</span> Coriandolo</li>
+                                    <li><span class="font-medium">Arabic:</span> Kuzbara</li>
+                                    <li><span class="font-medium">Chinese:</span> Hu sui</li>
+                                    <li><span class="font-medium">Japanese:</span> Koyendoro</li>
+                                    <li><span class="font-medium">Russian:</span> Koriandr</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Origin Tab -->
+                    <div id="origin" class="tab-content">
+                        <h3 class="heading text-xl font-semibold text-gray-900 mb-4">Origin & Cultivation</h3>
+                        <p class="text-gray-600 mb-4" id="originDescription">
+                            Coriander has been cultivated since ancient times, with evidence of its use dating back to 5000 BC. It is native to regions spanning from Southern Europe and Northern Africa to Southwestern Asia.
+                        </p>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <h4 class="heading text-lg font-semibold text-gray-900 mb-2">Growing Regions</h4>
+                                <p class="text-gray-600 mb-2" id="growingRegions">
+                                    The best quality coriander seeds come from these regions:
+                                </p>
+                                <ul class="list-disc pl-5 text-gray-600 space-y-1" id="regionsList">
+                                    <li>Rajasthan, India - largest producer with strong aroma varieties</li>
+                                    <li>Madhya Pradesh, India - known for high oil content</li>
+                                    <li>Morocco - produces sweet and mild varieties</li>
+                                    <li>Russia - cold-resistant varieties</li>
+                                    <li>Canada - premium organic production</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <h4 class="heading text-lg font-semibold text-gray-900 mb-2">Cultivation Process</h4>
+                                <p class="text-gray-600 mb-2" id="processingMethod">
+                                    Our coriander seeds are produced through careful cultivation:
+                                </p>
+                                <ol class="list-decimal pl-5 text-gray-600 space-y-1" id="processList">
+                                    <li>Selection of premium quality seeds for planting</li>
+                                    <li>Organic farming practices with natural fertilizers</li>
+                                    <li>Careful irrigation management</li>
+                                    <li>Harvesting at peak maturity</li>
+                                    <li>Sun-drying to preserve essential oils</li>
+                                    <li>Mechanical cleaning and sorting</li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <h4 class="heading text-lg font-semibold text-gray-900 mb-2">Quality Standards</h4>
+                        <p class="text-gray-600" id="qualityStandards">
+                            Our coriander seeds meet international quality standards including ISO, FSSAI, USDA Organic, and EU Organic specifications. We maintain strict quality control throughout the production process to ensure food safety and premium quality.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Related Products -->
+            <div class="mt-12">
+                <h2 class="heading text-2xl font-bold text-gray-900 mb-6">Other Premium Spices</h2>
+                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6" id="relatedProducts">
+                    <!-- Related products will be added dynamically -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-12 pb-6">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="heading text-xl font-semibold mb-4">Abhinandan International</h3>
+                    <p class="text-gray-400 mb-4">
+                        Premium quality spices and food products sourced directly from farms across India
+                        and Asia.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#"
+                            class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-gray-700">
+                            <i class="ri-facebook-fill"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-gray-700">
+                            <i class="ri-instagram-line"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-gray-700">
+                            <i class="ri-twitter-fill"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-gray-700">
+                            <i class="ri-linkedin-fill"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="heading text-xl font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Home</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Products</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">About Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="heading text-xl font-semibold mb-4">Products</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Spices</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Raisins</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Herbs</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Grains</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Oil Seeds</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Dehydrated Vegetables</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Coconut Products</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="heading text-xl font-semibold mb-4">Contact Us</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="ri-map-pin-line mt-1 mr-2"></i>
+                            <span class="text-gray-400">123 Spice Street, Mumbai, India 400001</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-phone-line mt-1 mr-2"></i>
+                            <span class="text-gray-400">+91 98765 43210</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-mail-line mt-1 mr-2"></i>
+                            <span class="text-gray-400">info@abhinandan.com</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-time-line mt-1 mr-2"></i>
+                            <span class="text-gray-400">Mon-Fri: 9AM - 6PM</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-6">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-400 mb-4 md:mb-0">
+                        &copy; 2023 Abhinandan International. All rights reserved.
+                    </p>
+                    <div class="flex space-x-6">
+                        <a href="#" class="text-gray-400 hover:text-white">Privacy Policy</a>
+                        <a href="#" class="text-gray-400 hover:text-white">Terms of Service</a>
+                        <a href="#" class="text-gray-400 hover:text-white">Shipping Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Product data for spices
+        const spices = {
+            'coriander-seeds': {
+                name: 'Coriander Seeds',
+                description: 'Our premium coriander seeds are carefully selected from the finest crops, known for their aromatic fragrance and slightly citrusy flavor. These golden-brown seeds are sun-dried to perfection, retaining their essential oils and nutritional value.',
+                color: 'Golden brown',
+                moisture: 'Max 9%',
+                size: '3-5mm',
+                packaging: '25kg, 50kg bags',
+                shelfLife: '24 months',
+                purity: '99.5%',
+                origin: 'India',
+                rating: '4.8',
+                reviews: '120+ Reviews',
+                storage: 'Store in a cool, dry place away from direct sunlight. Keep in airtight containers to maintain freshness and prevent moisture absorption. Ideal storage temperature is below 25°C with relative humidity below 65%.',
+                culinaryUses: 'Coriander seeds are a versatile spice used in various cuisines around the world. They add a warm, nutty, and slightly citrusy flavor to dishes:',
+                culinaryList: [
+                    'Essential in Indian curries, dals, and spice blends like garam masala',
+                    'Used in pickling spices and brines',
+                    'Flavoring for sausages and cured meats',
+                    'Baking ingredient in breads and pastries',
+                    'Brewing component in some Belgian wheat beers',
+                    'Flavoring for stews and soups'
+                ],
+                industrialUses: 'Beyond culinary applications, coriander seeds have several health benefits and other uses:',
+                industrialList: [
+                    'Digestive aid and carminative properties',
+                    'Traditional remedy for insomnia and anxiety',
+                    'Natural diuretic',
+                    'Used in aromatherapy and perfumery',
+                    'Component in some natural skincare products'
+                ],
+                varietiesDescription: 'We offer several varieties of coriander seeds to meet different culinary and industrial needs:',
+                varieties: [
+                    {
+                        name: 'Indian Coriander (Regular)',
+                        details: '<span class="font-medium">Size:</span> 3-5mm<br><span class="font-medium">Color:</span> Golden brown<br><span class="font-medium">Aroma:</span> Strong, citrusy<br><span class="font-medium">Use:</span> General culinary applications'
+                    },
+                    {
+                        name: 'European Coriander',
+                        details: '<span class="font-medium">Size:</span> 2-4mm<br><span class="font-medium">Color:</span> Light brown<br><span class="font-medium">Aroma:</span> Mild, sweet<br><span class="font-medium">Use:</span> Baking and confectionery'
+                    },
+                    {
+                        name: 'Organic Coriander',
+                        details: '<span class="font-medium">Size:</span> 3-5mm<br><span class="font-medium">Color:</span> Dark brown<br><span class="font-medium">Aroma:</span> Intense, earthy<br><span class="font-medium">Use:</span> Health food and organic products'
+                    }
+                ],
+                namesDescription: 'Coriander is known by various names across different cultures and regions:',
+                names: {
+                    indian: [
+                        ['Hindi', 'Dhaniya'],
+                        ['Tamil', 'Kothamalli'],
+                        ['Telugu', 'Dhaniyalu'],
+                        ['Kannada', 'Kottambari'],
+                        ['Malayalam', 'Malli'],
+                        ['Bengali', 'Dhone'],
+                        ['Gujarati', 'Dhana'],
+                        ['Marathi', 'Dhane']
+                    ],
+                    international: [
+                        ['Spanish', 'Cilantro (leaves), Coriandro (seeds)'],
+                        ['French', 'Coriandre'],
+                        ['German', 'Koriander'],
+                        ['Italian', 'Coriandolo'],
+                        ['Arabic', 'Kuzbara'],
+                        ['Chinese', 'Hu sui'],
+                        ['Japanese', 'Koyendoro'],
+                        ['Russian', 'Koriandr']
+                    ]
+                },
+                originDescription: 'Coriander has been cultivated since ancient times, with evidence of its use dating back to 5000 BC. It is native to regions spanning from Southern Europe and Northern Africa to Southwestern Asia.',
+                growingRegions: 'The best quality coriander seeds come from these regions:',
+                regionsList: [
+                    'Rajasthan, India - largest producer with strong aroma varieties',
+                    'Madhya Pradesh, India - known for high oil content',
+                    'Morocco - produces sweet and mild varieties',
+                    'Russia - cold-resistant varieties',
+                    'Canada - premium organic production'
+                ],
+                processingMethod: 'Our coriander seeds are produced through careful cultivation:',
+                processList: [
+                    'Selection of premium quality seeds for planting',
+                    'Organic farming practices with natural fertilizers',
+                    'Careful irrigation management',
+                    'Harvesting at peak maturity',
+                    'Sun-drying to preserve essential oils',
+                    'Mechanical cleaning and sorting'
+                ],
+                qualityStandards: 'Our coriander seeds meet international quality standards including ISO, FSSAI, USDA Organic, and EU Organic specifications. We maintain strict quality control throughout the production process to ensure food safety and premium quality.',
+                images: [
+                    'https://images.unsplash.com/photo-1598170845058-32a9af54d873?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
+                    'https://images.unsplash.com/photo-1603048719539-d2581f4b2b9a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
+                    'https://images.unsplash.com/photo-1603048719539-d2581f4b2b9a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
+                    'https://images.unsplash.com/photo-1603048719539-d2581f4b2b9a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80'
+                ],
+                nutrition: [
+                    { name: 'Dietary Fiber', value: 42 },
+                    { name: 'Protein', value: 12 },
+                    { name: 'Iron', value: 85 },
+                    { name: 'Calcium', value: 65 },
+                    { name: 'Vitamin C', value: 35 }
+                ],
+                relatedProducts: ['garlic', 'tamarind', 'bay-leaf', 'big-cardamon', 'cumin-seeds']
+            },
+            'garlic': {
+                name: 'Garlic',
+                description: 'Our premium garlic is sun-dried to perfection, retaining its strong aroma and health benefits. Carefully selected from the finest crops, our garlic is known for its pungent flavor and medicinal properties.',
+                color: 'Cream to light brown',
+                moisture: 'Max 6.5%',
+                size: '3-5cm bulbs',
+                packaging: '10kg, 20kg mesh bags',
+                shelfLife: '18 months',
+                purity: '99%',
+                origin: 'India',
+                rating: '4.7',
+                reviews: '95+ Reviews',
+                storage: 'Store in a cool, dry place with good ventilation. Avoid plastic bags as they can cause condensation. Ideal storage temperature is between 15-18°C with relative humidity below 60%.',
+                culinaryUses: 'Garlic is a fundamental flavoring in cuisines worldwide and has numerous culinary applications:',
+                culinaryList: [
+                    'Essential in Indian curries, chutneys, and pickles',
+                    'Base for sauces like aioli and toum',
+                    'Flavoring for meats, seafood, and vegetables',
+                    'Key ingredient in Mediterranean and Asian cuisines',
+                    'Roasted as a spread or condiment',
+                    'Pickled in vinegar or oil'
+                ],
+                industrialUses: 'Beyond culinary uses, garlic has significant health benefits and other applications:',
+                industrialList: [
+                    'Natural antibiotic and immune booster',
+                    'Cardiovascular health support',
+                    'Antioxidant properties',
+                    'Used in traditional medicine systems',
+                    'Component in some natural pesticides'
+                ],
+                varietiesDescription: 'We offer several varieties of garlic to meet different culinary and industrial needs:',
+                varieties: [
+                    {
+                        name: 'Indian Garlic (Regular)',
+                        details: '<span class="font-medium">Size:</span> Medium bulbs<br><span class="font-medium">Color:</span> White with purple tinge<br><span class="font-medium">Aroma:</span> Strong, pungent<br><span class="font-medium">Use:</span> General culinary applications'
+                    },
+                    {
+                        name: 'Chinese Garlic',
+                        details: '<span class="font-medium">Size:</span> Large bulbs<br><span class="font-medium">Color:</span> Pure white<br><span class="font-medium">Aroma:</span> Mild<br><span class="font-medium">Use:</span> Commercial food processing'
+                    },
+                    {
+                        name: 'Organic Garlic',
+                        details: '<span class="font-medium">Size:</span> Small to medium<br><span class="font-medium">Color:</span> Off-white<br><span class="font-medium">Aroma:</span> Intense, complex<br><span class="font-medium">Use:</span> Health food and organic products'
+                    }
+                ],
+                namesDescription: 'Garlic is known by various names across different cultures and regions:',
+                names: {
+                    indian: [
+                        ['Hindi', 'Lahsun'],
+                        ['Tamil', 'Poondu'],
+                        ['Telugu', 'Vellulli'],
+                        ['Kannada', 'Bellulli'],
+                        ['Malayalam', 'Veluthulli'],
+                        ['Bengali', 'Rasuna'],
+                        ['Gujarati', 'Lasun'],
+                        ['Marathi', 'Lasun']
+                    ],
+                    international: [
+                        ['Spanish', 'Ajo'],
+                        ['French', 'Ail'],
+                        ['German', 'Knoblauch'],
+                        ['Italian', 'Aglio'],
+                        ['Arabic', 'Thum'],
+                        ['Chinese', 'Da suan'],
+                        ['Japanese', 'Ninniku'],
+                        ['Russian', 'Chesnok']
+                    ]
+                },
+                originDescription: 'Garlic has been cultivated for over 5,000 years and is native to Central Asia. It has been used both as a food flavoring and as a traditional medicine in many cultures throughout history.',
+                growingRegions: 'The best quality garlic comes from these regions:',
+                regionsList: [
+                    'Madhya Pradesh, India - known for strong flavor',
+                    'Rajasthan, India - produces large quantities',
+                    'China - world\'s largest producer',
+                    'Spain - premium quality varieties',
+                    'California, USA - commercial production'
+                ],
+                processingMethod: 'Our garlic is processed through careful methods to preserve quality:',
+                processList: [
+                    'Selection of premium quality bulbs',
+                    'Natural sun-drying process',
+                    'Careful cleaning and sorting',
+                    'Grading by size and quality',
+                    'Quality testing for moisture and purity',
+                    'Packaging in breathable materials'
+                ],
+                qualityStandards: 'Our garlic meets international quality standards including ISO, FSSAI, and USDA specifications. We maintain strict hygiene protocols throughout the production process to ensure food safety.',
+                images: [
+                    'https://images.unsplash.com/photo-1603048719539-d2581f4b2b9a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
+                    'https://images.unsplash.com/photo-1603048719539-d2581f4b2b9a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
+                    'https://images.unsplash.com/photo-1603048719539-d2581f4b2b9a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
+                    'https://images.unsplash.com/photo-1603048719539-d2581f4b2b9a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80'
+                ],
+                nutrition: [
+                    { name: 'Allicin Content', value: 90 },
+                    { name: 'Vitamin B6', value: 65 },
+                    { name: 'Vitamin C', value: 38 },
+                    { name: 'Manganese', value: 73 },
+                    { name: 'Selenium', value: 25 }
+                ],
+                relatedProducts: ['coriander-seeds', 'tamarind', 'bay-leaf', 'cumin-seeds', 'black-pepper']
+            },
+            'tamarind': {
+                name: 'Tamarind',
+                description: 'Our premium tamarind is carefully selected for its perfect balance of sweet and sour flavors. Sourced from the finest orchards, our tamarind is naturally sun-dried and hand-sorted to ensure consistent quality and taste.',
+                color: 'Dark brown to reddish-brown',
+                moisture: 'Max 20%',
+                size: 'Whole pods or pulp blocks',
+                packaging: '25kg, 50kg jute bags or plastic-lined boxes',
+                shelfLife: '24 months',
+                purity: '99%',
+                origin: 'India',
+                rating: '4.6',
+                reviews: '85+ Reviews',
+                storage: 'Store in a cool, dry place away from direct sunlight. For pulp blocks, keep in airtight containers once opened. Ideal storage temperature is below 25°C with relative humidity below 65%.',
+                culinaryUses: 'Tamarind is a versatile ingredient used in various cuisines for its unique sweet-sour flavor:',
+                culinaryList: [
+                    'Essential in Indian curries, chutneys, and rasam',
+                    'Base for Southeast Asian sauces and soups',
+                    'Key ingredient in Mexican candies and beverages',
+                    'Flavoring agent in Worcestershire sauce',
+                    'Used in Middle Eastern meat dishes',
+                    'Component in refreshing drinks and sherbets'
+                ],
+                industrialUses: 'Beyond culinary applications, tamarind has several other uses:',
+                industrialList: [
+                    'Natural digestive aid',
+                    'Metal polish due to tartaric acid content',
+                    'Traditional medicine for various ailments',
+                    'Textile dye and mordant',
+                    'Component in some natural cleaning products'
+                ],
+                varietiesDescription: 'We offer several varieties of tamarind to meet different culinary and industrial needs:',
+                varieties: [
+                    {
+                        name: 'Indian Tamarind (Regular)',
+                        details: '<span class="font-medium">Form:</span> Whole pods or pulp blocks<br><span class="font-medium">Color:</span> Dark brown<br><span class="font-medium">Flavor:</span> Balanced sweet-sour<br><span class="font-medium">Use:</span> General culinary applications'
+                    },
+                    {
+                        name: 'Sweet Tamarind',
+                        details: '<span class="font-medium">Form:</span> Whole pods<br><span class="font-medium">Color:</span> Light brown<br><span class="font-medium">Flavor:</span> Predominantly sweet<br><span class="font-medium">Use:</span> Confectionery and snacks'
+                    },
+                    {
+                        name: 'Seedless Tamarind',
+                        details: '<span class="font-medium">Form:</span> Pulp blocks<br><span class="font-medium">Color:</span> Reddish-brown<br><span class="font-medium">Flavor:</span> Intense sour<br><span class="font-medium">Use:</span> Commercial food processing'
+                    }
+                ],
+                namesDescription: 'Tamarind is known by various names across different cultures and regions:',
+                names: {
+                    indian: [
+                        ['Hindi', 'Imli'],
+                        ['Tamil', 'Puli'],
+                        ['Telugu', 'Chintapandu'],
+                        ['Kannada', 'Hunase'],
+                        ['Malayalam', 'Puli'],
+                        ['Bengali', 'Tentul'],
+                        ['Gujarati', 'Amli'],
+                        ['Marathi', 'Chinch']
+                    ],
+                    international: [
+                        ['Spanish', 'Tamarindo'],
+                        ['French', 'Tamarindier'],
+                        ['German', 'Tamarinde'],
+                        ['Italian', 'Tamarindo'],
+                        ['Arabic', 'Tamar hindi'],
+                        ['Chinese', 'Suan jiao'],
+                        ['Japanese', 'Tamarindo'],
+                        ['Russian', 'Tamarind']
+                    ]
+                },
+                originDescription: 'Tamarind is native to tropical Africa but has been cultivated in India for so long that it is often considered indigenous. It has been an important crop in India for at least 4,000 years.',
+                growingRegions: 'The best quality tamarind comes from these regions:',
+                regionsList: [
+                    'Madhya Pradesh, India - known for balanced flavor',
+                    'Maharashtra, India - produces large quantities',
+                    'Thailand - sweet varieties',
+                    'Mexico - commercial production',
+                    'Sudan - wild varieties'
+                ],
+                processingMethod: 'Our tamarind is processed through traditional methods to preserve quality:',
+                processList: [
+                    'Selection of ripe pods',
+                    'Natural sun-drying process',
+                    'Hand-shelling and deseeding',
+                    'Pressing into pulp blocks (for some varieties)',
+                    'Quality testing for moisture and purity',
+                    'Packaging in appropriate materials'
+                ],
+                qualityStandards: 'Our tamarind meets international quality standards including ISO, FSSAI, and USDA specifications. We maintain strict hygiene protocols throughout the production process to ensure food safety.',
+                images: [
+                    'https://images.unsplash.com/photo-1603048719539-d2581f4b2b9a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
+                    'https://images.unsplash.com/photo-1603048719539-d2581f4b2b9a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
+                    'https://images.unsplash.com/photo-1603048719539-d2581f4b2b9a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
+                    'https://images.unsplash.com/photo-1603048719539-d2581f4b2b9a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80'
+                ],
+                nutrition: [
+                    { name: 'Tartaric Acid', value: 75 },
+                    { name: 'Vitamin B1', value: 34 },
+                    { name: 'Potassium', value: 62 },
+                    { name: 'Magnesium', value: 45 },
+                    { name: 'Dietary Fiber', value: 55 }
+                ],
+                relatedProducts: ['coriander-seeds', 'garlic', 'bay-leaf', 'black-pepper', 'cumin-seeds']
+            },
+            'bay-leaf': {
+                name: 'Bay Leaf',
+                description: 'Our premium bay leaves are hand-picked from mature trees, carefully dried to preserve their aromatic oils and distinctive flavor. These fragrant leaves add depth and complexity to dishes with their subtle bitterness and herbal aroma.',
+                color: 'Olive green to dark green',
+                moisture: 'Max 10%',
+                size: '5-8cm length',
+                packaging: '5kg, 10kg carton boxes',
+                shelfLife: '36 months',
+                purity: '99.5%',
+                origin: 'India',
+                rating: '4.5',
+                reviews: '75+ Reviews',
+                storage: 'Store in a cool, dry place away from direct sunlight. Keep in airtight containers to maintain aroma. Ideal storage temperature is below 25°C with relative humidity below 60%.',
+                culinaryUses: 'Bay leaves are a classic culinary herb used to flavor a wide variety of dishes:',
+                culinaryList: [
+                    'Essential in soups, stews, and stocks',
+                    'Flavoring for meats and seafood dishes',
+                    'Key ingredient in biryanis and pulaos',
+                    'Used in pickling and preserving',
+                    'Component in bouquet garni',
+                    'Flavoring for sauces and gravies'
+                ],
+                industrialUses: 'Beyond culinary applications, bay leaves have several other uses:',
+                industrialList: [
+                    'Traditional medicine for respiratory issues',
+                    'Natural insect repellent',
+                    'Aromatherapy and potpourri',
+                    'Component in some cosmetic products',
+                    'Used in traditional Ayurvedic medicine'
+                ],
+                varietiesDescription: 'We offer several varieties of bay leaves to meet different culinary needs:',
+                varieties: [
+                    {
+                        name: 'Indian Bay Leaf (Tej Patta)',
+                        details: '<span class="font-medium">Size:</span> 5-8cm<br><span class="font-medium">Color:</span> Dark green<br><span class="font-medium">Aroma:</span> Strong, cinnamon-like<br><span class="font-medium">Use:</span> Indian cuisine'
+                    },
+                    {
+                        name: 'Mediterranean Bay Leaf',
+                        details: '<span class="font-medium">Size:</span> 6-10cm<br><span class="font-medium">Color:</span> Olive green<br><span class="font-medium">Aroma:</span> Subtle, herbal<br><span class="font-medium">Use:</span> European cuisine'
+                    },
+                    {
+                        name: 'California Bay Leaf',
+                        details: '<span class="font-medium">Size:</span> 8-12cm<br><span class="font-medium">Color:</span> Bright green<br><span class="font-medium">Aroma:</span> Intense, eucalyptus-like<br><span class="font-medium">Use:</span> Strong flavor applications'
+                    }
+                ],
+                namesDescription: 'Bay leaf is known by various names across different cultures and regions:',
+                names: {
+                    indian: [
+                        ['Hindi', 'Tej Patta'],
+                        ['Tamil', 'Birinji Ilai'],
+                        ['Telugu', 'Talisha Chettu'],
+                        ['Kannada', 'Tamalpatra'],
+                        ['Malayalam', 'Karuga Vayana'],
+                        ['Bengali', 'Tej Pata'],
+                        ['Gujarati', 'Tamal Patra'],
+                        ['Marathi', 'Tamal Patra']
+                    ],
+                    international: [
+                        ['Spanish', 'Laurel'],
+                        ['French', 'Laurier'],
+                        ['German', 'Lorbeer'],
+                        ['Italian', 'Alloro'],
+                        ['Arabic', 'Waraq Ghar'],
+                        ['Chinese', 'Yue gui'],
+                        ['Japanese', 'Gekkeiju'],
+                        ['Russian', 'Lavr']
+                    ]
+                },
+                originDescription: 'Bay leaves come from several plants of the Lauraceae family. The Indian bay leaf (Tej Patta) is from a different species than the Mediterranean bay leaf, though both are used similarly in cooking. Bay leaves have been used since ancient times for both culinary and medicinal purposes.',
+                growingRegions: 'The best quality bay leaves come from these regions:',
+                regionsList: [
+                    'Himalayan foothills, India - for Tej Patta',
+                    'Turkey - for Mediterranean varieties',
+                    'California, USA - for strong-flavored varieties',
+                    'Greece - premium quality',
+                    'Morocco - commercial production'
+                ],
+                processingMethod: 'Our bay leaves are processed through careful methods to preserve quality:',
+                processList: [
+                    'Selection of mature leaves',
+                    'Natural shade-drying process',
+                    'Hand-sorting and cleaning',
+                    'Quality testing for aroma and color',
+                    'Packaging in moisture-proof materials'
+                ],
+                qualityStandards: 'Our bay leaves meet international quality standards including ISO, FSSAI, and USDA specifications. We maintain strict quality control throughout the production process to ensure premium quality.',
+                images: [
+                    'https://images.unsplash.com/photo-1603048719539-d2581f4b2b9a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
+                    'https://images.unsplash.com/photo-1603048719539-d2581f4b2b9a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
+                    'https://images.unsplash.com/photo-1603048719539-d2581f4b2b9a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
+                    'https://images.unsplash.com/photo-1603048719539-d2581f4b2b9a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80'
+                ],
+                nutrition: [
+                    { name: 'Essential Oils', value: 85 },
+                    { name: 'Vitamin A', value: 65 },
+                    { name: 'Vitamin C', value: 45 },
+                    { name: 'Iron', value: 55 },
+                    { name: 'Manganese', value: 40 }
+                ],
+                relatedProducts: ['coriander-seeds', 'garlic', 'tamarind', 'big-cardamon', 'black-pepper']
+            },
+            'big-cardamon': {
+                name: 'Big Cardamom',
+                description: 'Our premium big cardamom (black cardamom) is carefully harvested from mature pods, sun-dried to perfection to develop its distinctive smoky aroma. These large, dark brown pods contain numerous small seeds with a complex flavor profile combining smokiness, camphor, and mild sweetness.',
+                color: 'Dark brown to black',
+                moisture: 'Max 12%',
+                size: '2-3cm pods',
+                packaging: '10kg, 25kg jute bags',
+                shelfLife: '36 months',
+                purity: '99%',
+                origin: 'India',
+                rating: '4.4',
+                reviews: '65+ Reviews',
+                storage: 'Store in a cool, dry place away from direct sunlight. Keep in airtight containers to maintain aroma. Ideal storage temperature is below 25°C with relative humidity below 60%.',
+                culinaryUses: 'Big cardamom is an essential spice in many Asian cuisines, valued for its unique smoky flavor:',
+                culinaryList: [
+                    'Key ingredient in Indian garam masala',
+                    'Flavoring for biryanis and pulaos',
+                    'Used in meat curries and stews',
+                    'Component in Chinese five-spice powder',
+                    'Flavoring for pickles and chutneys',
+                    'Used in some Scandinavian baked goods'
+                ],
+                industrialUses: 'Beyond culinary applications, big cardamom has several other uses:',
+                industrialList: [
+                    'Traditional medicine for digestive issues',
+                    'Aromatherapy and perfumery',
+                    'Component in some natural mouthwashes',
+                    'Used in Ayurvedic preparations',
+                    'Flavoring for some tobacco products'
+                ],
+                varietiesDescription: 'We offer several varieties of big cardamom to meet different culinary needs:',
+                varieties: [
+                    {
+                        name: 'Indian Black Cardamom',
+                        details: '<span class="font-medium">Size:</span> 2-3cm pods<br><span class="font-medium">Color:</span> Dark brown<br><span class="font-medium">Aroma:</span> Intense, smoky<br><span class="font-medium">Use:</span> Indian cuisine'
+                    },
+                    {
+                        name: 'Nepalese Black Cardamom',
+                        details: '<span class="font-medium">Size:</span> 3-4cm pods<br><span class="font-medium">Color:</span> Black<br><span class="font-medium">Aroma:</span> Strong, camphor-like<br><span class="font-medium">Use:</span> Premium applications'
+                    },
+                    {
+                        name: 'Chinese Black Cardamom',
+                        details: '<span class="font-medium">Size:</span> 1.5-2.5cm pods<br><span class="font-medium">Color:</span> Brown<br><span class="font-medium">Aroma:</span> Mild, less smoky<br><span class="font-medium">Use:</span> Chinese cuisine'
+                    }
+                ],
+                namesDescription: 'Big cardamom is known by various names across different cultures and regions:',
+                names: {
+                    indian: [
+                        ['Hindi', 'Badi Elaichi'],
+                        ['Tamil', 'Periya Elakkai'],
+                        ['Telugu', 'Pedda Elakkulu'],
+                        ['Kannada', 'Dodda Elakki'],
+                        ['Malayalam', 'Valiya Elakka'],
+                        ['Bengali', 'Boro Elach'],
+                        ['Gujarati', 'Moti Elchi'],
+                        ['Marathi', 'Mothi Elachi']
+                    ],
+                    international: [
+                        ['Spanish', 'Cardamomo negro'],
+                        ['French', 'Cardamome noire'],
+                        ['German', 'Schwarzer Kardamom'],
+                        ['Italian', 'Cardamomo nero'],
+                        ['Arabic', 'Qaqulla sawda'],
+                        ['Chinese', 'Sha ren'],
+                        ['Japanese', 'Kuro karudamon'],
+                        ['Russian', 'Chyornyi kardamon']
+                    ]
+                },
+                originDescription: 'Big cardamom is native to the eastern Himalayan region and has been cultivated in India, Nepal, and Bhutan for centuries. Unlike green cardamom, it is typically dried over fire, which gives it its characteristic smoky flavor.',
+                growingRegions: 'The best quality big cardamom comes from these regions:',
+                regionsList: [
+                    'Sikkim, India - premium quality',
+                    'Nepal - large, aromatic pods',
+                    'Bhutan - organic varieties',
+                    'China - commercial production',
+                    'Vietnam - smaller varieties'
+                ],
+                processingMethod: 'Our big cardamom is processed through traditional methods to preserve quality:',
+                processList: [
+                    'Selection of mature pods',
+                    'Traditional smoke-drying process',
+                    'Hand-sorting and cleaning',
+                    'Quality testing for aroma and size',
+                    'Packaging in moisture-proof materials'
+                ],
+                qualityStandards: 'Our big cardamom meets international quality standards including ISO, FSSAI, and USDA specifications. We maintain strict quality control throughout the production process to ensure premium quality.',
+                images: [
+                    'https://images.unsplash.com/photo-1603048719539-d2581f4b2b9a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
+                    'https://images.unsplash.com/photo-1603048719539-d2581f4b2b9a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
+                    'https://images.unsplash.com/photo-1603048719539-d2581f4b2b9a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
+                    'https://images.unsplash.com/photo-1603048719539-d2581f4b2b9a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80'
+                ],
+                nutrition: [
+                    { name: 'Essential Oils', value: 75 },
+                    { name: 'Cineole Content', value: 70 },
+                    { name: 'Potassium', value: 45 },
+                    { name: 'Calcium', value: 35 },
+                    { name: 'Iron', value: 40 }
+                ],
+                relatedProducts: ['coriander-seeds', 'bay-leaf', 'black-pepper', 'cumin-seeds', 'cloves']
+            }
+        };
+
+        // Related products data
+        const relatedProductsData = {
+            'cumin-seeds': {
+                name: 'Cumin Seeds',
+                image: 'https://images.unsplash.com/photo-1603048719539-d2581f4b2b9a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
+                id: 'cumin-seeds'
+            },
+            'black-pepper': {
+                name: 'Black Pepper',
+                image: 'https://images.unsplash.com/photo-1603048719539-d2581f4b2b9a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
+                id: 'black-pepper'
+            },
+            'cloves': {
+                name: 'Cloves',
+                image: 'https://images.unsplash.com/photo-1603048719539-d2581f4b2b9a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
+                id: 'cloves'
+            }
+        };
+
+        // Change product function
+        function changeProduct(productId) {
+            const product = spices[productId];
+
+            // Update breadcrumb
+            document.getElementById('productNameBreadcrumb').textContent = product.name;
+
+            // Update main product info
+            document.getElementById('productName').textContent = product.name;
+            document.getElementById('productDescription').textContent = product.description;
+            document.getElementById('productColor').textContent = product.color;
+            document.getElementById('productMoisture').textContent = product.moisture;
+            document.getElementById('productSize').textContent = product.size;
+            document.getElementById('productPackaging').textContent = product.packaging;
+            document.getElementById('productShelfLife').textContent = product.shelfLife;
+            document.getElementById('productPurity').textContent = product.purity;
+            document.getElementById('productOrigin').textContent = product.origin;
+            document.getElementById('productRating').textContent = product.rating;
+            document.getElementById('productReviews').textContent = product.reviews;
+            document.getElementById('productStorage').textContent = product.storage;
+
+            // Update images
+            document.getElementById('mainImage').src = product.images[0];
+            document.getElementById('mainImage').alt = product.name;
+
+            const thumbnailGallery = document.getElementById('thumbnailGallery');
+            thumbnailGallery.innerHTML = '';
+            product.images.forEach((image, index) => {
+                const thumbnail = document.createElement('div');
+                thumbnail.className = `product-gallery-thumbnail cursor-pointer rounded-md overflow-hidden ${index === 0 ? 'active' : ''}`;
+                thumbnail.onclick = () => changeImage(image);
+                thumbnail.innerHTML = `<img src="${image}" alt="${product.name} thumbnail ${index + 1}" class="w-full h-full object-cover">`;
+                thumbnailGallery.appendChild(thumbnail);
+            });
+
+            // Update nutritional info
+            const nutritionInfo = document.getElementById('nutritionInfo');
+            nutritionInfo.innerHTML = '';
+            product.nutrition.forEach(nutrient => {
+                const nutrientItem = document.createElement('div');
+                nutrientItem.className = 'flex items-center justify-between';
+                nutrientItem.innerHTML = `
+                    <span class="text-gray-700 font-medium">${nutrient.name}</span>
+                    <div class="w-24">
+                        <div class="nutrient-meter">
+                            <div class="nutrient-meter-fill" style="width: ${nutrient.value}%"></div>
+                        </div>
+                    </div>
+                `;
+                nutritionInfo.appendChild(nutrientItem);
+            });
+
+            // Update uses tab
+            document.getElementById('culinaryUses').textContent = product.culinaryUses;
+            document.getElementById('industrialUses').textContent = product.industrialUses;
+
+            let culinaryList = document.getElementById('culinaryList');
+            culinaryList.innerHTML = '';
+            product.culinaryList.forEach(item => {
+                let li = document.createElement('li');
+                li.textContent = item;
+                culinaryList.appendChild(li);
+            });
+
+            let industrialList = document.getElementById('industrialList');
+            industrialList.innerHTML = '';
+            product.industrialList.forEach(item => {
+                let li = document.createElement('li');
+                li.textContent = item;
+                industrialList.appendChild(li);
+            });
+
+            // Update varieties tab
+            document.getElementById('varietiesDescription').textContent = product.varietiesDescription;
+
+            let varietiesContainer = document.getElementById('varietiesContainer');
+            varietiesContainer.innerHTML = '';
+            product.varieties.forEach(variety => {
+                let div = document.createElement('div');
+                div.className = 'border border-gray-200 rounded-lg p-4';
+                div.innerHTML = `
+                    <h4 class="heading text-lg font-semibold text-gray-900 mb-2">${variety.name}</h4>
+                    <p class="text-gray-600 mb-2">${variety.details}</p>
+                `;
+                varietiesContainer.appendChild(div);
+            });
+
+            // Update names tab
+            document.getElementById('namesDescription').textContent = product.namesDescription;
+
+            let namesContainer = document.getElementById('namesContainer');
+            namesContainer.innerHTML = '';
+
+            // Indian names
+            let indianDiv = document.createElement('div');
+            indianDiv.className = 'border border-gray-200 rounded-lg p-4';
+            indianDiv.innerHTML = '<h4 class="heading text-lg font-semibold text-gray-900 mb-2">Indian Languages</h4><ul class="space-y-1 text-gray-600"></ul>';
+            let indianList = indianDiv.querySelector('ul');
+            product.names.indian.forEach(name => {
+                let li = document.createElement('li');
+                li.innerHTML = `<span class="font-medium">${name[0]}:</span> ${name[1]}`;
+                indianList.appendChild(li);
+            });
+            namesContainer.appendChild(indianDiv);
+
+            // International names
+            let intlDiv = document.createElement('div');
+            intlDiv.className = 'border border-gray-200 rounded-lg p-4';
+            intlDiv.innerHTML = '<h4 class="heading text-lg font-semibold text-gray-900 mb-2">International Names</h4><ul class="space-y-1 text-gray-600"></ul>';
+            let intlList = intlDiv.querySelector('ul');
+            product.names.international.forEach(name => {
+                let li = document.createElement('li');
+                li.innerHTML = `<span class="font-medium">${name[0]}:</span> ${name[1]}`;
+                intlList.appendChild(li);
+            });
+            namesContainer.appendChild(intlDiv);
+
+            // Update origin tab
+            document.getElementById('originDescription').textContent = product.originDescription;
+            document.getElementById('growingRegions').textContent = product.growingRegions;
+            document.getElementById('processingMethod').textContent = product.processingMethod;
+            document.getElementById('qualityStandards').textContent = product.qualityStandards;
+
+            let regionsList = document.getElementById('regionsList');
+            regionsList.innerHTML = '';
+            product.regionsList.forEach(item => {
+                let li = document.createElement('li');
+                li.textContent = item;
+                regionsList.appendChild(li);
+            });
+
+            let processList = document.getElementById('processList');
+            processList.innerHTML = '';
+            product.processList.forEach(item => {
+                let li = document.createElement('li');
+                li.textContent = item;
+                processList.appendChild(li);
+            });
+
+            // Update related products
+            const relatedProductsContainer = document.getElementById('relatedProducts');
+            relatedProductsContainer.innerHTML = '';
+            
+            product.relatedProducts.forEach(relatedId => {
+                const relatedProduct = spices[relatedId] || relatedProductsData[relatedId];
+                if (relatedProduct) {
+                    const productCard = document.createElement('div');
+                    productCard.className = 'spice-card bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow';
+                    productCard.innerHTML = `
+                        <div class="h-40 overflow-hidden">
+                            <img src="${relatedProduct.image || relatedProduct.images[0]}" alt="${relatedProduct.name}" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold text-gray-900 mb-1">${relatedProduct.name}</h3>
+                            <div class="flex justify-between items-center">
+                                <button onclick="changeProduct('${relatedProduct.id || relatedId}')"
+                                    class="px-4 py-2 bg-primary text-white rounded-button hover:bg-opacity-90 transition-colors text-sm">
+                                    View Details
+                                </button>
+                            </div>
+                        </div>
+                    `;
+                    relatedProductsContainer.appendChild(productCard);
+                }
+            });
+
+            // Reset tab to uses
+            document.querySelector('.tab-button.text-primary').classList.remove('text-primary', 'border-primary');
+            document.querySelector('.tab-button.text-primary').classList.add('text-gray-500', 'border-transparent');
+
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+
+            document.getElementById('uses').classList.add('active');
+            document.querySelector('[onclick="openTab(event, \'uses\')"]').classList.add('text-primary', 'border-primary');
+            document.querySelector('[onclick="openTab(event, \'uses\')"]').classList.remove('text-gray-500', 'border-transparent');
+        }
+
+        // Initialize with coriander seeds
+        document.addEventListener('DOMContentLoaded', function () {
+            changeProduct('coriander-seeds');
+        });
+
+        // Image gallery functionality
+        function changeImage(src) {
+            document.getElementById('mainImage').src = src;
+
+            // Update active thumbnail
+            const thumbnails = document.querySelectorAll('.product-gallery-thumbnail');
+            thumbnails.forEach(thumb => {
+                thumb.classList.remove('active');
+                if (thumb.querySelector('img').src === src) {
+                    thumb.classList.add('active');
+                }
+            });
+        }
+
+        // Tab functionality
+        function openTab(evt, tabName) {
+            const tabContents = document.getElementsByClassName('tab-content');
+            for (let i = 0; i < tabContents.length; i++) {
+                tabContents[i].classList.remove('active');
+            }
+
+            const tabButtons = document.getElementsByClassName('tab-button');
+            for (let i = 0; i < tabButtons.length; i++) {
+                tabButtons[i].classList.remove('text-primary', 'border-primary');
+                tabButtons[i].classList.add('text-gray-500', 'border-transparent');
+            }
+
+            document.getElementById(tabName).classList.add('active');
+            evt.currentTarget.classList.remove('text-gray-500', 'border-transparent');
+            evt.currentTarget.classList.add('text-primary', 'border-primary');
+        }
+    </script>
+</body>
+
+</html>

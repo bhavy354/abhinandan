@@ -1,0 +1,1258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dehydrated Vegetables | Abhinandan International</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#8B4513',
+                        secondary: '#6B8E23'
+                    },
+                    borderRadius: {
+                        'none': '0px',
+                        'sm': '4px',
+                        DEFAULT: '8px',
+                        'md': '12px',
+                        'lg': '16px',
+                        'xl': '20px',
+                        '2xl': '24px',
+                        '3xl': '32px',
+                        'full': '9999px',
+                        'button': '8px'
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <style>
+        :where([class^="ri-"])::before {
+            content: "\f3c2";
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .heading {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .custom-input:focus {
+            outline: none;
+        }
+
+        .custom-checkbox {
+            appearance: none;
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #8B4513;
+            border-radius: 4px;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .custom-checkbox:checked {
+            background-color: #8B4513;
+        }
+
+        .custom-checkbox:checked::after {
+            content: "";
+            position: absolute;
+            width: 5px;
+            height: 10px;
+            border: solid white;
+            border-width: 0 2px 2px 0;
+            top: 2px;
+            left: 6px;
+            transform: rotate(45deg);
+        }
+
+        .product-gallery-thumbnail {
+            transition: all 0.3s ease;
+        }
+
+        .product-gallery-thumbnail:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-gallery-thumbnail.active {
+            border: 2px solid #8B4513;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-white">
+    <!-- Header Section -->
+    <header class="sticky top-0 z-50 bg-white shadow-sm">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                    <!-- <a href="#" class="text-3xl font-['Pacifico'] text-primary">Abhinandan</a> -->
+                    <a href="#" class="flex items-center">
+                        <img src="photo/logo-4kk-1.png" alt="Abhinandan Logo" class="h-10 w-auto mr-4">
+                    </a>
+                    <nav class="hidden md:flex ml-10">
+                        <ul class="flex space-x-8">
+                            <li><a href="Home.html"
+                                    class="text-gray-800 font-medium hover:text-primary transition-colors">Home</a></li>
+                            <li><a href="Product.html"
+                                    class="text-primary font-medium hover:text-primary transition-colors">Products</a>
+                            </li>
+                            <li><a href="Aboutus.html"
+                                    class="text-gray-800 font-medium hover:text-primary transition-colors">About Us</a>
+                            </li>
+                            <li><a href="Contact.html"
+                                    class="text-gray-800 font-medium hover:text-primary transition-colors">Contact</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="flex items-center">
+                    <div class="relative mr-4">
+                        <input type="text" placeholder="Search products..."
+                            class="custom-input pl-10 pr-4 py-2 rounded-full bg-gray-100 text-sm w-48 border-none">
+                        <div
+                            class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 flex items-center justify-center text-gray-500">
+                            <i class="ri-search-line"></i>
+                        </div>
+                    </div>
+
+                    <button
+                        class="ml-4 md:flex items-center px-4 py-2 bg-primary text-white rounded-button hover:bg-opacity-90 transition-colors whitespace-nowrap hidden">
+                        <span>Get Quote</span>
+                    </button>
+                    <div class="md:hidden w-10 h-10 flex items-center justify-center">
+                        <i class="ri-menu-line text-xl"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Product Detail Section -->
+    <section class="py-12 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <!-- Breadcrumb -->
+            <div class="flex items-center text-sm text-gray-600 mb-6">
+                <a href="Home.html" class="hover:text-primary">Home</a>
+                <i class="ri-arrow-right-s-line mx-2"></i>
+                <a href="Product.html" class="hover:text-primary">Products</a>
+                <i class="ri-arrow-right-s-line mx-2"></i>
+                <a href="Product.html#dehydrated-vegetables" class="hover:text-primary">Dehydrated
+                    Vegetables</a>
+                <i class="ri-arrow-right-s-line mx-2"></i>
+                <span class="text-primary" id="productNameBreadcrumb">Onion Flakes</span>
+            </div>
+
+            <div class="flex flex-col lg:flex-row gap-8">
+                <!-- Product Gallery -->
+                <div class="lg:w-1/2">
+                    <div class="bg-white rounded-lg shadow-md p-4 mb-4">
+                        <div class="h-96 overflow-hidden rounded-lg mb-4">
+                            <img id="mainImage"
+                                src="https://images.unsplash.com/photo-1603048719539-d2581f4b2b9a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+                                alt="Onion Flakes" class="w-full h-full object-contain">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Info -->
+                <div class="lg:w-1/2">
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <h1 class="heading text-3xl font-bold text-gray-900" id="productName">Onion Flakes</h1>
+                            <div class="relative">
+                                <select id="productSelector"
+                                    class="appearance-none bg-gray-100 border border-gray-300 text-gray-700 py-2 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-primary">
+                                    <option value="onion-flakes">Onion Flakes</option>
+                                    <option value="garlic-granules">Garlic Granules</option>
+                                    <option value="garlic-powder">Garlic Powder</option>
+                                    <option value="onion-powder">Onion Powder</option>
+                                    <option value="tomato">Tomato</option>
+                                    <option value="okra">Okra</option>
+                                </select>
+                                <div
+                                    class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                                    <i class="ri-arrow-down-s-line"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-6">
+                            <h3 class="text-lg font-semibold text-gray-900 mb-2">Description</h3>
+                            <p class="text-gray-600 mb-4" id="productDescription">
+                                Our premium dehydrated onion flakes are made from fresh, high-quality onions that are
+                                carefully cleaned, sliced, and dehydrated to preserve their natural flavor and aroma.
+                                These golden-yellow flakes retain the characteristic pungency and sweetness of fresh
+                                onions, making them perfect for various culinary applications.
+                            </p>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                                <div class="flex items-start">
+                                    <i class="ri-checkbox-circle-fill text-green-500 mt-1 mr-2"></i>
+                                    <span class="text-gray-600">100% natural with no additives</span>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="ri-checkbox-circle-fill text-green-500 mt-1 mr-2"></i>
+                                    <span class="text-gray-600">Long shelf life (up to 2 years)</span>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="ri-checkbox-circle-fill text-green-500 mt-1 mr-2"></i>
+                                    <span class="text-gray-600">Retains original flavor and nutrients</span>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="ri-checkbox-circle-fill text-green-500 mt-1 mr-2"></i>
+                                    <span class="text-gray-600">Quick rehydration properties</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-6">
+                            <h3 class="text-lg font-semibold text-gray-900 mb-2">Specifications</h3>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <p class="text-gray-600"><span class="font-medium">Color:</span> <span
+                                            id="productColor">Golden yellow to light brown</span></p>
+                                    <p class="text-gray-600"><span class="font-medium">Moisture:</span> <span
+                                            id="productMoisture">Max 8%</span></p>
+                                </div>
+                                <div>
+                                    <p class="text-gray-600"><span class="font-medium">Size:</span> <span
+                                            id="productSize">3-5mm flakes</span></p>
+                                    <p class="text-gray-600"><span class="font-medium">Packaging:</span> <span
+                                            id="productPackaging">5kg, 10kg, 25kg bags</span></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-6">
+                            <h3 class="text-lg font-semibold text-gray-900 mb-2">Storage Instructions</h3>
+                            <p class="text-gray-600" id="productStorage">
+                                Store in a cool, dry place away from direct sunlight. Keep in airtight containers to
+                                maintain freshness and prevent moisture absorption. Ideal storage temperature is below
+                                25°C with relative humidity below 60%.
+                            </p>
+                        </div>
+
+                        <div class="flex flex-col sm:flex-row gap-3 mb-6">
+                            <button
+                                class="flex-1 px-6 py-3 bg-primary text-white rounded-button hover:bg-opacity-90 transition-colors">
+                                Request Sample
+                            </button>
+                            <button
+                                class="flex-1 px-6 py-3 bg-secondary text-white rounded-button hover:bg-opacity-90 transition-colors">
+                                Enquiry Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Tabs -->
+            <div class="mt-12 bg-white rounded-lg shadow-md overflow-hidden">
+                <div class="border-b border-gray-200">
+                    <nav class="flex flex-col sm:flex-row">
+                        <button onclick="openTab(event, 'uses')"
+                            class="tab-button py-4 px-6 text-center border-b-2 font-medium text-primary border-primary">
+                            Uses
+                        </button>
+                        <button onclick="openTab(event, 'varieties')"
+                            class="tab-button py-4 px-6 text-center border-b-2 font-medium text-gray-500 border-transparent hover:text-gray-700 hover:border-gray-300">
+                            Varieties
+                        </button>
+                        <button onclick="openTab(event, 'names')"
+                            class="tab-button py-4 px-6 text-center border-b-2 font-medium text-gray-500 border-transparent hover:text-gray-700 hover:border-gray-300">
+                            Names in Different Languages
+                        </button>
+                        <button onclick="openTab(event, 'origin')"
+                            class="tab-button py-4 px-6 text-center border-b-2 font-medium text-gray-500 border-transparent hover:text-gray-700 hover:border-gray-300">
+                            Origin & Cultivation
+                        </button>
+                    </nav>
+                </div>
+
+                <div class="p-6">
+                    <!-- Uses Tab -->
+                    <div id="uses" class="tab-content active">
+                        <h3 class="heading text-xl font-semibold text-gray-900 mb-4">Culinary Uses</h3>
+                        <p class="text-gray-600 mb-4" id="culinaryUses">
+                            Onion flakes are widely used in food processing and culinary applications where fresh onions
+                            are impractical. They rehydrate quickly and can be used in:
+                        </p>
+                        <ul class="list-disc pl-5 text-gray-600 mb-6 space-y-2" id="culinaryList">
+                            <li>Soups, stews, and sauces</li>
+                            <li>Ready-to-eat meals and instant noodles</li>
+                            <li>Seasoning blends and spice mixes</li>
+                            <li>Meat products and marinades</li>
+                            <li>Salad dressings and dips</li>
+                            <li>Baked goods and savory snacks</li>
+                        </ul>
+
+                        <h3 class="heading text-xl font-semibold text-gray-900 mb-4">Industrial & Other Uses</h3>
+                        <p class="text-gray-600 mb-4" id="industrialUses">
+                            Beyond culinary applications, dehydrated onion flakes have several other uses:
+                        </p>
+                        <ul class="list-disc pl-5 text-gray-600 mb-6 space-y-2" id="industrialList">
+                            <li>Pharmaceutical preparations</li>
+                            <li>Nutritional supplements</li>
+                            <li>Pet food ingredients</li>
+                            <li>Natural food coloring</li>
+                        </ul>
+                    </div>
+
+                    <!-- Varieties Tab -->
+                    <div id="varieties" class="tab-content">
+                        <h3 class="heading text-xl font-semibold text-gray-900 mb-4">Product Varieties</h3>
+                        <p class="text-gray-600 mb-4" id="varietiesDescription">
+                            We offer several varieties of dehydrated onion products to meet different culinary and
+                            industrial needs:
+                        </p>
+
+                        <div class="space-y-4" id="varietiesContainer">
+                            <div class="border border-gray-200 rounded-lg p-4">
+                                <h4 class="heading text-lg font-semibold text-gray-900 mb-2">Regular Onion Flakes</h4>
+                                <p class="text-gray-600 mb-2">
+                                    <span class="font-medium">Size:</span> 3-5mm flakes<br>
+                                    <span class="font-medium">Color:</span> Golden yellow to light brown<br>
+                                    <span class="font-medium">Moisture:</span> Max 8%<br>
+                                    <span class="font-medium">Use:</span> General culinary applications
+                                </p>
+                            </div>
+
+                            <div class="border border-gray-200 rounded-lg p-4">
+                                <h4 class="heading text-lg font-semibold text-gray-900 mb-2">Toasted Onion Flakes</h4>
+                                <p class="text-gray-600 mb-2">
+                                    <span class="font-medium">Size:</span> 3-5mm flakes<br>
+                                    <span class="font-medium">Color:</span> Dark brown<br>
+                                    <span class="font-medium">Moisture:</span> Max 6%<br>
+                                    <span class="font-medium">Use:</span> For enhanced flavor in soups and sauces
+                                </p>
+                            </div>
+
+                            <div class="border border-gray-200 rounded-lg p-4">
+                                <h4 class="heading text-lg font-semibold text-gray-900 mb-2">Freeze-Dried Onion</h4>
+                                <p class="text-gray-600 mb-2">
+                                    <span class="font-medium">Size:</span> Various sizes available<br>
+                                    <span class="font-medium">Color:</span> White to light yellow<br>
+                                    <span class="font-medium">Moisture:</span> Max 3%<br>
+                                    <span class="font-medium">Use:</span> Premium applications requiring quick
+                                    rehydration
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Names Tab -->
+                    <div id="names" class="tab-content">
+                        <h3 class="heading text-xl font-semibold text-gray-900 mb-4">Names in Different Languages</h3>
+                        <p class="text-gray-600 mb-4" id="namesDescription">
+                            Onion is known by various names across different cultures and regions:
+                        </p>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="namesContainer">
+                            <div class="border border-gray-200 rounded-lg p-4">
+                                <h4 class="heading text-lg font-semibold text-gray-900 mb-2">Indian Languages</h4>
+                                <ul class="space-y-1 text-gray-600">
+                                    <li><span class="font-medium">Hindi:</span> Pyaz</li>
+                                    <li><span class="font-medium">Tamil:</span> Vengayam</li>
+                                    <li><span class="font-medium">Telugu:</span> Ullipaya</li>
+                                    <li><span class="font-medium">Kannada:</span> Erulli</li>
+                                    <li><span class="font-medium">Malayalam:</span> Savala</li>
+                                    <li><span class="font-medium">Bengali:</span> Peyaj</li>
+                                    <li><span class="font-medium">Gujarati:</span> Dungri</li>
+                                    <li><span class="font-medium">Marathi:</span> Kanda</li>
+                                </ul>
+                            </div>
+
+                            <div class="border border-gray-200 rounded-lg p-4">
+                                <h4 class="heading text-lg font-semibold text-gray-900 mb-2">International Names</h4>
+                                <ul class="space-y-1 text-gray-600">
+                                    <li><span class="font-medium">Spanish:</span> Cebolla</li>
+                                    <li><span class="font-medium">French:</span> Oignon</li>
+                                    <li><span class="font-medium">German:</span> Zwiebel</li>
+                                    <li><span class="font-medium">Italian:</span> Cipolla</li>
+                                    <li><span class="font-medium">Arabic:</span> Basal</li>
+                                    <li><span class="font-medium">Chinese:</span> Yang cong</li>
+                                    <li><span class="font-medium">Japanese:</span> Tamanegi</li>
+                                    <li><span class="font-medium">Russian:</span> Luk</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Origin Tab -->
+                    <div id="origin" class="tab-content">
+                        <h3 class="heading text-xl font-semibold text-gray-900 mb-4">Origin & Cultivation</h3>
+                        <p class="text-gray-600 mb-4" id="originDescription">
+                            Onions are one of the oldest cultivated vegetables, with evidence of cultivation dating back
+                            over 5,000 years. Modern dehydrated onion products are produced from high-quality onions
+                            grown in optimal conditions.
+                        </p>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <h4 class="heading text-lg font-semibold text-gray-900 mb-2">Growing Regions</h4>
+                                <p class="text-gray-600 mb-2" id="growingRegions">
+                                    The best quality onions for dehydration come from these regions:
+                                </p>
+                                <ul class="list-disc pl-5 text-gray-600 space-y-1" id="regionsList">
+                                    <li>Maharashtra, India - known for high pungency onions</li>
+                                    <li>Gujarat, India - produces sweet and mild onions</li>
+                                    <li>California, USA - large-scale commercial production</li>
+                                    <li>Egypt - known for high dry matter content</li>
+                                    <li>China - major global producer</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <h4 class="heading text-lg font-semibold text-gray-900 mb-2">Processing Method</h4>
+                                <p class="text-gray-600 mb-2" id="processingMethod">
+                                    Our dehydration process preserves maximum flavor and nutrients:
+                                </p>
+                                <ol class="list-decimal pl-5 text-gray-600 space-y-1" id="processList">
+                                    <li>Selection of premium quality onions</li>
+                                    <li>Thorough cleaning and peeling</li>
+                                    <li>Precision slicing to uniform thickness</li>
+                                    <li>Controlled dehydration at optimal temperatures</li>
+                                    <li>Quality testing and sorting</li>
+                                    <li>Packaging in moisture-proof materials</li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <h4 class="heading text-lg font-semibold text-gray-900 mb-2">Quality Standards</h4>
+                        <p class="text-gray-600" id="qualityStandards">
+                            Our dehydrated onion flakes meet international quality standards including ISO, FSSAI, and
+                            USDA specifications. We maintain strict hygiene protocols throughout the production process
+                            to ensure food safety.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Related Products -->
+
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-12 pb-6">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="heading text-xl font-semibold mb-4">Abhinandan International</h3>
+                    <p class="text-gray-400 mb-4">
+                        Premium quality spices and food products sourced directly from farms across India
+                        and Asia.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#"
+                            class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-gray-700">
+                            <i class="ri-facebook-fill"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-gray-700">
+                            <i class="ri-instagram-line"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-gray-700">
+                            <i class="ri-twitter-fill"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-gray-700">
+                            <i class="ri-linkedin-fill"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="heading text-xl font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="Home.html" class="text-gray-400 hover:text-white">Home</a></li>
+                        <li><a href="Product.html" class="text-gray-400 hover:text-white">Products</a></li>
+                        <li><a href="Aboutus.html" class="text-gray-400 hover:text-white">About Us</a></li>
+                        <li><a href="Contact.html" class="text-gray-400 hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="heading text-xl font-semibold mb-4">Products</h3>
+                    <ul class="space-y-2">
+                        <li><a href="Product.html#spices" class="text-gray-400 hover:text-white">Spices</a></li>
+                        <li><a href="Product.html#raisins" class="text-gray-400 hover:text-white">Raisins</a></li>
+                        <li><a href="Product.html#herbs" class="text-gray-400 hover:text-white">Herbs</a></li>
+                        <li><a href="Product.html#grains" class="text-gray-400 hover:text-white">Grains</a></li>
+                        <li><a href="Product.html#oil-seeds" class="text-gray-400 hover:text-white">Oil Seeds</a></li>
+                        <li><a href="dehydrated-vegetables" class="text-gray-400 hover:text-white">Dehydrated
+                                Vegetables</a></li>
+                        <li><a href="Product.html#coconut-products" class="text-gray-400 hover:text-white">Coconut
+                                Products</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="heading text-xl font-semibold mb-4">Contact Us</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="ri-map-pin-line mt-1 mr-2"></i>
+                            <span class="text-gray-400">123 Spice Street, Mumbai, India 400001</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-phone-line mt-1 mr-2"></i>
+                            <span class="text-gray-400">+91 98765 43210</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-mail-line mt-1 mr-2"></i>
+                            <span class="text-gray-400">info@abhinandan.com</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-time-line mt-1 mr-2"></i>
+                            <span class="text-gray-400">Mon-Fri: 9AM - 6PM</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-6">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-400 mb-4 md:mb-0">
+                        &copy; 2025 Abhinandan International. All rights reserved.
+                    </p>
+                    <div class="flex space-x-6">
+                        <a href="#" class="text-gray-400 hover:text-white">Privacy Policy</a>
+                        <a href="#" class="text-gray-400 hover:text-white">Terms of Service</a>
+                        <a href="#" class="text-gray-400 hover:text-white">Shipping Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Product data
+        const products = {
+            'onion-flakes': {
+                name: 'Onion Flakes',
+                description: 'Our premium dehydrated onion flakes are made from fresh, high-quality onions that are carefully cleaned, sliced, and dehydrated to preserve their natural flavor and aroma. These golden-yellow flakes retain the characteristic pungency and sweetness of fresh onions, making them perfect for various culinary applications.',
+                color: 'Golden yellow to light brown',
+                moisture: 'Max 8%',
+                size: '3-5mm flakes',
+                packaging: '5kg, 10kg, 25kg bags',
+                storage: 'Store in a cool, dry place away from direct sunlight. Keep in airtight containers to maintain freshness and prevent moisture absorption. Ideal storage temperature is below 25°C with relative humidity below 60%.',
+                culinaryUses: 'Onion flakes are widely used in food processing and culinary applications where fresh onions are impractical. They rehydrate quickly and can be used in:',
+                culinaryList: [
+                    'Soups, stews, and sauces',
+                    'Ready-to-eat meals and instant noodles',
+                    'Seasoning blends and spice mixes',
+                    'Meat products and marinades',
+                    'Salad dressings and dips',
+                    'Baked goods and savory snacks'
+                ],
+                industrialUses: 'Beyond culinary applications, dehydrated onion flakes have several other uses:',
+                industrialList: [
+                    'Pharmaceutical preparations',
+                    'Nutritional supplements',
+                    'Pet food ingredients',
+                    'Natural food coloring'
+                ],
+                varietiesDescription: 'We offer several varieties of dehydrated onion products to meet different culinary and industrial needs:',
+                varieties: [
+                    {
+                        name: 'Regular Onion Flakes',
+                        details: '<span class="font-medium">Size:</span> 3-5mm flakes<br><span class="font-medium">Color:</span> Golden yellow to light brown<br><span class="font-medium">Moisture:</span> Max 8%<br><span class="font-medium">Use:</span> General culinary applications'
+                    },
+                    {
+                        name: 'Toasted Onion Flakes',
+                        details: '<span class="font-medium">Size:</span> 3-5mm flakes<br><span class="font-medium">Color:</span> Dark brown<br><span class="font-medium">Moisture:</span> Max 6%<br><span class="font-medium">Use:</span> For enhanced flavor in soups and sauces'
+                    },
+                    {
+                        name: 'Freeze-Dried Onion',
+                        details: '<span class="font-medium">Size:</span> Various sizes available<br><span class="font-medium">Color:</span> White to light yellow<br><span class="font-medium">Moisture:</span> Max 3%<br><span class="font-medium">Use:</span> Premium applications requiring quick rehydration'
+                    }
+                ],
+                namesDescription: 'Onion is known by various names across different cultures and regions:',
+                names: {
+                    indian: [
+                        ['Hindi', 'Pyaz'],
+                        ['Tamil', 'Vengayam'],
+                        ['Telugu', 'Ullipaya'],
+                        ['Kannada', 'Erulli'],
+                        ['Malayalam', 'Savala'],
+                        ['Bengali', 'Peyaj'],
+                        ['Gujarati', 'Dungri'],
+                        ['Marathi', 'Kanda']
+                    ],
+                    international: [
+                        ['Spanish', 'Cebolla'],
+                        ['French', 'Oignon'],
+                        ['German', 'Zwiebel'],
+                        ['Italian', 'Cipolla'],
+                        ['Arabic', 'Basal'],
+                        ['Chinese', 'Yang cong'],
+                        ['Japanese', 'Tamanegi'],
+                        ['Russian', 'Luk']
+                    ]
+                },
+                originDescription: 'Onions are one of the oldest cultivated vegetables, with evidence of cultivation dating back over 5,000 years. Modern dehydrated onion products are produced from high-quality onions grown in optimal conditions.',
+                growingRegions: 'The best quality onions for dehydration come from these regions:',
+                regionsList: [
+                    'Maharashtra, India - known for high pungency onions',
+                    'Gujarat, India - produces sweet and mild onions',
+                    'California, USA - large-scale commercial production',
+                    'Egypt - known for high dry matter content',
+                    'China - major global producer'
+                ],
+                processingMethod: 'Our dehydration process preserves maximum flavor and nutrients:',
+                processList: [
+                    'Selection of premium quality onions',
+                    'Thorough cleaning and peeling',
+                    'Precision slicing to uniform thickness',
+                    'Controlled dehydration at optimal temperatures',
+                    'Quality testing and sorting',
+                    'Packaging in moisture-proof materials'
+                ],
+                qualityStandards: 'Our dehydrated onion flakes meet international quality standards including ISO, FSSAI, and USDA specifications. We maintain strict hygiene protocols throughout the production process to ensure food safety.'
+            },
+            'garlic-granules': {
+                name: 'Garlic Granules',
+                description: 'Our premium garlic granules are made from fresh, high-quality garlic that is carefully peeled, sliced, and dehydrated to preserve its natural flavor and aroma. These golden granules retain the characteristic pungency and health benefits of fresh garlic, making them perfect for various culinary applications.',
+                color: 'Cream to light brown',
+                moisture: 'Max 6.5%',
+                size: '1-3mm granules',
+                packaging: '5kg, 10kg, 25kg bags',
+                storage: 'Store in a cool, dry place away from direct sunlight. Keep in airtight containers to maintain freshness and prevent moisture absorption. Ideal storage temperature is below 25°C with relative humidity below 60%.',
+                culinaryUses: 'Garlic granules are widely used in food processing and culinary applications where fresh garlic is impractical. They rehydrate quickly and can be used in:',
+                culinaryList: [
+                    'Soups, stews, and sauces',
+                    'Meat products and marinades',
+                    'Seasoning blends and spice mixes',
+                    'Salad dressings and dips',
+                    'Baked goods and savory snacks',
+                    'Pizza toppings and pasta dishes'
+                ],
+                industrialUses: 'Beyond culinary applications, dehydrated garlic granules have several other uses:',
+                industrialList: [
+                    'Pharmaceutical preparations',
+                    'Nutritional supplements',
+                    'Pet food ingredients',
+                    'Natural preservative'
+                ],
+                varietiesDescription: 'We offer several varieties of dehydrated garlic products to meet different culinary and industrial needs:',
+                varieties: [
+                    {
+                        name: 'Regular Garlic Granules',
+                        details: '<span class="font-medium">Size:</span> 1-3mm granules<br><span class="font-medium">Color:</span> Cream to light brown<br><span class="font-medium">Moisture:</span> Max 6.5%<br><span class="font-medium">Use:</span> General culinary applications'
+                    },
+                    {
+                        name: 'Roasted Garlic Granules',
+                        details: '<span class="font-medium">Size:</span> 1-3mm granules<br><span class="font-medium">Color:</span> Dark brown<br><span class="font-medium">Moisture:</span> Max 5%<br><span class="font-medium">Use:</span> For enhanced flavor in soups and sauces'
+                    },
+                    {
+                        name: 'Freeze-Dried Garlic',
+                        details: '<span class="font-medium">Size:</span> Various sizes available<br><span class="font-medium">Color:</span> White<br><span class="font-medium">Moisture:</span> Max 3%<br><span class="font-medium">Use:</span> Premium applications requiring quick rehydration'
+                    }
+                ],
+                namesDescription: 'Garlic is known by various names across different cultures and regions:',
+                names: {
+                    indian: [
+                        ['Hindi', 'Lahsun'],
+                        ['Tamil', 'Poondu'],
+                        ['Telugu', 'Vellulli'],
+                        ['Kannada', 'Bellulli'],
+                        ['Malayalam', 'Veluthulli'],
+                        ['Bengali', 'Rasuna'],
+                        ['Gujarati', 'Lasun'],
+                        ['Marathi', 'Lasun']
+                    ],
+                    international: [
+                        ['Spanish', 'Ajo'],
+                        ['French', 'Ail'],
+                        ['German', 'Knoblauch'],
+                        ['Italian', 'Aglio'],
+                        ['Arabic', 'Thum'],
+                        ['Chinese', 'Da suan'],
+                        ['Japanese', 'Ninniku'],
+                        ['Russian', 'Chesnok']
+                    ]
+                },
+                originDescription: 'Garlic has been cultivated for thousands of years and is native to Central Asia. Modern dehydrated garlic products are produced from high-quality garlic grown in optimal conditions.',
+                growingRegions: 'The best quality garlic for dehydration comes from these regions:',
+                regionsList: [
+                    'Madhya Pradesh, India - known for strong flavor',
+                    'Rajasthan, India - produces large bulbs',
+                    'California, USA - large-scale commercial production',
+                    'China - major global producer',
+                    'Spain - known for high quality'
+                ],
+                processingMethod: 'Our dehydration process preserves maximum flavor and nutrients:',
+                processList: [
+                    'Selection of premium quality garlic',
+                    'Thorough cleaning and peeling',
+                    'Precision slicing to uniform thickness',
+                    'Controlled dehydration at optimal temperatures',
+                    'Quality testing and sorting',
+                    'Packaging in moisture-proof materials'
+                ],
+                qualityStandards: 'Our dehydrated garlic granules meet international quality standards including ISO, FSSAI, and USDA specifications. We maintain strict hygiene protocols throughout the production process to ensure food safety.'
+            },
+            'garlic-powder': {
+                name: 'Garlic Powder',
+                description: 'Our premium garlic powder is made from fresh, high-quality garlic that is carefully peeled, sliced, dehydrated, and ground to preserve its natural flavor and aroma. This fine powder retains the characteristic pungency and health benefits of fresh garlic, making it perfect for various culinary applications where a smooth texture is required.',
+                color: 'Cream to light brown',
+                moisture: 'Max 6%',
+                size: '80-100 mesh',
+                packaging: '5kg, 10kg, 25kg bags',
+                storage: 'Store in a cool, dry place away from direct sunlight. Keep in airtight containers to maintain freshness and prevent moisture absorption. Ideal storage temperature is below 25°C with relative humidity below 60%.',
+                culinaryUses: 'Garlic powder is widely used in food processing and culinary applications where fresh garlic is impractical or a smooth texture is needed:',
+                culinaryList: [
+                    'Seasoning blends and spice mixes',
+                    'Dry rubs for meats',
+                    'Instant soups and sauces',
+                    'Snack seasonings',
+                    'Baked goods',
+                    'Pizza and pasta seasonings'
+                ],
+                industrialUses: 'Beyond culinary applications, garlic powder has several other uses:',
+                industrialList: [
+                    'Pharmaceutical preparations',
+                    'Nutritional supplements',
+                    'Pet food ingredients',
+                    'Natural preservative'
+                ],
+                varietiesDescription: 'We offer several varieties of garlic powder to meet different culinary and industrial needs:',
+                varieties: [
+                    {
+                        name: 'Regular Garlic Powder',
+                        details: '<span class="font-medium">Mesh Size:</span> 80-100<br><span class="font-medium">Color:</span> Cream to light brown<br><span class="font-medium">Moisture:</span> Max 6%<br><span class="font-medium">Use:</span> General culinary applications'
+                    },
+                    {
+                        name: 'Roasted Garlic Powder',
+                        details: '<span class="font-medium">Mesh Size:</span> 80-100<br><span class="font-medium">Color:</span> Dark brown<br><span class="font-medium">Moisture:</span> Max 5%<br><span class="font-medium">Use:</span> For enhanced flavor in dishes'
+                    },
+                    {
+                        name: 'Granulated Garlic',
+                        details: '<span class="font-medium">Mesh Size:</span> 20-40<br><span class="font-medium">Color:</span> Cream to light brown<br><span class="font-medium">Moisture:</span> Max 6%<br><span class="font-medium">Use:</span> Where texture is important'
+                    }
+                ],
+                namesDescription: 'Garlic is known by various names across different cultures and regions:',
+                names: {
+                    indian: [
+                        ['Hindi', 'Lahsun'],
+                        ['Tamil', 'Poondu'],
+                        ['Telugu', 'Vellulli'],
+                        ['Kannada', 'Bellulli'],
+                        ['Malayalam', 'Veluthulli'],
+                        ['Bengali', 'Rasuna'],
+                        ['Gujarati', 'Lasun'],
+                        ['Marathi', 'Lasun']
+                    ],
+                    international: [
+                        ['Spanish', 'Ajo'],
+                        ['French', 'Ail'],
+                        ['German', 'Knoblauch'],
+                        ['Italian', 'Aglio'],
+                        ['Arabic', 'Thum'],
+                        ['Chinese', 'Da suan'],
+                        ['Japanese', 'Ninniku'],
+                        ['Russian', 'Chesnok']
+                    ]
+                },
+                originDescription: 'Garlic has been cultivated for thousands of years and is native to Central Asia. Modern garlic powder is produced from high-quality garlic grown in optimal conditions.',
+                growingRegions: 'The best quality garlic for powder production comes from these regions:',
+                regionsList: [
+                    'Madhya Pradesh, India - known for strong flavor',
+                    'Rajasthan, India - produces large bulbs',
+                    'California, USA - large-scale commercial production',
+                    'China - major global producer',
+                    'Spain - known for high quality'
+                ],
+                processingMethod: 'Our production process preserves maximum flavor and nutrients:',
+                processList: [
+                    'Selection of premium quality garlic',
+                    'Thorough cleaning and peeling',
+                    'Precision slicing to uniform thickness',
+                    'Controlled dehydration at optimal temperatures',
+                    'Precision grinding to desired mesh size',
+                    'Quality testing and packaging'
+                ],
+                qualityStandards: 'Our garlic powder meets international quality standards including ISO, FSSAI, and USDA specifications. We maintain strict hygiene protocols throughout the production process to ensure food safety.'
+            },
+            'onion-powder': {
+                name: 'Onion Powder',
+                description: 'Our premium onion powder is made from fresh, high-quality onions that are carefully cleaned, sliced, dehydrated, and ground to preserve their natural flavor and aroma. This fine powder retains the characteristic pungency and sweetness of fresh onions, making it perfect for various culinary applications where a smooth texture is required.',
+                color: 'Light yellow to brown',
+                moisture: 'Max 6%',
+                size: '80-100 mesh',
+                packaging: '5kg, 10kg, 25kg bags',
+                storage: 'Store in a cool, dry place away from direct sunlight. Keep in airtight containers to maintain freshness and prevent moisture absorption. Ideal storage temperature is below 25°C with relative humidity below 60%.',
+                culinaryUses: 'Onion powder is widely used in food processing and culinary applications where fresh onions are impractical or a smooth texture is needed:',
+                culinaryList: [
+                    'Seasoning blends and spice mixes',
+                    'Dry rubs for meats',
+                    'Instant soups and sauces',
+                    'Snack seasonings',
+                    'Baked goods',
+                    'Ready-to-eat meals'
+                ],
+                industrialUses: 'Beyond culinary applications, onion powder has several other uses:',
+                industrialList: [
+                    'Pharmaceutical preparations',
+                    'Nutritional supplements',
+                    'Pet food ingredients',
+                    'Natural flavoring'
+                ],
+                varietiesDescription: 'We offer several varieties of onion powder to meet different culinary and industrial needs:',
+                varieties: [
+                    {
+                        name: 'Regular Onion Powder',
+                        details: '<span class="font-medium">Mesh Size:</span> 80-100<br><span class="font-medium">Color:</span> Light yellow to brown<br><span class="font-medium">Moisture:</span> Max 6%<br><span class="font-medium">Use:</span> General culinary applications'
+                    },
+                    {
+                        name: 'Toasted Onion Powder',
+                        details: '<span class="font-medium">Mesh Size:</span> 80-100<br><span class="font-medium">Color:</span> Dark brown<br><span class="font-medium">Moisture:</span> Max 5%<br><span class="font-medium">Use:</span> For enhanced flavor in dishes'
+                    },
+                    {
+                        name: 'Granulated Onion',
+                        details: '<span class="font-medium">Mesh Size:</span> 20-40<br><span class="font-medium">Color:</span> Light yellow to brown<br><span class="font-medium">Moisture:</span> Max 6%<br><span class="font-medium">Use:</span> Where texture is important'
+                    }
+                ],
+                namesDescription: 'Onion is known by various names across different cultures and regions:',
+                names: {
+                    indian: [
+                        ['Hindi', 'Pyaz'],
+                        ['Tamil', 'Vengayam'],
+                        ['Telugu', 'Ullipaya'],
+                        ['Kannada', 'Erulli'],
+                        ['Malayalam', 'Savala'],
+                        ['Bengali', 'Peyaj'],
+                        ['Gujarati', 'Dungri'],
+                        ['Marathi', 'Kanda']
+                    ],
+                    international: [
+                        ['Spanish', 'Cebolla'],
+                        ['French', 'Oignon'],
+                        ['German', 'Zwiebel'],
+                        ['Italian', 'Cipolla'],
+                        ['Arabic', 'Basal'],
+                        ['Chinese', 'Yang cong'],
+                        ['Japanese', 'Tamanegi'],
+                        ['Russian', 'Luk']
+                    ]
+                },
+                originDescription: 'Onions are one of the oldest cultivated vegetables, with evidence of cultivation dating back over 5,000 years. Modern onion powder is produced from high-quality onions grown in optimal conditions.',
+                growingRegions: 'The best quality onions for powder production come from these regions:',
+                regionsList: [
+                    'Maharashtra, India - known for high pungency onions',
+                    'Gujarat, India - produces sweet and mild onions',
+                    'California, USA - large-scale commercial production',
+                    'Egypt - known for high dry matter content',
+                    'China - major global producer'
+                ],
+                processingMethod: 'Our production process preserves maximum flavor and nutrients:',
+                processList: [
+                    'Selection of premium quality onions',
+                    'Thorough cleaning and peeling',
+                    'Precision slicing to uniform thickness',
+                    'Controlled dehydration at optimal temperatures',
+                    'Precision grinding to desired mesh size',
+                    'Quality testing and packaging'
+                ],
+                qualityStandards: 'Our onion powder meets international quality standards including ISO, FSSAI, and USDA specifications. We maintain strict hygiene protocols throughout the production process to ensure food safety.'
+            },
+            'tomato': {
+                name: 'Dehydrated Tomato',
+                description: 'Our premium dehydrated tomatoes are made from fresh, ripe tomatoes that are carefully cleaned, sliced, and dehydrated to preserve their natural flavor, color, and nutritional value. These vibrant red pieces retain the characteristic sweet-tart taste of fresh tomatoes, making them perfect for various culinary applications.',
+                color: 'Deep red',
+                moisture: 'Max 8%',
+                size: '5-10mm pieces',
+                packaging: '5kg, 10kg, 25kg bags',
+                storage: 'Store in a cool, dry place away from direct sunlight. Keep in airtight containers to maintain freshness and prevent moisture absorption. Ideal storage temperature is below 25°C with relative humidity below 60%.',
+                culinaryUses: 'Dehydrated tomatoes are widely used in food processing and culinary applications where fresh tomatoes are impractical:',
+                culinaryList: [
+                    'Soups, stews, and sauces',
+                    'Pasta dishes and pizzas',
+                    'Salads and sandwich fillings',
+                    'Bread and baked goods',
+                    'Ready-to-eat meals',
+                    'Seasoning blends'
+                ],
+                industrialUses: 'Beyond culinary applications, dehydrated tomatoes have several other uses:',
+                industrialList: [
+                    'Nutritional supplements',
+                    'Pet food ingredients',
+                    'Natural food coloring',
+                    'Cosmetic preparations'
+                ],
+                varietiesDescription: 'We offer several varieties of dehydrated tomato products to meet different culinary and industrial needs:',
+                varieties: [
+                    {
+                        name: 'Sun-Dried Tomato Pieces',
+                        details: '<span class="font-medium">Size:</span> 5-10mm pieces<br><span class="font-medium">Color:</span> Deep red<br><span class="font-medium">Moisture:</span> Max 8%<br><span class="font-medium">Use:</span> General culinary applications'
+                    },
+                    {
+                        name: 'Tomato Powder',
+                        details: '<span class="font-medium">Mesh Size:</span> 80-100<br><span class="font-medium">Color:</span> Deep red<br><span class="font-medium">Moisture:</span> Max 6%<br><span class="font-medium">Use:</span> For coloring and flavoring'
+                    },
+                    {
+                        name: 'Freeze-Dried Tomato',
+                        details: '<span class="font-medium">Size:</span> Various sizes available<br><span class="font-medium">Color:</span> Bright red<br><span class="font-medium">Moisture:</span> Max 3%<br><span class="font-medium">Use:</span> Premium applications requiring quick rehydration'
+                    }
+                ],
+                namesDescription: 'Tomato is known by various names across different cultures and regions:',
+                names: {
+                    indian: [
+                        ['Hindi', 'Tamatar'],
+                        ['Tamil', 'Thakkali'],
+                        ['Telugu', 'Tamata'],
+                        ['Kannada', 'Tomato'],
+                        ['Malayalam', 'Thakkaali'],
+                        ['Bengali', 'Tomato'],
+                        ['Gujarati', 'Tameta'],
+                        ['Marathi', 'Tomato']
+                    ],
+                    international: [
+                        ['Spanish', 'Tomate'],
+                        ['French', 'Tomate'],
+                        ['German', 'Tomate'],
+                        ['Italian', 'Pomodoro'],
+                        ['Arabic', 'Tamatem'],
+                        ['Chinese', 'Fan qie'],
+                        ['Japanese', 'Tomato'],
+                        ['Russian', 'Pomidor']
+                    ]
+                },
+                originDescription: 'Tomatoes originated in South America and were introduced to Europe in the 16th century. Modern dehydrated tomato products are produced from high-quality tomatoes grown in optimal conditions.',
+                growingRegions: 'The best quality tomatoes for dehydration come from these regions:',
+                regionsList: [
+                    'Maharashtra, India - known for firm texture',
+                    'Karnataka, India - produces sweet varieties',
+                    'California, USA - large-scale commercial production',
+                    'Italy - known for premium quality',
+                    'China - major global producer'
+                ],
+                processingMethod: 'Our dehydration process preserves maximum flavor and nutrients:',
+                processList: [
+                    'Selection of premium quality tomatoes',
+                    'Thorough cleaning and sorting',
+                    'Precision slicing to uniform thickness',
+                    'Controlled dehydration at optimal temperatures',
+                    'Quality testing and sorting',
+                    'Packaging in moisture-proof materials'
+                ],
+                qualityStandards: 'Our dehydrated tomatoes meet international quality standards including ISO, FSSAI, and USDA specifications. We maintain strict hygiene protocols throughout the production process to ensure food safety.'
+            },
+            'okra': {
+                name: 'Dehydrated Okra',
+                description: 'Our premium dehydrated okra is made from fresh, tender okra pods that are carefully cleaned, sliced, and dehydrated to preserve their natural flavor and nutritional value. These green pieces retain the characteristic texture and mild flavor of fresh okra, making them perfect for various culinary applications.',
+                color: 'Green to olive green',
+                moisture: 'Max 7%',
+                size: '5-15mm pieces',
+                packaging: '5kg, 10kg, 25kg bags',
+                storage: 'Store in a cool, dry place away from direct sunlight. Keep in airtight containers to maintain freshness and prevent moisture absorption. Ideal storage temperature is below 25°C with relative humidity below 60%.',
+                culinaryUses: 'Dehydrated okra is widely used in food processing and culinary applications where fresh okra is impractical:',
+                culinaryList: [
+                    'Soups and stews',
+                    'Curries and vegetable dishes',
+                    'Ready-to-eat meals',
+                    'Snack seasonings',
+                    'Baked goods',
+                    'Thickening agent for dishes'
+                ],
+                industrialUses: 'Beyond culinary applications, dehydrated okra has several other uses:',
+                industrialList: [
+                    'Nutritional supplements',
+                    'Pet food ingredients',
+                    'Natural thickener',
+                    'Cosmetic preparations'
+                ],
+                varietiesDescription: 'We offer several varieties of dehydrated okra products to meet different culinary and industrial needs:',
+                varieties: [
+                    {
+                        name: 'Regular Okra Pieces',
+                        details: '<span class="font-medium">Size:</span> 5-15mm pieces<br><span class="font-medium">Color:</span> Green to olive green<br><span class="font-medium">Moisture:</span> Max 7%<br><span class="font-medium">Use:</span> General culinary applications'
+                    },
+                    {
+                        name: 'Okra Powder',
+                        details: '<span class="font-medium">Mesh Size:</span> 80-100<br><span class="font-medium">Color:</span> Light green<br><span class="font-medium">Moisture:</span> Max 6%<br><span class="font-medium">Use:</span> For thickening and nutritional applications'
+                    },
+                    {
+                        name: 'Freeze-Dried Okra',
+                        details: '<span class="font-medium">Size:</span> Various sizes available<br><span class="font-medium">Color:</span> Bright green<br><span class="font-medium">Moisture:</span> Max 3%<br><span class="font-medium">Use:</span> Premium applications requiring quick rehydration'
+                    }
+                ],
+                namesDescription: 'Okra is known by various names across different cultures and regions:',
+                names: {
+                    indian: [
+                        ['Hindi', 'Bhindi'],
+                        ['Tamil', 'Vendakkai'],
+                        ['Telugu', 'Bendakaya'],
+                        ['Kannada', 'Bende kaayi'],
+                        ['Malayalam', 'Vendakka'],
+                        ['Bengali', 'Dherosh'],
+                        ['Gujarati', 'Bhinda'],
+                        ['Marathi', 'Bhendi']
+                    ],
+                    international: [
+                        ['Spanish', 'Okra'],
+                        ['French', 'Gombo'],
+                        ['German', 'Okra'],
+                        ['Italian', 'Gombo'],
+                        ['Arabic', 'Bamya'],
+                        ['Chinese', 'Qiu kui'],
+                        ['Japanese', 'Okura'],
+                        ['Russian', 'Bamiya']
+                    ]
+                },
+                originDescription: 'Okra is believed to have originated in Africa and was brought to the Americas during the slave trade. Modern dehydrated okra products are produced from high-quality okra grown in optimal conditions.',
+                growingRegions: 'The best quality okra for dehydration comes from these regions:',
+                regionsList: [
+                    'Maharashtra, India - known for tender pods',
+                    'Gujarat, India - produces large quantities',
+                    'Andhra Pradesh, India - known for quality',
+                    'Nigeria - major African producer',
+                    'United States - commercial production'
+                ],
+                processingMethod: 'Our dehydration process preserves maximum flavor and nutrients:',
+                processList: [
+                    'Selection of premium quality okra',
+                    'Thorough cleaning and sorting',
+                    'Precision slicing to uniform thickness',
+                    'Controlled dehydration at optimal temperatures',
+                    'Quality testing and sorting',
+                    'Packaging in moisture-proof materials'
+                ],
+                qualityStandards: 'Our dehydrated okra meets international quality standards including ISO, FSSAI, and USDA specifications. We maintain strict hygiene protocols throughout the production process to ensure food safety.'
+            }
+        };
+
+        // Change product function
+        function changeProduct(productId) {
+            const product = products[productId];
+
+            // Update breadcrumb
+            document.getElementById('productNameBreadcrumb').textContent = product.name;
+
+            // Update main product info
+            document.getElementById('productName').textContent = product.name;
+            document.getElementById('productDescription').textContent = product.description;
+            document.getElementById('productColor').textContent = product.color;
+            document.getElementById('productMoisture').textContent = product.moisture;
+            document.getElementById('productSize').textContent = product.size;
+            document.getElementById('productPackaging').textContent = product.packaging;
+            document.getElementById('productStorage').textContent = product.storage;
+
+            // Update selector
+            document.getElementById('productSelector').value = productId;
+
+            // Update uses tab
+            document.getElementById('culinaryUses').textContent = product.culinaryUses;
+            document.getElementById('industrialUses').textContent = product.industrialUses;
+
+            let culinaryList = document.getElementById('culinaryList');
+            culinaryList.innerHTML = '';
+            product.culinaryList.forEach(item => {
+                let li = document.createElement('li');
+                li.textContent = item;
+                culinaryList.appendChild(li);
+            });
+
+            let industrialList = document.getElementById('industrialList');
+            industrialList.innerHTML = '';
+            product.industrialList.forEach(item => {
+                let li = document.createElement('li');
+                li.textContent = item;
+                industrialList.appendChild(li);
+            });
+
+            // Update varieties tab
+            document.getElementById('varietiesDescription').textContent = product.varietiesDescription;
+
+            let varietiesContainer = document.getElementById('varietiesContainer');
+            varietiesContainer.innerHTML = '';
+            product.varieties.forEach(variety => {
+                let div = document.createElement('div');
+                div.className = 'border border-gray-200 rounded-lg p-4';
+                div.innerHTML = `
+                    <h4 class="heading text-lg font-semibold text-gray-900 mb-2">${variety.name}</h4>
+                    <p class="text-gray-600 mb-2">${variety.details}</p>
+                `;
+                varietiesContainer.appendChild(div);
+            });
+
+            // Update names tab
+            document.getElementById('namesDescription').textContent = product.namesDescription;
+
+            let namesContainer = document.getElementById('namesContainer');
+            namesContainer.innerHTML = '';
+
+            // Indian names
+            let indianDiv = document.createElement('div');
+            indianDiv.className = 'border border-gray-200 rounded-lg p-4';
+            indianDiv.innerHTML = '<h4 class="heading text-lg font-semibold text-gray-900 mb-2">Indian Languages</h4><ul class="space-y-1 text-gray-600"></ul>';
+            let indianList = indianDiv.querySelector('ul');
+            product.names.indian.forEach(name => {
+                let li = document.createElement('li');
+                li.innerHTML = `<span class="font-medium">${name[0]}:</span> ${name[1]}`;
+                indianList.appendChild(li);
+            });
+            namesContainer.appendChild(indianDiv);
+
+            // International names
+            let intlDiv = document.createElement('div');
+            intlDiv.className = 'border border-gray-200 rounded-lg p-4';
+            intlDiv.innerHTML = '<h4 class="heading text-lg font-semibold text-gray-900 mb-2">International Names</h4><ul class="space-y-1 text-gray-600"></ul>';
+            let intlList = intlDiv.querySelector('ul');
+            product.names.international.forEach(name => {
+                let li = document.createElement('li');
+                li.innerHTML = `<span class="font-medium">${name[0]}:</span> ${name[1]}`;
+                intlList.appendChild(li);
+            });
+            namesContainer.appendChild(intlDiv);
+
+            // Update origin tab
+            document.getElementById('originDescription').textContent = product.originDescription;
+            document.getElementById('growingRegions').textContent = product.growingRegions;
+            document.getElementById('processingMethod').textContent = product.processingMethod;
+            document.getElementById('qualityStandards').textContent = product.qualityStandards;
+
+            let regionsList = document.getElementById('regionsList');
+            regionsList.innerHTML = '';
+            product.regionsList.forEach(item => {
+                let li = document.createElement('li');
+                li.textContent = item;
+                regionsList.appendChild(li);
+            });
+
+            let processList = document.getElementById('processList');
+            processList.innerHTML = '';
+            product.processList.forEach(item => {
+                let li = document.createElement('li');
+                li.textContent = item;
+                processList.appendChild(li);
+            });
+
+            // Update images (placeholder - in a real app you would use actual product images)
+            document.getElementById('mainImage').src = `./Product/DehydratedVegetables/${productId}.jpg`;
+            document.getElementById('mainImage').alt = product.name;
+
+            // Reset tab to uses
+            const activeTabButton = document.querySelector('.tab-button.text-primary');
+            if (activeTabButton) {
+                activeTabButton.classList.remove('text-primary', 'border-primary');
+                activeTabButton.classList.add('text-gray-500', 'border-transparent');
+            }
+
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+
+            document.getElementById('uses').classList.add('active');
+            const usesTabButton = document.querySelector('[onclick="openTab(event, \'uses\')"]');
+            if (usesTabButton) {
+                usesTabButton.classList.add('text-primary', 'border-primary');
+                usesTabButton.classList.remove('text-gray-500', 'border-transparent');
+            }
+
+        }
+
+        // Initialize with onion flakes
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const params = new URLSearchParams(window.location.search);
+            const productId = params.get('product') || 'onion-flakes';
+
+            // Only run if productId exists in the product object
+            if (products[productId]) {
+                changeProduct(productId);
+            }
+
+            const selector = document.getElementById('productSelector');
+            if (selector) {
+                selector.addEventListener('change', function () {
+                    if (products[this.value]) {
+                        changeProduct(this.value);
+                    }
+                });
+            }
+        });
+
+        // Image gallery functionality
+        function changeImage(src) {
+            document.getElementById('mainImage').src = src;
+
+            // Update active thumbnail
+            const thumbnails = document.querySelectorAll('.product-gallery-thumbnail');
+            thumbnails.forEach(thumb => {
+                thumb.classList.remove('active');
+                if (thumb.querySelector('img').src === src) {
+                    thumb.classList.add('active');
+                }
+            });
+        }
+
+        // Tab functionality
+        function openTab(evt, tabName) {
+            const tabContents = document.getElementsByClassName('tab-content');
+            for (let i = 0; i < tabContents.length; i++) {
+                tabContents[i].classList.remove('active');
+            }
+
+            const tabButtons = document.getElementsByClassName('tab-button');
+            for (let i = 0; i < tabButtons.length; i++) {
+                tabButtons[i].classList.remove('text-primary', 'border-primary');
+                tabButtons[i].classList.add('text-gray-500', 'border-transparent');
+            }
+
+            document.getElementById(tabName).classList.add('active');
+            evt.currentTarget.classList.remove('text-gray-500', 'border-transparent');
+            evt.currentTarget.classList.add('text-primary', 'border-primary');
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const params = new URLSearchParams(window.location.search);
+            const productId = params.get('product');
+
+            if (productId) {
+                changeProduct(productId);
+            }
+        });
+
+
+    </script>
+</body>
+
+</html>

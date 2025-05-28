@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Detail | Abhinandan International</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#8B4513',
+                        secondary: '#6B8E23'
+                    },
+                    borderRadius: {
+                        'none': '0px',
+                        'sm': '4px',
+                        DEFAULT: '8px',
+                        'md': '12px',
+                        'lg': '16px',
+                        'xl': '20px',
+                        '2xl': '24px',
+                        '3xl': '32px',
+                        'full': '9999px',
+                        'button': '8px'
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <style>
+        :where([class^="ri-"])::before { content: "\f3c2"; }
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .heading {
+            font-family: 'Playfair Display', serif;
+        }
+        .custom-input:focus {
+            outline: none;
+        }
+        .custom-checkbox {
+            appearance: none;
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #8B4513;
+            border-radius: 4px;
+            position: relative;
+            cursor: pointer;
+        }
+        .custom-checkbox:checked {
+            background-color: #8B4513;
+        }
+        .custom-checkbox:checked::after {
+            content: "";
+            position: absolute;
+            width: 5px;
+            height: 10px;
+            border: solid white;
+            border-width: 0 2px 2px 0;
+            top: 2px;
+            left: 6px;
+            transform: rotate(45deg);
+        }
+        .product-gallery-thumbnail {
+            transition: all 0.3s ease;
+        }
+        .product-gallery-thumbnail:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .product-gallery-thumbnail.active {
+            border: 2px solid #8B4513;
+        }
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Header Section -->
+    <header class="sticky top-0 z-50 bg-white shadow-sm">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                    <!-- <a href="#" class="text-3xl font-['Pacifico'] text-primary">Abhinandan</a> -->
+                    <a href="#" class="flex items-center">
+                        <img src="photo/logo-4kk-1.png" alt="Abhinandan Logo" class="h-10 w-auto mr-4">
+                    </a>
+                    <nav class="hidden md:flex ml-10">
+                        <ul class="flex space-x-8">
+                            <li><a href="Home.html"
+                                    class="text-gray-800 font-medium hover:text-primary transition-colors">Home</a></li>
+                            <li><a href="Product.html"
+                                    class="text-primary font-medium hover:text-primary transition-colors">Products</a>
+                            </li>
+                            <li><a href="Aboutus.html"
+                                    class="text-gray-800 font-medium hover:text-primary transition-colors">About Us</a>
+                            </li>
+                            <li><a href="Contact.html"
+                                    class="text-gray-800 font-medium hover:text-primary transition-colors">Contact</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="flex items-center">
+                    <div class="relative mr-4">
+                        <input type="text" placeholder="Search products..."
+                            class="custom-input pl-10 pr-4 py-2 rounded-full bg-gray-100 text-sm w-48 border-none">
+                        <div
+                            class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 flex items-center justify-center text-gray-500">
+                            <i class="ri-search-line"></i>
+                        </div>
+                    </div>
+
+                    <button
+                        class="ml-4 md:flex items-center px-4 py-2 bg-primary text-white rounded-button hover:bg-opacity-90 transition-colors whitespace-nowrap hidden">
+                        <span>Get Quote</span>
+                    </button>
+                    <div class="md:hidden w-10 h-10 flex items-center justify-center">
+                        <i class="ri-menu-line text-xl"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Product Detail Section -->
+    <section class="py-12 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <!-- Breadcrumb -->
+            <div class="flex items-center text-sm text-gray-600 mb-6">
+                <a href="Home.html" class="hover:text-primary">Home</a>
+                <i class="ri-arrow-right-s-line mx-2"></i>
+                <a href="Product.html" class="hover:text-primary">Pr-oducts</a>
+                <i class="ri-arrow-right-s-line mx-2"></i>
+                <a href="#" class="hover:text-primary">Cocount Product</a>
+                <i class="ri-arrow-right-s-line mx-2"></i>
+                <span class="text-primary">Copra</span>
+            </div>
+
+            <div class="flex flex-col lg:flex-row gap-8">
+                <!-- Product Gallery -->
+                <div class="lg:w-1/2">
+                    <div class="bg-white rounded-lg shadow-md p-4 mb-4">
+                        <div class="h-96 overflow-hidden rounded-lg mb-4">
+                            <img id="mainImage" src="./Image/Copra.webp" alt="Copra" class="w-full h-full object-contain">
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <!-- Product Info -->
+                <div class="lg:w-1/2">
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <h1 class="heading text-3xl font-bold text-gray-900 mb-2">Copra</h1>
+                  <!-- Description Tab -->                                      
+                        <h3 class="text-lg font-semibold text-gray-900 mb-2">Description</h3>
+                        <p class="text-gray-600 mb-4">
+                            Copra is the dried kernel of mature coconuts, mainly used for extracting coconut oil. It is a vital raw material for the edible oil industry, as well as in food, cosmetics, and animal feed applications. Copra is available in various forms such as ball copra, cup copra, and milling copra, depending on its intended use. Known for its high oil content and rich aroma, copra is a cornerstone product in the coconut value chain.
+                        </p>
+                                               
+                        <h4 class="text-lg font-semibold text-gray-900 mb-2">Storage Instructions</h4>
+                        <p class="text-gray-600">
+                            Store in an airtight container in a cool, dry place away from direct sunlight. Ideal storage temperature: 15°C to 25°C. Shelf life: Up to 12 months in proper conditions.
+                        </p>
+                    
+                               
+                        
+                        <div class="mb-6">
+                            <h4 class="text-lg font-semibold text-gray-900 mb-2">Packaging</h3>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="text-gray-850">Bulk Packaging Options.</span>
+                                <span class="text-gray-850">Private Label & Branding Service.</span>
+                                <span class="text-gray-850">Diverse Packaging Materials.</span>
+                                <span class="text-gray-850">Compliance with International Standards.</span>
+                                <span class="text-gray-850">Sustainable Packaging Options.</span>
+                          
+                            </div>
+                        </div>
+
+                        
+                        <div class="flex flex-col sm:flex-row gap-3 mb-6">                            
+                            <button class="flex-1 px-6 py-3 bg-secondary text-white rounded-button hover:bg-opacity-90 transition-colors">
+                                Enquiry Now
+                            </button>
+                        </div>
+
+                        
+                        
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Tabs -->
+            <div class="mt-12 bg-white rounded-lg shadow-md overflow-hidden">
+                <div class="border-b border-gray-200">
+                    <nav class="flex flex-col sm:flex-row">                        
+                        <button onclick="openTab(event, 'uses')" class="tab-button py-4 px-6 text-center border-b-2 font-medium text-gray-500 border-transparent hover:text-gray-700 hover:border-gray-300">
+                            Uses
+                        </button>
+                        <button onclick="openTab(event, 'varieties')" class="tab-button py-4 px-6 text-center border-b-2 font-medium text-gray-500 border-transparent hover:text-gray-700 hover:border-gray-300">
+                            Varieties
+                        </button>
+                        <button onclick="openTab(event, 'names')" class="tab-button py-4 px-6 text-center border-b-2 font-medium text-gray-500 border-transparent hover:text-gray-700 hover:border-gray-300">
+                            Names in Different Languages
+                        </button>
+                        <button onclick="openTab(event, 'origin')" class="tab-button py-4 px-6 text-center border-b-2 font-medium text-gray-500 border-transparent hover:text-gray-700 hover:border-gray-300">
+                            Origin & Cultivation
+                        </button>
+                    </nav>
+                </div>
+
+                <div class="p-6">
+                    
+                    <!-- Uses Tab -->
+                    <div id="uses" class="tab-content active">
+                        <h3 class="heading text-xl font-semibold text-gray-900 mb-4">Culinary Uses</h3>
+                        <ul class="list-disc pl-5 text-gray-600 mb-6 space-y-2">
+                            <li>Oil Extraction: Primary source for cold-pressed and refined coconut oil.</li>
+                            <li>Traditional Cooking: Used in South Indian curries, gravies, and coconut-based dishes after rehydrating.</li>
+                            <li>Sweets & Confectionery: Used in preparation of coconut burfis, laddoos, and other desserts.</li>
+                            <li>Bakery Industry: Occasionally ground into coarse flour for specialty recipes.</li>
+                            <li>Desserts & Ice Creams: Adds a crunchy texture to puddings, parfaits, and ice creams.</li>
+                            <li>Used in curries, gravies, and chutneys for flavor & texture</li>
+                            <li>Coconut Milk Production: Copra is processed for thick coconut milk extraction.</li>
+                            
+                        </ul>
+
+                        <h3 class="heading text-xl font-semibold text-gray-900 mb-4">Medicinal & Other Uses</h3>                    
+         
+                        <ul class="list-disc pl-5 text-gray-600 mb-6 space-y-2">
+                            <li>Rich in Dietary Fiber: Supports digestion and gut health.</li>
+                            <li>Natural Source of Good Fats: Contains MCTs for quick energy metabolism.</li>
+                            <li>Ayurveda & Natural Remedies: Known for cooling properties and mild laxative effects.</li>
+                            <li>By-Product Uses: Flake residue (after oil extraction) is used in animal feed industry.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Varieties Tab -->
+                    <div id="varieties" class="tab-content">
+                        <h3 class="heading text-xl font-semibold text-gray-900 mb-4">Copra Varieties</h3>
+                        <p class="text-gray-600 mb-4">
+                            We offer several varieties of Copra:
+                        </p>                     
+                        <ul class="list-disc pl-5 text-gray-600 mb-6 space-y-2">
+                            <li>Cup Copra (Half-cut Copra): Dried half shells, commonly used for domestic cooking and puja rituals.</li>
+                            <li>Milling Copra: Used primarily for oil extraction in industrial processes.</li>
+                            <li>Ball Copra: Fully dried, spherical copra used for edible purposes & temple offerings.</li>
+                        </ul>              
+                         
+                    </div>
+
+                    <!-- Names Tab -->
+                    <div id="names" class="tab-content">
+                        <h3 class="heading text-xl font-semibold text-gray-900 mb-4">Copra in Different Languages</h3>
+                        <p class="text-gray-600 mb-4">
+                            Copra is known by various names across different cultures and regions:
+                        </p>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="border border-gray-200 rounded-lg p-4">
+                                <h4 class="heading text-lg font-semibold text-gray-900 mb-2">Indian Languages</h4>
+                                <ul class="space-y-1 text-gray-600">
+                                    <li><span class="font-medium">Hindi:</span> Sukha Nariyal/ Copra</li>
+                                    <li><span class="font-medium">Tamil:</span> Ular Thengai</li>
+                                    <li><span class="font-medium">Telugu:</span> Kobbari Kayi</li>
+                                    <li><span class="font-medium">Marathi:</span> Sukha Naral</li>
+                                    <li><span class="font-medium">Malayalam:</span> Hirisan Kelapa</li>
+                                    <li><span class="font-medium">Indonesian:</span> Kopra</li>
+                                    <li><span class="font-medium">Gujarati:</span> Sukhu Nariyal</li>
+                                    <li><span class="font-medium">Fillipion:</span> Kopra</li>
+                                </ul>
+                            </div>
+                                                        	
+                            <div class="border border-gray-200 rounded-lg p-4">
+                                <h4 class="heading text-lg font-semibold text-gray-900 mb-2">International Names</h4>
+                                <ul class="space-y-1 text-gray-600">
+                                    <li><span class="font-medium">Vietnam:</span> Dừa lát sấy khô</li>
+                                    <li><span class="font-medium">French:</span> Flocons de noix de coco</li>
+                                    <li><span class="font-medium">German:</span> Kokosnuss</li>
+                                    <li><span class="font-medium">Thailand:</span> Ma-phrao Hang</li>
+                                    <li><span class="font-medium">Arabic:</span> (Arabic)	جوز الهند المجفف (Joz Alhind Al Mujafaf)</li>
+                                    <li><span class="font-medium">Sri Lanka:</span> Pol Kudda</li>
+                                    <li><span class="font-medium">USA / UK:</span> Copra (Dried Coconut Meat)</li>                                    <li><span class="font-medium">Sri Lanka:</span> Pol Kudda</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Origin Tab -->
+                    <div id="origin" class="tab-content">
+                        <h3 class="heading text-xl font-semibold text-gray-900 mb-4">Origin & Cultivation</h3>                                               
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                            <div>                        
+                                <ul class="list-disc pl-5 text-gray-600 space-y-1">
+                                    <li>Primarily sourced from coastal regions of South India (Tamil Nadu, Kerala, Karnataka)</li>
+                                    <li>Grown in tropical climates with abundant rainfall and rich sandy loam soils</li>
+                                    <li>Harvested after 12 months of planting</li>
+                                    <li>Coconuts are de-husked, shelled, pared, and then shredded and dried to achieve fine texture</li>
+                                    <li>Strict quality checks ensure food safety compliance for international markets</li>
+                                </ul>
+                            </div>                         
+                        
+                        </div>                       
+                       
+                    </div>
+                </div>
+            </div>
+
+           
+        </div>
+    </section>
+
+<!-- Footer -->
+<footer class="bg-gray-900 text-white pt-12 pb-6">
+    <div class="container mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+            <div>
+                <h3 class="heading text-xl font-semibold mb-4">Abhinandan International</h3>
+                <p class="text-gray-400 mb-4">
+                    Premium quality spices and food products sourced directly from farms across India
+                    and Asia.
+                </p>
+                <div class="flex space-x-4">
+                    <a href="#"
+                        class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-gray-700">
+                        <i class="ri-facebook-fill"></i>
+                    </a>
+                    <a href="#"
+                        class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-gray-700">
+                        <i class="ri-instagram-line"></i>
+                    </a>
+                    <a href="#"
+                        class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-gray-700">
+                        <i class="ri-twitter-fill"></i>
+                    </a>
+                    <a href="#"
+                        class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-gray-700">
+                        <i class="ri-linkedin-fill"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div>
+                <h3 class="heading text-xl font-semibold mb-4">Quick Links</h3>
+                <ul class="space-y-2">
+                    <li><a href="#" class="text-gray-400 hover:text-white">Home</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white">Products</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white">About Us</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white">Contact</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="heading text-xl font-semibold mb-4">Products</h3>
+                <ul class="space-y-2">
+                    <li><a href="#" class="text-gray-400 hover:text-white">Spices</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white">Raisins</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white">Herbs</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white">Grains</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white">Oil Seeds</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white">Dehydrated Vegetables</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white">Coconut Products</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="heading text-xl font-semibold mb-4">Contact Us</h3>
+                <ul class="space-y-3">
+                    <li class="flex items-start">
+                        <i class="ri-map-pin-line mt-1 mr-2"></i>
+                        <span class="text-gray-400">123 Spice Street, Mumbai, India 400001</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="ri-phone-line mt-1 mr-2"></i>
+                        <span class="text-gray-400">+91 98765 43210</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="ri-mail-line mt-1 mr-2"></i>
+                        <span class="text-gray-400">info@abhinandan.com</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="ri-time-line mt-1 mr-2"></i>
+                        <span class="text-gray-400">Mon-Fri: 9AM - 6PM</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="border-t border-gray-800 pt-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 mb-4 md:mb-0">
+                    &copy; 2023 Abhinandan International. All rights reserved.
+                </p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-white">Terms of Service</a>
+                    <a href="#" class="text-gray-400 hover:text-white">Shipping Policy</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <script>
+        // Image gallery functionality
+        function changeImage(src) {
+            document.getElementById('mainImage').src = src;
+            
+            // Update active thumbnail
+            const thumbnails = document.querySelectorAll('.product-gallery-thumbnail');
+            thumbnails.forEach(thumb => {
+                thumb.classList.remove('active');
+                if(thumb.querySelector('img').src === src) {
+                    thumb.classList.add('active');
+                }
+            });
+        }
+
+        // Tab functionality
+        function openTab(evt, tabName) {
+            const tabContents = document.getElementsByClassName('tab-content');
+            for (let i = 0; i < tabContents.length; i++) {
+                tabContents[i].classList.remove('active');
+            }
+
+            const tabButtons = document.getElementsByClassName('tab-button');
+            for (let i = 0; i < tabButtons.length; i++) {
+                tabButtons[i].classList.remove('text-primary', 'border-primary');
+                tabButtons[i].classList.add('text-gray-500', 'border-transparent');
+            }
+
+            document.getElementById(tabName).classList.add('active');
+            evt.currentTarget.classList.remove('text-gray-500', 'border-transparent');
+            evt.currentTarget.classList.add('text-primary', 'border-primary');
+        }
+
+        // Quantity selector
+        const quantityInput = document.querySelector('input[type="number"]');
+        const minusBtn = quantityInput.previousElementSibling;
+        const plusBtn = quantityInput.nextElementSibling;
+
+        minusBtn.addEventListener('click', () => {
+            if(quantityInput.value > 1) {
+                quantityInput.value = parseInt(quantityInput.value) - 1;
+            }
+        });
+
+        plusBtn.addEventListener('click', () => {
+            quantityInput.value = parseInt(quantityInput.value) + 1;
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spice Haven - Premium Spices & Herbs</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>tailwind.config = { theme: { extend: { colors: { primary: '#8B4513', secondary: '#6B8E23' }, borderRadius: { 'none': '0px', 'sm': '4px', DEFAULT: '8px', 'md': '12px', 'lg': '16px', 'xl': '20px', '2xl': '24px', '3xl': '32px', 'full': '9999px', 'button': '8px' } } } }</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <style>
+        :where([class^="ri-"])::before {
+            content: "\f3c2";
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .heading {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .hero-section {
+            background-image: url('./photo/Home/001.jpg');
+            /* Local image path */
+            background-position: right center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .custom-input:focus {
+            outline: none;
+        }
+
+        .custom-checkbox {
+            appearance: none;
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #8B4513;
+            border-radius: 4px;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .custom-checkbox:checked {
+            background-color: #8B4513;
+        }
+
+        .custom-checkbox:checked::after {
+            content: "";
+            position: absolute;
+            width: 5px;
+            height: 10px;
+            border: solid white;
+            border-width: 0 2px 2px 0;
+            top: 2px;
+            left: 6px;
+            transform: rotate(45deg);
+        }
+    </style>
+</head>
+
+<body class="bg-white">
+    <!-- Header Section -->
+    <header class="sticky top-0 z-50 bg-white shadow-sm">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                    <!-- <a href="#" class="text-3xl font-['Pacifico'] text-primary">Abhinandan</a> -->
+                    <a href="#" class="flex items-center">
+                        <img src="photo/logo-4kk-1.png" alt="Abhinandan Logo" class="h-10 w-auto mr-4">
+                    </a>
+                    <nav class="hidden md:flex ml-10">
+                        <ul class="flex space-x-8">
+                            <li><a href="Home.html"
+                                    class="text-primary font-medium hover:text-primary transition-colors">Home</a></li>
+                            <li><a href="Product.html"
+                                    class="text-gray-800 font-medium hover:text-primary transition-colors">Products</a>
+                            </li>
+                            <li><a href="Aboutus.html"
+                                    class="text-gray-800 font-medium hover:text-primary transition-colors">About Us</a>
+                            </li>
+                            <li><a href="Contact.html"
+                                    class="text-gray-800 font-medium hover:text-primary transition-colors">Contact</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="flex items-center">
+                    <div class="relative mr-4">
+                        <input type="text" placeholder="Search products..."
+                            class="custom-input pl-10 pr-4 py-2 rounded-full bg-gray-100 text-sm w-48 border-none">
+                        <div
+                            class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 flex items-center justify-center text-gray-500">
+                            <i class="ri-search-line"></i>
+                        </div>
+                    </div>
+                    
+                    <button
+                        class="ml-4 md:flex items-center px-4 py-2 bg-primary text-white rounded-button hover:bg-opacity-90 transition-colors whitespace-nowrap hidden">
+                        <span>Get Quote</span>
+                    </button>
+                    <div class="md:hidden w-10 h-10 flex items-center justify-center">
+                        <i class="ri-menu-line text-xl"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Hero Section -->
+    <section class="hero-section w-full min-h-[600px] relative">
+        <div class="absolute inset-0 bg-gradient-to-r from-white via-white/90 to-transparent"></div>
+        <div class="container mx-auto px-6 py-20 relative z-10 flex items-center min-h-[600px]">
+            <div class="max-w-xl">
+                <h1 class="heading text-5xl font-bold text-gray-900 mb-6 leading-tight">We Process Quality, We Harvest
+                    Trust</h1>
+                <p class="text-lg text-gray-700 mb-8">India produces a wide range of spices and holds a prominent
+                    position in world spice production. Because of the varying climates from tropical to sub-tropical to
+                    temperate, almost all spices grow splendidly in India. Unjha in Gujarat is one such leading market
+                    for Indian Spices such as Cumin, Fennel, Fenugreek, Coriander, Mustard, Ajwain, Sesame, Soyabean,
+                    and more.</p>
+                <div class="flex flex-wrap gap-4">
+                    <button
+                        class="px-6 py-3 bg-primary text-white rounded-button hover:bg-opacity-90 transition-colors whitespace-nowrap !rounded-button">
+                        Explore Products
+                    </button>
+                    <button
+                        class="px-6 py-3 border-2 border-primary text-primary rounded-button hover:bg-primary/5 transition-colors whitespace-nowrap !rounded-button">
+                        Our Story
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Product Categories -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="heading text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Premium Collections</h2>
+                <p class="max-w-2xl mx-auto text-gray-600">Discover our extensive range of premium products, carefully
+                    sourced and processed to maintain the highest quality standards.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Spices Category -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md transition-transform hover:shadow-lg">
+                    <div class="h-64 overflow-hidden">
+                        <img src="./photo/Home/002.jpg" alt="Premium Spices Collection"
+                            class="w-full h-full object-cover object-top transition-transform hover:scale-105">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="heading text-2xl font-semibold text-gray-900 mb-3">Spices</h3>
+                        <p class="text-gray-600 mb-4">Premium whole, crushed, and powdered spices including Mustard,
+                            Fenugreek, Chillies, Turmeric, and more.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">Whole</span>
+                            <span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">Crushed</span>
+                            <span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">Powder</span>
+                        </div>
+                        <a href="Product.html?section#spices" class="inline-flex items-center text-primary font-medium">
+                            View Collection
+                            <i class="ri-arrow-right-line ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- Raisins Category -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md transition-transform hover:shadow-lg">
+                    <div class="h-64 overflow-hidden">
+                        <img src="./photo/Home/003.jpg" alt="Premium Raisins Collection"
+                            class="w-full h-full object-cover object-top transition-transform hover:scale-105">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="heading text-2xl font-semibold text-gray-900 mb-3">Raisins</h3>
+                        <p class="text-gray-600 mb-4">Premium quality raisins, naturally dried and carefully selected
+                            for the perfect sweetness and texture.</p>
+                        <a href="Product.html?section#raisins" class="inline-flex items-center text-primary font-medium">
+                            View Collection
+                            <i class="ri-arrow-right-line ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- Herbs Category -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md transition-transform hover:shadow-lg">
+                    <div class="h-64 overflow-hidden">
+                        <img src="./photo/Home/004.jpg" alt="Premium Herbs Collection"
+                            class="w-full h-full object-cover object-top transition-transform hover:scale-105">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="heading text-2xl font-semibold text-gray-900 mb-3">Herbs</h3>
+                        <p class="text-gray-600 mb-4">Fresh and dried culinary herbs, including Bay Leaf, Curry Leaf,
+                            and other aromatic varieties.</p>
+                        <a href="Product.html?section#herbs" class="inline-flex items-center text-primary font-medium">
+                            View Collection
+                            <i class="ri-arrow-right-line ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- Grains Category -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md transition-transform hover:shadow-lg">
+                    <div class="h-64 overflow-hidden">
+                        <img src="./photo/Home/005.jpg" alt="Premium Grains Collection"
+                            class="w-full h-full object-cover object-top transition-transform hover:scale-105">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="heading text-2xl font-semibold text-gray-900 mb-3">Grains</h3>
+                        <p class="text-gray-600 mb-4">Premium quality grains sourced from the finest growing regions,
+                            perfect for every culinary need.</p>
+                        <a href="Product.html?section#grains" class="inline-flex items-center text-primary font-medium">
+                            View Collection
+                            <i class="ri-arrow-right-line ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- Oil Seeds Category -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md transition-transform hover:shadow-lg">
+                    <div class="h-64 overflow-hidden">
+                        <img src="./photo/Home/006.jpg" alt="Premium Oil Seeds Collection"
+                            class="w-full h-full object-cover object-top transition-transform hover:scale-105">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="heading text-2xl font-semibold text-gray-900 mb-3">Oil Seeds</h3>
+                        <p class="text-gray-600 mb-4">High-quality oil seeds selected for their exceptional oil content
+                            and nutritional value.</p>
+                        <a href="Product.html?section#oil-seeds" class="inline-flex items-center text-primary font-medium">
+                            View Collection
+                            <i class="ri-arrow-right-line ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- Dehydrated Vegetables Category -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md transition-transform hover:shadow-lg">
+                    <div class="h-64 overflow-hidden">
+                        <img src="./photo/Home/007.jpg" alt="Dehydrated Vegetables Collection"
+                            class="w-full h-full object-cover object-top transition-transform hover:scale-105">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="heading text-2xl font-semibold text-gray-900 mb-3">Dehydrated Vegetables</h3>
+                        <p class="text-gray-600 mb-4">Premium dehydrated vegetables that retain their natural flavor,
+                            color, and nutritional value.</p>
+                        <a href="Product.html?section#dehydrated-vegetables" class="inline-flex items-center text-primary font-medium">
+                            View Collection
+                            <i class="ri-arrow-right-line ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- Coconut Products Category -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md transition-transform hover:shadow-lg">
+                    <div class="h-64 overflow-hidden">
+                        <img src="./photo/Home/008.jpg" alt="Coconut Products Collection"
+                            class="w-full h-full object-cover object-top transition-transform hover:scale-105">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="heading text-2xl font-semibold text-gray-900 mb-3">Coconut Products</h3>
+                        <p class="text-gray-600 mb-4">Premium coconut products processed to maintain their natural
+                            freshness and flavor.</p>
+                        <a href="Product.html?section#coconut-products" class="inline-flex items-center text-primary font-medium">
+                            View Collection
+                            <i class="ri-arrow-right-line ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="h-64 overflow-hidden">
+                <img src="./photo/Home/009.jpg" alt="Premium Spices Collection"
+                    class="w-full h-full object-cover object-top transition-transform hover:scale-105">
+            </div>
+            <div class="p-6">
+                <h3 class="heading text-2xl font-semibold text-gray-900 mb-3">Premium Spices</h3>
+                <p class="text-gray-600 mb-4">Our exquisite selection of whole and ground spices brings authentic
+                    flavors from across the globe to your kitchen. From aromatic cardamom to fiery chili, discover the
+                    perfect spice for every dish.</p>
+                <a href="#" class="inline-flex items-center text-primary font-medium">
+                    View Collection
+                    <i class="ri-arrow-right-line ml-2"></i>
+                </a>
+            </div>
+        </div>
+        <!-- Herbs Category -->
+        <div class="bg-white rounded-lg overflow-hidden shadow-md transition-transform hover:shadow-lg">
+            <div class="h-64 overflow-hidden">
+                <img src="./photo/Home/010.jpg" alt="Organic Herbs Collection"
+                    class="w-full h-full object-cover object-top transition-transform hover:scale-105">
+            </div> 
+            <div class="p-6">
+                <h3 class="heading text-2xl font-semibold text-gray-900 mb-3">Organic Herbs</h3>
+                <p class="text-gray-600 mb-4">Elevate your cooking with our premium selection of dried and fresh herbs.
+                    Carefully harvested at peak freshness, our herbs deliver exceptional aroma and flavor to transform
+                    any recipe.</p>
+                <a href="#" class="inline-flex items-center text-primary font-medium">
+                    View Collection
+                    <i class="ri-arrow-right-line ml-2"></i>
+                </a>
+            </div>
+        </div>
+        </div>
+        </div>
+    </section>
+    <!-- Featured Products -->
+    <section class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="flex justify-between items-end mb-10">
+                <div>
+                    <h2 class="heading text-3xl md:text-4xl font-bold text-gray-900 mb-4">Featured Products</h2>
+                    <p class="text-gray-600 max-w-2xl">Discover our most popular and sought-after spices and herbs,
+                        celebrated by chefs and home cooks worldwide.</p>
+                </div>
+                <div class="flex space-x-2">
+                    <button id="prev-btn"
+                        class="w-10 h-10 flex items-center justify-center rounded-full border border-gray-300 text-gray-600 hover:bg-gray-100 transition-colors">
+                        <i class="ri-arrow-left-s-line"></i>
+                    </button>
+                    <button id="next-btn"
+                        class="w-10 h-10 flex items-center justify-center rounded-full border border-gray-300 text-gray-600 hover:bg-gray-100 transition-colors">
+                        <i class="ri-arrow-right-s-line"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="relative overflow-hidden">
+                <div id="product-slider" class="flex transition-transform duration-300 ease-in-out gap-6">
+                    <!-- Product 1 -->
+                    <div class="min-w-[280px] max-w-[280px] bg-white rounded-lg overflow-hidden shadow-md">
+                        <div class="h-48 overflow-hidden">
+                            <img src="./photo/Home/011.jpg" alt="Premium Saffron"
+                                class="w-full h-full object-cover object-top">
+                        </div>
+                        <div class="p-4">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="heading text-lg font-semibold text-gray-900">Premium Saffron</h3>
+                                <span
+                                    class="bg-primary/10 text-primary text-xs px-2 py-1 rounded-full">Bestseller</span>
+                            </div>
+                            <p class="text-sm text-gray-600 mb-2">Hand-harvested premium quality saffron threads from
+                                the valleys of Kashmir.</p>
+                            <div class="flex items-center text-sm text-gray-500 mb-3">
+                                <i class="ri-map-pin-line mr-1"></i>
+                                <span>Origin: Kashmir, India</span>
+                            </div>
+                            <button
+                                class="w-full py-2 bg-white border border-primary text-primary rounded-button hover:bg-primary/5 transition-colors whitespace-nowrap !rounded-button">
+                                Learn More
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Product 2 -->
+                    <div class="min-w-[280px] max-w-[280px] bg-white rounded-lg overflow-hidden shadow-md">
+                        <div class="h-48 overflow-hidden">
+                            <img src="./photo/Home/012.jpg" alt="Madagascar Vanilla Beans"
+                                class="w-full h-full object-cover object-top">
+                        </div>
+                        <div class="p-4">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="heading text-lg font-semibold text-gray-900">Madagascar Vanilla</h3>
+                                <span
+                                    class="bg-secondary/10 text-secondary text-xs px-2 py-1 rounded-full">Organic</span>
+                            </div>
+                            <p class="text-sm text-gray-600 mb-2">Aromatic Bourbon vanilla beans with rich, creamy
+                                flavor profiles.</p>
+                            <div class="flex items-center text-sm text-gray-500 mb-3">
+                                <i class="ri-map-pin-line mr-1"></i>
+                                <span>Origin: Madagascar</span>
+                            </div>
+                            <button
+                                class="w-full py-2 bg-white border border-primary text-primary rounded-button hover:bg-primary/5 transition-colors whitespace-nowrap !rounded-button">
+                                Learn More
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Product 3 -->
+                    <div class="min-w-[280px] max-w-[280px] bg-white rounded-lg overflow-hidden shadow-md">
+                        <div class="h-48 overflow-hidden">
+                            <img src="./photo/Home/013.jpg" alt="Tellicherry Black Pepper"
+                                class="w-full h-full object-cover object-top">
+                        </div>
+                        <div class="p-4">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="heading text-lg font-semibold text-gray-900">Tellicherry Pepper</h3>
+                                <span class="bg-primary/10 text-primary text-xs px-2 py-1 rounded-full">Premium</span>
+                            </div>
+                            <p class="text-sm text-gray-600 mb-2">Large, aromatic peppercorns with complex citrus and
+                                floral notes.</p>
+                            <div class="flex items-center text-sm text-gray-500 mb-3">
+                                <i class="ri-map-pin-line mr-1"></i>
+                                <span>Origin: Malabar Coast, India</span>
+                            </div>
+                            <button
+                                class="w-full py-2 bg-white border border-primary text-primary rounded-button hover:bg-primary/5 transition-colors whitespace-nowrap !rounded-button">
+                                Learn More
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Product 4 -->
+                    <div class="min-w-[280px] max-w-[280px] bg-white rounded-lg overflow-hidden shadow-md">
+                        <div class="h-48 overflow-hidden">
+                            <img src="./photo/Home/014.jpg" alt="Fresh Rosemary"
+                                class="w-full h-full object-cover object-top">
+                        </div>
+                        <div class="p-4">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="heading text-lg font-semibold text-gray-900">Fresh Rosemary</h3>
+                                <span
+                                    class="bg-secondary/10 text-secondary text-xs px-2 py-1 rounded-full">Organic</span>
+                            </div>
+                            <p class="text-sm text-gray-600 mb-2">Aromatic fresh rosemary sprigs with intense pine-like
+                                fragrance.</p>
+                            <div class="flex items-center text-sm text-gray-500 mb-3">
+                                <i class="ri-map-pin-line mr-1"></i>
+                                <span>Origin: Tuscany, Italy</span>
+                            </div>
+                            <button
+                                class="w-full py-2 bg-white border border-primary text-primary rounded-button hover:bg-primary/5 transition-colors whitespace-nowrap !rounded-button">
+                                Learn More
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Product 5 -->
+                    <div class="min-w-[280px] max-w-[280px] bg-white rounded-lg overflow-hidden shadow-md">
+                        <div class="h-48 overflow-hidden">
+                            <img src="./photo/Home/015.jpg" alt="Organic Turmeric"
+                                class="w-full h-full object-cover object-top">
+                        </div>
+                        <div class="p-4">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="heading text-lg font-semibold text-gray-900">Organic Turmeric</h3>
+                                <span
+                                    class="bg-secondary/10 text-secondary text-xs px-2 py-1 rounded-full">Organic</span>
+                            </div>
+                            <p class="text-sm text-gray-600 mb-2">High-curcumin turmeric with vibrant color and earthy
+                                flavor.</p>
+                            <div class="flex items-center text-sm text-gray-500 mb-3">
+                                <i class="ri-map-pin-line mr-1"></i>
+                                <span>Origin: Kerala, India</span>
+                            </div>
+                            <button
+                                class="w-full py-2 bg-white border border-primary text-primary rounded-button hover:bg-primary/5 transition-colors whitespace-nowrap !rounded-button">
+                                Learn More
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Company Overview -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="heading text-3xl md:text-4xl font-bold text-gray-900 mb-6">Why Choose Us</h2>
+                    <p class="text-gray-700 mb-6">At Abhinandan International, we take pride in our state-of-the-art
+                        processing facility where quality meets innovation. Our comprehensive process ensures that every
+                        spice that reaches your kitchen maintains its authentic flavor and premium quality.</p>
+                    <p class="text-gray-700 mb-8">From procurement to container loading, every step is meticulously
+                        supervised by our expert representatives. Our advanced machine cleaning and Sortex technology
+                        ensures unparalleled product purity and consistency.</p>
+                    <div class="space-y-6 mb-8">
+                        <div class="bg-white p-6 rounded-lg shadow-sm">
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mr-4">
+                                    <i class="ri-tools-line text-2xl text-primary"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Advanced Processing</h3>
+                                    <p class="text-gray-600">State-of-the-art machine cleaning and Sortex technology for
+                                        superior product quality.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-sm">
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mr-4">
+                                    <i class="ri-shield-check-line text-2xl text-primary"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Quality Control</h3>
+                                    <p class="text-gray-600">Rigorous supervision at every stage from procurement to
+                                        container loading.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-sm">
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mr-4">
+                                    <i class="ri-box-3-line text-2xl text-primary"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Custom Packaging</h3>
+                                    <p class="text-gray-600">Flexible packaging solutions tailored to meet specific
+                                        buyer requirements.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap gap-4 items-center">
+                        <button
+                            class="px-6 py-3 bg-primary text-white rounded-button hover:bg-opacity-90 transition-colors whitespace-nowrap !rounded-button">
+                            Contact Us
+                            <i class="ri-arrow-right-line ml-2"></i>
+                        </button>
+                        <button
+                            class="px-6 py-3 border-2 border-primary text-primary rounded-button hover:bg-primary/5 transition-colors whitespace-nowrap !rounded-button">
+                            Download Brochure
+                        </button>
+                    </div>
+                </div>
+                <div class="relative h-[500px] rounded-lg overflow-hidden shadow-lg">
+                    <img src="./photo/Home/016.jpg" alt="Processing Facility"
+                        class="w-full h-full object-cover object-top">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex items-end">
+                        <div class="p-6 text-white">
+                            <h3 class="text-xl font-semibold mb-2">State-of-the-Art Processing</h3>
+                            <p class="text-sm">Our modern facility ensures the highest standards of quality and
+                                cleanliness in every batch.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Certifications Section -->
+    <section class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="heading text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Certifications</h2>
+                <p class="max-w-2xl mx-auto text-gray-600">When it comes to Quality there is no compromise, following
+                    all standards and good manufacturing practices.</p>
+            </div>
+            <div class="relative overflow-hidden mb-16">
+                <div id="cert-slider" class="flex transition-transform duration-500 ease-in-out">
+                    <div class="min-w-[280px] p-6 bg-white rounded-lg shadow-sm text-center">
+                        <img src="./photo/Home/017.jpg" alt="ISO 22000" class="w-24 h-24 mx-auto mb-4 object-contain">
+                        <h3 class="text-lg font-semibold text-gray-900">ISO 22000:2018</h3>
+                        <p class="text-sm text-gray-600">Food Safety Management System</p>
+                    </div>
+                    <div class="min-w-[280px] p-6 bg-white rounded-lg shadow-sm text-center">
+                        <img src="./photo/Home/018.jpg" alt="HACCP" class="w-24 h-24 mx-auto mb-4 object-contain">
+                        <h3 class="text-lg font-semibold text-gray-900">HACCP</h3>
+                        <p class="text-sm text-gray-600">Food Safety System Certification</p>
+                    </div>
+                    <div class="min-w-[280px] p-6 bg-white rounded-lg shadow-sm text-center">
+                        <img src="./photo/Home/019.jpg" alt="GMP" class="w-24 h-24 mx-auto mb-4 object-contain">
+                        <h3 class="text-lg font-semibold text-gray-900">GMP</h3>
+                        <p class="text-sm text-gray-600">Good Manufacturing Practice</p>
+                    </div>
+                    <div class="min-w-[280px] p-6 bg-white rounded-lg shadow-sm text-center">
+                        <img src="./photo/Home/020.jpg" alt="FSSAI" class="w-24 h-24 mx-auto mb-4 object-contain">
+                        <h3 class="text-lg font-semibold text-gray-900">FSSAI</h3>
+                        <p class="text-sm text-gray-600">Food Safety Standards</p>
+                    </div>
+                    <div class="min-w-[280px] p-6 bg-white rounded-lg shadow-sm text-center">
+                        <img src="./photo/Home/021.jpg" alt="BRC" class="w-24 h-24 mx-auto mb-4 object-contain">
+                        <h3 class="text-lg font-semibold text-gray-900">BRC</h3>
+                        <p class="text-sm text-gray-600">Global Food Safety Standard</p>
+                    </div>
+                    <div class="min-w-[280px] p-6 bg-white rounded-lg shadow-sm text-center">
+                        <img src="./photo/Home/022.jpg" alt="Organic" class="w-24 h-24 mx-auto mb-4 object-contain">
+                        <h3 class="text-lg font-semibold text-gray-900">Organic Certified</h3>
+                        <p class="text-sm text-gray-600">USDA Organic Standards</p>
+                    </div>
+                    <div class="min-w-[280px] p-6 bg-white rounded-lg shadow-sm text-center">
+                        <img src="./photo/Home/023.jpg" alt="Kosher" class="w-24 h-24 mx-auto mb-4 object-contain">
+                        <h3 class="text-lg font-semibold text-gray-900">Kosher Certified</h3>
+                        <p class="text-sm text-gray-600">Kosher Food Standards</p>
+                    </div>
+                    <div class="min-w-[280px] p-6 bg-white rounded-lg shadow-sm text-center">
+                        <img src="./photo/Home/024.jpg" alt="Halal" class="w-24 h-24 mx-auto mb-4 object-contain">
+                        <h3 class="text-lg font-semibold text-gray-900">Halal Certified</h3>
+                        <p class="text-sm text-gray-600">Halal Food Standards</p>
+                    </div>
+                </div>
+                <div class="flex justify-center mt-8 space-x-2">
+                    <div id="cert-dots" class="flex space-x-2"></div>
+                </div>
+            </div>
+            <!-- Quality Promise Section -->
+            <div class="text-center mb-16">
+                <h2 class="heading text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Quality Promise</h2>
+                <p class="max-w-2xl mx-auto text-gray-600">Every product in our collection undergoes rigorous quality
+                    control to ensure exceptional flavor, aroma, and purity.</p>
+            </div>
+            <div class="grid md:grid-cols-4 gap-8">
+                <!-- Quality Feature 1 -->
+                <div class="bg-white p-6 rounded-lg shadow-sm text-center hover:shadow-md transition-shadow">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="ri-plant-line text-2xl text-primary"></i>
+                    </div>
+                    <h3 class="heading text-xl font-semibold text-gray-900 mb-3">100% Natural</h3>
+                    <p class="text-gray-600">Our products contain no artificial additives, preservatives, or
+                        fillers—just pure, natural goodness.</p>
+                </div>
+                <!-- Quality Feature 2 -->
+                <div class="bg-white p-6 rounded-lg shadow-sm text-center hover:shadow-md transition-shadow">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="ri-award-line text-2xl text-primary"></i>
+                    </div>
+                    <h3 class="heading text-xl font-semibold text-gray-900 mb-3">Premium Quality</h3>
+                    <p class="text-gray-600">We select only the highest grade spices and herbs, tested for purity,
+                        color, and flavor intensity.</p>
+                </div>
+                <!-- Quality Feature 3 -->
+                <div class="bg-white p-6 rounded-lg shadow-sm text-center hover:shadow-md transition-shadow">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="ri-earth-line text-2xl text-primary"></i>
+                    </div>
+                    <h3 class="heading text-xl font-semibold text-gray-900 mb-3">Sustainable Sourcing</h3>
+                    <p class="text-gray-600">We partner with farmers who practice sustainable agriculture and fair labor
+                        practices.</p>
+                </div>
+                <!-- Quality Feature 4 -->
+                <div class="bg-white p-6 rounded-lg shadow-sm text-center hover:shadow-md transition-shadow">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="ri-leaf-line text-2xl text-primary"></i>
+                    </div>
+                    <h3 class="heading text-xl font-semibold text-gray-900 mb-3">Fresh Processing</h3>
+                    <p class="text-gray-600">Our small-batch processing preserves essential oils and flavor compounds
+                        for maximum freshness.</p>
+                </div>
+            </div>
+            <div class="mt-16 bg-white rounded-lg shadow-md overflow-hidden">
+                <div class="grid md:grid-cols-3">
+                    <div class="p-8 flex flex-col justify-center">
+                        <h3 class="heading text-2xl font-semibold text-gray-900 mb-4">Our Quality Control Process</h3>
+                        <p class="text-gray-600 mb-6">Every batch of our spices and herbs undergoes a rigorous six-step
+                            quality control process before reaching your kitchen.</p>
+                        <button
+                            class="inline-flex items-center px-6 py-3 bg-primary text-white rounded-button hover:bg-opacity-90 transition-colors whitespace-nowrap !rounded-button">
+                            Learn More
+                            <i class="ri-arrow-right-line ml-2"></i>
+                        </button>
+                    </div>
+                    <div class="md:col-span-2 h-80">
+                        <img src="./photo/Home/025.jpg" alt="Quality Control Process"
+                            class="w-full h-full object-cover object-top">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Newsletter Section -->
+    <section class="py-20 bg-primary/5">
+        <div class="container mx-auto px-6">
+            <div class="max-w-3xl mx-auto text-center">
+                <h2 class="heading text-3xl font-bold text-gray-900 mb-4">Join Our Culinary Community</h2>
+                <p class="text-gray-600 mb-8">Subscribe to receive exclusive recipes, spice pairing guides, and special
+                    offers directly to your inbox.</p>
+                <div class="flex flex-col sm:flex-row gap-4 max-w-xl mx-auto">
+                    <input type="email" placeholder="Your email address"
+                        class="flex-grow px-4 py-3 rounded-lg border-none shadow-sm focus:ring-2 focus:ring-primary/30 custom-input">
+                    <button
+                        class="px-6 py-3 bg-primary text-white rounded-button hover:bg-opacity-90 transition-colors whitespace-nowrap !rounded-button">
+                        Subscribe
+                    </button>
+                </div>
+                <div class="mt-4 text-sm text-gray-500 flex items-center justify-center">
+                    <input type="checkbox" class="custom-checkbox mr-2">
+                    <label>I agree to receive marketing communications from Spice Haven</label>
+                </div>
+            </div>
+        </div>
+    </section>
+        <!-- Footer -->
+        <footer class="bg-gray-900 text-white pt-16 pb-8">
+            <div class="container mx-auto px-6">
+                <div class="grid md:grid-cols-4 gap-8 mb-12">
+                    <div>
+                        <a href="#" class="text-3xl font-['Pacifico'] text-white mb-6 block">Abhinandan</a>
+                        <p class="text-gray-400 mb-6">We Process Quality, We Harvest Trust - Your trusted partner in premium
+                            Indian spices.</p>
+                        <div class="flex space-x-4">
+                            <a href="#"
+                                class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-primary transition-colors">
+                                <i class="ri-facebook-fill"></i>
+                            </a>
+                            <a href="#"
+                                class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-primary transition-colors">
+                                <i class="ri-instagram-line"></i>
+                            </a>
+                            <a href="#"
+                                class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-primary transition-colors">
+                                <i class="ri-twitter-x-line"></i>
+                            </a>
+                            <a href="#"
+                                class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-primary transition-colors">
+                                <i class="ri-linkedin-fill text-xl"></i>
+                            </a>
+                            
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                        <ul class="space-y-2">
+                            <li><a href="./Home.html" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+                            <li><a href="./Product.html" class="text-gray-400 hover:text-white transition-colors">Products</a></li>
+                            <li><a href="./Aboutus.html" class="text-gray-400 hover:text-white transition-colors text-white">About Us</a></li>
+                            <li><a href="./Contact.html" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-semibold mb-4">Contact Us</h4>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <div class="w-5 h-5 flex items-center justify-center mr-2 mt-1">
+                                    <i class="ri-map-pin-line text-primary"></i>
+                                </div>
+                                <span class="text-gray-400">Spice House, Unjha APMC Market, Gujarat, India</span>
+                            </li>
+                            <li class="flex items-center">
+                                <div class="w-5 h-5 flex items-center justify-center mr-2">
+                                    <i class="ri-phone-line text-primary"></i>
+                                </div>
+                                <span class="text-gray-400">+91 98765 43210</span>
+                            </li>
+                            <li class="flex items-center">
+                                <div class="w-5 h-5 flex items-center justify-center mr-2">
+                                    <i class="ri-mail-line text-primary"></i>
+                                </div>
+                                <span class="text-gray-400">info@abhinandan.com</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        
+                        <h4 class="text-lg font-semibold mt-6 mb-4">Certifications</h4>
+                        <div class="flex flex-wrap gap-3">
+                            <img src="https://deepseek.ai/generate-image?prompt=A%20USDA%20Organic%20certification%20logo%20in%20a%20clean%2C%20modern%20design%20with%20green%20and%20white%20colors"
+                                alt="Organic Certification" class="h-10 object-contain">
+                            <img src="https://deepseek.ai/generate-image?prompt=An%20EU%20Organic%20certification%20logo%20with%20a%20leaf%20symbol%20and%20stars%20in%20green%20and%20white"
+                                alt="EU Organic" class="h-10 object-contain">
+                            <img src="https://deepseek.ai/generate-image?prompt=A%20Spices%20Board%20of%20India%20certification%20logo%20with%20traditional%20Indian%20design%20elements"
+                                alt="Spices Board India" class="h-10 object-contain">
+                        </div>
+                    </div>
+                </div>
+                <div class="pt-8 border-t border-gray-800 text-center text-gray-500 text-sm">
+                    <p>© 2025 Abhinandan International. All rights reserved. | <a href="#"
+                            class="hover:text-white transition-colors">Privacy Policy</a> | <a href="#"
+                            class="hover:text-white transition-colors">Terms of Service</a></p>
+                </div>
+            </div>
+        </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const slider = document.getElementById('product-slider');
+            const certSlider = document.getElementById('cert-slider');
+            const certDots = document.getElementById('cert-dots');
+            // Certification slider functionality
+            const certSlides = certSlider.children;
+            const visibleCerts = 4;
+            let certPosition = 0;
+            let certAutoplayInterval;
+            // Create dots
+            for (let i = 0; i < Math.ceil(certSlides.length / visibleCerts); i++) {
+                const dot = document.createElement('button');
+                dot.className = 'w-3 h-3 rounded-full bg-gray-300 hover:bg-primary transition-colors';
+                dot.setAttribute('data-index', i);
+                certDots.appendChild(dot);
+            }
+            const dots = certDots.children;
+            dots[0].classList.add('bg-primary');
+            // Function to update certification slider position
+            function updateCertSlider(index) {
+                const slideWidth = certSlides[0].offsetWidth;
+                certPosition = index * (slideWidth * visibleCerts);
+                certSlider.style.transform = `translateX(-${certPosition}px)`;
+                // Update dots
+                Array.from(dots).forEach((dot, i) => {
+                    dot.classList.toggle('bg-primary', i === index);
+                    dot.classList.toggle('bg-gray-300', i !== index);
+                });
+            }
+            // Add click events to dots
+            Array.from(dots).forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    clearInterval(certAutoplayInterval);
+                    updateCertSlider(index);
+                    startCertAutoplay();
+                });
+            });
+            // Autoplay function
+            function startCertAutoplay() {
+                certAutoplayInterval = setInterval(() => {
+                    const currentIndex = Math.floor(certPosition / (certSlides[0].offsetWidth * visibleCerts));
+                    const nextIndex = (currentIndex + 1) % Math.ceil(certSlides.length / visibleCerts);
+                    updateCertSlider(nextIndex);
+                }, 3000);
+            }
+            // Start autoplay
+            startCertAutoplay();
+            // Pause autoplay on hover
+            certSlider.addEventListener('mouseenter', () => clearInterval(certAutoplayInterval));
+            certSlider.addEventListener('mouseleave', startCertAutoplay);
+            const prevBtn = document.getElementById('prev-btn');
+            const nextBtn = document.getElementById('next-btn');
+            let position = 0;
+            const slideWidth = 300; // Width of each slide including margin
+            const slidesCount = slider.children.length;
+            const visibleSlides = Math.floor(slider.parentElement.offsetWidth / slideWidth);
+            const maxPosition = (slidesCount - visibleSlides) * slideWidth;
+            function updateSliderPosition() {
+                slider.style.transform = `translateX(-${position}px)`;
+            }
+            prevBtn.addEventListener('click', function () {
+                position = Math.max(position - slideWidth, 0);
+                updateSliderPosition();
+            });
+            nextBtn.addEventListener('click', function () {
+                position = Math.min(position + slideWidth, maxPosition);
+                updateSliderPosition();
+            });
+            // Update on window resize
+            window.addEventListener('resize', function () {
+                const newVisibleSlides = Math.floor(slider.parentElement.offsetWidth / slideWidth);
+                const newMaxPosition = (slidesCount - newVisibleSlides) * slideWidth;
+                position = Math.min(position, newMaxPosition);
+                updateSliderPosition();
+            });
+        });
+        document.addEventListener('DOMContentLoaded', function () {
+            const checkboxes = document.querySelectorAll('.custom-checkbox');
+            checkboxes.forEach(checkbox => {
+                checkbox.addEventListener('click', function () {
+                    this.checked = !this.checked;
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

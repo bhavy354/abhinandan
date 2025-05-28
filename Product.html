@@ -1,0 +1,1516 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abhinandan International - Premium Spices & Products</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>tailwind.config = { theme: { extend: { colors: { primary: '#8B4513', secondary: '#6B8E23' }, borderRadius: { 'none': '0px', 'sm': '4px', DEFAULT: '8px', 'md': '12px', 'lg': '16px', 'xl': '20px', '2xl': '24px', '3xl': '32px', 'full': '9999px', 'button': '8px' } } } }</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <style>
+        :where([class^="ri-"])::before {
+            content: "\f3c2";
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .heading {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .custom-input:focus {
+            outline: none;
+        }
+
+        .custom-checkbox {
+            appearance: none;
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #8B4513;
+            border-radius: 4px;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .custom-checkbox:checked {
+            background-color: #8B4513;
+        }
+
+        .custom-checkbox:checked::after {
+            content: "";
+            position: absolute;
+            width: 5px;
+            height: 10px;
+            border: solid white;
+            border-width: 0 2px 2px 0;
+            top: 2px;
+            left: 6px;
+            transform: rotate(45deg);
+        }
+
+        .category-card {
+            transition: all 0.3s ease;
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-card {
+            transition: all 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body class="bg-white">
+    <!-- Header Section -->
+    <header class="sticky top-0 z-50 bg-white shadow-sm">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                    <!-- <a href="#" class="text-3xl font-['Pacifico'] text-primary">Abhinandan</a> -->
+                    <a href="#" class="flex items-center">
+                        <img src="photo/logo-4kk-1.png" alt="Abhinandan Logo" class="h-10 w-auto mr-4">
+                    </a>
+                    <nav class="hidden md:flex ml-10">
+                        <ul class="flex space-x-8">
+                            <li><a href="Home.html"
+                                    class="text-gray-800 font-medium hover:text-primary transition-colors">Home</a></li>
+                            <li><a href="Product.html"
+                                    class="text-primary font-medium hover:text-primary transition-colors">Products</a>
+                            </li>
+                            <li><a href="Aboutus.html"
+                                    class="text-gray-800 font-medium hover:text-primary transition-colors">About Us</a>
+                            </li>
+                            <li><a href="Contact.html"
+                                    class="text-gray-800 font-medium hover:text-primary transition-colors">Contact</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="flex items-center">
+                    <div class="relative mr-4">
+                        <input type="text" placeholder="Search products..."
+                            class="custom-input pl-10 pr-4 py-2 rounded-full bg-gray-100 text-sm w-48 border-none">
+                        <div
+                            class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 flex items-center justify-center text-gray-500">
+                            <i class="ri-search-line"></i>
+                        </div>
+                    </div>
+
+                    <button
+                        class="ml-4 md:flex items-center px-4 py-2 bg-primary text-white rounded-button hover:bg-opacity-90 transition-colors whitespace-nowrap hidden">
+                        <span>Get Quote</span>
+                    </button>
+                    <div class="md:hidden w-10 h-10 flex items-center justify-center">
+                        <i class="ri-menu-line text-xl"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Products Section -->
+    <section id="products" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="heading text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Product Categories</h2>
+                <p class="max-w-2xl mx-auto text-gray-600">Discover our extensive range of premium products, carefully
+                    sourced and processed to maintain the highest quality standards.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                <!-- Spices Category -->
+                <a href="#spices" class="category-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="h-48 overflow-hidden">
+                        <img src="./photo/Home/002.jpg" alt="Premium Spices Collection"
+                            class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="heading text-2xl font-semibold text-gray-900 mb-3">Spices</h3>
+                        <p class="text-gray-600 mb-4">Premium whole, crushed, and powdered spices including Mustard,
+                            Fenugreek, Chillies, Turmeric, and more.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">Whole</span>
+                            <span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">Crushed</span>
+                            <span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">Powder</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Raisins Category -->
+                <a href="#raisins" class="category-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="h-48 overflow-hidden">
+                        <img src="./photo/Home/003.jpg" alt="Premium Raisins Collection"
+                            class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="heading text-2xl font-semibold text-gray-900 mb-3">Raisins</h3>
+                        <p class="text-gray-600 mb-4">Premium quality raisins, naturally dried and carefully selected
+                            for the perfect sweetness and texture.</p>
+                    </div>
+                </a>
+
+                <!-- Herbs Category -->
+                <a href="#herbs" class="category-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="h-48 overflow-hidden">
+                        <img src="./photo/Home/004.jpg" alt="Premium Herbs Collection"
+                            class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="heading text-2xl font-semibold text-gray-900 mb-3">Herbs</h3>
+                        <p class="text-gray-600 mb-4">Fresh and dried culinary herbs, including Bay Leaf, Curry Leaf,
+                            and other aromatic varieties.</p>
+                    </div>
+                </a>
+
+                <!-- Grains Category -->
+                <a href="#grains" class="category-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="h-48 overflow-hidden">
+                        <img src="./photo/Home/005.jpg" alt="Premium Grains Collection"
+                            class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="heading text-2xl font-semibold text-gray-900 mb-3">Grains</h3>
+                        <p class="text-gray-600 mb-4">Premium quality grains sourced from the finest growing regions,
+                            perfect for every culinary need.</p>
+                    </div>
+                </a>
+
+                <!-- Oil Seeds Category -->
+                <a href="#oil-seeds" class="category-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="h-48 overflow-hidden">
+                        <img src="./photo/Home/006.jpg" alt="Premium Oil Seeds Collection"
+                            class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="heading text-2xl font-semibold text-gray-900 mb-3">Oil Seeds</h3>
+                        <p class="text-gray-600 mb-4">High-quality oil seeds selected for their exceptional oil content
+                            and nutritional value.</p>
+                    </div>
+                </a>
+
+                <!-- Dehydrated Vegetables Category -->
+                <a href="#dehydrated-vegetables" class="category-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="h-48 overflow-hidden">
+                        <img src="./photo/Home/007.jpg" alt="Dehydrated Vegetables Collection"
+                            class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="heading text-2xl font-semibold text-gray-900 mb-3">Dehydrated Vegetables</h3>
+                        <p class="text-gray-600 mb-4">Premium dehydrated vegetables that retain their natural flavor,
+                            color, and nutritional value.</p>
+                    </div>
+                </a>
+
+                <!-- Coconut Products Category -->
+                <a href="#coconut-products" class="category-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="h-48 overflow-hidden">
+                        <img src="./photo/Home/008.jpg" alt="Coconut Products Collection"
+                            class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="heading text-2xl font-semibold text-gray-900 mb-3">Coconut Products</h3>
+                        <p class="text-gray-600 mb-4">Premium coconut products processed to maintain their natural
+                            freshness and flavor.</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Spices Sub-Products -->
+    <section id="spices" class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="heading text-3xl md:text-4xl font-bold text-gray-900 mb-4">Spices Collection</h2>
+                <p class="max-w-2xl mx-auto text-gray-600">Our premium spices are sourced from the finest growing
+                    regions and processed with care to preserve their natural flavors and aromas.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                <!-- Mustard Kernels -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="h-48 overflow-hidden">
+                        <img src="./Product/Spices/mustard-kernels.jpg"
+                            alt="Mustard Kernels" class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="heading text-xl font-semibold text-gray-900 mb-2">Mustard Kernels</h3>
+                        <p class="text-gray-600 mb-3">Premium quality yellow mustard seeds with a mild, slightly nutty
+                            flavor.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-medium">Whole | Crushed | Powder</span>
+                            <a href="01Spices.html?product=mustard-kernels"
+                                class="px-4 py-2 bg-primary text-white rounded-button hover:bg-opacity-90 transition-colors text-sm">
+                                View Details
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mustard Flakes -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="h-48 overflow-hidden">
+                        <img src="./Product/Spices/mustard-flakes.jpg"
+                            alt="Mustard Flakes" class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="heading text-xl font-semibold text-gray-900 mb-2">Mustard Flakes</h3>
+                        <p class="text-gray-600 mb-3">Crushed mustard seeds that release more flavor when cooked.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-medium">Whole | Crushed</span>
+                            <a href="01Spices.html?product=mustard-flakes"
+                                class="px-4 py-2 bg-primary text-white rounded-button hover:bg-opacity-90 transition-colors text-sm">
+                                View Details
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mustard Seeds -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="h-48 overflow-hidden">
+                        <img src="./Product/Spices/mustard-seeds.jpg"
+                            alt="Mustard Seeds" class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="heading text-xl font-semibold text-gray-900 mb-2">Mustard Seeds</h3>
+                        <p class="text-gray-600 mb-3">Yellow and brown varieties with pungent flavor.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-medium">Whole</span>
+                            <a href="01Spices.html?product=mustard-seeds"
+                                class="px-4 py-2 bg-primary text-white rounded-button hover:bg-opacity-90 transition-colors text-sm">
+                                View Details
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fenugreek Seeds -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="h-48 overflow-hidden">
+                        <img src="./Product/Spices/fenugreek-seeds.jpg"
+                            alt="Fenugreek Seeds" class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="heading text-xl font-semibold text-gray-900 mb-2">Fenugreek Seeds</h3>
+                        <p class="text-gray-600 mb-3">Aromatic seeds with a slightly bitter taste and maple-like aroma.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-medium">Whole | Powder</span>
+                            <a href="01Spices.html?product=fenugreek-seeds"
+                                class="px-4 py-2 bg-primary text-white rounded-button hover:bg-opacity-90 transition-colors text-sm">
+                                View Details
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chillies -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="h-48 overflow-hidden">
+                        <img src="./Product/Spices/chillies.jpg"
+                            alt="Chillies" class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="heading text-xl font-semibold text-gray-900 mb-2">Chillies</h3>
+                        <p class="text-gray-600 mb-3">Premium quality dried red chillies with varying heat levels.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-medium">Whole | Powder</span>
+                            <a href="01Spices.html?product=chillies"
+                                class="px-4 py-2 bg-primary text-white rounded-button hover:bg-opacity-90 transition-colors text-sm">
+                                View Details
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Turmeric Finger -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="h-48 overflow-hidden">
+                        <img src="./Product/Spices/turmeric-finger.jpg" alt="Turmeric Finger"
+                            class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="heading text-xl font-semibold text-gray-900 mb-2">Turmeric Finger</h3>
+                        <p class="text-gray-600 mb-3">Whole turmeric rhizomes with deep orange color and earthy flavor.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-medium">Whole|Powder</span>
+                            <a href="01Spices.html?product=turmeric-finger"
+                                class="px-4 py-2 bg-primary text-white rounded-button hover:bg-opacity-90 transition-colors text-sm">
+                                View Details
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fennel Seeds -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="h-48 overflow-hidden">
+                        <img src="./Product/Spices/fennel-seeds.jpg"
+                            alt="Fennel Seeds" class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="heading text-xl font-semibold text-gray-900 mb-2">Fennel Seeds</h3>
+                        <p class="text-gray-600 mb-3">Sweet, aromatic seeds with a mild licorice flavor.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-medium">Whole | Powder</span>
+                            <a href="01Spices.html?product=fennel-seeds"
+                                class="px-4 py-2 bg-primary text-white rounded-button hover:bg-opacity-90 transition-colors text-sm">
+                                View Details
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cumin Seeds -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="h-48 overflow-hidden">
+                        <img src="./Product/Spices/cumin-seeds.jpg"
+                            alt="Cumin Seeds" class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="heading text-xl font-semibold text-gray-900 mb-2">Cumin Seeds</h3>
+                        <p class="text-gray-600 mb-3">Warm, earthy flavor with a slightly bitter undertone.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-medium">Whole | Powder</span>
+                            <a href="01Spices.html?product=cumin-seeds"
+                                class="px-4 py-2 bg-primary text-white rounded-button hover:bg-opacity-90 transition-colors text-sm">
+                                View Details
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Black Cumin -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="h-48 overflow-hidden">
+                        <img src="./Product/Spices/black-cumin.jpg"
+                            alt="Black Cumin" class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="heading text-xl font-semibold text-gray-900 mb-2">Black Cumin</h3>
+                        <p class="text-gray-600 mb-3">Also known as Nigella seeds, with a slightly bitter, peppery
+                            flavor.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-medium">Whole</span>
+                            <a href="01Spices.html?product=black-cumin"
+                                class="px-4 py-2 bg-primary text-white rounded-button hover:bg-opacity-90 transition-colors text-sm">
+                                View Details
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Celery Seeds -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="h-48 overflow-hidden">
+                        <img src="./Product/Spices/celery-seeds.jpg"
+                            alt="Celery Seeds" class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="heading text-xl font-semibold text-gray-900 mb-2">Celery Seeds</h3>
+                        <p class="text-gray-600 mb-3">Tiny seeds with intense celery flavor and aroma.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-medium">Whole</span>
+                            <a href="01Spices.html?product=celery-seeds"
+                                class="px-4 py-2 bg-primary text-white rounded-button hover:bg-opacity-90 transition-colors text-sm">
+                                View Details
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ginger Fried -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="h-48 overflow-hidden">
+                        <img src="./Product/Spices/ginger-fried.jpg"
+                            alt="Ginger Fried" class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="heading text-xl font-semibold text-gray-900 mb-2">Ginger Fried</h3>
+                        <p class="text-gray-600 mb-3">Crispy fried ginger with concentrated flavor.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-medium">Whole | Powder</span>
+                            <a href="01Spices.html?product=ginger-fried"
+                                class="px-4 py-2 bg-primary text-white rounded-button hover:bg-opacity-90 transition-colors text-sm">
+                                View Details
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                
+
+                <!-- Nutmeg & Mace -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="h-48 overflow-hidden">
+                        <img src="./Product/Spices/nutmeg-mace.jpg"
+                            alt="Nutmeg & Mace" class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="heading text-xl font-semibold text-gray-900 mb-2">Nutmeg & Mace</h3>
+                        <p class="text-gray-600 mb-3">Warm, sweet and aromatic spices from the same fruit.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-medium">Whole | Powder</span>
+                            <a href="01Spices.html?product=nutmeg-mace"
+                                class="px-4 py-2 bg-primary text-white rounded-button hover:bg-opacity-90 transition-colors text-sm">
+                                View Details
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Coriander Seeds -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="h-48 overflow-hidden">
+                        <img src="./Product/Spices/coriander-seeds.jpg"
+                            alt="Coriander Seeds" class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="heading text-xl font-semibold text-gray-900 mb-2">Coriander Seeds</h3>
+                        <p class="text-gray-600 mb-3">Mild, citrusy flavor with a warm, nutty aroma.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-medium">Whole | Powder</span>
+                            <a href="01Spices.html?product=coriander-seeds"
+                                class="px-4 py-2 bg-primary text-white rounded-button hover:bg-opacity-90 transition-colors text-sm">
+                                View Details
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Garlic -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="h-48 overflow-hidden">
+                        <img src="./Product/Spices/garlic.jpg"
+                            alt="Garlic" class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="heading text-xl font-semibold text-gray-900 mb-2">Garlic</h3>
+                        <p class="text-gray-600 mb-3">Dried garlic with concentrated flavor and aroma.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-medium">Whole | Powder</span>
+                            <a href="01Spices.html?product=garlic"
+                                class="px-4 py-2 bg-primary text-white rounded-button hover:bg-opacity-90 transition-colors text-sm">
+                                View Details
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tamarind -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="h-48 overflow-hidden">
+                        <img src="./Product/Spices/tamarind.jpg"
+                            alt="Tamarind" class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="heading text-xl font-semibold text-gray-900 mb-2">Tamarind</h3>
+                        <p class="text-gray-600 mb-3">Sweet and sour fruit used in many cuisines.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-medium">Whole | Paste</span>
+                            <a href="01Spices.html?product=tamarind"
+                                class="px-4 py-2 bg-primary text-white rounded-button hover:bg-opacity-90 transition-colors text-sm">
+                                View Details
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bay Leaf -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="h-48 overflow-hidden">
+                        <img src="./Product/Spices/bay-leaf.jpg"
+                            alt="Bay Leaf" class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="heading text-xl font-semibold text-gray-900 mb-2">Bay Leaf</h3>
+                        <p class="text-gray-600 mb-3">Aromatic leaves used to flavor soups, stews and braises.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-medium">Whole</span>
+                            <a href="01Spices.html?product=bay-leaf"
+                                class="px-4 py-2 bg-primary text-white rounded-button hover:bg-opacity-90 transition-colors text-sm">
+                                View Details
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Big Cardamon -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="h-48 overflow-hidden">
+                        <img src="./Product/Spices/big-cardamon.jpg"
+                            alt="Big Cardamon" class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="heading text-xl font-semibold text-gray-900 mb-2">Big Cardamon</h3>
+                        <p class="text-gray-600 mb-3">Large, smoky flavored cardamom pods.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-medium">Whole</span>
+                            <a href="01Spices.html?product=big-cardamon"
+                                class="px-4 py-2 bg-primary text-white rounded-button hover:bg-opacity-90 transition-colors text-sm">
+                                View Details
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <!-- Ajwain Seeds -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="h-48 overflow-hidden">
+                        <img src="./Product/Spices/ajwain.jpg"
+                            alt="Ajwain Seeds" class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="heading text-xl font-semibold text-gray-900 mb-2">Ajwain Seeds</h3>
+                        <p class="text-gray-600 mb-3">Strong, thyme-like flavor with digestive benefits.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-medium">Whole</span>
+                            <a href="01Spices.html?product=ajwain"
+                                class="px-4 py-2 bg-primary text-white rounded-button hover:bg-opacity-90 transition-colors text-sm">
+                                View Details
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Clove -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="h-48 overflow-hidden">
+                        <img src="./Product/Spices/clove.jpg"
+                            alt="Clove" class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="heading text-xl font-semibold text-gray-900 mb-2">Clove</h3>
+                        <p class="text-gray-600 mb-3">Strong, sweet and aromatic spice with numbing quality.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-medium">Whole | Powder</span>
+                            <a href="01Spices.html?product=clove"
+                                class="px-4 py-2 bg-primary text-white rounded-button hover:bg-opacity-90 transition-colors text-sm">
+                                View Details
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Curry Leaf -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="h-48 overflow-hidden">
+                        <img src="./Product/Spices/curry-leaf.jpg"
+                            alt="Curry Leaf" class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="heading text-xl font-semibold text-gray-900 mb-2">Curry Leaf</h3>
+                        <p class="text-gray-600 mb-3">Aromatic leaves essential to South Indian cuisine.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-medium">Fresh | Dried</span>
+                            <a href="01Spices.html?product=curry-leaf"
+                                class="px-4 py-2 bg-primary text-white rounded-button hover:bg-opacity-90 transition-colors text-sm">
+                                View Details
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Black Pepper -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="h-48 overflow-hidden">
+                        <img src="./Product/Spices/black-pepper.jpg"
+                            alt="Black Pepper" class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="heading text-xl font-semibold text-gray-900 mb-2">Black Pepper</h3>
+                        <p class="text-gray-600 mb-3">The king of spices in three varieties.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-medium">Whole | Powder</span>
+                            <a href="01Spices.html?product=black-pepper"
+                                class="px-4 py-2 bg-primary text-white rounded-button hover:bg-opacity-90 transition-colors text-sm">
+                                View Details
+                            </a>
+                        </div>
+                    </div>
+                </div>                               
+
+                <!-- White Pepper -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="h-48 overflow-hidden">
+                        <img src="./Product/Spices/white-pepper.jpg"
+                            alt="White Pepper" class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="heading text-xl font-semibold text-gray-900 mb-2">White Pepper</h3>
+                        <p class="text-gray-600 mb-3">The king of spices in three varieties.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-medium">Whole | Powder</span>
+                            <a href="01Spices.html?product=white-pepper"
+                                class="px-4 py-2 bg-primary text-white rounded-button hover:bg-opacity-90 transition-colors text-sm">
+                                View Details
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Green Pepper -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="h-48 overflow-hidden">
+                        <img src="./Product/Spices/green-pepper.jpg"
+                            alt="Green Pepper" class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="heading text-xl font-semibold text-gray-900 mb-2">Green Pepper</h3>
+                        <p class="text-gray-600 mb-3">The king of spices in three varieties.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-medium">Whole | Powder</span>
+                            <a href="01Spices.html?product=green-pepper"
+                                class="px-4 py-2 bg-primary text-white rounded-button hover:bg-opacity-90 transition-colors text-sm">
+                                View Details
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Curry Powder -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="h-48 overflow-hidden">
+                        <img src="./Product/Spices/curry-powder.jpg"
+                            alt="Curry Powder" class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="heading text-xl font-semibold text-gray-900 mb-2">Curry Powder</h3>
+                        <p class="text-gray-600 mb-3">Aromatic blend of spices for authentic curry flavor.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-medium">Powder</span>
+                            <a href="01Spices.html?product=curry-powder"
+                                class="px-4 py-2 bg-primary text-white rounded-button hover:bg-opacity-90 transition-colors text-sm">
+                                View Details
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Raisins Sub-Products -->
+    <section id="raisins" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="heading text-3xl md:text-4xl font-bold text-gray-900 mb-4">Raisins Collection</h2>
+                <p class="max-w-2xl mx-auto text-gray-600">Our premium raisins are naturally sun-dried and carefully
+                    selected for perfect sweetness and texture.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                <!-- Golden Raisins -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="h-48 overflow-hidden">
+                        <img src="./Product/Raisins/golden.jpg" alt="Golden Raisins"
+                            class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="heading text-xl font-semibold text-gray-900 mb-2">Golden Raisins</h3>
+                        <p class="text-gray-600 mb-3">Sweet, plump raisins with a golden hue and delicate flavor.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-medium">Whole</span>
+                            <a href="02Raisins.html?product=golden"
+                                class="px-4 py-2 bg-primary text-white rounded-button hover:bg-opacity-90 transition-colors text-sm">
+                                View Details
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Black Raisins -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="h-48 overflow-hidden">
+                        <img src="./Product/Raisins/black.jpg" alt="Black Raisins"
+                            class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="heading text-xl font-semibold text-gray-900 mb-2">Black Raisins</h3>
+                        <p class="text-gray-600 mb-3">Dark, intensely sweet raisins with rich flavor.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-medium">Whole</span>
+                            <a href="02Raisins.html?product=black"
+                                class="px-4 py-2 bg-primary text-white rounded-button hover:bg-opacity-90 transition-colors text-sm">
+                                View Details
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Brown Raisins -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="h-48 overflow-hidden">
+                        <img src="./Product/Raisins/brown.jpg" alt="Brown Raisins"
+                            class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="heading text-xl font-semibold text-gray-900 mb-2">Brown Raisins</h3>
+                        <p class="text-gray-600 mb-3">Traditional sun-dried raisins with natural brown color.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-medium">Whole</span>
+                            <a href="02Raisins.html?product=brown"
+                                class="px-4 py-2 bg-primary text-white rounded-button hover:bg-opacity-90 transition-colors text-sm">
+                                View Details
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Malayar Raisins -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="h-48 overflow-hidden">
+                        <img src="./Product/Raisins/malayar.jpg" alt="Malayar Raisins"
+                            class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="heading text-xl font-semibold text-gray-900 mb-2">Malayar Raisins</h3>
+                        <p class="text-gray-600 mb-3">Large, premium quality raisins from specific grape varieties.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-medium">Whole</span>
+                            <a href="02Raisins.html?product=malayar"
+                                class="px-4 py-2 bg-primary text-white rounded-button hover:bg-opacity-90 transition-colors text-sm">
+                                View Details
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Green Raisins -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="h-48 overflow-hidden">
+                        <img src="./Product/Raisins/green.jpg" alt="Green Raisins"
+                            class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="heading text-xl font-semibold text-gray-900 mb-2">Green Raisins</h3>
+                        <p class="text-gray-600 mb-3">Mild, sweet raisins with a distinctive green color.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-medium">Whole</span>
+                            <a href="02Raisins.html?product=green"
+                                class="px-4 py-2 bg-primary text-white rounded-button hover:bg-opacity-90 transition-colors text-sm">
+                                View Details
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Herbs Sub-Products -->
+    <section id="herbs" class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="heading text-3xl md:text-4xl font-bold text-gray-900 mb-4">Herbs Collection</h2>
+                <p class="max-w-2xl mx-auto text-gray-600">Our premium herbs are carefully harvested and processed to
+                    preserve their essential oils and flavors.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                <!-- Zeodary Roots -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="h-48 overflow-hidden">
+                        <img src="./Product/Herbs/zeodary-roots.jpg" alt="Zeodary Roots"
+                            class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="heading text-xl font-semibold text-gray-900 mb-2">Zeodary Roots</h3>
+                        <p class="text-gray-600 mb-3">Aromatic roots used in traditional medicine and cooking.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-medium">Whole</span>
+                            <a href="03Herbs.html?product=zeodary-roots"
+                                class="px-4 py-2 bg-primary text-white rounded-button hover:bg-opacity-90 transition-colors text-sm">
+                                View Details
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sena Leaves and Pods -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="h-48 overflow-hidden">
+                        <img src="./Product/Herbs/sena-leaves-pods.jpg" alt="Sena Leaves and Pods"
+                            class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="heading text-xl font-semibold text-gray-900 mb-2">Sena Leaves and Pods</h3>
+                        <p class="text-gray-600 mb-3">Medicinal herb with digestive benefits.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-medium">Whole</span>
+                            <a href="03Herbs.html?product=sena-leaves-pods"
+                                class="px-4 py-2 bg-primary text-white rounded-button hover:bg-opacity-90 transition-colors text-sm">
+                                View Details
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Basil Seeds -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="h-48 overflow-hidden">
+                        <img src="./Product/Herbs/basil-seeds.jpg" alt="Basil Seeds"
+                            class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="heading text-xl font-semibold text-gray-900 mb-2">Basil Seeds</h3>
+                        <p class="text-gray-600 mb-3">Tiny seeds that swell in liquid, used in drinks and desserts.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-medium">Whole</span>
+                            <a href="03Herbs.html?product=basil-seeds"
+                                class="px-4 py-2 bg-primary text-white rounded-button hover:bg-opacity-90 transition-colors text-sm">
+                                View Details
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cassia Small -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="h-48 overflow-hidden">
+                        <img src="./Product/Herbs/cassia-small.jpg" alt="Cassia Small and Big"
+                            class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="heading text-xl font-semibold text-gray-900 mb-2">Cassia Small</h3>
+                        <p class="text-gray-600 mb-3">Aromatic bark similar to cinnamon but with stronger flavor.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-medium">Whole | Powder</span>
+                            <a href="03Herbs.html?product=cassia-small"
+                                class="px-4 py-2 bg-primary text-white rounded-button hover:bg-opacity-90 transition-colors text-sm">
+                                View Details
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cassia Big -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="h-48 overflow-hidden">
+                        <img src="./Product/Herbs/cassia-big.jpg" alt="Cassia Small and Big"
+                            class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="heading text-xl font-semibold text-gray-900 mb-2">Cassia Big</h3>
+                        <p class="text-gray-600 mb-3">Big cassia comes from mature Cinnamomum cassia trees.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-medium">Whole | Powder</span>
+                            <a href="03Herbs.html?product=cassia-big"
+                                class="px-4 py-2 bg-primary text-white rounded-button hover:bg-opacity-90 transition-colors text-sm">
+                                View Details
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Annato Seeds -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="h-48 overflow-hidden">
+                        <img src="./Product/Herbs/annato-seeds.jpg" alt="Annato Seeds"
+                            class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="heading text-xl font-semibold text-gray-900 mb-2">Annato Seeds</h3>
+                        <p class="text-gray-600 mb-3">Natural food coloring with mild, slightly peppery flavor.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-medium">Whole | Powder</span>
+                            <a href="03Herbs.html?product=annato-seeds"
+                                class="px-4 py-2 bg-primary text-white rounded-button hover:bg-opacity-90 transition-colors text-sm">
+                                View Details
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Grains Sub-Products -->
+    <section id="grains" class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="heading text-3xl md:text-4xl font-bold text-gray-900 mb-4">Premium Grains Collection</h2>
+                <p class="max-w-2xl mx-auto text-gray-600">Our premium grains are sourced from the finest growing
+                    regions and processed with care to preserve their nutritional value and quality.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                <!-- Wheat -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="h-48 overflow-hidden">
+                        <img src="./Product/Grains/wheat.jpg" alt="Premium Wheat"
+                            class="w-full h-full object-cover object-center">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="heading text-xl font-semibold text-gray-900 mb-2">Premium Wheat</h3>
+                        <p class="text-gray-600 mb-3">High-quality wheat grains with excellent gluten content for baking
+                            and cooking.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-medium">Whole Grain</span>
+                            <a href="04Grains.html?product=wheat"
+                                class="px-4 py-2 bg-primary text-white rounded-button hover:bg-opacity-90 transition-colors text-sm">
+                                View Details
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Amaranth Seeds -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="h-48 overflow-hidden">
+                        <img src="./Product/Grains/amaranth.jpg" alt="Amaranth Seeds"
+                            class="w-full h-full object-cover object-center">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="heading text-xl font-semibold text-gray-900 mb-2">Amaranth Seeds</h3>
+                        <p class="text-gray-600 mb-3">Nutritious ancient grain with high protein content and gluten-free
+                            properties.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-medium">Whole Grain</span>
+                            <a href="04Grains.html?product=amaranth"
+                                class="px-4 py-2 bg-primary text-white rounded-button hover:bg-opacity-90 transition-colors text-sm">
+                                View Details
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Millet -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="h-48 overflow-hidden">
+                        <img src="./Product/Grains/millet.jpg" alt="Millet"
+                            class="w-full h-full object-cover object-center">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="heading text-xl font-semibold text-gray-900 mb-2">Millet</h3>
+                        <p class="text-gray-600 mb-3">Gluten-free ancient grain rich in fiber, protein and essential
+                            minerals.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-medium">Whole Grain</span>
+                            <a href="04Grains.html?product=millet"
+                                class="px-4 py-2 bg-primary text-white rounded-button hover:bg-opacity-90 transition-colors text-sm">
+                                View Details
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sorghum -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="h-48 overflow-hidden">
+                        <img src="./Product/Grains/sorghum.jpg" alt="Sorghum"
+                            class="w-full h-full object-cover object-center">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="heading text-xl font-semibold text-gray-900 mb-2">Sorghum</h3>
+                        <p class="text-gray-600 mb-3">Versatile gluten-free grain with high antioxidant content and
+                            nutty flavor.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-medium">Whole Grain</span>
+                            <a href="04Grains.html?product=sorghum"
+                                class="px-4 py-2 bg-primary text-white rounded-button hover:bg-opacity-90 transition-colors text-sm">
+                                View Details
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Maize -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="h-48 overflow-hidden">
+                        <img src="./Product/Grains/maize.jpg" alt="Maize"
+                            class="w-full h-full object-cover object-center">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="heading text-xl font-semibold text-gray-900 mb-2">Maize</h3>
+                        <p class="text-gray-600 mb-3">Premium quality corn grains for various culinary and industrial
+                            applications.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-medium">Whole Kernel</span>
+                            <a href="04Grains.html?product=maize"
+                                class="px-4 py-2 bg-primary text-white rounded-button hover:bg-opacity-90 transition-colors text-sm">
+                                View Details
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Oil Seeds Sub-Products -->
+    <section id="oil-seeds" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="heading text-3xl md:text-4xl font-bold text-gray-900 mb-4">Premium Oil Seeds Collection</h2>
+                <p class="max-w-2xl mx-auto text-gray-600">Our oil seeds are carefully selected for their high oil
+                    content and nutritional value, perfect for oil extraction and culinary uses.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                <!-- Natural Sesame Seeds -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="h-48 overflow-hidden">
+                        <img src="./Product/OilSeeds/natural-sesame.jpg" alt="Natural Sesame Seeds"
+                            class="w-full h-full object-cover object-center">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="heading text-xl font-semibold text-gray-900 mb-2">Natural Sesame Seeds</h3>
+                        <p class="text-gray-600 mb-3">Premium quality sesame seeds with natural hull, rich in oil and
+                            nutrients.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-medium">Whole Seeds</span>
+                            <a href="05OilSeeds.html?product=natural-sesame"
+                                class="px-4 py-2 bg-primary text-white rounded-button hover:bg-opacity-90 transition-colors text-sm">
+                                View Details
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hulled Sesame Seeds -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="h-48 overflow-hidden">
+                        <img src="./Product/OilSeeds/hulled-sesame.jpg" alt="Hulled Sesame Seeds"
+                            class="w-full h-full object-cover object-center">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="heading text-xl font-semibold text-gray-900 mb-2">Hulled Sesame Seeds</h3>
+                        <p class="text-gray-600 mb-3">Premium quality hulled sesame seeds with creamy white color and
+                            mild flavor.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-medium">Hulled</span>
+                            <a href="05OilSeeds.html?product=hullel-sesame"
+                                class="px-4 py-2 bg-primary text-white rounded-button hover:bg-opacity-90 transition-colors text-sm">
+                                View Details
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Peanut (Blanched) -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="h-48 overflow-hidden">
+                        <img src="./Product/OilSeeds/peanut-blanched.jpg" alt="Peanut (Blanched)"
+                            class="w-full h-full object-cover object-center">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="heading text-xl font-semibold text-gray-900 mb-2">Peanut (Blanched)</h3>
+                        <p class="text-gray-600 mb-3">Premium quality blanched peanuts with skin removed, perfect for
+                            oil extraction.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-medium">Blanched</span>
+                            <a href="05OilSeeds.html?product=peanut-blanched"
+                                class="px-4 py-2 bg-primary text-white rounded-button hover:bg-opacity-90 transition-colors text-sm">
+                                View Details
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Niger Seed -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="h-48 overflow-hidden">
+                        <img src="./Product/OilSeeds/niger-seed.jpg" alt="Niger Seed"
+                            class="w-full h-full object-cover object-center">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="heading text-xl font-semibold text-gray-900 mb-2">Niger Seed</h3>
+                        <p class="text-gray-600 mb-3">Small black seeds with high oil content, commonly used for bird
+                            feed and oil.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-medium">Whole Seeds</span>
+                            <a href="05OilSeeds.html?product=niger-seed"
+                                class="px-4 py-2 bg-primary text-white rounded-button hover:bg-opacity-90 transition-colors text-sm">
+                                View Details
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lin Seed -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="h-48 overflow-hidden">
+                        <img src="./Product/OilSeeds/lin-seed.jpg" alt="Lin Seed"
+                            class="w-full h-full object-cover object-center">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="heading text-xl font-semibold text-gray-900 mb-2">Lin Seed</h3>
+                        <p class="text-gray-600 mb-3">Also known as flax seeds, rich in omega-3 fatty acids and dietary
+                            fiber.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-medium">Whole Seeds</span>
+                            <a href="05OilSeeds.html?product=lin-seed"
+                                class="px-4 py-2 bg-primary text-white rounded-button hover:bg-opacity-90 transition-colors text-sm">
+                                View Details
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Flax Seed Organic-->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="h-48 overflow-hidden">
+                        <img src="./Product/OilSeeds/flax-seed-organic.jpg" alt="Flax Seed"
+                            class="w-full h-full object-cover object-center">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="heading text-xl font-semibold text-gray-900 mb-2">Flax Seed Organic</h3>
+                        <p class="text-gray-600 mb-3">Organic flax is cultivated using sustainable farming practices.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-medium">Whole Seed</span>
+                            <a href="05OilSeeds.html?product=flax-seed-organic"
+                                class="px-4 py-2 bg-primary text-white rounded-button hover:bg-opacity-90 transition-colors text-sm">
+                                View Details
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Flax Seed Conventional -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="h-48 overflow-hidden">
+                        <img src="./Product/OilSeeds/flax-seed-conventional.jpg" alt="Flax Seed"
+                            class="w-full h-full object-cover object-center">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="heading text-xl font-semibold text-gray-900 mb-2">Flax Seed</h3>
+                        <p class="text-gray-600 mb-3">flax seeds are high-quality oil seeds packed with nutritional
+                            benefits.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-medium">Whole Seed</span>
+                            <a href="05OilSeeds.html?product=flax-seed-conventional"
+                                class="px-4 py-2 bg-primary text-white rounded-button hover:bg-opacity-90 transition-colors text-sm">
+                                View Details
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Dehydrated Vegetables Sub-Products -->
+    <section id="dehydrated-vegetables" class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="heading text-3xl md:text-4xl font-bold text-gray-900 mb-4">Dehydrated Vegetables Collection
+                </h2>
+                <p class="max-w-2xl mx-auto text-gray-600">Our dehydrated vegetables retain maximum flavor, color and
+                    nutrition while offering extended shelf life and convenience.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                <!-- Onion Flakes -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="h-48 overflow-hidden">
+                        <img src="./Product/DehydratedVegetables/onion-flakes.JPG" alt="Onion Flakes"
+                            class="w-full h-full object-cover object-center">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="heading text-xl font-semibold text-gray-900 mb-2">Onion Flakes</h3>
+                        <p class="text-gray-600 mb-3">Premium quality dehydrated onion flakes with strong flavor and
+                            aroma.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-medium">Flakes</span>
+                            <a href="06DehydratedVegetables.html?product=onion-flakes"
+                                class="px-4 py-2 bg-primary text-white rounded-button hover:bg-opacity-90 transition-colors text-sm">
+                                View Details
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Garlic Granules -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="h-48 overflow-hidden">
+                        <img src="./Product/DehydratedVegetables/garlic-granules.JPG" alt="Garlic Granules"
+                            class="w-full h-full object-cover object-center">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="heading text-xl font-semibold text-gray-900 mb-2">Garlic Granules</h3>
+                        <p class="text-gray-600 mb-3">Premium quality dehydrated garlic in granular form for easy use.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-medium">Granules</span>
+                            <a href="06DehydratedVegetables.html?product=garlic-granules"
+                                class="px-4 py-2 bg-primary text-white rounded-button hover:bg-opacity-90 transition-colors text-sm">
+                                View Details
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Garlic Powder -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="h-48 overflow-hidden">
+                        <img src="./Product/DehydratedVegetables/garlic-powder.JPG" alt="Garlic Powder"
+                            class="w-full h-full object-cover object-center">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="heading text-xl font-semibold text-gray-900 mb-2">Garlic Powder</h3>
+                        <p class="text-gray-600 mb-3">Fine powder made from premium quality dehydrated garlic.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-medium">Powder</span>
+                            <a href="06DehydratedVegetables.html?product=garlic-powder"
+                                class="px-4 py-2 bg-primary text-white rounded-button hover:bg-opacity-90 transition-colors text-sm">
+                                View Details
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Onion Powder -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="h-48 overflow-hidden">
+                        <img src="./Product/DehydratedVegetables/onion-powder.JPG" alt="Onion Powder"
+                            class="w-full h-full object-cover object-center">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="heading text-xl font-semibold text-gray-900 mb-2">Onion Powder</h3>
+                        <p class="text-gray-600 mb-3">Fine powder made from premium quality dehydrated onions.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-medium">Powder</span>
+                            <a href="06DehydratedVegetables.html?product=onion-powder"
+                                class="px-4 py-2 bg-primary text-white rounded-button hover:bg-opacity-90 transition-colors text-sm">
+                                View Details
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tomato -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="h-48 overflow-hidden">
+                        <img src="./Product/DehydratedVegetables/tomato.jpg" alt="Dehydrated Tomato"
+                            class="w-full h-full object-cover object-center">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="heading text-xl font-semibold text-gray-900 mb-2">Dehydrated Tomato</h3>
+                        <p class="text-gray-600 mb-3">Sun-dried tomatoes with concentrated flavor and natural sweetness.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-medium">Pieces/Powder</span>
+                            <a href="06DehydratedVegetables.html?product=tomato"
+                                class="px-4 py-2 bg-primary text-white rounded-button hover:bg-opacity-90 transition-colors text-sm">
+                                View Details
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Okra -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="h-48 overflow-hidden">
+                        <img src="./Product/DehydratedVegetables/okra.jpg" alt="Dehydrated Okra"
+                            class="w-full h-full object-cover object-center">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="heading text-xl font-semibold text-gray-900 mb-2">Dehydrated Okra</h3>
+                        <p class="text-gray-600 mb-3">Premium quality dehydrated okra with excellent rehydration
+                            properties.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-medium">Slices</span>
+                            <a href="06DehydratedVegetables.html?product=okra"
+                                class="px-4 py-2 bg-primary text-white rounded-button hover:bg-opacity-90 transition-colors text-sm">
+                                View Details
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Coconut Products Sub-Products -->
+    <section id="coconut-products" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="heading text-3xl md:text-4xl font-bold text-gray-900 mb-4">Premium Coconut Products</h2>
+                <p class="max-w-2xl mx-auto text-gray-600">Our coconut products are processed from fresh coconuts to
+                    maintain maximum flavor, aroma and nutritional value.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                <!-- Dessicated Coconut -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="h-48 overflow-hidden">
+                        <img src="./Product/Coconut Products/Image/desiccated coconut.webp" alt="Dessicated Coconut"
+                            class="w-full h-full object-cover object-center">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="heading text-xl font-semibold text-gray-900 mb-2">Dessicated Coconut</h3>
+                        <p class="text-gray-600 mb-3">Finely grated and dried coconut meat available in various grades.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-medium">Fine/Medium</span>
+                            <a href="./Product/CoconutProducts/Desiccated Coconut.html"
+                                class="px-4 py-2 bg-primary text-white rounded-button hover:bg-opacity-90 transition-colors text-sm">
+                                View Details
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Coconut Flakes -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="h-48 overflow-hidden">
+                        <img src="./Product/CoconutProducts/Image/Coconut Flakes.webp" alt="Coconut Flakes"
+                            class="w-full h-full object-cover object-center">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="heading text-xl font-semibold text-gray-900 mb-2">Coconut Flakes</h3>
+                        <p class="text-gray-600 mb-3">Premium quality coconut flakes for baking and confectionery.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-medium">Flakes</span>
+                            <a href="./Product/CoconutProducts/Coconut Flakes.html"
+                                class="px-4 py-2 bg-primary text-white rounded-button hover:bg-opacity-90 transition-colors text-sm">
+                                View Details
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Copra -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="h-48 overflow-hidden">
+                        <img src="./Product/CoconutProducts/Image/Copra.webp" alt="Copra"
+                            class="w-full h-full object-cover object-center">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="heading text-xl font-semibold text-gray-900 mb-2">Copra</h3>
+                        <p class="text-gray-600 mb-3">Dried coconut kernels used for oil extraction and other
+                            applications.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-medium">Whole/Pieces</span>
+                            <a href="./Product/CoconutProducts/Copra.html"
+                                class="px-4 py-2 bg-primary text-white rounded-button hover:bg-opacity-90 transition-colors text-sm">
+                                View Details
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-12 pb-6">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="heading text-xl font-semibold mb-4">Abhinandan International</h3>
+                    <p class="text-gray-400 mb-4">
+                        Premium quality spices and food products sourced directly from farms across India
+                        and Asia.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#"
+                            class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-gray-700">
+                            <i class="ri-facebook-fill"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-gray-700">
+                            <i class="ri-instagram-line"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-gray-700">
+                            <i class="ri-twitter-fill"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-gray-700">
+                            <i class="ri-linkedin-fill"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="heading text-xl font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="./Home.html" class="text-gray-400 hover:text-white">Home</a></li>
+                        <li><a href="./Product.html" class="text-gray-400 hover:text-white">Products</a></li>
+                        <li><a href="./Aboutus.html" class="text-gray-400 hover:text-white">About Us</a></li>
+                        <li><a href="./Contact.html" class="text-gray-400 hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="heading text-xl font-semibold mb-4">Products</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Spices</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Raisins</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Herbs</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Grains</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Oil Seeds</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Dehydrated Vegetables</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Coconut Products</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="heading text-xl font-semibold mb-4">Contact Us</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="ri-map-pin-line mt-1 mr-2"></i>
+                            <span class="text-gray-400">123 Spice Street, Mumbai, India 400001</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-phone-line mt-1 mr-2"></i>
+                            <span class="text-gray-400">+91 98765 43210</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-mail-line mt-1 mr-2"></i>
+                            <span class="text-gray-400">info@abhinandan.com</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-time-line mt-1 mr-2"></i>
+                            <span class="text-gray-400">Mon-Fri: 9AM - 6PM</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-6">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-400 mb-4 md:mb-0">
+                        &copy; 2023 Abhinandan International. All rights reserved.
+                    </p>
+                    <div class="flex space-x-6">
+                        <a href="#" class="text-gray-400 hover:text-white">Privacy Policy</a>
+                        <a href="#" class="text-gray-400 hover:text-white">Terms of Service</a>
+                        <a href="#" class="text-gray-400 hover:text-white">Shipping Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abhinandan International - Contact Us</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>tailwind.config = { theme: { extend: { colors: { primary: '#8B4513', secondary: '#6B8E23' }, borderRadius: { 'none': '0px', 'sm': '4px', DEFAULT: '8px', 'md': '12px', 'lg': '16px', 'xl': '20px', '2xl': '24px', '3xl': '32px', 'full': '9999px', 'button': '8px' } } } }</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <style>
+        :where([class^="ri-"])::before {
+            content: "\f3c2";
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .heading {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .custom-input:focus {
+            outline: none;
+        }
+
+        .contact-card {
+            transition: all 0.3s ease;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body class="bg-white">
+    <!-- Header Section -->
+    <header class="sticky top-0 z-50 bg-white shadow-sm">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                    <!-- <a href="#" class="text-3xl font-['Pacifico'] text-primary">Abhinandan</a> -->
+                    <a href="#" class="flex items-center">
+                        <img src="photo/logo-4kk-1.png" alt="Abhinandan Logo" class="h-10 w-auto mr-4">
+                    </a>
+                    <nav class="hidden md:flex ml-10">
+                        <ul class="flex space-x-8">
+                            <li><a href="Home.html"
+                                    class="text-gray-800 font-medium hover:text-primary transition-colors">Home</a></li>
+                            <li><a href="Product.html"
+                                    class="text-gray-800 font-medium hover:text-primary transition-colors">Products</a>
+                            </li>
+                            <li><a href="Aboutus.html"
+                                    class="text-gray-800 font-medium hover:text-primary transition-colors">About Us</a>
+                            </li>
+                            <li><a href="Contact.html"
+                                    class="text-primary font-medium hover:text-primary transition-colors">Contact</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="flex items-center">
+                    <div class="relative mr-4">
+                        <input type="text" placeholder="Search products..."
+                            class="custom-input pl-10 pr-4 py-2 rounded-full bg-gray-100 text-sm w-48 border-none">
+                        <div
+                            class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 flex items-center justify-center text-gray-500">
+                            <i class="ri-search-line"></i>
+                        </div>
+                    </div>
+                    
+                    <button
+                        class="ml-4 md:flex items-center px-4 py-2 bg-primary text-white rounded-button hover:bg-opacity-90 transition-colors whitespace-nowrap hidden">
+                        <span>Get Quote</span>
+                    </button>
+                    <div class="md:hidden w-10 h-10 flex items-center justify-center">
+                        <i class="ri-menu-line text-xl"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contact Hero Section -->
+    <section class="py-20 bg-gradient-to-r from-primary/10 to-secondary/10">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h1 class="heading text-4xl md:text-5xl font-bold text-gray-900 mb-4">Get In Touch</h1>
+                <p class="max-w-2xl mx-auto text-gray-600">We'd love to hear from you! Whether you have questions about
+                    our products, need assistance with an order, or want to explore partnership opportunities, our team
+                    is here to help.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Methods Section -->
+    <section class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Contact Card 1 -->
+                <div class="contact-card bg-white rounded-lg p-8 shadow-md text-center">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="ri-map-pin-line text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="heading text-xl font-semibold text-gray-900 mb-3">Our Office</h3>
+                    <p class="text-gray-600 mb-4">123 Spice Street<br>Mumbai, Maharashtra 400001<br>India</p>
+                    <a href="#" class="text-primary font-medium hover:underline">View on Map</a>
+                </div>
+
+                <!-- Contact Card 2 -->
+                <div class="contact-card bg-white rounded-lg p-8 shadow-md text-center">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="ri-phone-line text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="heading text-xl font-semibold text-gray-900 mb-3">Phone & Email</h3>
+                    <p class="text-gray-600 mb-4">
+                        <strong>Sales:</strong> +91 98765 43210<br>
+                        <strong>Support:</strong> +91 98765 43211<br>
+                        <strong>Email:</strong> info@abhinandan.com
+                    </p>
+                    <a href="tel:+919876543210" class="text-primary font-medium hover:underline">Call Now</a>
+                </div>
+
+                <!-- Contact Card 3 -->
+                <div class="contact-card bg-white rounded-lg p-8 shadow-md text-center">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="ri-time-line text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="heading text-xl font-semibold text-gray-900 mb-3">Working Hours</h3>
+                    <p class="text-gray-600 mb-4">
+                        <strong>Monday - Friday:</strong> 9:00 AM - 6:00 PM<br>
+                        <strong>Saturday:</strong> 10:00 AM - 4:00 PM<br>
+                        <strong>Sunday:</strong> Closed
+                    </p>
+                    <a href="#" class="text-primary font-medium hover:underline">Book Appointment</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="heading text-3xl md:text-4xl font-bold text-gray-900 mb-4">Send Us a Message</h2>
+                    <p class="max-w-2xl mx-auto text-gray-600">Fill out the form below and our team will get back to you
+                        within 24 hours.</p>
+                </div>
+
+                <form class="bg-white rounded-lg shadow-md p-8">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                        <div>
+                            <label for="name" class="block text-gray-700 font-medium mb-2">Full Name</label>
+                            <input type="text" id="name"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-colors"
+                                placeholder="Enter your name" required>
+                        </div>
+                        <div>
+                            <label for="email" class="block text-gray-700 font-medium mb-2">Email Address</label>
+                            <input type="email" id="email"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-colors"
+                                placeholder="Enter your email" required>
+                        </div>
+                    </div>
+
+                    <div class="mb-6">
+                        <label for="phone" class="block text-gray-700 font-medium mb-2">Phone Number</label>
+                        <input type="tel" id="phone"
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-colors"
+                            placeholder="Enter your phone number">
+                    </div>
+
+                    <div class="mb-6">
+                        <label for="subject" class="block text-gray-700 font-medium mb-2">Subject</label>
+                        <select id="subject"
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-colors">
+                            <option value="">Select a subject</option>
+                            <option value="product">Product Inquiry</option>
+                            <option value="order">Order Support</option>
+                            <option value="wholesale">Wholesale Inquiry</option>
+                            <option value="partnership">Partnership Opportunity</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-6">
+                        <label for="message" class="block text-gray-700 font-medium mb-2">Your Message</label>
+                        <textarea id="message" rows="5"
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-colors"
+                            placeholder="Enter your message"></textarea>
+                    </div>
+
+                    <div class="flex items-center mb-6">
+                        <input type="checkbox" id="subscribe"
+                            class="mr-2 w-5 h-5 border border-gray-300 rounded focus:ring-primary">
+                        <label for="subscribe" class="text-gray-600">Subscribe to our newsletter for updates and
+                            promotions</label>
+                    </div>
+
+                    <button type="submit"
+                        class="w-full py-3 px-6 bg-primary text-white font-medium rounded-button hover:bg-opacity-90 transition-colors">
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="heading text-3xl md:text-4xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
+                <p class="max-w-2xl mx-auto text-gray-600">Find quick answers to common questions about our products and
+                    services.</p>
+            </div>
+
+            <div class="max-w-3xl mx-auto">
+                <!-- FAQ Item 1 -->
+                <div class="mb-6 border-b border-gray-200 pb-6">
+                    <button class="flex items-center justify-between w-full text-left">
+                        <h3 class="heading text-xl font-semibold text-gray-900">How can I place an order?</h3>
+                        <i class="ri-arrow-down-s-line text-xl text-primary"></i>
+                    </button>
+                    <div class="mt-4 text-gray-600">
+                        <p>You can place an order directly through our website, by emailing our sales team at
+                            sales@abhinandan.com, or by calling our customer service number at +91 98765 43210 during
+                            business hours.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="mb-6 border-b border-gray-200 pb-6">
+                    <button class="flex items-center justify-between w-full text-left">
+                        <h3 class="heading text-xl font-semibold text-gray-900">What are your minimum order quantities?
+                        </h3>
+                        <i class="ri-arrow-down-s-line text-xl text-primary"></i>
+                    </button>
+                    <div class="mt-4 text-gray-600">
+                        <p>Our minimum order quantity varies by product. For retail customers, we typically have no
+                            minimum order. For wholesale customers, the MOQ is usually 25kg per product. Contact our
+                            sales team for specific requirements.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="mb-6 border-b border-gray-200 pb-6">
+                    <button class="flex items-center justify-between w-full text-left">
+                        <h3 class="heading text-xl font-semibold text-gray-900">Do you offer international shipping?
+                        </h3>
+                        <i class="ri-arrow-down-s-line text-xl text-primary"></i>
+                    </button>
+                    <div class="mt-4 text-gray-600">
+                        <p>Yes, we ship our products worldwide. Shipping costs and delivery times vary depending on the
+                            destination and order size. Contact our logistics team for specific shipping inquiries.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div class="mb-6 border-b border-gray-200 pb-6">
+                    <button class="flex items-center justify-between w-full text-left">
+                        <h3 class="heading text-xl font-semibold text-gray-900">What certifications do your products
+                            have?</h3>
+                        <i class="ri-arrow-down-s-line text-xl text-primary"></i>
+                    </button>
+                    <div class="mt-4 text-gray-600">
+                        <p>Our products are certified organic, ISO 22000, FSSAI, and HACCP compliant. We also have Halal
+                            and Kosher certifications available for specific products. Request our certification
+                            documents for more details.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 5 -->
+                <div class="mb-6 pb-6">
+                    <button class="flex items-center justify-between w-full text-left">
+                        <h3 class="heading text-xl font-semibold text-gray-900">How do I become a distributor?</h3>
+                        <i class="ri-arrow-down-s-line text-xl text-primary"></i>
+                    </button>
+                    <div class="mt-4 text-gray-600">
+                        <p>We welcome new distribution partners. Please contact our partnership team at
+                            partners@abhinandan.com with your company details, business model, and target markets. We'll
+                            review your application and get back to you within 3 business days.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="rounded-lg overflow-hidden shadow-lg">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.002701119168!2d72.8312153158509!3d19.07598768709675!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c6306644edc1%3A0x5da4ed8f8d648c69!2sMumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1621234567890!5m2!1sen!2sin"
+                    width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+       <!-- Footer -->
+       <footer class="bg-gray-900 text-white pt-16 pb-8">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <a href="#" class="text-3xl font-['Pacifico'] text-white mb-6 block">Abhinandan</a>
+                    <p class="text-gray-400 mb-6">We Process Quality, We Harvest Trust - Your trusted partner in premium
+                        Indian spices.</p>
+                    <div class="flex space-x-4">
+                        <a href="#"
+                            class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-primary transition-colors">
+                            <i class="ri-facebook-fill"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-primary transition-colors">
+                            <i class="ri-instagram-line"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-primary transition-colors">
+                            <i class="ri-twitter-x-line"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-primary transition-colors">
+                            <i class="ri-linkedin-fill text-xl"></i>
+                        </a>
+                        
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="./Home.html" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="./Product.html" class="text-gray-400 hover:text-white transition-colors">Products</a></li>
+                        <li><a href="./Aboutus.html" class="text-gray-400 hover:text-white transition-colors text-white">About Us</a></li>
+                        <li><a href="./Contact.html" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contact Us</h4>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <div class="w-5 h-5 flex items-center justify-center mr-2 mt-1">
+                                <i class="ri-map-pin-line text-primary"></i>
+                            </div>
+                            <span class="text-gray-400">Spice House, Unjha APMC Market, Gujarat, India</span>
+                        </li>
+                        <li class="flex items-center">
+                            <div class="w-5 h-5 flex items-center justify-center mr-2">
+                                <i class="ri-phone-line text-primary"></i>
+                            </div>
+                            <span class="text-gray-400">+91 98765 43210</span>
+                        </li>
+                        <li class="flex items-center">
+                            <div class="w-5 h-5 flex items-center justify-center mr-2">
+                                <i class="ri-mail-line text-primary"></i>
+                            </div>
+                            <span class="text-gray-400">info@abhinandan.com</span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    
+                    <h4 class="text-lg font-semibold mt-6 mb-4">Certifications</h4>
+                    <div class="flex flex-wrap gap-3">
+                        <img src="https://deepseek.ai/generate-image?prompt=A%20USDA%20Organic%20certification%20logo%20in%20a%20clean%2C%20modern%20design%20with%20green%20and%20white%20colors"
+                            alt="Organic Certification" class="h-10 object-contain">
+                        <img src="https://deepseek.ai/generate-image?prompt=An%20EU%20Organic%20certification%20logo%20with%20a%20leaf%20symbol%20and%20stars%20in%20green%20and%20white"
+                            alt="EU Organic" class="h-10 object-contain">
+                        <img src="https://deepseek.ai/generate-image?prompt=A%20Spices%20Board%20of%20India%20certification%20logo%20with%20traditional%20Indian%20design%20elements"
+                            alt="Spices Board India" class="h-10 object-contain">
+                    </div>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-gray-800 text-center text-gray-500 text-sm">
+                <p>© 2025 Abhinandan International. All rights reserved. | <a href="#"
+                        class="hover:text-white transition-colors">Privacy Policy</a> | <a href="#"
+                        class="hover:text-white transition-colors">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple FAQ toggle functionality
+        document.querySelectorAll('button').forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+                content.style.display = content.style.display === 'none' ? 'block' : 'none';
+            });
+        });
+    </script>
+</body>
+
+</html>

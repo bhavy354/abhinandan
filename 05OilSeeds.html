@@ -1,0 +1,1344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oil Seeds | Abhinandan International</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#8B4513',
+                        secondary: '#6B8E23'
+                    },
+                    borderRadius: {
+                        'none': '0px',
+                        'sm': '4px',
+                        DEFAULT: '8px',
+                        'md': '12px',
+                        'lg': '16px',
+                        'xl': '20px',
+                        '2xl': '24px',
+                        '3xl': '32px',
+                        'full': '9999px',
+                        'button': '8px'
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <style>
+        :where([class^="ri-"])::before {
+            content: "\f3c2";
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .heading {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .custom-input:focus {
+            outline: none;
+        }
+
+        .custom-checkbox {
+            appearance: none;
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #8B4513;
+            border-radius: 4px;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .custom-checkbox:checked {
+            background-color: #8B4513;
+        }
+
+        .custom-checkbox:checked::after {
+            content: "";
+            position: absolute;
+            width: 5px;
+            height: 10px;
+            border: solid white;
+            border-width: 0 2px 2px 0;
+            top: 2px;
+            left: 6px;
+            transform: rotate(45deg);
+        }
+
+        .product-gallery-thumbnail {
+            transition: all 0.3s ease;
+        }
+
+        .product-gallery-thumbnail:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-gallery-thumbnail.active {
+            border: 2px solid #8B4513;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-white">
+    <!-- Header Section -->
+    <header class="sticky top-0 z-50 bg-white shadow-sm">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                    <!-- <a href="#" class="text-3xl font-['Pacifico'] text-primary">Abhinandan</a> -->
+                    <a href="#" class="flex items-center">
+                        <img src="photo/logo-4kk-1.png" alt="Abhinandan Logo" class="h-10 w-auto mr-4">
+                    </a>
+                    <nav class="hidden md:flex ml-10">
+                        <ul class="flex space-x-8">
+                            <li><a href="Home.html"
+                                    class="text-gray-800 font-medium hover:text-primary transition-colors">Home</a></li>
+                            <li><a href="Product.html"
+                                    class="text-primary font-medium hover:text-primary transition-colors">Products</a>
+                            </li>
+                            <li><a href="Aboutus.html"
+                                    class="text-gray-800 font-medium hover:text-primary transition-colors">About Us</a>
+                            </li>
+                            <li><a href="Contact.html"
+                                    class="text-gray-800 font-medium hover:text-primary transition-colors">Contact</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="flex items-center">
+                    <div class="relative mr-4">
+                        <input type="text" placeholder="Search products..."
+                            class="custom-input pl-10 pr-4 py-2 rounded-full bg-gray-100 text-sm w-48 border-none">
+                        <div
+                            class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 flex items-center justify-center text-gray-500">
+                            <i class="ri-search-line"></i>
+                        </div>
+                    </div>
+
+                    <button
+                        class="ml-4 md:flex items-center px-4 py-2 bg-primary text-white rounded-button hover:bg-opacity-90 transition-colors whitespace-nowrap hidden">
+                        <span>Get Quote</span>
+                    </button>
+                    <div class="md:hidden w-10 h-10 flex items-center justify-center">
+                        <i class="ri-menu-line text-xl"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Product Detail Section -->
+    <section class="py-12 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <!-- Breadcrumb -->
+            <div class="flex items-center text-sm text-gray-600 mb-6">
+                <a href="Home.html" class="hover:text-primary">Home</a>
+                <i class="ri-arrow-right-s-line mx-2"></i>
+                <a href="Product.html" class="hover:text-primary">Products</a>
+                <i class="ri-arrow-right-s-line mx-2"></i>
+                <a href="Product.html?section#oil-seeds" class="hover:text-primary">Oil Seeds</a>
+                <i class="ri-arrow-right-s-line mx-2"></i>
+                <span class="text-primary" id="productNameBreadcrumb">Natural Sesame Seeds</span>
+            </div>
+
+            <div class="flex flex-col lg:flex-row gap-8">
+                <!-- Product Gallery -->
+                <div class="lg:w-1/2">
+                    <div class="bg-white rounded-lg shadow-md p-4 mb-4">
+                        <div class="h-96 overflow-hidden rounded-lg mb-4">
+                            <img id="mainImage"
+                                src="https://images.unsplash.com/photo-1593720213428-28a5b9e94613?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+                                alt="Natural Sesame Seeds" class="w-full h-full object-contain">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Info -->
+                <div class="lg:w-1/2">
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <h1 class="heading text-3xl font-bold text-gray-900" id="productName">Natural Sesame Seeds
+                            </h1>
+                            <div class="relative">
+                                <select id="productSelector"
+                                    class="appearance-none bg-gray-100 border border-gray-300 text-gray-700 py-2 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-primary">
+                                    <option value="natural-sesame">Natural Sesame Seeds</option>
+                                    <option value="hulled-sesame">Hulled Sesame Seeds</option>
+                                    <option value="peanut-blanched">Peanut (Blanched)</option>
+                                    <option value="niger-seed">Niger Seed</option>
+                                    <option value="lin-seed">Lin Seed</option>
+                                    <option value="flax-seed-organic">Flax Seed (Organic)</option>
+                                    <option value="flax-seed-conventional">Flax Seed (Conventional)</option>
+                                </select>
+                                <div
+                                    class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                                    <i class="ri-arrow-down-s-line"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-6">
+                            <h3 class="text-lg font-semibold text-gray-900 mb-2">Description</h3>
+                            <p class="text-gray-600 mb-4" id="productDescription">
+                                Our premium natural sesame seeds are carefully selected from the finest crops, ensuring
+                                high oil content and rich nutty flavor. These seeds are unprocessed and retain their
+                                natural husk, providing maximum nutritional benefits including high levels of calcium,
+                                iron, and healthy fats.
+                            </p>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                                <div class="flex items-start">
+                                    <i class="ri-checkbox-circle-fill text-green-500 mt-1 mr-2"></i>
+                                    <span class="text-gray-600">Rich in antioxidants and healthy fats</span>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="ri-checkbox-circle-fill text-green-500 mt-1 mr-2"></i>
+                                    <span class="text-gray-600">High in calcium, iron, and magnesium</span>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="ri-checkbox-circle-fill text-green-500 mt-1 mr-2"></i>
+                                    <span class="text-gray-600">Non-GMO and pesticide-free</span>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="ri-checkbox-circle-fill text-green-500 mt-1 mr-2"></i>
+                                    <span class="text-gray-600">Excellent source of plant-based protein</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-6">
+                            <h3 class="text-lg font-semibold text-gray-900 mb-2">Specifications</h3>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <p class="text-gray-600"><span class="font-medium">Color:</span> <span
+                                            id="productColor">Light to dark brown</span></p>
+                                    <p class="text-gray-600"><span class="font-medium">Moisture:</span> <span
+                                            id="productMoisture">Max 6%</span></p>
+                                </div>
+                                <div>
+                                    <p class="text-gray-600"><span class="font-medium">Purity:</span> <span
+                                            id="productPurity">99.9%</span></p>
+                                    <p class="text-gray-600"><span class="font-medium">Packaging:</span> <span
+                                            id="productPackaging">25kg, 50kg bags or bulk</span></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-6">
+                            <h3 class="text-lg font-semibold text-gray-900 mb-2">Storage Instructions</h3>
+                            <p class="text-gray-600" id="productStorage">
+                                Store in a cool, dry place away from direct sunlight and moisture. For extended shelf
+                                life, store in airtight containers at temperatures below 25°C with relative humidity
+                                below 60%. Refrigeration can further extend freshness.
+                            </p>
+                        </div>
+
+                        <div class="flex flex-col sm:flex-row gap-3 mb-6">
+                            <button
+                                class="flex-1 px-6 py-3 bg-primary text-white rounded-button hover:bg-opacity-90 transition-colors">
+                                Request Sample
+                            </button>
+                            <button
+                                class="flex-1 px-6 py-3 bg-secondary text-white rounded-button hover:bg-opacity-90 transition-colors">
+                                Enquiry Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Tabs -->
+            <div class="mt-12 bg-white rounded-lg shadow-md overflow-hidden">
+                <div class="border-b border-gray-200">
+                    <nav class="flex flex-col sm:flex-row">
+                        <button onclick="openTab(event, 'uses')"
+                            class="tab-button py-4 px-6 text-center border-b-2 font-medium text-primary border-primary">
+                            Uses
+                        </button>
+                        <button onclick="openTab(event, 'varieties')"
+                            class="tab-button py-4 px-6 text-center border-b-2 font-medium text-gray-500 border-transparent hover:text-gray-700 hover:border-gray-300">
+                            Varieties
+                        </button>
+                        <button onclick="openTab(event, 'names')"
+                            class="tab-button py-4 px-6 text-center border-b-2 font-medium text-gray-500 border-transparent hover:text-gray-700 hover:border-gray-300">
+                            Names in Different Languages
+                        </button>
+                        <button onclick="openTab(event, 'origin')"
+                            class="tab-button py-4 px-6 text-center border-b-2 font-medium text-gray-500 border-transparent hover:text-gray-700 hover:border-gray-300">
+                            Origin & Cultivation
+                        </button>
+                    </nav>
+                </div>
+
+                <div class="p-6">
+                    <!-- Uses Tab -->
+                    <div id="uses" class="tab-content active">
+                        <h3 class="heading text-xl font-semibold text-gray-900 mb-4">Culinary Uses</h3>
+                        <p class="text-gray-600 mb-4" id="culinaryUses">
+                            Natural sesame seeds are widely used in various culinary applications across different
+                            cuisines:
+                        </p>
+                        <ul class="list-disc pl-5 text-gray-600 mb-6 space-y-2" id="culinaryList">
+                            <li>Sprinkled on breads, buns, and pastries</li>
+                            <li>Key ingredient in tahini paste and halva</li>
+                            <li>Used in Asian stir-fries and noodle dishes</li>
+                            <li>Added to salads for crunch and nutrition</li>
+                            <li>Base for traditional sweets like sesame bars and ladoos</li>
+                            <li>Flavoring agent in rice dishes and pilafs</li>
+                        </ul>
+
+                        <h3 class="heading text-xl font-semibold text-gray-900 mb-4">Industrial & Other Uses</h3>
+                        <p class="text-gray-600 mb-4" id="industrialUses">
+                            Beyond culinary applications, natural sesame seeds have several industrial and health uses:
+                        </p>
+                        <ul class="list-disc pl-5 text-gray-600 mb-6 space-y-2" id="industrialList">
+                            <li>Production of sesame oil for cooking and cosmetics</li>
+                            <li>Pharmaceutical preparations and supplements</li>
+                            <li>Animal feed ingredient</li>
+                            <li>Natural food coloring agent</li>
+                            <li>Used in traditional medicine for its health benefits</li>
+                        </ul>
+                    </div>
+
+                    <!-- Varieties Tab -->
+                    <div id="varieties" class="tab-content">
+                        <h3 class="heading text-xl font-semibold text-gray-900 mb-4">Product Varieties</h3>
+                        <p class="text-gray-600 mb-4" id="varietiesDescription">
+                            We offer several varieties of sesame seeds and other oil seeds to meet different culinary
+                            and industrial needs:
+                        </p>
+
+                        <div class="space-y-4" id="varietiesContainer">
+                            <div class="border border-gray-200 rounded-lg p-4">
+                                <h4 class="heading text-lg font-semibold text-gray-900 mb-2">Natural Sesame Seeds</h4>
+                                <p class="text-gray-600 mb-2">
+                                    <span class="font-medium">Color:</span> Light to dark brown<br>
+                                    <span class="font-medium">Oil Content:</span> 45-50%<br>
+                                    <span class="font-medium">Purity:</span> 99.9%<br>
+                                    <span class="font-medium">Use:</span> General culinary and oil production
+                                </p>
+                            </div>
+
+                            <div class="border border-gray-200 rounded-lg p-4">
+                                <h4 class="heading text-lg font-semibold text-gray-900 mb-2">Hulled Sesame Seeds</h4>
+                                <p class="text-gray-600 mb-2">
+                                    <span class="font-medium">Color:</span> Cream to off-white<br>
+                                    <span class="font-medium">Oil Content:</span> 50-55%<br>
+                                    <span class="font-medium">Purity:</span> 99.95%<br>
+                                    <span class="font-medium">Use:</span> Premium culinary applications
+                                </p>
+                            </div>
+
+                            <div class="border border-gray-200 rounded-lg p-4">
+                                <h4 class="heading text-lg font-semibold text-gray-900 mb-2">Black Sesame Seeds</h4>
+                                <p class="text-gray-600 mb-2">
+                                    <span class="font-medium">Color:</span> Deep black<br>
+                                    <span class="font-medium">Oil Content:</span> 40-45%<br>
+                                    <span class="font-medium">Purity:</span> 99.9%<br>
+                                    <span class="font-medium">Use:</span> Specialty foods and traditional medicine
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Names Tab -->
+                    <div id="names" class="tab-content">
+                        <h3 class="heading text-xl font-semibold text-gray-900 mb-4">Names in Different Languages</h3>
+                        <p class="text-gray-600 mb-4" id="namesDescription">
+                            Sesame is known by various names across different cultures and regions:
+                        </p>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="namesContainer">
+                            <div class="border border-gray-200 rounded-lg p-4">
+                                <h4 class="heading text-lg font-semibold text-gray-900 mb-2">Indian Languages</h4>
+                                <ul class="space-y-1 text-gray-600">
+                                    <li><span class="font-medium">Hindi:</span> Til</li>
+                                    <li><span class="font-medium">Tamil:</span> Ellu</li>
+                                    <li><span class="font-medium">Telugu:</span> Nuvvulu</li>
+                                    <li><span class="font-medium">Kannada:</span> Ellu</li>
+                                    <li><span class="font-medium">Malayalam:</span> Ellu</li>
+                                    <li><span class="font-medium">Bengali:</span> Til</li>
+                                    <li><span class="font-medium">Gujarati:</span> Tal</li>
+                                    <li><span class="font-medium">Marathi:</span> Til</li>
+                                </ul>
+                            </div>
+
+                            <div class="border border-gray-200 rounded-lg p-4">
+                                <h4 class="heading text-lg font-semibold text-gray-900 mb-2">International Names</h4>
+                                <ul class="space-y-1 text-gray-600">
+                                    <li><span class="font-medium">Spanish:</span> Ajonjolí</li>
+                                    <li><span class="font-medium">French:</span> Sésame</li>
+                                    <li><span class="font-medium">German:</span> Sesam</li>
+                                    <li><span class="font-medium">Italian:</span> Sesamo</li>
+                                    <li><span class="font-medium">Arabic:</span> Simsim</li>
+                                    <li><span class="font-medium">Chinese:</span> Zhi ma</li>
+                                    <li><span class="font-medium">Japanese:</span> Goma</li>
+                                    <li><span class="font-medium">Russian:</span> Kunzhut</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Origin Tab -->
+                    <div id="origin" class="tab-content">
+                        <h3 class="heading text-xl font-semibold text-gray-900 mb-4">Origin & Cultivation</h3>
+                        <p class="text-gray-600 mb-4" id="originDescription">
+                            Sesame is one of the oldest oilseed crops known to humanity, domesticated over 3,000 years
+                            ago. Modern sesame cultivation focuses on high-yield varieties with excellent oil content
+                            and flavor profiles.
+                        </p>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <h4 class="heading text-lg font-semibold text-gray-900 mb-2">Growing Regions</h4>
+                                <p class="text-gray-600 mb-2" id="growingRegions">
+                                    The best quality sesame seeds come from these regions:
+                                </p>
+                                <ul class="list-disc pl-5 text-gray-600 space-y-1" id="regionsList">
+                                    <li>Gujarat and Rajasthan, India - known for high oil content</li>
+                                    <li>Sudan and Ethiopia - produces premium quality seeds</li>
+                                    <li>Myanmar - large-scale commercial production</li>
+                                    <li>China - major global producer</li>
+                                    <li>Nigeria - significant African producer</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <h4 class="heading text-lg font-semibold text-gray-900 mb-2">Processing Method</h4>
+                                <p class="text-gray-600 mb-2" id="processingMethod">
+                                    Our processing ensures maximum quality and nutrition retention:
+                                </p>
+                                <ol class="list-decimal pl-5 text-gray-600 space-y-1" id="processList">
+                                    <li>Careful selection of premium quality seeds</li>
+                                    <li>Thorough cleaning and removal of impurities</li>
+                                    <li>Grading by size and color</li>
+                                    <li>Quality testing for moisture and oil content</li>
+                                    <li>Packaging in moisture-proof materials</li>
+                                    <li>Storage in controlled environment</li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <h4 class="heading text-lg font-semibold text-gray-900 mb-2">Quality Standards</h4>
+                        <p class="text-gray-600" id="qualityStandards">
+                            Our natural sesame seeds meet international quality standards including ISO, FSSAI, and USDA
+                            specifications. We maintain strict hygiene protocols throughout the production process to
+                            ensure food safety and quality.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Related Products -->
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-12 pb-6">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="heading text-xl font-semibold mb-4">Abhinandan International</h3>
+                    <p class="text-gray-400 mb-4">
+                        Premium quality spices and food products sourced directly from farms across India
+                        and Asia.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#"
+                            class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-gray-700">
+                            <i class="ri-facebook-fill"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-gray-700">
+                            <i class="ri-instagram-line"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-gray-700">
+                            <i class="ri-twitter-fill"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-gray-700">
+                            <i class="ri-linkedin-fill"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="heading text-xl font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="Home.html" class="text-gray-400 hover:text-white">Home</a></li>
+                        <li><a href="Product.html" class="text-gray-400 hover:text-white">Products</a></li>
+                        <li><a href="Aboutus.html" class="text-gray-400 hover:text-white">About Us</a></li>
+                        <li><a href="Contact.html" class="text-gray-400 hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="heading text-xl font-semibold mb-4">Products</h3>
+                    <ul class="space-y-2">
+                        <li><a href="Product.html#spices" class="text-gray-400 hover:text-white">Spices</a></li>
+                        <li><a href="Product.html#raisins" class="text-gray-400 hover:text-white">Raisins</a></li>
+                        <li><a href="Product.html#herbs" class="text-gray-400 hover:text-white">Herbs</a></li>
+                        <li><a href="Product.html#grains" class="text-gray-400 hover:text-white">Grains</a></li>
+                        <li><a href="Product.html#oil-seeds" class="text-gray-400 hover:text-white">Oil Seeds</a></li>
+                        <li><a href="dehydrated-vegetables" class="text-gray-400 hover:text-white">Dehydrated Vegetables</a></li>
+                        <li><a href="Product.html#coconut-products" class="text-gray-400 hover:text-white">Coconut Products</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="heading text-xl font-semibold mb-4">Contact Us</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="ri-map-pin-line mt-1 mr-2"></i>
+                            <span class="text-gray-400">123 Spice Street, Mumbai, India 400001</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-phone-line mt-1 mr-2"></i>
+                            <span class="text-gray-400">+91 98765 43210</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-mail-line mt-1 mr-2"></i>
+                            <span class="text-gray-400">info@abhinandan.com</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-time-line mt-1 mr-2"></i>
+                            <span class="text-gray-400">Mon-Fri: 9AM - 6PM</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-6">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-400 mb-4 md:mb-0">
+                        &copy; 2025 Abhinandan International. All rights reserved.
+                    </p>
+                    <div class="flex space-x-6">
+                        <a href="#" class="text-gray-400 hover:text-white">Privacy Policy</a>
+                        <a href="#" class="text-gray-400 hover:text-white">Terms of Service</a>
+                        <a href="#" class="text-gray-400 hover:text-white">Shipping Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Product data
+        const products = {
+            'natural-sesame': {
+                name: 'Natural Sesame Seeds',
+                description: 'Our premium natural sesame seeds are carefully selected from the finest crops, ensuring high oil content and rich nutty flavor. These seeds are unprocessed and retain their natural husk, providing maximum nutritional benefits including high levels of calcium, iron, and healthy fats.',
+                color: 'Light to dark brown',
+                moisture: 'Max 6%',
+                purity: '99.9%',
+                packaging: '25kg, 50kg bags or bulk',
+                storage: 'Store in a cool, dry place away from direct sunlight and moisture. For extended shelf life, store in airtight containers at temperatures below 25°C with relative humidity below 60%. Refrigeration can further extend freshness.',
+                culinaryUses: 'Natural sesame seeds are widely used in various culinary applications across different cuisines:',
+                culinaryList: [
+                    'Sprinkled on breads, buns, and pastries',
+                    'Key ingredient in tahini paste and halva',
+                    'Used in Asian stir-fries and noodle dishes',
+                    'Added to salads for crunch and nutrition',
+                    'Base for traditional sweets like sesame bars and ladoos',
+                    'Flavoring agent in rice dishes and pilafs'
+                ],
+                industrialUses: 'Beyond culinary applications, natural sesame seeds have several industrial and health uses:',
+                industrialList: [
+                    'Production of sesame oil for cooking and cosmetics',
+                    'Pharmaceutical preparations and supplements',
+                    'Animal feed ingredient',
+                    'Natural food coloring agent',
+                    'Used in traditional medicine for its health benefits'
+                ],
+                varietiesDescription: 'We offer several varieties of sesame seeds and other oil seeds to meet different culinary and industrial needs:',
+                varieties: [
+                    {
+                        name: 'Natural Sesame Seeds',
+                        details: '<span class="font-medium">Color:</span> Light to dark brown<br><span class="font-medium">Oil Content:</span> 45-50%<br><span class="font-medium">Purity:</span> 99.9%<br><span class="font-medium">Use:</span> General culinary and oil production'
+                    },
+                    {
+                        name: 'Hulled Sesame Seeds',
+                        details: '<span class="font-medium">Color:</span> Cream to off-white<br><span class="font-medium">Oil Content:</span> 50-55%<br><span class="font-medium">Purity:</span> 99.95%<br><span class="font-medium">Use:</span> Premium culinary applications'
+                    },
+                    {
+                        name: 'Black Sesame Seeds',
+                        details: '<span class="font-medium">Color:</span> Deep black<br><span class="font-medium">Oil Content:</span> 40-45%<br><span class="font-medium">Purity:</span> 99.9%<br><span class="font-medium">Use:</span> Specialty foods and traditional medicine'
+                    }
+                ],
+                namesDescription: 'Sesame is known by various names across different cultures and regions:',
+                names: {
+                    indian: [
+                        ['Hindi', 'Til'],
+                        ['Tamil', 'Ellu'],
+                        ['Telugu', 'Nuvvulu'],
+                        ['Kannada', 'Ellu'],
+                        ['Malayalam', 'Ellu'],
+                        ['Bengali', 'Til'],
+                        ['Gujarati', 'Tal'],
+                        ['Marathi', 'Til']
+                    ],
+                    international: [
+                        ['Spanish', 'Ajonjolí'],
+                        ['French', 'Sésame'],
+                        ['German', 'Sesam'],
+                        ['Italian', 'Sesamo'],
+                        ['Arabic', 'Simsim'],
+                        ['Chinese', 'Zhi ma'],
+                        ['Japanese', 'Goma'],
+                        ['Russian', 'Kunzhut']
+                    ]
+                },
+                originDescription: 'Sesame is one of the oldest oilseed crops known to humanity, domesticated over 3,000 years ago. Modern sesame cultivation focuses on high-yield varieties with excellent oil content and flavor profiles.',
+                growingRegions: 'The best quality sesame seeds come from these regions:',
+                regionsList: [
+                    'Gujarat and Rajasthan, India - known for high oil content',
+                    'Sudan and Ethiopia - produces premium quality seeds',
+                    'Myanmar - large-scale commercial production',
+                    'China - major global producer',
+                    'Nigeria - significant African producer'
+                ],
+                processingMethod: 'Our processing ensures maximum quality and nutrition retention:',
+                processList: [
+                    'Careful selection of premium quality seeds',
+                    'Thorough cleaning and removal of impurities',
+                    'Grading by size and color',
+                    'Quality testing for moisture and oil content',
+                    'Packaging in moisture-proof materials',
+                    'Storage in controlled environment'
+                ],
+                qualityStandards: 'Our natural sesame seeds meet international quality standards including ISO, FSSAI, and USDA specifications. We maintain strict hygiene protocols throughout the production process to ensure food safety and quality.'
+            },
+            'hulled-sesame': {
+                name: 'Hulled Sesame Seeds',
+                description: 'Our premium hulled sesame seeds are mechanically processed to remove the outer husk while retaining all the nutritional benefits. These cream-colored seeds have a milder flavor and higher oil content compared to natural sesame seeds, making them ideal for premium culinary applications.',
+                color: 'Cream to off-white',
+                moisture: 'Max 5%',
+                purity: '99.95%',
+                packaging: '25kg, 50kg bags or bulk',
+                storage: 'Store in a cool, dry place away from direct sunlight. For best quality, keep in airtight containers at temperatures below 25°C with relative humidity below 50%.',
+                culinaryUses: 'Hulled sesame seeds are preferred for applications where a smooth texture and mild flavor are desired:',
+                culinaryList: [
+                    'Tahini production and hummus',
+                    'Confectionery and bakery products',
+                    'Salad dressings and sauces',
+                    'Premium bread toppings',
+                    'Asian and Middle Eastern cuisine',
+                    'Health foods and nutrition bars'
+                ],
+                industrialUses: 'Hulled sesame seeds have various industrial applications:',
+                industrialList: [
+                    'Production of high-quality sesame oil',
+                    'Cosmetic and skincare products',
+                    'Nutritional supplements',
+                    'Pharmaceutical preparations',
+                    'Specialty animal feed'
+                ],
+                varietiesDescription: 'We offer different grades of hulled sesame seeds:',
+                varieties: [
+                    {
+                        name: 'Premium Hulled Sesame',
+                        details: '<span class="font-medium">Color:</span> Pure white<br><span class="font-medium">Oil Content:</span> 55-58%<br><span class="font-medium">Purity:</span> 99.98%<br><span class="font-medium">Use:</span> High-end culinary applications'
+                    },
+                    {
+                        name: 'Standard Hulled Sesame',
+                        details: '<span class="font-medium">Color:</span> Cream<br><span class="font-medium">Oil Content:</span> 50-55%<br><span class="font-medium">Purity:</span> 99.95%<br><span class="font-medium">Use:</span> General culinary use'
+                    },
+                    {
+                        name: 'Toasted Hulled Sesame',
+                        details: '<span class="font-medium">Color:</span> Golden brown<br><span class="font-medium">Oil Content:</span> 50-55%<br><span class="font-medium">Purity:</span> 99.95%<br><span class="font-medium">Use:</span> For enhanced flavor applications'
+                    }
+                ],
+                namesDescription: 'Hulled sesame seeds are known by various names:',
+                names: {
+                    indian: [
+                        ['Hindi', 'Chilke huye til'],
+                        ['Tamil', 'Thol ellu'],
+                        ['Telugu', 'Tella nuvvulu'],
+                        ['Kannada', 'Bisilu ellu'],
+                        ['Malayalam', 'Ulli ellu'],
+                        ['Bengali', 'Chhushka til'],
+                        ['Gujarati', 'Dodhi tal'],
+                        ['Marathi', 'Sodale til']
+                    ],
+                    international: [
+                        ['Spanish', 'Ajonjolí pelado'],
+                        ['French', 'Sésame décortiqué'],
+                        ['German', 'Geschälter Sesam'],
+                        ['Italian', 'Sesamo decorticato'],
+                        ['Arabic', 'Simsim maqshoor'],
+                        ['Chinese', 'Tuo ke zhi ma'],
+                        ['Japanese', 'Muki goma'],
+                        ['Russian', 'Ochishchennyj kunzhut']
+                    ]
+                },
+                originDescription: 'Hulled sesame seeds are produced from premium quality natural sesame seeds through specialized mechanical processing that removes the outer husk while preserving the nutritional content.',
+                growingRegions: 'The best hulled sesame seeds are processed from seeds grown in:',
+                regionsList: [
+                    'India - particularly Gujarat and Rajasthan',
+                    'Sudan - known for large, uniform seeds',
+                    'Ethiopia - produces seeds with high oil content',
+                    'Mexico - known for premium quality',
+                    'China - large-scale production'
+                ],
+                processingMethod: 'Our hulling process maintains maximum quality:',
+                processList: [
+                    'Selection of premium natural sesame seeds',
+                    'Mechanical hulling with minimal heat generation',
+                    'Color sorting to remove discolored seeds',
+                    'Gravity separation to remove any remaining husk',
+                    'Precision grading by size',
+                    'Quality testing and packaging'
+                ],
+                qualityStandards: 'Our hulled sesame seeds meet international quality standards including ISO, FSSAI, and USDA specifications. We maintain strict hygiene protocols throughout the production process.'
+            },
+            'peanut-blanched': {
+                name: 'Peanut (Blanched)',
+                description: 'Our premium blanched peanuts are carefully processed to remove the red skin while maintaining the natural flavor and nutritional value. These creamy-white peanuts are rich in protein, healthy fats, and essential nutrients, making them ideal for various culinary and industrial applications.',
+                color: 'Creamy white',
+                moisture: 'Max 5%',
+                purity: '99.9%',
+                packaging: '25kg, 50kg bags or bulk',
+                storage: 'Store in a cool, dry place away from sunlight. For extended shelf life, keep in airtight containers at temperatures below 20°C with relative humidity below 50%.',
+                culinaryUses: 'Blanched peanuts are widely used in food processing:',
+                culinaryList: [
+                    'Peanut butter production',
+                    'Confectionery and chocolate products',
+                    'Bakery items and snacks',
+                    'Asian cuisine and sauces',
+                    'Ice cream toppings',
+                    'Health foods and nutrition bars'
+                ],
+                industrialUses: 'Blanched peanuts have various industrial applications:',
+                industrialList: [
+                    'Production of peanut oil',
+                    'Animal feed ingredient',
+                    'Cosmetic preparations',
+                    'Nutritional supplements',
+                    'Pharmaceutical uses'
+                ],
+                varietiesDescription: 'We offer different varieties of blanched peanuts:',
+                varieties: [
+                    {
+                        name: 'Virginia Blanched',
+                        details: '<span class="font-medium">Size:</span> Large<br><span class="font-medium">Oil Content:</span> 45-50%<br><span class="font-medium">Purity:</span> 99.9%<br><span class="font-medium">Use:</span> Premium culinary applications'
+                    },
+                    {
+                        name: 'Runner Blanched',
+                        details: '<span class="font-medium">Size:</span> Medium<br><span class="font-medium">Oil Content:</span> 50-55%<br><span class="font-medium">Purity:</span> 99.9%<br><span class="font-medium">Use:</span> General culinary and oil production'
+                    },
+                    {
+                        name: 'Spanish Blanched',
+                        details: '<span class="font-medium">Size:</span> Small<br><span class="font-medium">Oil Content:</span> 55-60%<br><span class="font-medium">Purity:</span> 99.9%<br><span class="font-medium">Use:</span> High oil content applications'
+                    }
+                ],
+                namesDescription: 'Peanuts are known by various names across different cultures:',
+                names: {
+                    indian: [
+                        ['Hindi', 'Mungphali'],
+                        ['Tamil', 'Verkadalai'],
+                        ['Telugu', 'Pallilu'],
+                        ['Kannada', 'Kadale kaayi'],
+                        ['Malayalam', 'Kappalandi'],
+                        ['Bengali', 'Chini badam'],
+                        ['Gujarati', 'Singdana'],
+                        ['Marathi', 'Bhuimug']
+                    ],
+                    international: [
+                        ['Spanish', 'Maní'],
+                        ['French', 'Arachide'],
+                        ['German', 'Erdnuss'],
+                        ['Italian', 'Arachide'],
+                        ['Arabic', 'Fustuq al-ardi'],
+                        ['Chinese', 'Hua sheng'],
+                        ['Japanese', 'Piinattsu'],
+                        ['Russian', 'Arakhis']
+                    ]
+                },
+                originDescription: 'Peanuts originated in South America and are now cultivated worldwide. Blanched peanuts are produced through careful processing that removes the skin while preserving the nutritional content.',
+                growingRegions: 'The best quality peanuts for blanching come from:',
+                regionsList: [
+                    'Gujarat, India - major producer',
+                    'Andhra Pradesh, India - known for quality',
+                    'China - largest global producer',
+                    'United States - premium varieties',
+                    'Argentina - known for high oil content'
+                ],
+                processingMethod: 'Our blanching process ensures quality:',
+                processList: [
+                    'Selection of premium raw peanuts',
+                    'Dry roasting for easy skin removal',
+                    'Mechanical blanching with minimal damage',
+                    'Color sorting to remove discolored nuts',
+                    'Size grading for uniformity',
+                    'Quality testing and packaging'
+                ],
+                qualityStandards: 'Our blanched peanuts meet international quality standards including ISO, FSSAI, and USDA specifications. We maintain strict aflatoxin control measures.'
+            },
+            'niger-seed': {
+                name: 'Niger Seed',
+                description: 'Our premium niger seeds are small, oil-rich seeds known for their high nutritional value. These black, tear-shaped seeds are rich in healthy fats, protein, and essential minerals, making them ideal for both human consumption and bird feed applications.',
+                color: 'Deep black',
+                moisture: 'Max 7%',
+                purity: '99.8%',
+                packaging: '25kg, 50kg bags or bulk',
+                storage: 'Store in a cool, dry place away from direct sunlight. For best results, keep in airtight containers at temperatures below 25°C with relative humidity below 60%.',
+                culinaryUses: 'Niger seeds have various culinary uses:',
+                culinaryList: [
+                    'Traditional Ethiopian cuisine',
+                    'Sprouted for salads',
+                    'Added to breads and baked goods',
+                    'Nutritional supplements',
+                    'Health food products',
+                    'Ayurvedic preparations'
+                ],
+                industrialUses: 'Niger seeds have several industrial applications:',
+                industrialList: [
+                    'Bird feed production',
+                    'Oil extraction for cooking',
+                    'Cosmetic and skincare products',
+                    'Animal feed ingredient',
+                    'Traditional medicine'
+                ],
+                varietiesDescription: 'We offer different grades of niger seeds:',
+                varieties: [
+                    {
+                        name: 'Premium Niger Seed',
+                        details: '<span class="font-medium">Size:</span> Uniform small<br><span class="font-medium">Oil Content:</span> 35-40%<br><span class="font-medium">Purity:</span> 99.9%<br><span class="font-medium">Use:</span> Human consumption'
+                    },
+                    {
+                        name: 'Standard Niger Seed',
+                        details: '<span class="font-medium">Size:</span> Mixed<br><span class="font-medium">Oil Content:</span> 30-35%<br><span class="font-medium">Purity:</span> 99.8%<br><span class="font-medium">Use:</span> General purpose'
+                    },
+                    {
+                        name: 'Bird Feed Grade',
+                        details: '<span class="font-medium">Size:</span> Mixed<br><span class="font-medium">Oil Content:</span> 30-35%<br><span class="font-medium">Purity:</span> 99.5%<br><span class="font-medium">Use:</span> Bird feed production'
+                    }
+                ],
+                namesDescription: 'Niger seed is known by various names:',
+                names: {
+                    indian: [
+                        ['Hindi', 'Ramtil'],
+                        ['Tamil', 'Kadugu'],
+                        ['Telugu', 'Vennel'],
+                        ['Kannada', 'Huchchellu'],
+                        ['Malayalam', 'Kadugu'],
+                        ['Bengali', 'Ramtil'],
+                        ['Gujarati', 'Ramtil'],
+                        ['Marathi', 'Karla']
+                    ],
+                    international: [
+                        ['English', 'Niger seed'],
+                        ['Spanish', 'Semilla de Niger'],
+                        ['French', 'Graines de Niger'],
+                        ['German', 'Nigersaat'],
+                        ['Italian', 'Semi di Niger'],
+                        ['Amharic', 'Nug'],
+                        ['Arabic', 'Habbet el-aziz'],
+                        ['Russian', 'Nigera semena']
+                    ]
+                },
+                originDescription: 'Niger seed is native to Ethiopia and has been cultivated for centuries. Modern production focuses on high-yield varieties with excellent oil content.',
+                growingRegions: 'The best quality niger seeds come from:',
+                regionsList: [
+                    'Ethiopia - native growing region',
+                    'India - particularly Maharashtra',
+                    'Myanmar - significant producer',
+                    'Sudan - known for quality',
+                    'Nepal - small-scale production'
+                ],
+                processingMethod: 'Our processing ensures quality:',
+                processList: [
+                    'Careful selection of premium seeds',
+                    'Thorough cleaning and removal of impurities',
+                    'Grading by size and color',
+                    'Quality testing for moisture and oil content',
+                    'Packaging in moisture-proof materials',
+                    'Storage in controlled environment'
+                ],
+                qualityStandards: 'Our niger seeds meet international quality standards. We maintain strict hygiene protocols throughout the production process.'
+            },
+            'lin-seed': {
+                name: 'Lin Seed',
+                description: 'Our premium lin seeds, also known as flax seeds, are small oil-rich seeds packed with nutritional benefits. These brown or golden seeds are an excellent source of omega-3 fatty acids, fiber, and lignans, making them a superfood for health-conscious consumers.',
+                color: 'Brown or golden',
+                moisture: 'Max 8%',
+                purity: '99.9%',
+                packaging: '25kg, 50kg bags or bulk',
+                storage: 'Store in a cool, dry place away from sunlight. For extended shelf life, refrigerate in airtight containers. Ideal storage temperature is below 20°C with relative humidity below 50%.',
+                culinaryUses: 'Lin seeds are widely used in health foods:',
+                culinaryList: [
+                    'Added to smoothies and cereals',
+                    'Baking ingredient for breads and muffins',
+                    'Egg substitute in vegan cooking',
+                    'Sprinkled on salads and yogurt',
+                    'Nutrition bars and health foods',
+                    'Ground into flour for gluten-free recipes'
+                ],
+                industrialUses: 'Lin seeds have various industrial applications:',
+                industrialList: [
+                    'Production of linseed oil',
+                    'Nutritional supplements',
+                    'Animal feed ingredient',
+                    'Textile industry (linen production)',
+                    'Cosmetic and skincare products'
+                ],
+                varietiesDescription: 'We offer different varieties of lin seeds:',
+                varieties: [
+                    {
+                        name: 'Brown Lin Seed',
+                        details: '<span class="font-medium">Color:</span> Dark brown<br><span class="font-medium">Oil Content:</span> 40-45%<br><span class="font-medium">Purity:</span> 99.9%<br><span class="font-medium">Use:</span> General culinary and industrial'
+                    },
+                    {
+                        name: 'Golden Lin Seed',
+                        details: '<span class="font-medium">Color:</span> Golden<br><span class="font-medium">Oil Content:</span> 45-50%<br><span class="font-medium">Purity:</span> 99.9%<br><span class="font-medium">Use:</span> Premium culinary applications'
+                    },
+                    {
+                        name: 'Organic Lin Seed',
+                        details: '<span class="font-medium">Color:</span> Brown<br><span class="font-medium">Oil Content:</span> 40-45%<br><span class="font-medium">Purity:</span> 99.9%<br><span class="font-medium">Use:</span> Organic food production'
+                    }
+                ],
+                namesDescription: 'Lin seed is known by various names:',
+                names: {
+                    indian: [
+                        ['Hindi', 'Alsi'],
+                        ['Tamil', 'Ali vidai'],
+                        ['Telugu', 'Avisa ginjalu'],
+                        ['Kannada', 'Agase beeja'],
+                        ['Malayalam', 'Cheruchana vithu'],
+                        ['Bengali', 'Tishi'],
+                        ['Gujarati', 'Alashi'],
+                        ['Marathi', 'Javas']
+                    ],
+                    international: [
+                        ['Spanish', 'Linaza'],
+                        ['French', 'Graines de lin'],
+                        ['German', 'Leinsamen'],
+                        ['Italian', 'Semi di lino'],
+                        ['Arabic', 'Bazr al-katan'],
+                        ['Chinese', 'Ya ma zi'],
+                        ['Japanese', 'Ama ni'],
+                        ['Russian', 'Lnyanoe semya']
+                    ]
+                },
+                originDescription: 'Lin seed has been cultivated since ancient times, with evidence dating back to 3000 BC in Babylon. Modern production focuses on high-quality varieties with excellent nutritional profiles.',
+                growingRegions: 'The best quality lin seeds come from:',
+                regionsList: [
+                    'Canada - largest global producer',
+                    'India - particularly Madhya Pradesh',
+                    'China - significant production',
+                    'United States - premium varieties',
+                    'Russia - known for quality'
+                ],
+                processingMethod: 'Our processing ensures maximum nutrition:',
+                processList: [
+                    'Selection of premium quality seeds',
+                    'Thorough cleaning and removal of impurities',
+                    'Color sorting for uniformity',
+                    'Quality testing for oil content and purity',
+                    'Packaging in moisture-proof materials',
+                    'Storage in controlled environment'
+                ],
+                qualityStandards: 'Our lin seeds meet international quality standards including ISO, FSSAI, and USDA specifications. We maintain strict quality control measures.'
+            },
+            'flax-seed-organic': {
+                name: 'Flax Seed (Organic)',
+                description: 'Our premium organic flax seeds are cultivated without synthetic pesticides or fertilizers, ensuring a pure and natural product. These small seeds are packed with omega-3 fatty acids, fiber, and antioxidants, making them a nutritional powerhouse for health-conscious consumers.',
+                color: 'Brown or golden',
+                moisture: 'Max 8%',
+                purity: '99.9%',
+                packaging: '25kg, 50kg bags or bulk',
+                storage: 'Store in a cool, dry place away from sunlight. For extended shelf life, refrigerate in airtight containers. Ideal storage temperature is below 20°C with relative humidity below 50%.',
+                culinaryUses: 'Organic flax seeds are widely used in health foods:',
+                culinaryList: [
+                    'Added to smoothies and breakfast cereals',
+                    'Baking ingredient for healthy breads',
+                    'Egg substitute in vegan recipes',
+                    'Sprinkled on salads and yogurt',
+                    'Nutrition bars and health supplements',
+                    'Ground into flour for gluten-free cooking'
+                ],
+                industrialUses: 'Organic flax seeds have various applications:',
+                industrialList: [
+                    'Production of organic linseed oil',
+                    'Nutritional supplements',
+                    'Animal feed for organic farming',
+                    'Cosmetic and skincare products',
+                    'Textile industry (linen production)'
+                ],
+                varietiesDescription: 'We offer different organic flax seed varieties:',
+                varieties: [
+                    {
+                        name: 'Organic Brown Flax',
+                        details: '<span class="font-medium">Color:</span> Dark brown<br><span class="font-medium">Oil Content:</span> 40-45%<br><span class="font-medium">Purity:</span> 99.9%<br><span class="font-medium">Use:</span> General organic applications'
+                    },
+                    {
+                        name: 'Organic Golden Flax',
+                        details: '<span class="font-medium">Color:</span> Golden<br><span class="font-medium">Oil Content:</span> 45-50%<br><span class="font-medium">Purity:</span> 99.9%<br><span class="font-medium">Use:</span> Premium organic products'
+                    },
+                    {
+                        name: 'Organic Sprouting Flax',
+                        details: '<span class="font-medium">Color:</span> Brown<br><span class="font-medium">Oil Content:</span> 40-45%<br><span class="font-medium">Purity:</span> 99.9%<br><span class="font-medium">Use:</span> Sprouting and microgreens'
+                    }
+                ],
+                namesDescription: 'Organic flax seed is known by various names:',
+                names: {
+                    indian: [
+                        ['Hindi', 'Alsi (Jaivik)'],
+                        ['Tamil', 'Ali vidai (Organic)'],
+                        ['Telugu', 'Avisa ginjalu (Organic)'],
+                        ['Kannada', 'Agase beeja (Organic)'],
+                        ['Malayalam', 'Cheruchana vithu (Organic)'],
+                        ['Bengali', 'Tishi (Organic)'],
+                        ['Gujarati', 'Alashi (Organic)'],
+                        ['Marathi', 'Javas (Organic)']
+                    ],
+                    international: [
+                        ['Spanish', 'Linaza orgánica'],
+                        ['French', 'Graines de lin bio'],
+                        ['German', 'Bio-Leinsamen'],
+                        ['Italian', 'Semi di lino biologici'],
+                        ['Arabic', 'Bazr al-katan al-hayawani'],
+                        ['Chinese', 'You ji ya ma zi'],
+                        ['Japanese', 'Yuki ama ni'],
+                        ['Russian', 'Organicheskoe lnyanoe semya']
+                    ]
+                },
+                originDescription: 'Organic flax is cultivated using sustainable farming practices without synthetic inputs. Our organic flax seeds are certified according to international organic standards.',
+                growingRegions: 'The best organic flax seeds come from:',
+                regionsList: [
+                    'Canada - largest organic producer',
+                    'United States - premium organic varieties',
+                    'India - certified organic farms',
+                    'China - growing organic production',
+                    'Europe - strict organic standards'
+                ],
+                processingMethod: 'Our organic processing ensures purity:',
+                processList: [
+                    'Certified organic cultivation',
+                    'Mechanical cleaning without chemicals',
+                    'Color sorting for uniformity',
+                    'Quality testing for oil content and purity',
+                    'Packaging in certified organic facilities',
+                    'Storage separate from conventional products'
+                ],
+                qualityStandards: 'Our organic flax seeds meet international organic certification standards including USDA Organic, EU Organic, and India Organic. We maintain strict organic integrity throughout the supply chain.'
+            },
+            'flax-seed-conventional': {
+                name: 'Flax Seed (Conventional)',
+                description: 'Our premium conventional flax seeds are high-quality oil seeds packed with nutritional benefits. These small, brown or golden seeds are an excellent source of omega-3 fatty acids, fiber, and lignans, offering great value for food manufacturers and health-conscious consumers.',
+                color: 'Brown or golden',
+                moisture: 'Max 8%',
+                purity: '99.9%',
+                packaging: '25kg, 50kg bags or bulk',
+                storage: 'Store in a cool, dry place away from sunlight. For extended shelf life, refrigerate in airtight containers. Ideal storage temperature is below 20°C with relative humidity below 50%.',
+                culinaryUses: 'Conventional flax seeds are widely used in food production:',
+                culinaryList: [
+                    'Added to breads, muffins, and cereals',
+                    'Nutrition bars and health foods',
+                    'Egg substitute in commercial baking',
+                    'Breakfast cereal ingredient',
+                    'Salad toppings and yogurt mix-ins',
+                    'Ground into flour for various recipes'
+                ],
+                industrialUses: 'Conventional flax seeds have various applications:',
+                industrialList: [
+                    'Production of linseed oil',
+                    'Animal feed ingredient',
+                    'Nutritional supplements',
+                    'Textile industry (linen production)',
+                    'Cosmetic and skincare products'
+                ],
+                varietiesDescription: 'We offer different conventional flax seed varieties:',
+                varieties: [
+                    {
+                        name: 'Brown Flax Seed',
+                        details: '<span class="font-medium">Color:</span> Dark brown<br><span class="font-medium">Oil Content:</span> 40-45%<br><span class="font-medium">Purity:</span> 99.9%<br><span class="font-medium">Use:</span> General food production'
+                    },
+                    {
+                        name: 'Golden Flax Seed',
+                        details: '<span class="font-medium">Color:</span> Golden<br><span class="font-medium">Oil Content:</span> 45-50%<br><span class="font-medium">Purity:</span> 99.9%<br><span class="font-medium">Use:</span> Premium food applications'
+                    },
+                    {
+                        name: 'Milled Flax Seed',
+                        details: '<span class="font-medium">Color:</span> Brown<br><span class="font-medium">Oil Content:</span> 40-45%<br><span class="font-medium">Purity:</span> 99.9%<br><span class="font-medium">Use:</span> Ready-to-use ingredient'
+                    }
+                ],
+                namesDescription: 'Conventional flax seed is known by various names:',
+                names: {
+                    indian: [
+                        ['Hindi', 'Alsi'],
+                        ['Tamil', 'Ali vidai'],
+                        ['Telugu', 'Avisa ginjalu'],
+                        ['Kannada', 'Agase beeja'],
+                        ['Malayalam', 'Cheruchana vithu'],
+                        ['Bengali', 'Tishi'],
+                        ['Gujarati', 'Alashi'],
+                        ['Marathi', 'Javas']
+                    ],
+                    international: [
+                        ['Spanish', 'Linaza'],
+                        ['French', 'Graines de lin'],
+                        ['German', 'Leinsamen'],
+                        ['Italian', 'Semi di lino'],
+                        ['Arabic', 'Bazr al-katan'],
+                        ['Chinese', 'Ya ma zi'],
+                        ['Japanese', 'Ama ni'],
+                        ['Russian', 'Lnyanoe semya']
+                    ]
+                },
+                originDescription: 'Conventional flax seeds are cultivated using modern agricultural practices to ensure high yields and consistent quality. Our flax seeds meet all food safety standards.',
+                growingRegions: 'The best conventional flax seeds come from:',
+                regionsList: [
+                    'Canada - largest global producer',
+                    'India - particularly Madhya Pradesh',
+                    'China - significant production',
+                    'United States - premium varieties',
+                    'Russia - known for quality'
+                ],
+                processingMethod: 'Our processing ensures quality and safety:',
+                processList: [
+                    'Selection of premium quality seeds',
+                    'Thorough cleaning and removal of impurities',
+                    'Color sorting for uniformity',
+                    'Quality testing for oil content and purity',
+                    'Packaging in food-grade materials',
+                    'Storage in controlled environment'
+                ],
+                qualityStandards: 'Our conventional flax seeds meet international quality standards including ISO, FSSAI, and USDA specifications. We maintain strict quality control measures throughout production.'
+            }
+        };
+
+        // Change product function
+        function changeProduct(productId) {
+            const product = products[productId];
+
+            // Update breadcrumb
+            document.getElementById('productNameBreadcrumb').textContent = product.name;
+
+            // Update main product info
+            document.getElementById('productName').textContent = product.name;
+            document.getElementById('productDescription').textContent = product.description;
+            document.getElementById('productColor').textContent = product.color;
+            document.getElementById('productMoisture').textContent = product.moisture;
+            if (product.purity) {
+                document.getElementById('productPurity').textContent = product.purity;
+            }
+            document.getElementById('productPackaging').textContent = product.packaging;
+            document.getElementById('productStorage').textContent = product.storage;
+
+            // Update selector
+            document.getElementById('productSelector').value = productId;
+
+            // Update uses tab
+            document.getElementById('culinaryUses').textContent = product.culinaryUses;
+            document.getElementById('industrialUses').textContent = product.industrialUses;
+
+            let culinaryList = document.getElementById('culinaryList');
+            culinaryList.innerHTML = '';
+            product.culinaryList.forEach(item => {
+                let li = document.createElement('li');
+                li.textContent = item;
+                culinaryList.appendChild(li);
+            });
+
+            let industrialList = document.getElementById('industrialList');
+            industrialList.innerHTML = '';
+            product.industrialList.forEach(item => {
+                let li = document.createElement('li');
+                li.textContent = item;
+                industrialList.appendChild(li);
+            });
+
+            // Update varieties tab
+            document.getElementById('varietiesDescription').textContent = product.varietiesDescription;
+
+            let varietiesContainer = document.getElementById('varietiesContainer');
+            varietiesContainer.innerHTML = '';
+            product.varieties.forEach(variety => {
+                let div = document.createElement('div');
+                div.className = 'border border-gray-200 rounded-lg p-4';
+                div.innerHTML = `
+                    <h4 class="heading text-lg font-semibold text-gray-900 mb-2">${variety.name}</h4>
+                    <p class="text-gray-600 mb-2">${variety.details}</p>
+                `;
+                varietiesContainer.appendChild(div);
+            });
+
+            // Update names tab
+            document.getElementById('namesDescription').textContent = product.namesDescription;
+
+            let namesContainer = document.getElementById('namesContainer');
+            namesContainer.innerHTML = '';
+
+            // Indian names
+            let indianDiv = document.createElement('div');
+            indianDiv.className = 'border border-gray-200 rounded-lg p-4';
+            indianDiv.innerHTML = '<h4 class="heading text-lg font-semibold text-gray-900 mb-2">Indian Languages</h4><ul class="space-y-1 text-gray-600"></ul>';
+            let indianList = indianDiv.querySelector('ul');
+            product.names.indian.forEach(name => {
+                let li = document.createElement('li');
+                li.innerHTML = `<span class="font-medium">${name[0]}:</span> ${name[1]}`;
+                indianList.appendChild(li);
+            });
+            namesContainer.appendChild(indianDiv);
+
+            // International names
+            let intlDiv = document.createElement('div');
+            intlDiv.className = 'border border-gray-200 rounded-lg p-4';
+            intlDiv.innerHTML = '<h4 class="heading text-lg font-semibold text-gray-900 mb-2">International Names</h4><ul class="space-y-1 text-gray-600"></ul>';
+            let intlList = intlDiv.querySelector('ul');
+            product.names.international.forEach(name => {
+                let li = document.createElement('li');
+                li.innerHTML = `<span class="font-medium">${name[0]}:</span> ${name[1]}`;
+                intlList.appendChild(li);
+            });
+            namesContainer.appendChild(intlDiv);
+
+            // Update origin tab
+            document.getElementById('originDescription').textContent = product.originDescription;
+            document.getElementById('growingRegions').textContent = product.growingRegions;
+            document.getElementById('processingMethod').textContent = product.processingMethod;
+            document.getElementById('qualityStandards').textContent = product.qualityStandards;
+
+            let regionsList = document.getElementById('regionsList');
+            regionsList.innerHTML = '';
+            product.regionsList.forEach(item => {
+                let li = document.createElement('li');
+                li.textContent = item;
+                regionsList.appendChild(li);
+            });
+
+            let processList = document.getElementById('processList');
+            processList.innerHTML = '';
+            product.processList.forEach(item => {
+                let li = document.createElement('li');
+                li.textContent = item;
+                processList.appendChild(li);
+            });
+
+            // Update images (placeholder - in a real app you would use actual product images)
+            document.getElementById('mainImage').src = `./Product/OilSeeds/${productId}.jpg`;
+            document.getElementById('mainImage').alt = product.name;
+
+            // Reset tab to uses
+            const activeTabButton = document.querySelector('.tab-button.text-primary');
+            if (activeTabButton) {
+                activeTabButton.classList.remove('text-primary', 'border-primary');
+                activeTabButton.classList.add('text-gray-500', 'border-transparent');
+            }
+
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+
+            document.getElementById('uses').classList.add('active');
+            const usesTabButton = document.querySelector('[onclick="openTab(event, \'uses\')"]');
+            if (usesTabButton) {
+                usesTabButton.classList.add('text-primary', 'border-primary');
+                usesTabButton.classList.remove('text-gray-500', 'border-transparent');
+            }
+
+        }
+
+        // Initialize with natural sesame seeds
+        document.addEventListener('DOMContentLoaded', function () {
+            const params = new URLSearchParams(window.location.search);
+            const productId = params.get('product') || 'natural-sesame';
+
+            // Only run if productId exists in the product object
+            if (products[productId]) {
+                changeProduct(productId);
+            }
+
+            const selector = document.getElementById('productSelector');
+            if (selector) {
+                selector.addEventListener('change', function () {
+                    if (products[this.value]) {
+                        changeProduct(this.value);
+                    }
+                });
+            }
+        });
+
+        // Image gallery functionality
+        function changeImage(src) {
+            document.getElementById('mainImage').src = src;
+
+            // Update active thumbnail
+            const thumbnails = document.querySelectorAll('.product-gallery-thumbnail');
+            thumbnails.forEach(thumb => {
+                thumb.classList.remove('active');
+                if (thumb.querySelector('img').src === src) {
+                    thumb.classList.add('active');
+                }
+            });
+        }
+
+        // Tab functionality
+        function openTab(evt, tabName) {
+            const tabContents = document.getElementsByClassName('tab-content');
+            for (let i = 0; i < tabContents.length; i++) {
+                tabContents[i].classList.remove('active');
+            }
+
+            const tabButtons = document.getElementsByClassName('tab-button');
+            for (let i = 0; i < tabButtons.length; i++) {
+                tabButtons[i].classList.remove('text-primary', 'border-primary');
+                tabButtons[i].classList.add('text-gray-500', 'border-transparent');
+            }
+
+            document.getElementById(tabName).classList.add('active');
+            evt.currentTarget.classList.remove('text-gray-500', 'border-transparent');
+            evt.currentTarget.classList.add('text-primary', 'border-primary');
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const params = new URLSearchParams(window.location.search);
+            const productId = params.get('product');
+
+            if (productId) {
+                changeProduct(productId);
+            }
+        });
+    </script>
+</body>
+
+</html>

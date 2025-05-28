@@ -1,0 +1,1538 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Spices | Abhinandan International</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#8B4513',
+                        secondary: '#6B8E23',
+                        accent: '#D2691E'
+                    },
+                    borderRadius: {
+                        'none': '0px',
+                        'sm': '4px',
+                        DEFAULT: '8px',
+                        'md': '12px',
+                        'lg': '16px',
+                        'xl': '20px',
+                        '2xl': '24px',
+                        '3xl': '32px',
+                        'full': '9999px',
+                        'button': '8px'
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <style>
+        :where([class^="ri-"])::before {
+            content: "\f3c2";
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .heading {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .custom-input:focus {
+            outline: none;
+        }
+
+        .product-gallery-thumbnail {
+            transition: all 0.3s ease;
+        }
+
+        .product-gallery-thumbnail:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-gallery-thumbnail.active {
+            border: 2px solid #8B4513;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .spice-badge {
+            display: inline-block;
+            padding: 0.25rem 0.5rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .spice-badge.organic {
+            background-color: #ECFDF5;
+            color: #065F46;
+        }
+
+        .spice-badge.premium {
+            background-color: #EFF6FF;
+            color: #1E40AF;
+        }
+
+        .spice-badge.export {
+            background-color: #FEF2F2;
+            color: #991B1B;
+        }
+
+        .nutrition-fact {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            border-bottom: 1px dashed #E5E7EB;
+        }
+
+        .nutrition-fact:last-child {
+            border-bottom: none;
+        }
+    </style>
+</head>
+
+<body class="bg-white">
+    <!-- Header Section -->
+    <header class="sticky top-0 z-50 bg-white shadow-sm">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                    <!-- <a href="#" class="text-3xl font-['Pacifico'] text-primary">Abhinandan</a> -->
+                    <a href="#" class="flex items-center">
+                        <img src="photo/logo-4kk-1.png" alt="Abhinandan Logo" class="h-10 w-auto mr-4">
+                    </a>
+                    <nav class="hidden md:flex ml-10">
+                        <ul class="flex space-x-8">
+                            <li><a href="Home.html"
+                                    class="text-gray-800 font-medium hover:text-primary transition-colors">Home</a></li>
+                            <li><a href="Product.html"
+                                    class="text-primary font-medium hover:text-primary transition-colors">Products</a>
+                            </li>
+                            <li><a href="Aboutus.html"
+                                    class="text-gray-800 font-medium hover:text-primary transition-colors">About Us</a>
+                            </li>
+                            <li><a href="Contact.html"
+                                    class="text-gray-800 font-medium hover:text-primary transition-colors">Contact</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="flex items-center">
+                    <div class="relative mr-4">
+                        <input type="text" placeholder="Search spices..."
+                            class="custom-input pl-10 pr-4 py-2 rounded-full bg-gray-100 text-sm w-48 border-none">
+                        <div
+                            class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 flex items-center justify-center text-gray-500">
+                            <i class="ri-search-line"></i>
+                        </div>
+                    </div>
+
+                    <button
+                        class="ml-4 md:flex items-center px-4 py-2 bg-primary text-white rounded-button hover:bg-opacity-90 transition-colors whitespace-nowrap hidden">
+                        <span>Get Quote</span>
+                    </button>
+                    <div class="md:hidden w-10 h-10 flex items-center justify-center">
+                        <i class="ri-menu-line text-xl"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Product Detail Section -->
+    <section class="py-12 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <!-- Breadcrumb -->
+            <div class="flex items-center text-sm text-gray-600 mb-6">
+                <a href="Home.html" class="hover:text-primary">Home</a>
+                <i class="ri-arrow-right-s-line mx-2"></i>
+                <a href="Product.html" class="hover:text-primary">Spices</a>
+                <i class="ri-arrow-right-s-line mx-2"></i>
+                <span class="text-primary" id="productNameBreadcrumb">Ajwain Seeds</span>
+            </div>
+
+            <div class="flex flex-col lg:flex-row gap-8">
+                <!-- Product Gallery -->
+                <div class="lg:w-1/2">
+                    <div class="bg-white rounded-lg shadow-md p-4 mb-4">
+                        <div class="h-96 overflow-hidden rounded-lg mb-4">
+                            <img id="mainImage"
+                                src="https://images.unsplash.com/photo-1603048719539-d2581f4b2b9a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+                                alt="Ajwain Seeds" class="w-full h-full object-contain">
+                        </div>
+                        <div class="grid grid-cols-4 gap-2">
+                            <div class="product-gallery-thumbnail active cursor-pointer"
+                                onclick="changeImage('https://images.unsplash.com/photo-1603048719539-d2581f4b2b9a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80')">
+                                <img src="https://images.unsplash.com/photo-1603048719539-d2581f4b2b9a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+                                    alt="Ajwain Seeds" class="w-full h-20 object-cover rounded">
+                            </div>
+                            <div class="product-gallery-thumbnail cursor-pointer"
+                                onclick="changeImage('https://images.unsplash.com/photo-1575936123452-b67c3203c357?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80')">
+                                <img src="https://images.unsplash.com/photo-1575936123452-b67c3203c357?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+                                    alt="Ajwain Seeds" class="w-full h-20 object-cover rounded">
+                            </div>
+                            <div class="product-gallery-thumbnail cursor-pointer"
+                                onclick="changeImage('https://images.unsplash.com/photo-1603048719539-d2581f4b2b9a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80')">
+                                <img src="https://images.unsplash.com/photo-1603048719539-d2581f4b2b9a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+                                    alt="Ajwain Seeds" class="w-full h-20 object-cover rounded">
+                            </div>
+                            <div class="product-gallery-thumbnail cursor-pointer"
+                                onclick="changeImage('https://images.unsplash.com/photo-1575936123452-b67c3203c357?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80')">
+                                <img src="https://images.unsplash.com/photo-1575936123452-b67c3203c357?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+                                    alt="Ajwain Seeds" class="w-full h-20 object-cover rounded">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Nutrition Facts -->
+                    <div class="bg-white rounded-lg shadow-md p-6 mb-4">
+                        <h3 class="heading text-xl font-semibold text-gray-900 mb-4">Nutritional Information</h3>
+                        <div class="space-y-2" id="nutritionFacts">
+                            <div class="nutrition-fact">
+                                <span class="text-gray-600">Energy</span>
+                                <span class="font-medium">305 kcal</span>
+                            </div>
+                            <div class="nutrition-fact">
+                                <span class="text-gray-600">Protein</span>
+                                <span class="font-medium">17.1 g</span>
+                            </div>
+                            <div class="nutrition-fact">
+                                <span class="text-gray-600">Fat</span>
+                                <span class="font-medium">21.8 g</span>
+                            </div>
+                            <div class="nutrition-fact">
+                                <span class="text-gray-600">Carbohydrates</span>
+                                <span class="font-medium">43.4 g</span>
+                            </div>
+                            <div class="nutrition-fact">
+                                <span class="text-gray-600">Fiber</span>
+                                <span class="font-medium">39.3 g</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Info -->
+                <div class="lg:w-1/2">
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h1 class="heading text-3xl font-bold text-gray-900" id="productName">Ajwain Seeds</h1>
+                                <div class="flex space-x-2 mt-2">
+                                    <span class="spice-badge organic">Organic</span>
+                                    <span class="spice-badge premium">Premium</span>
+                                    <span class="spice-badge export">Export Quality</span>
+                                </div>
+                            </div>
+                            <div class="relative">
+                                <select id="productSelector"
+                                    class="appearance-none bg-gray-100 border border-gray-300 text-gray-700 py-2 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-primary">
+                                    <option value="ajwain">Ajwain Seeds</option>
+                                    <option value="clove">Clove</option>
+                                    <option value="curry-leaf">Curry Leaf</option>
+                                    <option value="black-pepper">Black Pepper</option>
+                                    <option value="white-pepper">White Pepper</option>
+                                    <option value="green-pepper">Green Pepper</option>
+                                    <option value="curry-powder">Curry Powder</option>
+                                </select>
+                                <div
+                                    class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                                    <i class="ri-arrow-down-s-line"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-6">
+                            <h3 class="text-lg font-semibold text-gray-900 mb-2">Description</h3>
+                            <p class="text-gray-600 mb-4" id="productDescription">
+                                Ajwain (Trachyspermum ammi), also known as carom seeds, are small, oval-shaped seeds
+                                with a bitter, pungent taste and strong aroma similar to thyme. Our premium quality
+                                ajwain seeds are carefully sourced from the best farms in Rajasthan, India, known for
+                                producing the most aromatic and flavorful ajwain.
+                            </p>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                                <div class="flex items-start">
+                                    <i class="ri-checkbox-circle-fill text-green-500 mt-1 mr-2"></i>
+                                    <span class="text-gray-600">100% natural with no additives</span>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="ri-checkbox-circle-fill text-green-500 mt-1 mr-2"></i>
+                                    <span class="text-gray-600">Rich in thymol (active compound)</span>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="ri-checkbox-circle-fill text-green-500 mt-1 mr-2"></i>
+                                    <span class="text-gray-600">High essential oil content (2-4%)</span>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="ri-checkbox-circle-fill text-green-500 mt-1 mr-2"></i>
+                                    <span class="text-gray-600">Excellent digestive properties</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-6">
+                            <h3 class="text-lg font-semibold text-gray-900 mb-2">Specifications</h3>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <p class="text-gray-600"><span class="font-medium">Color:</span> <span
+                                            id="productColor">Light brown to dark brown</span></p>
+                                    <p class="text-gray-600"><span class="font-medium">Moisture:</span> <span
+                                            id="productMoisture">Max 10%</span></p>
+                                    <p class="text-gray-600"><span class="font-medium">Foreign Matter:</span> <span
+                                            id="productForeign">Max 1%</span></p>
+                                </div>
+                                <div>
+                                    <p class="text-gray-600"><span class="font-medium">Size:</span> <span
+                                            id="productSize">1.5-2.5mm</span></p>
+                                    <p class="text-gray-600"><span class="font-medium">Packaging:</span> <span
+                                            id="productPackaging">5kg, 10kg, 25kg bags</span></p>
+                                    <p class="text-gray-600"><span class="font-medium">Shelf Life:</span> <span
+                                            id="productShelfLife">12-18 months</span></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-6">
+                            <h3 class="text-lg font-semibold text-gray-900 mb-2">Storage Instructions</h3>
+                            <p class="text-gray-600" id="productStorage">
+                                Store in a cool, dry place away from direct sunlight and moisture. Keep in airtight
+                                containers to maintain freshness and prevent loss of essential oils. Ideal storage
+                                temperature is below 25°C with relative humidity below 60%.
+                            </p>
+                        </div>
+
+                        <div class="flex flex-col sm:flex-row gap-3 mb-6">
+                            <button
+                                class="flex-1 px-6 py-3 bg-primary text-white rounded-button hover:bg-opacity-90 transition-colors">
+                                Request Sample
+                            </button>
+                            <button
+                                class="flex-1 px-6 py-3 bg-secondary text-white rounded-button hover:bg-opacity-90 transition-colors">
+                                Enquiry Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Tabs -->
+            <div class="mt-12 bg-white rounded-lg shadow-md overflow-hidden">
+                <div class="border-b border-gray-200">
+                    <nav class="flex flex-col sm:flex-row">
+                        <button onclick="openTab(event, 'uses')"
+                            class="tab-button py-4 px-6 text-center border-b-2 font-medium text-primary border-primary">
+                            Uses
+                        </button>
+                        <button onclick="openTab(event, 'varieties')"
+                            class="tab-button py-4 px-6 text-center border-b-2 font-medium text-gray-500 border-transparent hover:text-gray-700 hover:border-gray-300">
+                            Varieties
+                        </button>
+                        <button onclick="openTab(event, 'names')"
+                            class="tab-button py-4 px-6 text-center border-b-2 font-medium text-gray-500 border-transparent hover:text-gray-700 hover:border-gray-300">
+                            Names in Different Languages
+                        </button>
+                        <button onclick="openTab(event, 'origin')"
+                            class="tab-button py-4 px-6 text-center border-b-2 font-medium text-gray-500 border-transparent hover:text-gray-700 hover:border-gray-300">
+                            Origin & Cultivation
+                        </button>
+                    </nav>
+                </div>
+
+                <div class="p-6">
+                    <!-- Uses Tab -->
+                    <div id="uses" class="tab-content active">
+                        <h3 class="heading text-xl font-semibold text-gray-900 mb-4">Culinary Uses</h3>
+                        <p class="text-gray-600 mb-4" id="culinaryUses">
+                            Ajwain seeds are widely used in Indian cuisine and have various culinary applications:
+                        </p>
+                        <ul class="list-disc pl-5 text-gray-600 mb-6 space-y-2" id="culinaryList">
+                            <li>Essential in flavoring breads like parathas and puris</li>
+                            <li>Used in tempering (tadka) for dals and curries</li>
+                            <li>Added to pickles for digestive benefits</li>
+                            <li>Flavoring agent in snacks and fried foods</li>
+                            <li>Used in spice blends like panch phoron</li>
+                            <li>Flavoring for biscuits and savory baked goods</li>
+                        </ul>
+
+                        <h3 class="heading text-xl font-semibold text-gray-900 mb-4">Medicinal & Other Uses</h3>
+                        <p class="text-gray-600 mb-4" id="medicinalUses">
+                            Ajwain has been used in traditional medicine for centuries due to its therapeutic
+                            properties:
+                        </p>
+                        <ul class="list-disc pl-5 text-gray-600 mb-6 space-y-2" id="medicinalList">
+                            <li>Relief from indigestion and flatulence</li>
+                            <li>Natural remedy for cold and cough</li>
+                            <li>Used in Ayurvedic preparations</li>
+                            <li>Essential oil used in aromatherapy</li>
+                            <li>Antimicrobial properties</li>
+                            <li>Used in herbal tooth powders</li>
+                        </ul>
+                    </div>
+
+                    <!-- Varieties Tab -->
+                    <div id="varieties" class="tab-content">
+                        <h3 class="heading text-xl font-semibold text-gray-900 mb-4">Product Varieties</h3>
+                        <p class="text-gray-600 mb-4" id="varietiesDescription">
+                            We offer several varieties of ajwain products to meet different culinary and industrial
+                            needs:
+                        </p>
+
+                        <div class="space-y-4" id="varietiesContainer">
+                            <div class="border border-gray-200 rounded-lg p-4">
+                                <h4 class="heading text-lg font-semibold text-gray-900 mb-2">Premium Ajwain Seeds</h4>
+                                <p class="text-gray-600 mb-2">
+                                    <span class="font-medium">Origin:</span> Rajasthan, India<br>
+                                    <span class="font-medium">Color:</span> Light brown<br>
+                                    <span class="font-medium">Essential Oil:</span> Min 2.5%<br>
+                                    <span class="font-medium">Use:</span> Culinary and medicinal
+                                </p>
+                            </div>
+
+                            <div class="border border-gray-200 rounded-lg p-4">
+                                <h4 class="heading text-lg font-semibold text-gray-900 mb-2">Organic Ajwain</h4>
+                                <p class="text-gray-600 mb-2">
+                                    <span class="font-medium">Certification:</span> USDA Organic, India Organic<br>
+                                    <span class="font-medium">Color:</span> Dark brown<br>
+                                    <span class="font-medium">Essential Oil:</span> Min 2%<br>
+                                    <span class="font-medium">Use:</span> Health food industry
+                                </p>
+                            </div>
+
+                            <div class="border border-gray-200 rounded-lg p-4">
+                                <h4 class="heading text-lg font-semibold text-gray-900 mb-2">Ajwain Powder</h4>
+                                <p class="text-gray-600 mb-2">
+                                    <span class="font-medium">Mesh Size:</span> 60-80<br>
+                                    <span class="font-medium">Color:</span> Light brown<br>
+                                    <span class="font-medium">Essential Oil:</span> Min 1.8%<br>
+                                    <span class="font-medium">Use:</span> Seasoning blends, supplements
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Names Tab -->
+                    <div id="names" class="tab-content">
+                        <h3 class="heading text-xl font-semibold text-gray-900 mb-4">Names in Different Languages</h3>
+                        <p class="text-gray-600 mb-4" id="namesDescription">
+                            Ajwain is known by various names across different cultures and regions:
+                        </p>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="namesContainer">
+                            <div class="border border-gray-200 rounded-lg p-4">
+                                <h4 class="heading text-lg font-semibold text-gray-900 mb-2">Indian Languages</h4>
+                                <ul class="space-y-1 text-gray-600">
+                                    <li><span class="font-medium">Hindi:</span> Ajwain</li>
+                                    <li><span class="font-medium">Tamil:</span> Omam</li>
+                                    <li><span class="font-medium">Telugu:</span> Vamu</li>
+                                    <li><span class="font-medium">Kannada:</span> Oma</li>
+                                    <li><span class="font-medium">Malayalam:</span> Ayamodakam</li>
+                                    <li><span class="font-medium">Bengali:</span> Jowan</li>
+                                    <li><span class="font-medium">Gujarati:</span> Ajmo</li>
+                                    <li><span class="font-medium">Marathi:</span> Ova</li>
+                                </ul>
+                            </div>
+
+                            <div class="border border-gray-200 rounded-lg p-4">
+                                <h4 class="heading text-lg font-semibold text-gray-900 mb-2">International Names</h4>
+                                <ul class="space-y-1 text-gray-600">
+                                    <li><span class="font-medium">English:</span> Carom seeds, Bishop's weed</li>
+                                    <li><span class="font-medium">Latin:</span> Trachyspermum ammi</li>
+                                    <li><span class="font-medium">Arabic:</span> Kamun al-muluki</li>
+                                    <li><span class="font-medium">French:</span> Ajowan</li>
+                                    <li><span class="font-medium">German:</span> Ajowan</li>
+                                    <li><span class="font-medium">Spanish:</span> Ajowan</li>
+                                    <li><span class="font-medium">Chinese:</span> A jiao wei</li>
+                                    <li><span class="font-medium">Persian:</span> Nanakhaha</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Origin Tab -->
+                    <div id="origin" class="tab-content">
+                        <h3 class="heading text-xl font-semibold text-gray-900 mb-4">Origin & Cultivation</h3>
+                        <p class="text-gray-600 mb-4" id="originDescription">
+                            Ajwain is believed to have originated in the eastern Mediterranean region, possibly Egypt,
+                            and was introduced to India through the Middle East. It has been cultivated in India for
+                            thousands of years and is now primarily grown in Rajasthan, Gujarat, and Maharashtra.
+                        </p>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <h4 class="heading text-lg font-semibold text-gray-900 mb-2">Growing Regions</h4>
+                                <p class="text-gray-600 mb-2" id="growingRegions">
+                                    The best quality ajwain comes from these regions:
+                                </p>
+                                <ul class="list-disc pl-5 text-gray-600 space-y-1" id="regionsList">
+                                    <li>Rajasthan, India - produces 70% of India's ajwain</li>
+                                    <li>Gujarat, India - known for high essential oil content</li>
+                                    <li>Maharashtra, India - organic cultivation</li>
+                                    <li>Iran - traditional growing region</li>
+                                    <li>Egypt - original native region</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <h4 class="heading text-lg font-semibold text-gray-900 mb-2">Cultivation Process</h4>
+                                <p class="text-gray-600 mb-2" id="cultivationProcess">
+                                    Ajwain is cultivated as a winter crop in India:
+                                </p>
+                                <ol class="list-decimal pl-5 text-gray-600 space-y-1" id="cultivationList">
+                                    <li>Sowing in October-November</li>
+                                    <li>Requires well-drained sandy loam soil</li>
+                                    <li>Minimal irrigation needed</li>
+                                    <li>Harvesting in February-March</li>
+                                    <li>Threshing to separate seeds</li>
+                                    <li>Sun drying before packaging</li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <h4 class="heading text-lg font-semibold text-gray-900 mb-2">Quality Standards</h4>
+                        <p class="text-gray-600" id="qualityStandards">
+                            Our ajwain seeds meet international quality standards including ISO, FSSAI, and USDA
+                            specifications. We maintain strict hygiene protocols throughout the production process to
+                            ensure food safety and quality. Our ajwain is tested for essential oil content, moisture,
+                            and purity before packaging.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Related Products -->
+            <div class="mt-12">
+                <h2 class="heading text-2xl font-bold text-gray-900 mb-6">Other Premium Spices</h2>
+                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6" id="relatedProducts">
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                        <div class="h-48 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1603048719539-d2581f4b2b9a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+                                alt="Clove" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold text-gray-900 mb-1">Clove</h3>
+                            <div class="flex justify-between items-center">
+                                <button onclick="changeProduct('clove')"
+                                    class="px-4 py-2 bg-primary text-white rounded-button hover:bg-opacity-90 transition-colors text-sm">
+                                    View Details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                        <div class="h-48 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1603048719539-d2581f4b2b9a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+                                alt="Curry Leaf" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold text-gray-900 mb-1">Curry Leaf</h3>
+                            <div class="flex justify-between items-center">
+                                <button onclick="changeProduct('curry-leaf')"
+                                    class="px-4 py-2 bg-primary text-white rounded-button hover:bg-opacity-90 transition-colors text-sm">
+                                    View Details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                        <div class="h-48 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1603048719539-d2581f4b2b9a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+                                alt="Black Pepper" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold text-gray-900 mb-1">Black Pepper</h3>
+                            <div class="flex justify-between items-center">
+                                <button onclick="changeProduct('black-pepper')"
+                                    class="px-4 py-2 bg-primary text-white rounded-button hover:bg-opacity-90 transition-colors text-sm">
+                                    View Details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                        <div class="h-48 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1603048719539-d2581f4b2b9a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+                                alt="Curry Powder" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold text-gray-900 mb-1">Curry Powder</h3>
+                            <div class="flex justify-between items-center">
+                                <button onclick="changeProduct('curry-powder')"
+                                    class="px-4 py-2 bg-primary text-white rounded-button hover:bg-opacity-90 transition-colors text-sm">
+                                    View Details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-12 pb-6">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="heading text-xl font-semibold mb-4">Abhinandan International</h3>
+                    <p class="text-gray-400 mb-4">
+                        Premium quality spices and food products sourced directly from farms across India
+                        and Asia.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#"
+                            class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-gray-700">
+                            <i class="ri-facebook-fill"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-gray-700">
+                            <i class="ri-instagram-line"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-gray-700">
+                            <i class="ri-twitter-fill"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-gray-700">
+                            <i class="ri-linkedin-fill"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="heading text-xl font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Home</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Products</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">About Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="heading text-xl font-semibold mb-4">Products</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Spices</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Raisins</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Herbs</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Grains</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Oil Seeds</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Dehydrated Vegetables</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Coconut Products</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="heading text-xl font-semibold mb-4">Contact Us</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="ri-map-pin-line mt-1 mr-2"></i>
+                            <span class="text-gray-400">123 Spice Street, Mumbai, India 400001</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-phone-line mt-1 mr-2"></i>
+                            <span class="text-gray-400">+91 98765 43210</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-mail-line mt-1 mr-2"></i>
+                            <span class="text-gray-400">info@abhinandan.com</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-time-line mt-1 mr-2"></i>
+                            <span class="text-gray-400">Mon-Fri: 9AM - 6PM</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-6">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-400 mb-4 md:mb-0">
+                        &copy; 2023 Abhinandan International. All rights reserved.
+                    </p>
+                    <div class="flex space-x-6">
+                        <a href="#" class="text-gray-400 hover:text-white">Privacy Policy</a>
+                        <a href="#" class="text-gray-400 hover:text-white">Terms of Service</a>
+                        <a href="#" class="text-gray-400 hover:text-white">Shipping Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Product data
+        const products = {
+            'ajwain': {
+                name: 'Ajwain Seeds',
+                description: 'Ajwain (Trachyspermum ammi), also known as carom seeds, are small, oval-shaped seeds with a bitter, pungent taste and strong aroma similar to thyme. Our premium quality ajwain seeds are carefully sourced from the best farms in Rajasthan, India, known for producing the most aromatic and flavorful ajwain.',
+                color: 'Light brown to dark brown',
+                moisture: 'Max 10%',
+                size: '1.5-2.5mm',
+                packaging: '5kg, 10kg, 25kg bags',
+                shelfLife: '12-18 months',
+                foreign: 'Max 1%',
+                storage: 'Store in a cool, dry place away from direct sunlight and moisture. Keep in airtight containers to maintain freshness and prevent loss of essential oils. Ideal storage temperature is below 25°C with relative humidity below 60%.',
+                culinaryUses: 'Ajwain seeds are widely used in Indian cuisine and have various culinary applications:',
+                culinaryList: [
+                    'Essential in flavoring breads like parathas and puris',
+                    'Used in tempering (tadka) for dals and curries',
+                    'Added to pickles for digestive benefits',
+                    'Flavoring agent in snacks and fried foods',
+                    'Used in spice blends like panch phoron',
+                    'Flavoring for biscuits and savory baked goods'
+                ],
+                medicinalUses: 'Ajwain has been used in traditional medicine for centuries due to its therapeutic properties:',
+                medicinalList: [
+                    'Relief from indigestion and flatulence',
+                    'Natural remedy for cold and cough',
+                    'Used in Ayurvedic preparations',
+                    'Essential oil used in aromatherapy',
+                    'Antimicrobial properties',
+                    'Used in herbal tooth powders'
+                ],
+                varietiesDescription: 'We offer several varieties of ajwain products to meet different culinary and industrial needs:',
+                varieties: [
+                    {
+                        name: 'Premium Ajwain Seeds',
+                        details: '<span class="font-medium">Origin:</span> Rajasthan, India<br><span class="font-medium">Color:</span> Light brown<br><span class="font-medium">Essential Oil:</span> Min 2.5%<br><span class="font-medium">Use:</span> Culinary and medicinal'
+                    },
+                    {
+                        name: 'Organic Ajwain',
+                        details: '<span class="font-medium">Certification:</span> USDA Organic, India Organic<br><span class="font-medium">Color:</span> Dark brown<br><span class="font-medium">Essential Oil:</span> Min 2%<br><span class="font-medium">Use:</span> Health food industry'
+                    },
+                    {
+                        name: 'Ajwain Powder',
+                        details: '<span class="font-medium">Mesh Size:</span> 60-80<br><span class="font-medium">Color:</span> Light brown<br><span class="font-medium">Essential Oil:</span> Min 1.8%<br><span class="font-medium">Use:</span> Seasoning blends, supplements'
+                    }
+                ],
+                namesDescription: 'Ajwain is known by various names across different cultures and regions:',
+                names: {
+                    indian: [
+                        ['Hindi', 'Ajwain'],
+                        ['Tamil', 'Omam'],
+                        ['Telugu', 'Vamu'],
+                        ['Kannada', 'Oma'],
+                        ['Malayalam', 'Ayamodakam'],
+                        ['Bengali', 'Jowan'],
+                        ['Gujarati', 'Ajmo'],
+                        ['Marathi', 'Ova']
+                    ],
+                    international: [
+                        ['English', 'Carom seeds, Bishop\'s weed'],
+                        ['Latin', 'Trachyspermum ammi'],
+                        ['Arabic', 'Kamun al-muluki'],
+                        ['French', 'Ajowan'],
+                        ['German', 'Ajowan'],
+                        ['Spanish', 'Ajowan'],
+                        ['Chinese', 'A jiao wei'],
+                        ['Persian', 'Nanakhaha']
+                    ]
+                },
+                originDescription: 'Ajwain is believed to have originated in the eastern Mediterranean region, possibly Egypt, and was introduced to India through the Middle East. It has been cultivated in India for thousands of years and is now primarily grown in Rajasthan, Gujarat, and Maharashtra.',
+                growingRegions: 'The best quality ajwain comes from these regions:',
+                regionsList: [
+                    'Rajasthan, India - produces 70% of India\'s ajwain',
+                    'Gujarat, India - known for high essential oil content',
+                    'Maharashtra, India - organic cultivation',
+                    'Iran - traditional growing region',
+                    'Egypt - original native region'
+                ],
+                cultivationProcess: 'Ajwain is cultivated as a winter crop in India:',
+                cultivationList: [
+                    'Sowing in October-November',
+                    'Requires well-drained sandy loam soil',
+                    'Minimal irrigation needed',
+                    'Harvesting in February-March',
+                    'Threshing to separate seeds',
+                    'Sun drying before packaging'
+                ],
+                qualityStandards: 'Our ajwain seeds meet international quality standards including ISO, FSSAI, and USDA specifications. We maintain strict hygiene protocols throughout the production process to ensure food safety and quality. Our ajwain is tested for essential oil content, moisture, and purity before packaging.',
+                nutritionFacts: [
+                    { name: 'Energy', value: '305 kcal' },
+                    { name: 'Protein', value: '17.1 g' },
+                    { name: 'Fat', value: '21.8 g' },
+                    { name: 'Carbohydrates', value: '43.4 g' },
+                    { name: 'Fiber', value: '39.3 g' }
+                ]
+            },
+            'clove': {
+                name: 'Clove',
+                description: 'Cloves are the aromatic flower buds of the Syzygium aromaticum tree, native to the Maluku Islands in Indonesia. Our premium quality cloves are hand-picked at the perfect stage of maturity, then carefully dried to preserve their intense aroma and flavor. Known for their warm, sweet, and slightly bitter taste, cloves are a staple in both sweet and savory dishes worldwide.',
+                color: 'Dark brown',
+                moisture: 'Max 12%',
+                size: '12-16mm length',
+                packaging: '5kg, 10kg, 25kg bags',
+                shelfLife: '24-36 months',
+                foreign: 'Max 1%',
+                storage: 'Store in a cool, dry place away from direct sunlight. Keep in airtight containers to maintain freshness and prevent loss of essential oils. Ideal storage temperature is below 25°C with relative humidity below 65%.',
+                culinaryUses: 'Cloves are widely used in global cuisines and have various culinary applications:',
+                culinaryList: [
+                    'Essential in spice blends like garam masala',
+                    'Used in mulled wines and hot beverages',
+                    'Flavoring for meats and stews',
+                    'Key ingredient in Indian biryanis',
+                    'Used in baking (gingerbread, fruitcakes)',
+                    'Flavoring for pickles and chutneys'
+                ],
+                medicinalUses: 'Cloves have been used in traditional medicine for centuries due to their therapeutic properties:',
+                medicinalList: [
+                    'Natural remedy for toothache and oral health',
+                    'Digestive aid and carminative',
+                    'Antimicrobial and antiviral properties',
+                    'Used in Ayurvedic and Chinese medicine',
+                    'Essential oil used in aromatherapy',
+                    'Anti-inflammatory properties'
+                ],
+                varietiesDescription: 'We offer several varieties of clove products to meet different culinary and industrial needs:',
+                varieties: [
+                    {
+                        name: 'Premium Whole Cloves',
+                        details: '<span class="font-medium">Origin:</span> Zanzibar, Madagascar<br><span class="font-medium">Color:</span> Dark brown<br><span class="font-medium">Essential Oil:</span> Min 15%<br><span class="font-medium">Use:</span> Culinary and medicinal'
+                    },
+                    {
+                        name: 'Organic Cloves',
+                        details: '<span class="font-medium">Certification:</span> USDA Organic, EU Organic<br><span class="font-medium">Color:</span> Dark brown<br><span class="font-medium">Essential Oil:</span> Min 14%<br><span class="font-medium">Use:</span> Health food industry'
+                    },
+                    {
+                        name: 'Clove Powder',
+                        details: '<span class="font-medium">Mesh Size:</span> 60-80<br><span class="font-medium">Color:</span> Dark brown<br><span class="font-medium">Essential Oil:</span> Min 12%<br><span class="font-medium">Use:</span> Seasoning blends, supplements'
+                    }
+                ],
+                namesDescription: 'Clove is known by various names across different cultures and regions:',
+                names: {
+                    indian: [
+                        ['Hindi', 'Laung'],
+                        ['Tamil', 'Kirambu'],
+                        ['Telugu', 'Lavangam'],
+                        ['Kannada', 'Lavanga'],
+                        ['Malayalam', 'Grambu'],
+                        ['Bengali', 'Lobongo'],
+                        ['Gujarati', 'Laving'],
+                        ['Marathi', 'Lavang']
+                    ],
+                    international: [
+                        ['English', 'Clove'],
+                        ['Latin', 'Syzygium aromaticum'],
+                        ['Arabic', 'Qaranful'],
+                        ['French', 'Clou de girofle'],
+                        ['German', 'Gewürznelke'],
+                        ['Spanish', 'Clavo de olor'],
+                        ['Chinese', 'Ding xiang'],
+                        ['Indonesian', 'Cengkeh']
+                    ]
+                },
+                originDescription: 'Cloves are native to the Maluku Islands (formerly known as the Spice Islands) of Indonesia and have been traded for over 2,000 years. The clove trade was historically controlled by the Dutch, who restricted cultivation to maintain high prices. Today, cloves are grown in many tropical countries including Zanzibar, Madagascar, India, and Sri Lanka.',
+                growingRegions: 'The best quality cloves come from these regions:',
+                regionsList: [
+                    'Zanzibar - known for premium quality cloves',
+                    'Madagascar - major global producer',
+                    'Indonesia - original native region',
+                    'Sri Lanka - known for high oil content',
+                    'India - Kerala and Tamil Nadu'
+                ],
+                cultivationProcess: 'Cloves are cultivated through a careful process:',
+                cultivationList: [
+                    'Trees begin flowering after 5-7 years',
+                    'Buds are hand-picked when they turn pink',
+                    'Careful sun drying for 4-5 days',
+                    'Buds turn dark brown during drying',
+                    'Sorting by size and quality',
+                    'Packaging in moisture-proof materials'
+                ],
+                qualityStandards: 'Our cloves meet international quality standards including ISO, FSSAI, and USDA specifications. We maintain strict hygiene protocols throughout the production process to ensure food safety and quality. Our cloves are tested for essential oil content (eugenol), moisture, and purity before packaging.',
+                nutritionFacts: [
+                    { name: 'Energy', value: '274 kcal' },
+                    { name: 'Protein', value: '6 g' },
+                    { name: 'Fat', value: '13 g' },
+                    { name: 'Carbohydrates', value: '65 g' },
+                    { name: 'Fiber', value: '33.9 g' }
+                ]
+            },
+            'curry-leaf': {
+                name: 'Curry Leaf',
+                description: 'Curry leaves (Murraya koenigii) are aromatic leaves used extensively in South Indian and Sri Lankan cooking. Our premium quality curry leaves are carefully hand-picked from mature trees, then gently dried to preserve their distinctive citrus-like aroma and slightly bitter taste. These leaves are an essential flavoring agent in many Indian dishes and are known for their numerous health benefits.',
+                color: 'Dark green to olive green',
+                moisture: 'Max 8%',
+                size: '2-4cm length',
+                packaging: '5kg, 10kg, 25kg bags',
+                shelfLife: '12-18 months',
+                foreign: 'Max 1%',
+                storage: 'Store in a cool, dry place away from direct sunlight. Keep in airtight containers to maintain freshness and prevent loss of aroma. Ideal storage temperature is below 25°C with relative humidity below 60%. For best results, store in refrigerator.',
+                culinaryUses: 'Curry leaves are fundamental to Indian cooking and have various culinary applications:',
+                culinaryList: [
+                    'Essential tempering (tadka) for dals and curries',
+                    'Flavoring for South Indian dishes like sambar',
+                    'Used in chutneys and spice blends',
+                    'Flavoring for rice dishes like lemon rice',
+                    'Added to snacks and fried foods',
+                    'Used in marinades for meats'
+                ],
+                medicinalUses: 'Curry leaves have been used in Ayurvedic medicine for centuries due to their therapeutic properties:',
+                medicinalList: [
+                    'Natural remedy for digestive issues',
+                    'Helps control blood sugar levels',
+                    'Rich in antioxidants',
+                    'Promotes hair growth and health',
+                    'Anti-inflammatory properties',
+                    'Supports liver health'
+                ],
+                varietiesDescription: 'We offer several varieties of curry leaf products to meet different culinary and industrial needs:',
+                varieties: [
+                    {
+                        name: 'Premium Dried Curry Leaves',
+                        details: '<span class="font-medium">Origin:</span> Tamil Nadu, India<br><span class="font-medium">Color:</span> Dark green<br><span class="font-medium">Aroma:</span> Strong, citrusy<br><span class="font-medium">Use:</span> Culinary and medicinal'
+                    },
+                    {
+                        name: 'Organic Curry Leaves',
+                        details: '<span class="font-medium">Certification:</span> India Organic, USDA Organic<br><span class="font-medium">Color:</span> Olive green<br><span class="font-medium">Aroma:</span> Strong, citrusy<br><span class="font-medium">Use:</span> Health food industry'
+                    },
+                    {
+                        name: 'Curry Leaf Powder',
+                        details: '<span class="font-medium">Mesh Size:</span> 60-80<br><span class="font-medium">Color:</span> Green<br><span class="font-medium">Aroma:</span> Mild, earthy<br><span class="font-medium">Use:</span> Seasoning blends, supplements'
+                    }
+                ],
+                namesDescription: 'Curry leaf is known by various names across different cultures and regions:',
+                names: {
+                    indian: [
+                        ['Hindi', 'Kadi patta'],
+                        ['Tamil', 'Kariveppilai'],
+                        ['Telugu', 'Karivepaku'],
+                        ['Kannada', 'Karibevu'],
+                        ['Malayalam', 'Kariveppila'],
+                        ['Bengali', 'Curry pata'],
+                        ['Gujarati', 'Mitho limbdo'],
+                        ['Marathi', 'Kadhipatta']
+                    ],
+                    international: [
+                        ['English', 'Curry leaf'],
+                        ['Latin', 'Murraya koenigii'],
+                        ['Sinhala', 'Karapincha'],
+                        ['Thai', 'Bai karee'],
+                        ['Malay', 'Daun kari'],
+                        ['Burmese', 'Pindosin'],
+                        ['Vietnamese', 'Lá cà ri'],
+                        ['Nepali', 'Meetha neem']
+                    ]
+                },
+                originDescription: 'Curry leaf is native to India and Sri Lanka, where it has been used in cooking and traditional medicine for thousands of years. The plant grows as a small tree or shrub in tropical and subtropical regions. While often associated with curry powder in Western countries, curry leaves are actually a distinct ingredient with their own unique flavor profile.',
+                growingRegions: 'The best quality curry leaves come from these regions:',
+                regionsList: [
+                    'Tamil Nadu, India - known for most aromatic leaves',
+                    'Kerala, India - traditional growing region',
+                    'Sri Lanka - wild varieties with strong flavor',
+                    'Andhra Pradesh, India - commercial cultivation',
+                    'Karnataka, India - organic farming'
+                ],
+                cultivationProcess: 'Curry leaves are cultivated through a careful process:',
+                cultivationList: [
+                    'Propagated from seeds or cuttings',
+                    'Plants begin yielding after 1-2 years',
+                    'Leaves are hand-picked from mature branches',
+                    'Careful shade drying for 3-4 days',
+                    'Leaves retain dark green color when properly dried',
+                    'Sorting by size and quality'
+                ],
+                qualityStandards: 'Our curry leaves meet international quality standards including ISO, FSSAI, and USDA specifications. We maintain strict hygiene protocols throughout the production process to ensure food safety and quality. Our curry leaves are tested for aroma, color, moisture, and purity before packaging.',
+                nutritionFacts: [
+                    { name: 'Energy', value: '108 kcal' },
+                    { name: 'Protein', value: '6.1 g' },
+                    { name: 'Fat', value: '1 g' },
+                    { name: 'Carbohydrates', value: '18.7 g' },
+                    { name: 'Fiber', value: '6.4 g' }
+                ]
+            },
+            'black-pepper': {
+                name: 'Black Pepper',
+                description: 'Black pepper (Piper nigrum) is the world\'s most traded spice, known as the "King of Spices". Our premium quality black pepper is harvested at peak ripeness from vines grown in the lush Western Ghats of India, then carefully sun-dried to develop its characteristic pungent aroma and sharp, slightly hot flavor. These whole peppercorns are perfect for grinding fresh to enhance any dish.',
+                color: 'Dark brown to black',
+                moisture: 'Max 12%',
+                size: '4-5mm diameter',
+                packaging: '5kg, 10kg, 25kg bags',
+                shelfLife: '24-36 months',
+                foreign: 'Max 1%',
+                storage: 'Store in a cool, dry place away from direct sunlight. Keep in airtight containers to maintain freshness and prevent loss of aroma. For best flavor, grind just before use. Ideal storage temperature is below 25°C with relative humidity below 65%.',
+                culinaryUses: 'Black pepper is used in cuisines worldwide and has various culinary applications:',
+                culinaryList: [
+                    'Table condiment (ground or whole)',
+                    'Essential in spice blends and rubs',
+                    'Flavoring for soups and sauces',
+                    'Used in marinades for meats',
+                    'Key ingredient in pickling',
+                    'Flavoring for cheeses and baked goods'
+                ],
+                medicinalUses: 'Black pepper has been used in traditional medicine for centuries due to its therapeutic properties:',
+                medicinalList: [
+                    'Digestive aid and carminative',
+                    'Enhances nutrient absorption (piperine)',
+                    'Antioxidant and anti-inflammatory',
+                    'Used in Ayurvedic preparations',
+                    'May support respiratory health',
+                    'Potential metabolic benefits'
+                ],
+                varietiesDescription: 'We offer several varieties of black pepper products to meet different culinary and industrial needs:',
+                varieties: [
+                    {
+                        name: 'Malabar Garbled Black Pepper',
+                        details: '<span class="font-medium">Origin:</span> Kerala, India<br><span class="font-medium">Color:</span> Deep black<br><span class="font-medium">Piperine:</span> Min 4%<br><span class="font-medium">Use:</span> Premium culinary applications'
+                    },
+                    {
+                        name: 'Tellicherry Black Pepper',
+                        details: '<span class="font-medium">Origin:</span> Kerala, India<br><span class="font-medium">Color:</span> Dark brown<br><span class="font-medium">Piperine:</span> Min 5%<br><span class="font-medium">Use:</span> Gourmet cooking'
+                    },
+                    {
+                        name: 'Organic Black Pepper',
+                        details: '<span class="font-medium">Certification:</span> USDA Organic, EU Organic<br><span class="font-medium">Color:</span> Black<br><span class="font-medium">Piperine:</span> Min 3.5%<br><span class="font-medium">Use:</span> Health food industry'
+                    }
+                ],
+                namesDescription: 'Black pepper is known by various names across different cultures and regions:',
+                names: {
+                    indian: [
+                        ['Hindi', 'Kali mirch'],
+                        ['Tamil', 'Milagu'],
+                        ['Telugu', 'Miriyalu'],
+                        ['Kannada', 'Kari menasu'],
+                        ['Malayalam', 'Kurumulaku'],
+                        ['Bengali', 'Gol morich'],
+                        ['Gujarati', 'Kala mari'],
+                        ['Marathi', 'Kali miri']
+                    ],
+                    international: [
+                        ['English', 'Black pepper'],
+                        ['Latin', 'Piper nigrum'],
+                        ['Arabic', 'Filfil aswad'],
+                        ['French', 'Poivre noir'],
+                        ['German', 'Schwarzer Pfeffer'],
+                        ['Spanish', 'Pimienta negra'],
+                        ['Chinese', 'Hei hu jiao'],
+                        ['Indonesian', 'Lada hitam']
+                    ]
+                },
+                originDescription: 'Black pepper is native to the Malabar Coast of India (present-day Kerala) and has been traded since ancient times. It was so valuable in medieval Europe that it was often used as currency. The spice trade routes for pepper shaped world history, motivating European exploration and colonization. Today, India remains one of the largest producers of high-quality black pepper.',
+                growingRegions: 'The best quality black pepper comes from these regions:',
+                regionsList: [
+                    'Kerala, India - Malabar and Tellicherry varieties',
+                    'Karnataka, India - high piperine content',
+                    'Sri Lanka - traditional growing region',
+                    'Vietnam - largest global producer',
+                    'Indonesia - Lampong variety'
+                ],
+                cultivationProcess: 'Black pepper is cultivated through a careful process:',
+                cultivationList: [
+                    'Grown on supporting trees or poles',
+                    'Berries harvested when nearly ripe (reddish)',
+                    'Sun-dried for 7-10 days until black and wrinkled',
+                    'Hand-sorted to remove stems and debris',
+                    'Graded by size and density',
+                    'Packaged in moisture-proof materials'
+                ],
+                qualityStandards: 'Our black pepper meets international quality standards including ISO, ASTA, FSSAI, and USDA specifications. We maintain strict hygiene protocols throughout the production process to ensure food safety and quality. Our pepper is tested for piperine content, moisture, and purity before packaging.',
+                nutritionFacts: [
+                    { name: 'Energy', value: '251 kcal' },
+                    { name: 'Protein', value: '10.4 g' },
+                    { name: 'Fat', value: '3.3 g' },
+                    { name: 'Carbohydrates', value: '63.9 g' },
+                    { name: 'Fiber', value: '25.3 g' }
+                ]
+            },
+            'white-pepper': {
+                name: 'White Pepper',
+                description: 'White pepper is made from fully ripe pepper berries (Piper nigrum) that have had the outer skin removed before drying. Our premium quality white pepper is produced using traditional methods in Kerala, India, resulting in a cleaner, slightly fermented flavor compared to black pepper. With its pale cream color and refined heat, white pepper is preferred in light-colored dishes where black specks would be undesirable.',
+                color: 'Cream to light brown',
+                moisture: 'Max 12%',
+                size: '3-4mm diameter',
+                packaging: '5kg, 10kg, 25kg bags',
+                shelfLife: '24-36 months',
+                foreign: 'Max 1%',
+                storage: 'Store in a cool, dry place away from direct sunlight. Keep in airtight containers to maintain freshness and prevent loss of aroma. For best flavor, grind just before use. Ideal storage temperature is below 25°C with relative humidity below 65%.',
+                culinaryUses: 'White pepper is widely used in global cuisines and has various culinary applications:',
+                culinaryList: [
+                    'Essential in light-colored sauces and soups',
+                    'Preferred in European cuisine (French, Swedish)',
+                    'Used in mayonnaise and cream sauces',
+                    'Flavoring for delicate fish and poultry dishes',
+                    'Key ingredient in Chinese hot and sour soup',
+                    'Used in sausages and processed meats'
+                ],
+                medicinalUses: 'White pepper shares many of black pepper\'s health benefits:',
+                medicinalList: [
+                    'Digestive aid and carminative',
+                    'Contains piperine for nutrient absorption',
+                    'Antioxidant properties',
+                    'May support circulatory health',
+                    'Used in traditional Chinese medicine',
+                    'Potential anti-inflammatory effects'
+                ],
+                varietiesDescription: 'We offer several varieties of white pepper products to meet different culinary and industrial needs:',
+                varieties: [
+                    {
+                        name: 'Muntok White Pepper',
+                        details: '<span class="font-medium">Origin:</span> Indonesia<br><span class="font-medium">Color:</span> Cream<br><span class="font-medium">Piperine:</span> Min 4%<br><span class="font-medium">Use:</span> Premium culinary applications'
+                    },
+                    {
+                        name: 'Indian White Pepper',
+                        details: '<span class="font-medium">Origin:</span> Kerala, India<br><span class="font-medium">Color:</span> Light brown<br><span class="font-medium">Piperine:</span> Min 3.5%<br><span class="font-medium">Use:</span> Gourmet cooking'
+                    },
+                    {
+                        name: 'Organic White Pepper',
+                        details: '<span class="font-medium">Certification:</span> USDA Organic, EU Organic<br><span class="font-medium">Color:</span> Cream<br><span class="font-medium">Piperine:</span> Min 3%<br><span class="font-medium">Use:</span> Health food industry'
+                    }
+                ],
+                namesDescription: 'White pepper is known by various names across different cultures and regions:',
+                names: {
+                    indian: [
+                        ['Hindi', 'Safed mirch'],
+                        ['Tamil', 'Vellai milagu'],
+                        ['Telugu', 'Tella miriyalu'],
+                        ['Kannada', 'Bili menasu'],
+                        ['Malayalam', 'Vella kurumulaku'],
+                        ['Bengali', 'Sada gol morich'],
+                        ['Gujarati', 'Dhara mari'],
+                        ['Marathi', 'Pandhara miri']
+                    ],
+                    international: [
+                        ['English', 'White pepper'],
+                        ['Latin', 'Piper nigrum'],
+                        ['Arabic', 'Filfil abyad'],
+                        ['French', 'Poivre blanc'],
+                        ['German', 'Weißer Pfeffer'],
+                        ['Spanish', 'Pimienta blanca'],
+                        ['Chinese', 'Bai hu jiao'],
+                        ['Indonesian', 'Lada putih']
+                    ]
+                },
+                originDescription: 'White pepper comes from the same plant as black pepper (Piper nigrum) but is processed differently. The traditional method involves soaking ripe berries in water for about a week, during which the outer skin softens and decomposes. The berries are then rubbed to remove the skin and dried. This process, developed in Southeast Asia, results in a cleaner, more uniform flavor preferred in many cuisines.',
+                growingRegions: 'The best quality white pepper comes from these regions:',
+                regionsList: [
+                    'Indonesia (Muntok) - famous for premium white pepper',
+                    'India (Kerala) - traditional processing methods',
+                    'Vietnam - large-scale production',
+                    'Malaysia (Sarawak) - high quality',
+                    'China (Hainan) - special varieties'
+                ],
+                cultivationProcess: 'White pepper is produced through a careful process:',
+                cultivationList: [
+                    'Berries allowed to fully ripen on vine (red color)',
+                    'Harvested and soaked in water for 7-10 days',
+                    'Outer skin removed by rubbing or machine',
+                    'Sun-dried for 5-7 days until hard and light',
+                    'Sorted by size and density',
+                    'Packaged in moisture-proof materials'
+                ],
+                qualityStandards: 'Our white pepper meets international quality standards including ISO, ASTA, FSSAI, and USDA specifications. We maintain strict hygiene protocols throughout the production process to ensure food safety and quality. Our pepper is tested for piperine content, moisture, and purity before packaging.',
+                nutritionFacts: [
+                    { name: 'Energy', value: '296 kcal' },
+                    { name: 'Protein', value: '10.4 g' },
+                    { name: 'Fat', value: '2.1 g' },
+                    { name: 'Carbohydrates', value: '68.9 g' },
+                    { name: 'Fiber', value: '26.2 g' }
+                ]
+            },
+            'green-pepper': {
+                name: 'Green Pepper',
+                description: 'Green pepper is made from unripe pepper berries (Piper nigrum) that are preserved through special drying or freeze-drying processes. Our premium quality green pepper retains its vibrant green color and fresh, slightly fruity flavor with mild heat. These whole peppercorns add a distinctive flavor and visual appeal to dishes, making them popular in gourmet cooking and fusion cuisine.',
+                color: 'Bright green to olive green',
+                moisture: 'Max 12%',
+                size: '4-5mm diameter',
+                packaging: '5kg, 10kg, 25kg bags',
+                shelfLife: '18-24 months',
+                foreign: 'Max 1%',
+                storage: 'Store in a cool, dry place away from direct sunlight. Keep in airtight containers to maintain color and freshness. For best results, store in refrigerator. Ideal storage temperature is below 20°C with relative humidity below 60%.',
+                culinaryUses: 'Green pepper is prized in gourmet cooking and has various culinary applications:',
+                culinaryList: [
+                    'Used in French nouvelle cuisine',
+                    'Flavoring for cream sauces and soups',
+                    'Key ingredient in steak au poivre',
+                    'Added to pâtés and terrines',
+                    'Flavoring for seafood dishes',
+                    'Used in fusion and modern cuisine'
+                ],
+                medicinalUses: 'Green pepper shares many of black pepper\'s health benefits with milder effects:',
+                medicinalList: [
+                    'Digestive aid',
+                    'Contains antioxidants',
+                    'Mild stimulant properties',
+                    'May support circulatory health',
+                    'Used in traditional medicine',
+                    'Potential metabolic benefits'
+                ],
+                varietiesDescription: 'We offer several varieties of green pepper products to meet different culinary needs:',
+                varieties: [
+                    {
+                        name: 'Freeze-Dried Green Pepper',
+                        details: '<span class="font-medium">Process:</span> Freeze-dried<br><span class="font-medium">Color:</span> Bright green<br><span class="font-medium">Flavor:</span> Fresh, vibrant<br><span class="font-medium">Use:</span> Premium culinary applications'
+                    },
+                    {
+                        name: 'Dehydrated Green Pepper',
+                        details: '<span class="font-medium">Process:</span> Special drying<br><span class="font-medium">Color:</span> Olive green<br><span class="font-medium">Flavor:</span> Mild, fruity<br><span class="font-medium">Use:</span> Gourmet cooking'
+                    },
+                    {
+                        name: 'Organic Green Pepper',
+                        details: '<span class="font-medium">Certification:</span> USDA Organic, EU Organic<br><span class="font-medium">Color:</span> Green<br><span class="font-medium">Flavor:</span> Fresh<br><span class="font-medium">Use:</span> Health food industry'
+                    }
+                ],
+                namesDescription: 'Green pepper is known by various names across different cultures and regions:',
+                names: {
+                    indian: [
+                        ['Hindi', 'Hari mirch'],
+                        ['Tamil', 'Pachai milagu'],
+                        ['Telugu', 'Pacha miriyalu'],
+                        ['Kannada', 'Hasu menasu'],
+                        ['Malayalam', 'Pacha kurumulaku'],
+                        ['Bengali', 'Kacha gol morich'],
+                        ['Gujarati', 'Lila mari'],
+                        ['Marathi', 'Hirva miri']
+                    ],
+                    international: [
+                        ['English', 'Green pepper'],
+                        ['Latin', 'Piper nigrum'],
+                        ['Arabic', 'Filfil akhdar'],
+                        ['French', 'Poivre vert'],
+                        ['German', 'Grüner Pfeffer'],
+                        ['Spanish', 'Pimienta verde'],
+                        ['Chinese', 'Qing hu jiao'],
+                        ['Thai', 'Prik thai khieo']
+                    ]
+                },
+                originDescription: 'Green pepper comes from the same plant as black and white pepper (Piper nigrum) but is processed differently to preserve the unripe berries. Traditional methods involve brining or vinegar preservation, while modern techniques use freeze-drying or special dehydration to maintain the green color and fresh flavor. This form of pepper became popular in French cuisine in the 20th century and is now used worldwide.',
+                growingRegions: 'The best quality green pepper comes from these regions:',
+                regionsList: [
+                    'India (Kerala) - traditional growing region',
+                    'Brazil - innovative processing methods',
+                    'Madagascar - high quality',
+                    'Indonesia - large-scale production',
+                    'Vietnam - commercial cultivation'
+                ],
+                cultivationProcess: 'Green pepper is produced through a careful process:',
+                cultivationList: [
+                    'Berries harvested when fully grown but still green',
+                    'Quickly processed to prevent ripening',
+                    'Preserved through freeze-drying or special drying',
+                    'Color stabilized to maintain green hue',
+                    'Sorted by size and quality',
+                    'Packaged in moisture-proof materials'
+                ],
+                qualityStandards: 'Our green pepper meets international quality standards including ISO, FSSAI, and USDA specifications. We maintain strict hygiene protocols throughout the production process to ensure food safety and quality. Our pepper is tested for color retention, moisture, and purity before packaging.',
+                nutritionFacts: [
+                    { name: 'Energy', value: '251 kcal' },
+                    { name: 'Protein', value: '10.4 g' },
+                    { name: 'Fat', value: '3.3 g' },
+                    { name: 'Carbohydrates', value: '63.9 g' },
+                    { name: 'Fiber', value: '25.3 g' }
+                ]
+            },
+            'curry-powder': {
+                name: 'Curry Powder',
+                origin: 'India',
+                description: 'Our authentic curry powder is a carefully balanced blend of premium spices including turmeric, coriander, cumin, fenugreek, and other aromatic ingredients. This golden-yellow powder delivers the perfect balance of warmth, earthiness, and subtle heat that is characteristic of traditional Indian cuisine.',
+                color: 'Golden yellow',
+                moisture: 'Max 10%',
+                size: '80-100 mesh',
+                packaging: '500g, 1kg, 5kg, 25kg bags',
+                storage: 'Store in a cool, dry place away from direct sunlight and strong odors. Keep in airtight containers to maintain freshness and prevent moisture absorption. Ideal storage temperature is below 25°C with relative humidity below 60%. Refrigeration can extend shelf life.',
+                culinaryUses: 'Curry powder is a versatile spice blend that forms the foundation of many dishes across various cuisines. It can be used in:',
+                culinaryList: [
+                    'Traditional Indian curries and gravies',
+                    'Marinades for meats, poultry, and seafood',
+                    'Seasoning for rice dishes like biryani and pilaf',
+                    'Flavoring for soups, stews, and lentil dishes',
+                    'Spice rubs for grilling and roasting',
+                    'Flavoring for snacks and street foods'
+                ],
+                healthBenefits: 'Beyond its culinary applications, curry powder offers several health benefits:',
+                healthList: [
+                    'Anti-inflammatory properties from turmeric',
+                    'Digestive aid from cumin and coriander',
+                    'Antioxidant effects from various spice components',
+                    'Potential immune-boosting properties',
+                    'May help regulate blood sugar levels'
+                ],
+                varietiesDescription: 'We offer several varieties of curry powder to meet different culinary needs and regional preferences:',
+                varieties: [
+                    {
+                        name: 'Madras Curry Powder',
+                        heat: 'Medium-Hot',
+                        color: 'Deep golden',
+                        ingredients: 'Extra chili, black pepper, mustard seeds',
+                        use: 'South Indian and Sri Lankan dishes',
+                        badge: 'Hot'
+                    },
+                    {
+                        name: 'Mild Curry Powder',
+                        heat: 'Mild',
+                        color: 'Light yellow',
+                        ingredients: 'More coriander, less chili',
+                        use: 'Western-style curries, children\'s dishes',
+                        badge: 'Mild'
+                    },
+                    {
+                        name: 'Garam Masala',
+                        heat: 'Warm',
+                        color: 'Brownish',
+                        ingredients: 'Cinnamon, cardamom, cloves',
+                        use: 'North Indian dishes, finishing spice',
+                        badge: 'Aromatic'
+                    }
+                ],
+                namesDescription: 'Curry powder is known by various names across different cultures and regions:',
+                names: {
+                    indian: [
+                        ['Hindi', 'Curry Powder'],
+                        ['Tamil', 'Kaari Podi'],
+                        ['Telugu', 'Kaari Podi'],
+                        ['Kannada', 'Kaari Pudi'],
+                        ['Malayalam', 'Kaari Podi'],
+                        ['Bengali', 'Curry Guroo'],
+                        ['Gujarati', 'Curry Powder'],
+                        ['Marathi', 'Curry Powder']
+                    ],
+                    international: [
+                        ['Spanish', 'Polvo de curry'],
+                        ['French', 'Poudre de curry'],
+                        ['German', 'Currypulver'],
+                        ['Italian', 'Polvere di curry'],
+                        ['Arabic', 'Boora kari'],
+                        ['Chinese', 'Gālí fěn'],
+                        ['Japanese', 'Karē ko'],
+                        ['Russian', 'Priprava kari']
+                    ]
+                },
+                originDescription: 'While "curry powder" as a blend was popularized by British colonialists in India, the concept of spice blends for flavoring dishes dates back thousands of years in Indian culinary traditions.',
+                growingRegions: 'The spices used in curry powder come from various regions known for their quality:',
+                regionsList: [
+                    'Kerala, India - for black pepper and cardamom',
+                    'Gujarat, India - for cumin and coriander',
+                    'Tamil Nadu, India - for chili and mustard seeds',
+                    'Madhya Pradesh, India - for turmeric',
+                    'Sri Lanka - for cinnamon and curry leaves'
+                ],
+                processingMethod: 'Our traditional production process ensures maximum flavor and aroma:',
+                processList: [
+                    'Sourcing of premium quality whole spices',
+                    'Careful cleaning and sorting',
+                    'Precision roasting to enhance flavors',
+                    'Grinding to perfect consistency',
+                    'Blending in precise proportions',
+                    'Quality testing and packaging'
+                ],
+                qualityStandards: 'Our curry powder meets international quality standards including ISO, FSSAI, and USDA specifications. We maintain strict hygiene protocols throughout the production process to ensure food safety and consistent quality.',
+                flavorProfile: {
+                    spicy: 70,
+                    earthy: 80,
+                    sweet: 30,
+                    bitter: 20,
+                    umami: 60
+                },
+                images: [
+                    'https://images.unsplash.com/photo-1603048719539-d2581f4b2b9a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
+                    'https://images.unsplash.com/photo-1541013406132-57d8b4af5fbf?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
+                    'https://images.unsplash.com/photo-1603569283847-aa6a0c57cb3b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
+                    'https://images.unsplash.com/photo-1603569283847-aa6a0c57cb3b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80'
+                ]
+            },
+        };
+
+        // Change product function
+        function changeProduct(productId) {
+            const product = products[productId];
+
+            // Update breadcrumb
+            document.getElementById('productNameBreadcrumb').textContent = product.name;
+
+            // Update main product info
+            document.getElementById('productName').textContent = product.name;
+            document.getElementById('productDescription').textContent = product.description;
+            document.getElementById('productColor').textContent = product.color;
+            document.getElementById('productMoisture').textContent = product.moisture;
+            document.getElementById('productSize').textContent = product.size;
+            document.getElementById('productPackaging').textContent = product.packaging;
+            document.getElementById('productStorage').textContent = product.storage;
+
+            // Update selector
+            document.getElementById('productSelector').value = productId;
+
+            // Update uses tab
+            document.getElementById('culinaryUses').textContent = product.culinaryUses;
+            document.getElementById('industrialUses').textContent = product.industrialUses;
+
+            let culinaryList = document.getElementById('culinaryList');
+            culinaryList.innerHTML = '';
+            product.culinaryList.forEach(item => {
+                let li = document.createElement('li');
+                li.textContent = item;
+                culinaryList.appendChild(li);
+            });
+
+            let industrialList = document.getElementById('industrialList');
+            industrialList.innerHTML = '';
+            product.industrialList.forEach(item => {
+                let li = document.createElement('li');
+                li.textContent = item;
+                industrialList.appendChild(li);
+            });
+
+            // Update varieties tab
+            document.getElementById('varietiesDescription').textContent = product.varietiesDescription;
+
+            let varietiesContainer = document.getElementById('varietiesContainer');
+            varietiesContainer.innerHTML = '';
+            product.varieties.forEach(variety => {
+                let div = document.createElement('div');
+                div.className = 'border border-gray-200 rounded-lg p-4';
+                div.innerHTML = `
+            <h4 class="heading text-lg font-semibold text-gray-900 mb-2">${variety.name}</h4>
+            <p class="text-gray-600 mb-2">${variety.details}</p>
+        `;
+                varietiesContainer.appendChild(div);
+            });
+
+            // Update names tab
+            document.getElementById('namesDescription').textContent = product.namesDescription;
+
+            let namesContainer = document.getElementById('namesContainer');
+            namesContainer.innerHTML = '';
+
+            // Indian names
+            let indianDiv = document.createElement('div');
+            indianDiv.className = 'border border-gray-200 rounded-lg p-4';
+            indianDiv.innerHTML = '<h4 class="heading text-lg font-semibold text-gray-900 mb-2">Indian Languages</h4><ul class="space-y-1 text-gray-600"></ul>';
+            let indianList = indianDiv.querySelector('ul');
+            product.names.indian.forEach(name => {
+                let li = document.createElement('li');
+                li.innerHTML = `<span class="font-medium">${name[0]}:</span> ${name[1]}`;
+                indianList.appendChild(li);
+            });
+            namesContainer.appendChild(indianDiv);
+
+            // International names
+            let intlDiv = document.createElement('div');
+            intlDiv.className = 'border border-gray-200 rounded-lg p-4';
+            intlDiv.innerHTML = '<h4 class="heading text-lg font-semibold text-gray-900 mb-2">International Names</h4><ul class="space-y-1 text-gray-600"></ul>';
+            let intlList = intlDiv.querySelector('ul');
+            product.names.international.forEach(name => {
+                let li = document.createElement('li');
+                li.innerHTML = `<span class="font-medium">${name[0]}:</span> ${name[1]}`;
+                intlList.appendChild(li);
+            });
+            namesContainer.appendChild(intlDiv);
+
+            // Update origin tab
+            document.getElementById('originDescription').textContent = product.originDescription;
+            document.getElementById('growingRegions').textContent = product.growingRegions;
+            document.getElementById('processingMethod').textContent = product.processingMethod;
+            document.getElementById('qualityStandards').textContent = product.qualityStandards;
+
+            let regionsList = document.getElementById('regionsList');
+            regionsList.innerHTML = '';
+            product.regionsList.forEach(item => {
+                let li = document.createElement('li');
+                li.textContent = item;
+                regionsList.appendChild(li);
+            });
+
+            let processList = document.getElementById('processList');
+            processList.innerHTML = '';
+            product.processList.forEach(item => {
+                let li = document.createElement('li');
+                li.textContent = item;
+                processList.appendChild(li);
+            });
+
+            // Update images (placeholder - in a real app you would use actual product images)
+            document.getElementById('mainImage').src = `https://images.unsplash.com/photo-1603048719539-d2581f4b2b9a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80&product=${productId}`;
+            document.getElementById('mainImage').alt = product.name;
+
+            // Reset tab to uses
+            document.querySelector('.tab-button.text-primary').classList.remove('text-primary', 'border-primary');
+            document.querySelector('.tab-button.text-primary').classList.add('text-gray-500', 'border-transparent');
+
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+
+            document.getElementById('uses').classList.add('active');
+            document.querySelector('[onclick="openTab(event, \'uses\')"]').classList.add('text-primary', 'border-primary');
+            document.querySelector('[onclick="openTab(event, \'uses\')"]').classList.remove('text-gray-500', 'border-transparent');
+        }
+
+        // Initialize with onion flakes
+        document.addEventListener('DOMContentLoaded', function () {
+            changeProduct('onion-flakes');
+
+            // Set up product selector change event
+            document.getElementById('productSelector').addEventListener('change', function () {
+                changeProduct(this.value);
+            });
+        });
+
+        // Image gallery functionality
+        function changeImage(src) {
+            document.getElementById('mainImage').src = src;
+
+            // Update active thumbnail
+            const thumbnails = document.querySelectorAll('.product-gallery-thumbnail');
+            thumbnails.forEach(thumb => {
+                thumb.classList.remove('active');
+                if (thumb.querySelector('img').src === src) {
+                    thumb.classList.add('active');
+                }
+            });
+        }
+
+        // Tab functionality
+        function openTab(evt, tabName) {
+            const tabContents = document.getElementsByClassName('tab-content');
+            for (let i = 0; i < tabContents.length; i++) {
+                tabContents[i].classList.remove('active');
+            }
+
+            const tabButtons = document.getElementsByClassName('tab-button');
+            for (let i = 0; i < tabButtons.length; i++) {
+                tabButtons[i].classList.remove('text-primary', 'border-primary');
+                tabButtons[i].classList.add('text-gray-500', 'border-transparent');
+            }
+
+            document.getElementById(tabName).classList.add('active');
+            evt.currentTarget.classList.remove('text-gray-500', 'border-transparent');
+            evt.currentTarget.classList.add('text-primary', 'border-primary');
+        }
+    </script>
+</body>
+
+</html>
